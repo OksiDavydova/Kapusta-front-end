@@ -1,12 +1,14 @@
 // import "./styles";
 import { Route, Routes, Link } from 'react-router-dom';
 import { publicRoutes, privetRoutes } from './routes';
+import Header from "./components/modules";
 const { LoginWithReg, PageNotFound } = publicRoutes;
 const { Main, Statistics } = privetRoutes;
 
 function App() {
   return (
     <>
+      <Header/>
       <Routes>
         {/* этот Routes чисто для того, чтобы сразу можно было переходить на нужные страницы. ПОсле успешного завершения проекта убирается или дорабатывается в процессе*/}
         <Route

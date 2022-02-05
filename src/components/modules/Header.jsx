@@ -1,22 +1,20 @@
-import s from './Header.module.scss'
-import HeaderLogo from '../common/HeaderLogo/HeaderLogo'; 
-import UserLogout from '../common/UserLogout';
-import UserProfile from '../common/UserProfile';
-function Header() {
-    return (
-        <header className={s.header}>
-            <div className={s.headerContainer}>
+import { Logo, UserLogout, UserProfile } from "../common";
+import { HeaderStyled } from "../../styled/modules";
 
-                <div className={s.logo}>
-                    <HeaderLogo />
-                </div>
-                <div className={s.userContainer}>
-                    <UserProfile />
-                    <UserLogout />
-                </div>
-            </div>
-        </header>
-    )
-};
+function Header() {
+  return (
+    <HeaderStyled.HeaderTag>
+      <HeaderStyled.HeaderContainer>
+        {/* <div className={s.logo}> */}
+        <Logo />
+        {/* </div> */}
+        <HeaderStyled.UserProfileWrapper>
+          <UserProfile />
+          <UserLogout />
+        </HeaderStyled.UserProfileWrapper>
+      </HeaderStyled.HeaderContainer>
+    </HeaderStyled.HeaderTag>
+  );
+}
 
 export default Header;

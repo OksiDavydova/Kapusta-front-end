@@ -1,4 +1,6 @@
+import { css } from "@emotion/react";
 
+export const GlobalStyles = css`
   html {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -48,4 +50,4 @@
 
     cursor: pointer;
   }
-
+`;

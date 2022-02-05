@@ -15,21 +15,21 @@ function App() {
             <main>
               <nav>
                 <button>
-                  <Link to="/login">login</Link>
+                  <Link to="login">login</Link>
                 </button>
                 <button>
-                  <Link to="/main">Main</Link>
+                  <Link to="main">Main</Link>
                 </button>
                 <button>
-                  <Link to="/statistics">Statistics</Link>
+                  <Link to="statistics">Statistics</Link>
                 </button>
               </nav>
             </main>
           }
         />
         <Route path="/login" element={<LoginWithReg />} />
-        <Route path="/main" element={<Main />} />
-        <Route path="/statistics" element={<Statistics />} />
+        <Route path="/main/*" element={<Main />} />
+        <Route path="/statistics/*" element={<Statistics />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>

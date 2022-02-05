@@ -1,7 +1,12 @@
 // import "./styles";
+import Header from "./components/modules";
 
 function App() {
-  return <div className="App">Kapusta</div>;
+  return (
+    <>
+    <Header/>
+      <div className="App">Kapusta</div>
+      </>)
 }
 
 export default App;

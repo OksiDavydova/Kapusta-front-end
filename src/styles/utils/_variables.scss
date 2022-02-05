@@ -1,6 +1,6 @@
 :root {
   /* Добавить шрифт, если он не сработает */
-  --main-font-text: "Roboto";
+  --main-font-text: 'Roboto';
   /* Шрифт по-умолчанию. На случай, если не прогрузится основной */
   --main-default-font-text: sans-serif;
   --main-black-color: #000000;
@@ -30,4 +30,6 @@
   --costs-color: #e53935;
   /* Расход */
   --income-color: #407946;
+  /*Лого*/
+  --logo-bg: #f5f6fa;
 }

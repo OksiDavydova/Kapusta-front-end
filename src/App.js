@@ -1,39 +1,28 @@
-// import "./styles";
-
+import React from "react";
 import { Route, Routes, Link } from "react-router-dom";
-import { publicRoutes, privetRoutes } from "./routes";
-import Header from "./components/modules";
-const { LoginWithReg, PageNotFound } = publicRoutes;
-const { Main, Statistics } = privetRoutes;
+import { MainPage, PageNotFound, ReportPage, LoginPage } from "./pages";
+import { Header } from "./components/modules";
 
 function App() {
   return (
     <>
       <Header />
+      <nav>
+        <button>
+          <Link to="login">login</Link>
+        </button>
+        <button>
+          <Link to="main">Main</Link>
+        </button>
+        <button>
+          <Link to="report">Report</Link>
+        </button>
+      </nav>
 
       <Routes>
-        {/* этот Routes чисто для того, чтобы сразу можно было переходить на нужные страницы. ПОсле успешного завершения проекта убирается или дорабатывается в процессе*/}
-        <Route
-          path="/"
-          element={
-            <main>
-              <nav>
-                <button>
-                  <Link to="login">login</Link>
-                </button>
-                <button>
-                  <Link to="main">Main</Link>
-                </button>
-                <button>
-                  <Link to="statistics">Statistics</Link>
-                </button>
-              </nav>
-            </main>
-          }
-        />
-        <Route path="/login" element={<LoginWithReg />} />
-        <Route path="/main/*" element={<Main />} />
-        <Route path="/statistics/*" element={<Statistics />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/main/*" element={<MainPage />} />
+        <Route path="/report/*" element={<ReportPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>

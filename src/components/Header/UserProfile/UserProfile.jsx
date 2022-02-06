@@ -1,8 +1,4 @@
-import {
-  AvatarLetter,
-  UserName,
-  ProfileWrapper,
-} from "../../styled/components";
+import { AvatarLetter, UserName, ProfileWrapper } from "./UserProfile.styled";
 
 function UserProfile() {
   return (

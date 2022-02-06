@@ -1,5 +1,5 @@
 import React from "react";
-import { CategoryToReport } from "../components/modules";
+import { CategoryToReport } from "../components/CategoryToReport";
 import { useNavigate } from "react-router-dom";
 
 export default function ReportPage() {

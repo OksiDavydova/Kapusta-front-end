@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { device } from "../utils";
+import { device } from "./utils";
 
 export const Container = styled.div`
   width: 100%;

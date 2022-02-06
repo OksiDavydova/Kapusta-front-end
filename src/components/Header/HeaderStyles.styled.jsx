@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors } from "../utils";
+import { colors } from "../../styles/utils";
 
 export const HeaderTag = styled.header`
   width: 100vw;

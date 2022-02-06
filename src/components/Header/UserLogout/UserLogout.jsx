@@ -1,10 +1,9 @@
-import sprite from "../../assets/svg/symbol-defs.svg";
+import sprite from "../../../assets/svg/symbol-defs.svg";
 import {
   LogoutButton,
   LogoutButtonText,
   LogoutBtnText,
-} from "../../styled/components";
-
+} from "./UserLogout.styled";
 
 function UserLogout() {
   return (

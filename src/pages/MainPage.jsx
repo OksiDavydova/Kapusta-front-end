@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes, Link, useNavigate } from "react-router-dom";
-import { IncomeModule, ExpenseModule } from "../components/modules";
+import { IncomeModule } from "../components/IncomeModule";
+import { ExpenseModule } from "../components/ExpenseModule";
 
 export default function Main() {
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
-import { LogoContainer } from "../../styled/components/LogoContainer.styled";
-import sprite from "../../assets/svg/symbol-defs.svg";
+import { LogoContainer } from "./LogoContainer.styled";
+import sprite from "../../../assets/svg/symbol-defs.svg";
 
 function Logo() {
   return (

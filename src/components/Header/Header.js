@@ -11,9 +11,7 @@ function Header() {
   return (
     <HeaderTag>
       <HeaderContainer>
-        {/* <div className={s.logo}> */}
         <Logo />
-        {/* </div> */}
         <UserProfileWrapper>
           <UserProfile />
           <UserLogout />

@@ -1,13 +1,12 @@
-import { LogoContainer } from "./LogoContainer.styled";
+import { NavLink } from "react-router-dom";
+import { SvgIcon } from "../../SvgIcon";
 import sprite from "../../../assets/svg/symbol-defs.svg";
 
 function Logo() {
   return (
-    <LogoContainer>
-      <svg width="90" height="31">
-        <use href={`${sprite}#icon-logo-with-bg`}></use>
-      </svg>
-    </LogoContainer>
+    <NavLink to="/main">
+      <SvgIcon w="90" h="31" hrefIcon={`${sprite}#icon-logo-with-bg`} />
+    </NavLink>
   );
 }
 export default Logo;

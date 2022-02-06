@@ -1,23 +1,28 @@
+import React, { useEffect, useState } from "react";
 import sprite from "../../../assets/svg/symbol-defs.svg";
-import {
-  LogoutButton,
-  LogoutButtonText,
-  LogoutBtnText,
-} from "./UserLogout.styled";
+import { LogoutBtn, LogoutBtnText } from "./UserLogout.styled";
+import { SvgIcon } from "../../SvgIcon";
 
 function UserLogout() {
-  return (
-    <div>
-      <LogoutButton>
-        <svg width="16" height="16">
-          <use href={`${sprite}#icon-logout`}></use>
-        </svg>
-      </LogoutButton>
+  const [deviceWidth, setDeviceWidth] = useState(window.innerWidth);
 
-      <LogoutButtonText>
+  const updateWidth = () => {
+    setDeviceWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  });
+
+  return (
+    <LogoutBtn>
+      {deviceWidth < 768 ? (
+        <SvgIcon w="16" h="16" hrefIcon={`${sprite}#icon-logout`} />
+      ) : (
         <LogoutBtnText>Выйти</LogoutBtnText>
-      </LogoutButtonText>
-    </div>
+      )}
+    </LogoutBtn>
   );
 }
 export default UserLogout;

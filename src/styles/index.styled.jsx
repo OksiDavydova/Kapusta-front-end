@@ -15,7 +15,8 @@ export const GlobalStyles = css`
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
+    font-size: 12px;
+    line-height: 1.16;
     min-height: 100vh;
   }
   code {

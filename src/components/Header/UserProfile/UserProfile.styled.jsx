@@ -16,8 +16,6 @@ export const AvatarLetter = styled.p`
   padding: 9px 12px;
 
   font-weight: bold;
-  font-size: 12px;
-  line-height: 1.16;
 
   border-radius: 50%;
   text-align: center;
@@ -33,11 +31,11 @@ export const UserName = styled.p`
   position: relative;
   margin-bottom: 0;
   margin-right: 20px;
-  font-size: 12px;
-  line-height: 1.16;
+  /* font-size: 12px;
+  line-height: 1.16; */
   color: ${colors.textColor};
 
-  &::after {
+  &:after {
     position: absolute;
     display: block;
     content: "";

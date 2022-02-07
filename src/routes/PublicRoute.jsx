@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 
 function PublicRoute({ children, redirectTo }) {
   // const isAuth = useSelector(getIsAuth);
-  const isAuth = true;
+  const isAuth = false;
 
   return isAuth ? <Navigate to={redirectTo} /> : children;
 }

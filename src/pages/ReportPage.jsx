@@ -9,12 +9,11 @@ export default function ReportPage() {
     navigate("/main");
   };
   return (
-    <div>
+    <>
       <button type="button" onClick={handleClick}>
         to main
       </button>
-      Report page
       <CategoryToReport />
-    </div>
+    </>
   );
 }

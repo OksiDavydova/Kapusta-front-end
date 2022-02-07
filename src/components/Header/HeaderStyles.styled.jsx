@@ -3,7 +3,7 @@ import { colors } from "../../styles/utils";
 
 export const HeaderTag = styled.header`
   height: 56px;
-  padding: 12px 20px 13px; // после добавления контейнера скоректировать
+  padding: 12px 0 13px; // после добавления контейнера скоректировать
   /* background-color: ${colors.white}; */
 
   /* @media (min-width: 768px) {

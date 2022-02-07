@@ -2,11 +2,13 @@ import React from "react";
 import { Route, Routes, Link, useNavigate } from "react-router-dom";
 import { IncomeModule } from "../components/IncomeModule";
 import { ExpenseModule } from "../components/ExpenseModule";
+import Notify from "../services/toastify";
 
 export default function Main() {
   const navigate = useNavigate();
   const toReportClick = () => {
     navigate("/report");
+    Notify.success("sonia");
   };
 
   return (

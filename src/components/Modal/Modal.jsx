@@ -5,9 +5,11 @@ import {
     ModalBackdrop,
     ModalTitleTxt,
     ModalBtnClose,
+    ClickLeftBtn,
 } from "./ModalStyles.styled";
 import sprite from "../../assets/svg/symbol-defs.svg";
 import { SvgIcon } from "../SvgIcon";
+import {Button} from '../Buttons/Button'
 const modalRoot = document.querySelector('#modal-root');
 
 function Modal({
@@ -48,12 +50,13 @@ function Modal({
                 <ModalTitleTxt>
                     {modalTxt}
                 </ModalTitleTxt>
-                <button onClick={handleClickLeftBtn}>
-                    {modalTxtBtnL}
-                </button>
-                  <button onClick={handleClickRightBtn}>
-                    {modalTxtBtnR}
-            </button>
+                <ClickLeftBtn onClick={handleClickLeftBtn}>
+                <Button text={modalTxtBtnL}></Button>
+                </ClickLeftBtn>
+                <span onClick={handleClickRightBtn}>
+                <Button text={modalTxtBtnR}></Button>
+                </span>
+
             </ModalContent>
         </ModalBackdrop>,
         modalRoot,

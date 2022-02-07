@@ -2,8 +2,8 @@ import { createPortal } from "react-dom";
 import {
     ModalBalanceContent,
     ModalBackdrop,
-    ModalTitleTxt1,
-    ModalTitleTxt2,
+    ModalTitleTxtB1,
+    ModalTitleTxtB2,
 } from "./ModalStyles.styled";
 const modalRoot = document.querySelector('#modal-root');
 
@@ -11,8 +11,8 @@ const modalRoot = document.querySelector('#modal-root');
 
 function ModalBalance({
     onClose,
-    modalTxt1 = 'Привет! Для начала работы внеси текущий баланс своего счета!',
-    modalTxt2 = 'Ты не можешь тратить деньги пока их у тебя нет :)',
+    modalTxtB1 = 'Привет! Для начала работы внеси текущий баланс своего счета!',
+    modalTxtB2 = 'Ты не можешь тратить деньги пока их у тебя нет :)',
     
 }) {
     const handleCloseModal = e => {
@@ -24,12 +24,12 @@ function ModalBalance({
     return createPortal(
        <ModalBackdrop onClick={handleCloseModal}>
             <ModalBalanceContent onClick={handleCloseModal}>               
-                <ModalTitleTxt1>
-                    {modalTxt1}
-                </ModalTitleTxt1>
-                <ModalTitleTxt2>
-                    {modalTxt2}
-                </ModalTitleTxt2>
+                <ModalTitleTxtB1>
+                    {modalTxtB1}
+                </ModalTitleTxtB1>
+                <ModalTitleTxtB2>
+                    {modalTxtB2}
+                </ModalTitleTxtB2>
             </ModalBalanceContent>
         </ModalBackdrop>,
         modalRoot,

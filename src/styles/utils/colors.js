@@ -12,7 +12,7 @@ export const colors = {
 
   inputBg: "#f6f7fb",
   bgModal: "#1d346a",
-
+  bgModalBalance: "linear-gradient(117.84deg, #1D346A 2.84%, #031634 67.28%)",
   /* Цвет для бэкграунда во вкладке "Доход" или "Расход" */
   bgSummary: "#f5f6fb",
 

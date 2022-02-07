@@ -13,11 +13,18 @@ export const GlobalStyles = css`
   body {
     margin: 0;
     font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    text-align: center;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 12px;
     line-height: 1.16;
     min-height: 100vh;
+ 
   }
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -48,7 +55,6 @@ export const GlobalStyles = css`
   }
   button {
     padding: 0;
-
     cursor: pointer;
   }
 `;

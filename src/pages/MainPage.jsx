@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import { Route, Routes, Link, useNavigate } from "react-router-dom";
 import { IncomeModule } from "../components/IncomeModule";
 import { ExpenseModule } from "../components/ExpenseModule";
+
 import Notify from "../services/toastify";
+
+import { ModalBalance } from "../components/Modal";// Перенести у файл Balance
+
 
 export default function Main() {
   const navigate = useNavigate();
@@ -11,6 +15,14 @@ export default function Main() {
     Notify.success("sonia");
   };
 
+  // Перенести у файл Balance
+const [showBalanceModal, setShowBalanceModal] = useState(true);
+
+  const removeBalanceModal= () => {                           
+    setShowBalanceModal(false)
+  };
+//-------------------------------------------
+  
   return (
     <>
       <main>
@@ -20,6 +32,15 @@ export default function Main() {
           <br />
           <input type="text" />
           <button>change</button>
+
+          {/* Перенести у файл Balance */}
+          {showBalanceModal && 
+        <ModalBalance
+          onClose={removeBalanceModal}
+          />
+          }
+          {/* --------------------- */}
+          
         </div>
         <div>
           <button type="button" onClick={toReportClick}>

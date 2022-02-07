@@ -76,12 +76,12 @@ export const ModalTitleTxt = styled.p`
   letter-spacing: 0.02em;
 `;
 
-export const ModalTitleTxt1 = styled.p`
+export const ModalTitleTxtB1 = styled.p`
   font-size: 14px;
   line-height: 1.48;
 `;
 
-  export const ModalTitleTxt2 = styled.p`
+  export const ModalTitleTxtB2 = styled.p`
   font-size: 12px;
   line-height: 1.33;
 `;
@@ -93,6 +93,11 @@ export const ModalBtnClose = styled.span`
   padding: 20px 20px 0 0;
   fill: ${colors.textColor}; 
 `;
+
+export const ClickLeftBtn = styled.span`
+  margin-right: 15px;
+`;
+
 
 
   

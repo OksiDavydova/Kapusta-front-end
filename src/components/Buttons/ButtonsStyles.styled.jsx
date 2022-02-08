@@ -29,29 +29,28 @@ export const BaseButton = styled.button`
         };
 `
 export const GreyButton = styled(BaseButton)`
-    padding: 12px 6px;
-    font-weight: normal;
-    color: #52555fb3;
-    background: #f5f6fb;
-    /* background: none; */
-    border: 2px solid #ffffff;
+  padding: 12px 6px;
+  font-weight: normal;
+  color: #52555fb3;
+  background: #f5f6fb;
+  /* background: none; */
+  border: 2px solid #ffffff;
 
-        &:hover {
-            border: #ff751d
-        };
+  &:hover {
+    border: #ff751d;
+  }
 
-        &:focus {
-            border: #ff751d
-        }
-  
-`
+  &:focus {
+    border: #ff751d;
+  }
+`;
 
 export const WhiteButton = styled(GreyButton)`
-    font-weight: bold;
-    color: #52555f;
-    background: #ffffff;
-    border: 2px solid #f6f7fc;
-`
+  font-weight: bold;
+  color: #52555f;
+  background: #ffffff;
+  border: 2px solid #f6f7fc;
+`;
 
 export const LinkGoogle = styled.a`
     display: flex;
@@ -71,9 +70,9 @@ export const LinkGoogle = styled.a`
     text-transform: capitalize;
     /* text-decoration: none; */
 
-    color: #000000;
-    background-color: #f6f7fb;
-    box-shadow: 1px 2px 3px rgba(170, 178, 197, 0.2);
+  color: #000000;
+  background-color: #f6f7fb;
+  box-shadow: 1px 2px 3px rgba(170, 178, 197, 0.2);
 
         &:hover {
             color: #ffffff;
@@ -107,7 +106,6 @@ export const StatisticButton = styled.a`
 // position: absolute;
 // bottom: 0;
 export const SquareButton = styled.button`
-
     vertical-align:bottom;
     width: 159px;
     height: 53px;
@@ -131,3 +129,17 @@ export const SquareButton = styled.button`
             background: #ff751d
         }
 `
+// =======
+//   cursor: pointer;
+//   &:hover {
+//     color: #ffffff;
+//     background-color: #ff751d;
+//     box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
+//   }
+//   &:focus {
+//     color: #ffffff;
+//     background-color: #ff751d;
+//     box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
+//   }
+// `;
+// >>>>>>> main

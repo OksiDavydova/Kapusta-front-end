@@ -15,3 +15,4 @@ export const LogoutBtnText = styled.span`
   color: black;
   border-bottom: 1px solid black;
 `;
+

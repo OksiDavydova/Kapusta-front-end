@@ -4,8 +4,7 @@ import { Navigate } from "react-router-dom";
 
 function PrivateRoute({ children, redirectTo }) {
   // const isAuth = useSelector(getIsAuth);
-  const isAuth = true;
-
+  const isAuth = false;
   return isAuth ? children : <Navigate to={redirectTo} />;
 }
 export default PrivateRoute;

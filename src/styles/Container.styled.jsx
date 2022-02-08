@@ -5,8 +5,8 @@ export const Container = styled.div`
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 
 
   @media ${device.mobileS} {
@@ -19,6 +19,8 @@ export const Container = styled.div`
 
   @media ${device.tablet} {
     max-width: 728px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   @media ${device.laptop} {

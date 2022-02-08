@@ -1,6 +1,7 @@
 import React from "react";
 import { CategoryToReport } from "../components/CategoryToReport";
 import { useNavigate } from "react-router-dom";
+import { CategoryReportList } from "../components/CategoryReportList";
 
 export default function ReportPage() {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ export default function ReportPage() {
         to main
       </button>
       <CategoryToReport />
+      <CategoryReportList />
     </>
   );
 }

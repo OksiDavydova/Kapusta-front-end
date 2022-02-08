@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import {colors} from './utils/colors'
+import { colors } from "./utils/colors";
 
 export const GlobalStyles = css`
   html {
@@ -23,7 +23,6 @@ export const GlobalStyles = css`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
-    background-color: ${colors.white};
   }
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -55,5 +54,8 @@ export const GlobalStyles = css`
   button {
     padding: 0;
     cursor: pointer;
+  }
+  svg {
+    fill: inherit;
   }
 `;

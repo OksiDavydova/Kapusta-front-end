@@ -6,7 +6,7 @@ export const Bg1 = styled.div`
   left: 0px;
   top: 0px;
   z-index: -1;
-  background-color: #e0c8cc;
+  /* background-color: #f3eaec; */
   width: 100%;
   height: 100%;
 `;
@@ -15,7 +15,7 @@ export const Bg2 = styled.div`
   left: 0px;
   top: 0px;
   z-index: -1;
-  background-color: #85e285;
+  /* background-color: #d5e4d5; */
   width: 100%;
   height: 100%;
 `;

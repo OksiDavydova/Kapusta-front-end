@@ -1,11 +1,11 @@
-import React from 'react';
-import sprite from '../../assets/svg/symbol-defs.svg';
+import React from "react";
+// import sprite from '../../assets/svg/symbol-defs.svg';
 
-function SvgIcon({ w = '', h = '', hrefIcon }) {
+function SvgIcon({ w = "", h = "", hrefIcon }) {
   return (
     <>
       <svg width={w} height={h}>
-        <use href={`${sprite}${hrefIcon}`}></use>
+        <use href={hrefIcon}></use>
       </svg>
     </>
   );

@@ -24,7 +24,6 @@ export const GlobalStyles = css`
     font-size: 12px;
     line-height: 1.16;
     min-height: 100vh;
- 
   }
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -56,5 +55,8 @@ export const GlobalStyles = css`
   button {
     padding: 0;
     cursor: pointer;
+  }
+  svg {
+    fill: inherit;
   }
 `;

@@ -3,14 +3,12 @@ import { Route, Routes, Link } from "react-router-dom";
 import { MainPage, PageNotFound, ReportPage, LoginPage } from "./pages";
 import { PublicRoute, PrivateRoute } from "./routes";
 import { Layout } from "./layout";
-import { CategoryReportList } from "./components/CategoryReportList";
 
 function App() {
   const isAuth = false;
   return (
     <>
       <Layout isAuth={isAuth}>
-        <CategoryReportList />
         <nav>
           <button>
             <Link to="login">login</Link>

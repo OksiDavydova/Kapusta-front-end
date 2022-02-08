@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import {colors} from './utils/colors'
 
 export const GlobalStyles = css`
   html {
@@ -21,10 +22,8 @@ export const GlobalStyles = css`
     text-align: center;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 12px;
-    line-height: 1.16;
     min-height: 100vh;
- 
+    background-color: ${colors.white};
   }
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

@@ -1,12 +1,17 @@
 import styled from "@emotion/styled";
 
-export const WhiteWrapper = styled.section`
+export const MainWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  align-content: space-between;
+  width: 320px;
+  height: 458px;
+  //   align-items: center;
+  justify-content: center;
+  outline: 1px solid red;
+`;
 
-  margin-left: auto;
-  margin-right: auto;
+export const AuthWrapper = styled.div`
   padding: 40px 18px 53px 18px;
   width: 300px;
   height: 525px;
@@ -15,8 +20,18 @@ export const WhiteWrapper = styled.section`
   border-radius: 30px;
 `;
 export const SingleWrapper = styled.div`
-  width: 100%;
+  width: ${(props) => props.width};
   display: flex;
   align-items: center;
   justify-content: space-between;
+  outline: 1px solid red;
+`;
+export const BalanseWrapper = styled.div`
+  width: 248px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  outline: 1px solid red;
 `;

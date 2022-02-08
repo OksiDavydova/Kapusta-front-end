@@ -4,6 +4,7 @@ import { MainPage, PageNotFound, ReportPage, LoginPage } from "./pages";
 import { PublicRoute, PrivateRoute } from "./routes";
 import { Layout } from "./layout";
 
+
 function App() {
   const isAuth = false;
   return (

@@ -2,6 +2,9 @@ import React, {useState} from "react";
 import { Route, Routes, Link, useNavigate } from "react-router-dom";
 import { IncomeModule } from "../components/IncomeModule";
 import { ExpenseModule } from "../components/ExpenseModule";
+import {Container} from '../styles/Container.styled'
+import {BalancePage} from '../components/BalancePage'
+
 
 import Notify from "../services/toastify";
 
@@ -24,7 +27,8 @@ const [showBalanceModal, setShowBalanceModal] = useState(true);
 //-------------------------------------------
   
   return (
-    <>
+    <Container>
+      <BalancePage/>
       <main>
         <h1>MAIN PAGE</h1>
         <div>
@@ -59,6 +63,6 @@ const [showBalanceModal, setShowBalanceModal] = useState(true);
           <Route path="income" element={<IncomeModule />} />
         </Routes>
       </main>
-    </>
+    </Container>
   );
 }

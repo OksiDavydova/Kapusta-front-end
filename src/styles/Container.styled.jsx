@@ -8,6 +8,7 @@ export const Container = styled.div`
   padding-left: 20px;
   padding-right: 20px;
 
+
   @media ${device.mobileS} {
     width: 100%;
   }

@@ -2,6 +2,9 @@ import React from "react";
 import { Route, Routes, Link, useNavigate } from "react-router-dom";
 import { IncomeModule } from "../components/IncomeModule";
 import { ExpenseModule } from "../components/ExpenseModule";
+import {Container} from '../styles/Container.styled'
+import {BalancePage} from '../components/BalancePage'
+
 
 export default function Main() {
   const navigate = useNavigate();
@@ -10,7 +13,8 @@ export default function Main() {
   };
 
   return (
-    <>
+    <Container>
+      <BalancePage/>
       <main>
         <h1>MAIN PAGE</h1>
         <div>
@@ -36,6 +40,6 @@ export default function Main() {
           <Route path="income" element={<IncomeModule />} />
         </Routes>
       </main>
-    </>
+    </Container>
   );
 }

@@ -1,7 +1,7 @@
-import React from "react";
-import { Route, Routes, Link } from "react-router-dom";
-import { MainPage, PageNotFound, ReportPage, LoginPage } from "./pages";
-import { Header } from "./components/Header";
+import React from 'react';
+import { Route, Routes, Link } from 'react-router-dom';
+import { MainPage, PageNotFound, ReportPage, LoginPage } from './pages';
+import { Header } from './components/Header';
 
 function App() {
   return (

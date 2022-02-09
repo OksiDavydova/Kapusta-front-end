@@ -7,7 +7,6 @@ import {WrapperMain} from '../Wrapper'
 import {CalendarMUI} from '../CalendarMUI'
 
 
-
 const text = 'Баланс: '
 
 function BalancePage(){

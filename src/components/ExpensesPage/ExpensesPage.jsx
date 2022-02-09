@@ -1,13 +1,15 @@
 import {Button} from '../Buttons'
 import {WrapperMain, WrapperSingle} from '../Wrapper'
-import {ProductWrapper, ArrowButton, Form, Input, DivSelect, Select, ProductDiv, ProductSpan, ProductInput, ProductButton} from './ExpensesPage.styled'
+import {ProductWrapper, ArrowButton, Form, Input, DivSelect, ProductDiv, ProductSpan, ProductInput, ProductButton} from './ExpensesPage.styled'
 import {SvgIcon} from '../SvgIcon'
+import {CategorySelectUnstyled} from '../SelectUnstyled' 
+
 
 function ExpensesPage(){
     return(
         <WrapperMain>
             <ProductWrapper>
-                <ArrowButton style={{fill: 'red'}} >
+                <ArrowButton>
                 <SvgIcon w={24} h={24} hrefIcon={'#icon-arrow-left'}/>
                 </ArrowButton>
                 <Form>
@@ -18,7 +20,7 @@ function ExpensesPage(){
                     placeholder="Описание товара"/>
                 </Form>
                 <DivSelect>
-                    <Select/>
+                    <CategorySelectUnstyled/>
                 </DivSelect>
                 <ProductDiv>
          <ProductSpan>

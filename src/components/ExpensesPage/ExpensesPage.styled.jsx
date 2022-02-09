@@ -12,6 +12,12 @@ export const ArrowButton = styled.a`
     width: 24px;
     height: 24px;
     margin: 15px auto 15px 0px;
+    &:hover{
+        fill: #FF751D;
+    };
+    &:focus{
+        fill: #FF751D;
+    };
 `
 
 export const Form = styled.form`
@@ -54,28 +60,28 @@ export const DivSelect = styled.div`
     border-top: none;
 `
 
-export const Select = styled.select`
-    display: block;
-    width: 100%;
-    padding-left: 20px;
-    background: none;
-    border: none;
-    appearance: none;
-    outline: none;
+// export const Select = styled.select`
+//     display: block;
+//     width: 100%;
+//     padding-left: 20px;
+//     background: none;
+//     border: none;
+//     appearance: none;
+//     outline: none;
 
-    /* display: flex;
-    align-items: center; */
-    text-align: left;
-    text-transform: none;
+//     /* display: flex;
+//     align-items: center; */
+//     text-align: left;
+//     text-transform: none;
 
-    &:after{
-        position: absolute;
-        content: url(./Vector\ 15.svg);
-        margin-right: 22px;
-        margin-left: 139px;
-        pointer-events: none;
-    }
-`
+//     &:after{
+//         position: absolute;
+//         content: url(./Vector\ 15.svg);
+//         margin-right: 22px;
+//         margin-left: 139px;
+//         pointer-events: none;
+//     }
+// `
 export const InputCost = styled.input`
     outline: none;
     width: 104px;

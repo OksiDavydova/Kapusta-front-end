@@ -4,8 +4,12 @@ import { IncomeModule } from "../components/IncomeModule";
 import { ExpenseModule } from "../components/ExpenseModule";
 import {Container} from '../styles/Container.styled'
 import {BalancePage} from '../components/BalancePage'
+
 import {TransactionTable} from '../components/TransactionTable'
 import {Summary} from '../components/Summary'
+
+import {ExpensesPage} from '../components/ExpensesPage'
+
 
 import Notify from "../services/toastify";
 
@@ -30,6 +34,7 @@ const [showBalanceModal, setShowBalanceModal] = useState(true);
   return (
     <Container>
       <BalancePage/>
+      <ExpensesPage/>
       <main>
         <h1>MAIN PAGE</h1>
         <div>

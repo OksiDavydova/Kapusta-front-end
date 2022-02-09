@@ -7,7 +7,7 @@ import {
     ModalBtnClose,
     ClickLeftBtn,
 } from "./ModalStyles.styled";
-import sprite from "../../assets/svg/symbol-defs.svg";
+// import sprite from "../../assets/svg/symbol-defs.svg";
 import { SvgIcon } from "../SvgIcon";
 import {Button} from '../Buttons/Button'
 const modalRoot = document.querySelector('#modal-root');
@@ -45,7 +45,7 @@ function Modal({
         <ModalBackdrop onClick={handleBackdropClick}>
             <ModalContent>
                 <ModalBtnClose onClick={onClose}>
-                <SvgIcon w="16" h="16" hrefIcon={`${sprite}#icon-close`} />
+                <SvgIcon w="16" h="16" hrefIcon={'#icon-close'} />
         </ModalBtnClose> 
                 <ModalTitleTxt>
                     {modalTxt}

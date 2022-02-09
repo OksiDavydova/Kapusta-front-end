@@ -9,6 +9,7 @@ export const MainWrapper = styled.div`
   //   align-items: center;
   justify-content: center;
   outline: 1px solid red;
+  background-color: #9acd32;
 `;
 
 export const AuthWrapper = styled.div`

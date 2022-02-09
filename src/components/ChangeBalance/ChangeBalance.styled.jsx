@@ -17,7 +17,8 @@ export const ChangeBalanceSpan = styled.span`
   
     color: #000000;
   
-    background: #f5f6fb;
+    // background: #f5f6fb;
+    background: none;
     border: 2px solid #ffffff;
     border-radius: 22px 0px 0px 22px;
   `
@@ -47,8 +48,8 @@ export const ChangeBalanceButton = styled.button`
     text-transform: uppercase;
     
     color: #52555fb3;
-    background: #f5f6fb;
-    // background: none;
+    // background: #f5f6fb;
+    background: none;
     border: 2px solid #ffffff;
     border-left: none;
     border-radius: 0px 22px 22px 0px;

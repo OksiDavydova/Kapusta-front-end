@@ -6,7 +6,6 @@ import {SvgIcon} from '../SvgIcon'
 import {CalendarMUI} from '../CalendarMUI'
 
 
-
 const text = 'Баланс: '
 
 function BalancePage(){

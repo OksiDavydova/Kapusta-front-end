@@ -1,10 +1,10 @@
-import { Navigate } from "react-router-dom";
+import { Navigate } from 'react-router-dom';
 // import { useSelector } from "react-redux";
 // import { getIsAuth } from "../redux/auth/auth-selector";
 
 function PrivateRoute({ children, redirectTo }) {
   // const isAuth = useSelector(getIsAuth);
-  const isAuth = true;
+  const isAuth = false;
   return isAuth ? children : <Navigate to={redirectTo} />;
 }
 export default PrivateRoute;

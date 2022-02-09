@@ -1,24 +1,23 @@
 import styled from "@emotion/styled";
 import { colors,device } from "../../styles/utils";
 
-//TODO scroll
-export const Table = styled.table`
+export const TableSection = styled.section`
 
 @media ${device.tablet}{   
      background-color: ${colors.bgSummary};
-     padding: 1px 6px 1px 1px;
+     padding: 1px;
      border-radius: 20px 20px 0 0;  
     };
   }
 `;
 
-export const Thead = styled.thead`
+export const Thead = styled.div`
   @media ${device.tabletMax}{   
      display:none;
     };
 `;
 
-export const Tr = styled.tr`  
+export const Tr = styled.ul`  
   @media ${device.tablet} {
      height: 40px;
      font-weight: 700;
@@ -34,7 +33,7 @@ export const Tr = styled.tr`
 };
 `;
 
-export const ThDay = styled.th`
+export const ThDay = styled.li`
   @media ${device.tablet} {
      width: 66px;
      margin-right: 27px;
@@ -48,7 +47,8 @@ export const ThDay = styled.th`
     };
 
 `;
-export const ThDescription = styled.th`
+
+export const ThDescription = styled.li`
   @media ${device.tablet} {
      width: 97px;
      margin-right: 86px;
@@ -59,7 +59,7 @@ export const ThDescription = styled.th`
     };
 `;
 
-export const ThCategory = styled.th`
+export const ThCategory = styled.li`
   @media ${device.tablet} {
      width: 120px;
      margin-right: 16px;
@@ -71,7 +71,7 @@ export const ThCategory = styled.th`
     };
 `;
 
-export const ThSum = styled.th`
+export const ThSum = styled.li`
   @media ${device.tablet} {
      width: 104px;
      margin-right: 84px;
@@ -81,7 +81,27 @@ export const ThSum = styled.th`
     };
 `;
 
-export const TrItem = styled.tr`
+export const Tbody = styled.section`
+  @media ${device.tablet} {
+    
+    width: 100%;
+    max-height:280px ;
+    overflow-y: scroll;
+  
+    &::-webkit-scrollbar{
+        width: 6px;
+        
+        border-radius: 2px;
+        
+    },
+    &::-webkit-scrollbar-thumb {
+       background: ${colors.orange};
+        border-radius: 15px;
+    }
+};
+    ;`
+
+export const TrItem = styled.ul`
 font-weight: 400;
 font-size: 12px;
 line-height: 1.16;
@@ -112,7 +132,7 @@ min-width:245px;
 };
 `;
 
-export const TdDay = styled.td`
+export const TdDay = styled.li`
   @media ${device.tabletMax}{   
      grid-row: 2/4;
      font-size: 8px;
@@ -130,7 +150,7 @@ export const TdDay = styled.td`
     };
 `;
 
-export const TdDescription = styled.td`
+export const TdDescription = styled.li`
   @media ${device.tabletMax}{   
      padding-bottom:5px;
      font-weight: 700;
@@ -149,7 +169,7 @@ export const TdDescription = styled.td`
     };
 `;
 
-export const TdCategory = styled.td`
+export const TdCategory = styled.li`
   @media ${device.tabletMax}{  
      padding-top:22px;
      margin-right:29px;
@@ -168,7 +188,7 @@ export const TdCategory = styled.td`
 
 `;
 
-export const TdSum = styled.td`
+export const TdSum = styled.li`
   @media ${device.tabletMax}{
      grid-row: 1/4;   
      font-weight: 700;
@@ -183,7 +203,7 @@ export const TdSum = styled.td`
    };
 `;
 
-export const TdBtnDel = styled.td`
+export const TdBtnDel = styled.li`
 width: 32px;
   grid-row: 1/4;
   border: none;

@@ -1,8 +1,10 @@
-import React from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
-import { MainPage, PageNotFound, ReportPage, LoginPage } from './pages';
-import { PublicRoute, PrivateRoute } from './routes';
-import { Layout } from './layout';
+
+import React from "react";
+import { Route, Routes, Link } from "react-router-dom";
+import { MainPage, PageNotFound, ReportPage, LoginPage } from "./pages";
+import { PublicRoute, PrivateRoute } from "./routes";
+import { Layout } from "./layout";
+
 
 function App() {
   const isAuth = false;
@@ -20,7 +22,6 @@ function App() {
             <Link to="report">Report</Link>
           </button>
         </nav>
-
         <Routes>
           <Route
             path="/login"
@@ -30,7 +31,6 @@ function App() {
               </PublicRoute>
             }
           />
-
           <Route
             path="/main/*"
             element={

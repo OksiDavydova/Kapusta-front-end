@@ -1,8 +1,10 @@
+
 import { useDispatch } from 'react-redux';
 import { SvgIcon } from '../SvgIcon';
 import { LinkGoogle } from './ButtonsStyles.styled';
-import sprite from '../../assets/svg/symbol-defs.svg';
+
 import { googleAuthUsers } from '../../redux/operation';
+
 
 function GoogleLink({ text }) {
   const dispatch = useDispatch();
@@ -11,8 +13,12 @@ function GoogleLink({ text }) {
   };
   return (
     <>
+
       <LinkGoogle onClick={googleAuth}>
-        <SvgIcon w={18} h={18} hrefIcon={`${sprite}#icon-google`} />
+        <SvgIcon w={18} h={18} hrefIcon={`#icon-google`} />
+
+      <LinkGoogle>
+        <SvgIcon w={18} h={18} idIcon={"#icon-google"} />
         {text}
       </LinkGoogle>
     </>

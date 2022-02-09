@@ -12,7 +12,7 @@ const authSlice = createSlice({
   reducers: {},
   extraReducers: {
     [signUpUsers.fulfilled]: (state, action) => {
-      return (state = { ...action.payload });
+      return (state = { ...action.payload, isLogin: true });
     },
     [loginUsers.fulfilled]: (state, action) => {
       return (state = { ...action.payload, isLogin: true });

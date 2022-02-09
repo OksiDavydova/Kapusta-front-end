@@ -1,13 +1,13 @@
-
-import React from "react";
-import { Route, Routes, Link } from "react-router-dom";
-import { MainPage, PageNotFound, ReportPage, LoginPage } from "./pages";
-import { PublicRoute, PrivateRoute } from "./routes";
-import { Layout } from "./layout";
-
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Route, Routes, Link } from 'react-router-dom';
+import { userIsAuth } from './redux/selectors';
+import { MainPage, PageNotFound, ReportPage, LoginPage } from './pages';
+import { PublicRoute, PrivateRoute } from './routes';
+import { Layout } from './layout';
 
 function App() {
-  const isAuth = false;
+  const isAuth = useSelector(userIsAuth);
   return (
     <>
       <Layout isAuth={isAuth}>

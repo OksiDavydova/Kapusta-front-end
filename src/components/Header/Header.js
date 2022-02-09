@@ -1,11 +1,11 @@
-import { Logo } from "./Logo";
-import { UserLogout } from "./UserLogout";
-import { UserProfile } from "./UserProfile";
+import { Logo } from './Logo';
+import { UserLogout } from './UserLogout';
+import { UserProfile } from './UserProfile';
 import {
   HeaderTag,
   HeaderContainer,
   UserProfileWrapper,
-} from "./HeaderStyles.styled";
+} from './HeaderStyles.styled';
 
 function Header() {
   return (

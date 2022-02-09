@@ -1,10 +1,10 @@
 import { BaseButton } from './ButtonsStyles.styled';
 
-function Button({text}) {
+function Button({ text, type }) {
   return (
     <>
-      <BaseButton>{text}</BaseButton>
+      <BaseButton type={`${type}`}>{text}</BaseButton>
     </>
   );
 }
-export {Button};
+export { Button };

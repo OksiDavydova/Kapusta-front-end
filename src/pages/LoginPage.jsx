@@ -1,3 +1,4 @@
+
 import React from "react";
 import { WrapperAuth } from "../components/Wrapper";
 import { ContentWrapperChapter } from "../components/Wrapper/Wrapper.styled";
@@ -22,5 +23,6 @@ export default function LoginPage() {
         <Button text={"регистрация"} />
       </ContentWrapperChapter>
     </WrapperAuth>
+
   );
 }

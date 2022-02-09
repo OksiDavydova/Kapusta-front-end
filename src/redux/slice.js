@@ -1,13 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 import {
   signUpUsers,
   loginUsers,
   logoutUsers,
-  googleAuthUsers,
-} from './operation';
+  // googleAuthUsers,
+} from "./operation";
 
 const authSlice = createSlice({
-  name: 'user/auth',
+  name: "user/auth",
   initialState: { isLogin: false },
   reducers: {},
   extraReducers: {

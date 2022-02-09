@@ -1,21 +1,21 @@
-import { ButtonStatistic, ButtonSquare } from "../Buttons";
+import { ButtonSquare } from "../Buttons";
 import { TextBalance } from "../Text";
 import { ChangeBalance } from "../ChangeBalance";
 import { SvgIcon } from "../SvgIcon";
 import { CalendarMUI } from "../CalendarMUI";
 import {
-  ContentWrapper,
   BalanceWrapper,
   ContentWrapperChapter,
 } from "../Wrapper/Wrapper.styled";
+import { ButtonToReport } from "./ButtonToReport";
 
 const text = "Баланс: ";
 
 function BalancePage() {
   return (
-    <ContentWrapper>
+    <>
       <BalanceWrapper>
-        <ButtonStatistic />
+        <ButtonToReport />
         <TextBalance
           margin={"0"}
           fontWeight={"500"}
@@ -29,11 +29,10 @@ function BalancePage() {
         </ContentWrapperChapter>
       </BalanceWrapper>
       <ContentWrapperChapter>
-        {/* // width={"320px"} */}
         <ButtonSquare text={"расход"} />
         <ButtonSquare text={"доход"} />
       </ContentWrapperChapter>
-    </ContentWrapper>
+    </>
   );
 }
 

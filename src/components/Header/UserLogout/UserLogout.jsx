@@ -1,11 +1,9 @@
-
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { logoutUsers } from '../../../redux/operation';
-import { LogoutBtn, LogoutBtnText } from './UserLogout.styled';
-import { SvgIcon } from '../../SvgIcon';
-import Modal from '../../Modal/Modal';
-
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { logoutUsers } from "../../../redux/operation";
+import { LogoutBtn, LogoutBtnText } from "./UserLogout.styled";
+import { SvgIcon } from "../../SvgIcon";
+import Modal from "../../Modal/Modal";
 
 function UserLogout() {
   const [deviceWidth, setDeviceWidth] = useState(window.innerWidth);
@@ -17,15 +15,12 @@ function UserLogout() {
   };
 
   useEffect(() => {
-
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
   });
 
   const toggleModal = () => {
-    setShowModal(prevShowModal => !prevShowModal);
-
-
+    setShowModal((prevShowModal) => !prevShowModal);
   };
 
   const userModalLogout = () => {
@@ -37,18 +32,14 @@ function UserLogout() {
     <>
       <LogoutBtn onClick={toggleModal}>
         {deviceWidth < 768 ? (
-
           <SvgIcon w={16} h={16} idIcon={"#icon-logout"} />
-
         ) : (
           <LogoutBtnText>Выйти</LogoutBtnText>
         )}
       </LogoutBtn>
       {setOpenModal && (
         <Modal
-
-          modalTxt={'Вы действительно хотите выйти?'}
-
+          modalTxt={"Вы действительно хотите выйти?"}
           handleClickLeftBtn={userModalLogout}
           handleClickRightBtn={toggleModal}
           onClose={toggleModal}

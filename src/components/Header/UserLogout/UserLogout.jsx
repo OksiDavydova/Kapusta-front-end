@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import sprite from "../../../assets/svg/symbol-defs.svg";
+// import sprite from "../../../assets/svg/symbol-defs.svg";
 import { LogoutBtn, LogoutBtnText } from "./UserLogout.styled";
 import { SvgIcon } from "../../SvgIcon";
 import Modal from "../../Modal/Modal";
@@ -30,7 +30,7 @@ function UserLogout() {
     <>
     <LogoutBtn onClick={toggleModal}>
       {deviceWidth < 768 ? (
-        <SvgIcon w="16" h="16" hrefIcon={`${sprite}#icon-logout`} />
+        <SvgIcon w="16" h="16" hrefIcon={'#icon-logout'} />
       ) : (
         <LogoutBtnText>Выйти</LogoutBtnText>
       )}

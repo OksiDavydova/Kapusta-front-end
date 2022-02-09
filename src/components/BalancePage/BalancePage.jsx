@@ -1,9 +1,8 @@
-import {WrapperSingle, WrapperBalance} from '../Wrapper'
+import {WrapperMain, WrapperSingle, WrapperBalance} from '../Wrapper'
 import {ButtonStatistic, ButtonSquare} from '../Buttons'
 import {TextBalance} from '../Text'
 import {ChangeBalance} from '../ChangeBalance'
 import {SvgIcon} from '../SvgIcon'
-import {WrapperMain} from '../Wrapper'
 import {CalendarMUI} from '../CalendarMUI'
 
 

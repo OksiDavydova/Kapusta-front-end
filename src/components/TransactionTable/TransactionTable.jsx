@@ -14,7 +14,6 @@ import {
     TdSum,
     Tbody,
 } from './TransactionTableStyle.styled';
-import sprite from "../../assets/svg/symbol-defs.svg";
 import { SvgIcon } from "../SvgIcon";
 
 function TransactionTable() {
@@ -37,7 +36,7 @@ function TransactionTable() {
                       <TdSum>- 30.00 грн.</TdSum>
                       <TdBtnDel>
                           <SvgIcon w="16" h="16"
-                              hrefIcon={`${sprite}#icon-delete`}
+                              hrefIcon={`#icon-delete`}
                           />
                       </TdBtnDel>
                   </TrItem>
@@ -47,7 +46,7 @@ function TransactionTable() {
                       <TdDescription>Метро</TdDescription>
                       <TdCategory>Products</TdCategory>
                       <TdSum>250.00 грн.</TdSum>
-                      <TdBtnDel> <SvgIcon w="16" h="16" hrefIcon={`${sprite}#icon-delete`} /></TdBtnDel>
+                      <TdBtnDel> <SvgIcon w="16" h="16" hrefIcon={`#icon-delete`} /></TdBtnDel>
                   </TrItem>
                  <TrItem>
                       <TdDay></TdDay>

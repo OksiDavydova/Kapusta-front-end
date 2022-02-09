@@ -1,7 +1,6 @@
 import { StatisticButton } from "./ButtonsStyles.styled";
 import { TextBalance } from "../Text";
 import { SvgIcon } from "../SvgIcon";
-// import sprite from "../../assets/svg/symbol-defs.svg";
 
 function ButtonStatistic() {
   return (
@@ -13,7 +12,7 @@ function ButtonStatistic() {
           letterSpacing={"0.04em"}
           text={"Перейти к отчетам"}
         />
-        <SvgIcon w={14} h={14} hrefIcon={'#icon-statistic'} />
+        <SvgIcon w={14} h={14} idIcon={"#icon-statistic"} />
       </StatisticButton>
     </>
   );

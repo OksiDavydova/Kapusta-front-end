@@ -1,12 +1,11 @@
 import { SvgIcon } from "../SvgIcon";
 import { LinkGoogle } from "./ButtonsStyles.styled";
-// import sprite from "../../assets/svg/symbol-defs.svg";
 
 function GoogleLink({ text }) {
   return (
     <>
       <LinkGoogle>
-        <SvgIcon w={18} h={18} hrefIcon={'#icon-google'} />
+        <SvgIcon w={18} h={18} idIcon={"#icon-google"} />
         {text}
       </LinkGoogle>
     </>

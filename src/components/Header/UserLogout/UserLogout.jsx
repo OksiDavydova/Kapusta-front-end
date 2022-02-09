@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import sprite from "../../../assets/svg/symbol-defs.svg";
 import { LogoutBtn, LogoutBtnText } from "./UserLogout.styled";
 import { SvgIcon } from "../../SvgIcon";
 import Modal from "../../Modal/Modal";
@@ -12,38 +11,38 @@ function UserLogout() {
     setDeviceWidth(window.innerWidth);
   };
 
- useEffect(() => {
+  useEffect(() => {
     window.addEventListener("resize", updateWidth);
     return () => window.removeEventListener("resize", updateWidth);
- });
-  
+  });
+
   const toggleModal = () => {
-    setShowModal(prevShowModal => !prevShowModal)
+    setShowModal((prevShowModal) => !prevShowModal);
   };
 
   const userModalLogout = () => {
     // dispatch(logOut())
     toggleModal();
-  }
+  };
 
   return (
     <>
-    <LogoutBtn onClick={toggleModal}>
-      {deviceWidth < 768 ? (
-        <SvgIcon w="16" h="16" hrefIcon={'#icon-logout'} />
-      ) : (
-        <LogoutBtnText>Выйти</LogoutBtnText>
-      )}
-    </LogoutBtn>
+      <LogoutBtn onClick={toggleModal}>
+        {deviceWidth < 768 ? (
+          <SvgIcon w={16} h={16} idIcon={"#icon-logout"} />
+        ) : (
+          <LogoutBtnText>Выйти</LogoutBtnText>
+        )}
+      </LogoutBtn>
       {setOpenModal && (
         <Modal
-        modalTxt={'Вы действительно хотите выйти?'}
+          modalTxt={"Вы действительно хотите выйти?"}
           handleClickLeftBtn={userModalLogout}
           handleClickRightBtn={toggleModal}
           onClose={toggleModal}
-          />
+        />
       )}
-      </>
+    </>
   );
 }
 export default UserLogout;

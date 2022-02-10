@@ -1,19 +1,19 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
-import { userIsAuth } from './redux/selectors';
+import React from "react";
+import { useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+import { userIsAuth } from "./redux/selectors";
 import {
   MainPage,
   PageNotFound,
   ReportPage,
   LoginPage,
   GoogleAuthPage,
-} from './pages';
-import { PublicRoute, PrivateRoute } from './routes';
-import { Layout } from './layout';
+} from "./pages";
+import { PublicRoute, PrivateRoute } from "./routes";
+import { Layout } from "./layout";
 // ???????
-import { IncomeModule } from './components/IncomeModule';
-import { ExpensesPage } from './components/ExpensesPage';
+import { IncomeModule } from "./components/IncomeModule";
+import { ExpensesPage } from "./components/ExpensesPage";
 
 function App() {
   const isAuth = useSelector(userIsAuth);

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Balance } from '../components/Balance';
 
-// import { TransactionTable } from "../components/TransactionTable";
-// import { Summary } from "../components/Summary";
+import { TransactionTable } from "../components/TransactionTable";
+import { Summary } from "../components/Summary";
 
 // import { IncomeModule } from "../components/IncomeModule";
 // import { ExpensesPage } from "../components/ExpensesPage";
@@ -16,14 +16,14 @@ import {
 
 import { NavigationLink } from '../components/Buttons';
 
+
 export default function Main() {
   return (
     <ContentWrapper>
       <Balance />
-      {/* <TransactionTable /> */}
       <h2>Table</h2>
-
-      {/* <Summary /> */}
+      <TransactionTable />
+      <Summary />
       <ContentWrapperChapter>
         <NavigationLink pathTo={'expense'} text={'расход'} />
         <NavigationLink pathTo={'income'} text={'доход'} />

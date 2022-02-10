@@ -32,10 +32,10 @@ export const logoutUsers = createAsyncThunk('users/logout', async () => {
 });
 
 export const googleAuthUsers = createAsyncThunk(
-  'users/googleAuth',
-  async () => {
-    console.log('Google Auth');
-    // const response = await axios.post('/api/v1/auth/googlelogin');
-    // return response;
+  'users/current',
+  async userToken => {
+    token.set(userToken);
+    const { data } = await axios.get('api/v1/users/current');
+    return data.user;
   },
 );

@@ -18,6 +18,7 @@ export const colors = {
 
   //   /* Цвет для неактивной вкладки "Доход" или "Расход" */
   bgBtn: "#fafbfd",
+  animation: "250ms cubic-bezier(0.4, 0, 0.2, 1)",
 };
 
 //   --costs-color: #e53935,

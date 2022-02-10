@@ -8,49 +8,49 @@ import {
   LabelList,
   Cell,
 } from "recharts";
-
-const data = [
-  {
-    name: "Свинина",
-    value: 5000,
-  },
-  {
-    name: "Говядина",
-    value: 4500,
-  },
-  {
-    name: "Курица",
-    value: 3200,
-  },
-  {
-    name: "Рыба",
-    value: 2100,
-  },
-  {
-    name: "Панини",
-    value: 1800,
-  },
-  {
-    name: "Кофе",
-    value: 1700,
-  },
-  {
-    name: "Спагетти",
-    value: 1500,
-  },
-  {
-    name: "Шоколад",
-    value: 850,
-  },
-  {
-    name: "Маслины",
-    value: 500,
-  },
-  {
-    name: "Зелень",
-    value: 300,
-  },
-];
+// for test
+// const data = [
+//   {
+//     name: "Свинина",
+//     value: 5000,
+//   },
+//   {
+//     name: "Говядина",
+//     value: 4500,
+//   },
+//   {
+//     name: "Курица",
+//     value: 3200,
+//   },
+//   {
+//     name: "Рыба",
+//     value: 2100,
+//   },
+//   {
+//     name: "Панини",
+//     value: 1800,
+//   },
+//   {
+//     name: "Кофе",
+//     value: 1700,
+//   },
+//   {
+//     name: "Спагетти",
+//     value: 1500,
+//   },
+//   {
+//     name: "Шоколад",
+//     value: 850,
+//   },
+//   {
+//     name: "Маслины",
+//     value: 500,
+//   },
+//   {
+//     name: "Зелень",
+//     value: 300,
+//   },
+// ];
 
 const colors = ["#FF751D", "#FFDAC0"];
 
@@ -59,7 +59,7 @@ function ChartMobile({ children }) {
   console.log("children", children);
 
   const sortArray = children.sort(
-    (firstSum, secondSum) => secondSum.sum - firstSum.sum,
+    (firstSum, secondSum) => secondSum.sum - firstSum.sum
   );
 
   return (
@@ -80,7 +80,7 @@ function ChartMobile({ children }) {
             dy={-20}
             dx={-38}
             fill={"#52555F"}
-            formatter={number => `${number.toLocaleString("ru-RU")} грн`}
+            formatter={(number) => `${number.toLocaleString("ru-RU")} грн`}
           />
         </Bar>
         <XAxis type="number" hide />

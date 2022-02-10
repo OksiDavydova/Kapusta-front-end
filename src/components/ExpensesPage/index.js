@@ -1,1 +1,1 @@
-export { ExpensesPage } from './ExpensesPage';
+export { default as ExpensesPage } from "./ExpensesPage";

@@ -12,7 +12,7 @@ export default function GoogleAuthPage() {
 
   dispatch(googleAuthUsers(token));
   console.log(isAuth);
-  {
+  
     return isAuth ? <Navigate to="/" /> : <Navigate to="/login" />;
-  }
+  
 }

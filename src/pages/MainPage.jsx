@@ -22,6 +22,7 @@ export default function Main() {
       <Balance />
       {/* <TransactionTable /> */}
       <h2>Table</h2>
+
       {/* <Summary /> */}
       <ContentWrapperChapter>
         <NavigationLink pathTo={"expense"} text={"расход"} />

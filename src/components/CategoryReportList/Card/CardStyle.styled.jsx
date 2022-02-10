@@ -40,7 +40,7 @@ export const CardBtnSvg = styled.button`
   & svg {
     &:hover,
     &:focus {
-      fill: red;
+      fill: #ff751d;
     }
   }
 `;

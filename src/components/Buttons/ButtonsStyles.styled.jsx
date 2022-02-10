@@ -88,19 +88,27 @@ export const LinkGoogle = styled.a`
 
 export const StatisticButton = styled.a`
     display: flex;
-    align-items: bottom;
+    align-items: center;
+    justify-content: space-between;
+    width: 154px;
+    height: 24px;
     margin-bottom: 40px;
     letter-spacing: 0.04em;
-    color: rgba(82, 85, 95, 0.7);
+    color: #52555fb3;
     background: none;
-    border: none;.
+    border: none;
+    outline: 1px solid red;
+    & > svg{
+        margin: 0px 5px 5px 0px;
+    }
 
-    &:hover {
-        border: 2px solid #ffffff;
-
+    &:hover{
+        color: #FF751D;
+        fill: #FF751D;
     };
-    &:focus {
-        border: 2px solid #ffffff;
+    &:focus{
+        color: #FF751D;
+        fill: #FF751D;
     };
 `
 // position: absolute;

@@ -4,9 +4,9 @@ export const MainWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
+  // align-items: center;
   width: 320px;
-  height: 458px;
-  //   align-items: center;
+  height: 511px;
   justify-content: center;
   outline: 1px solid red;
   background-color: #9acd32;
@@ -36,3 +36,12 @@ export const BalanseWrapper = styled.div`
   padding-top: 30px;
   outline: 1px solid red;
 `;
+
+export const ReportWrapper = styled.div`
+width: 320px;
+height: 100vh;
+justify-content: center;
+padding-top: 15px;
+background-color: #ff6b0859;
+
+`

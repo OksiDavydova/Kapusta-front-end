@@ -13,9 +13,11 @@ export const SingleText = styled.p`
   color: #52555f;
 `;
 
+
+// DELETE LATER!!!
 export const BalanceText = styled.p`
-  margin: ${(props) => props.margin};
-  font-weight: ${(props) => props.weight};
-  letter-spacing: ${(props) => props.spacing};
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   color: #52555fb3;
 `;

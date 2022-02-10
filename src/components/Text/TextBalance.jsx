@@ -1,11 +1,8 @@
 import {BalanceText} from './Text.styled'
 
-function TextBalance({margin, fontWeight, letterSpacing, text}) {
+function TextBalance({text}) {
     return (
-        <BalanceText 
-        margin={margin} 
-        weight={fontWeight} 
-        spacing={letterSpacing}>
+        <BalanceText>
           {text}
         </BalanceText>
     );

@@ -1,14 +1,15 @@
 import styled from "@emotion/styled";
-import { colors,device } from "../../styles/utils";
+import { colors, device } from "../../styles/utils";
 
 export const TransactionSection = styled.section`
 margin: 0 auto;
 
-  table {
+   table {
        @media ${device.tablet}{   
      background-color: ${colors.bgSummary};
      padding: 1px;
      border-radius: 20px 20px 0 0;  
+
     }
   }
   
@@ -206,4 +207,3 @@ min-width:245px;
       }
      }
 `;
-

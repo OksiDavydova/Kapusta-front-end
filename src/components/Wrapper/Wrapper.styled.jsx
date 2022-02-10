@@ -5,9 +5,9 @@ export const ContentWrapper = styled.section`
   flex-direction: column;
   align-content: space-between;
   width: 100%;
-  height: calc(
+  /* height: calc(
     100vh - 80px
-  ); // change - "some value" depended from content header
+  ); // change - "some value" depended from content header */
   /* height: 458px; */
   justify-content: center;
   /* outline: 1px solid red;

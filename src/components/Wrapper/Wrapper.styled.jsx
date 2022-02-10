@@ -10,8 +10,8 @@ export const ContentWrapper = styled.section`
   ); // change - "some value" depended from content header
   /* height: 458px; */
   justify-content: center;
-  outline: 1px solid red;
-  background-color: #9acd32;
+  /* outline: 1px solid red;
+  background-color: #9acd32; */
 `;
 
 export const AuthWrapper = styled.div`

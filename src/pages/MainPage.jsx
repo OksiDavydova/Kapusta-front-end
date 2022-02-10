@@ -1,78 +1,37 @@
-import React, {useState} from "react";
-import { Route, Routes, Link, useNavigate } from "react-router-dom";
-import { IncomeModule } from "../components/IncomeModule";
-import { ExpenseModule } from "../components/ExpenseModule";
-import {Container} from '../styles/Container.styled'
-import {BalancePage} from '../components/BalancePage'
+import React from "react";
+import { Balance } from "../components/Balance";
 
-import {TransactionTable} from '../components/TransactionTable'
-import {Summary} from '../components/Summary'
+// import { TransactionTable } from "../components/TransactionTable";
+// import { Summary } from "../components/Summary";
 
-import {ExpensesPage} from '../components/ExpensesPage'
+// import { IncomeModule } from "../components/IncomeModule";
+// import { ExpensesPage } from "../components/ExpensesPage";
 
+// import Notify from "../services/toastify";
 
-import Notify from "../services/toastify";
+import {
+  ContentWrapper,
+  ContentWrapperChapter,
+} from "../components/Wrapper/Wrapper.styled";
 
-import { ModalBalance } from "../components/Modal";// Перенести у файл Balance
-
+import { NavigationLink } from "../components/Buttons";
 
 export default function Main() {
-  const navigate = useNavigate();
-  const toReportClick = () => {
-    navigate("/report");
-    Notify.success("sonia");
-  };
-
-  // Перенести у файл Balance
-const [showBalanceModal, setShowBalanceModal] = useState(true);
-
-  const removeBalanceModal= () => {                           
-    setShowBalanceModal(false)
-  };
-//-------------------------------------------
-  
   return (
-    <Container>
-      <BalancePage/>
-      <ExpensesPage/>
-      <main>
-        <h1>MAIN PAGE</h1>
-        <div>
-          <p>balance</p>
-          <br />
-          <input type="text" />
-          <button>change</button>
+    <ContentWrapper>
+      <Balance />
+      {/* <TransactionTable /> */}
+      <h2>Table</h2>
+      {/* <Summary /> */}
+      <ContentWrapperChapter>
+        <NavigationLink pathTo={"expense"} text={"расход"} />
+        <NavigationLink pathTo={"income"} text={"доход"} />
+      </ContentWrapperChapter>
 
-          {/* Перенести у файл Balance */}
-          {showBalanceModal && 
-        <ModalBalance
-          onClose={removeBalanceModal}
-          />
-          }
-          {/* --------------------- */}
-          
-        </div>
-        <div>
-          <button type="button" onClick={toReportClick}>
-            to report
-          </button>
-          <br />
-          <button>
-            <Link to="expense">Доходы</Link>
-          </button>
-          <button>
-            <Link to="income">Расходы</Link>
-          </button>
-          <div>
-            <TransactionTable />
-            <Summary />
-            </div>
-        </div>
-        <Routes>
-          <Route path="expense" element={<ExpenseModule />} />
-          <Route path="income" element={<IncomeModule />} />
-        </Routes>
-      </main>
-    </Container>
+      {/* <Routes>
+        <Route path="/expense" element={<ExpensesPage />} />
+        <Route path="/income" element={<IncomeModule />} />
+      </Routes> */}
+    </ContentWrapper>
   );
 }

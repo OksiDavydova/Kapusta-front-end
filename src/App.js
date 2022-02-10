@@ -1,38 +1,42 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { Route, Routes, Link } from 'react-router-dom';
-import { userIsAuth } from './redux/selectors';
-import { MainPage, PageNotFound, ReportPage, LoginPage } from './pages';
-import { PublicRoute, PrivateRoute } from './routes';
-import { Layout } from './layout';
+import React from "react";
+import { useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+import { userIsAuth } from "./redux/selectors";
+import { MainPage, PageNotFound, ReportPage, LoginPage } from "./pages";
+import { PublicRoute, PrivateRoute } from "./routes";
+import { Layout } from "./layout";
+
+// ???????
+import { IncomeModule } from "./components/IncomeModule";
+import { ExpensesPage } from "./components/ExpensesPage";
 
 function App() {
   const isAuth = useSelector(userIsAuth);
   return (
     <>
       <Layout isAuth={isAuth}>
-        <nav>
+        {/* <nav>
           <button>
             <Link to="login">login</Link>
           </button>
           <button>
-            <Link to="main">Main</Link>
+            <Link to="/">Main</Link>
           </button>
           <button>
             <Link to="report">Report</Link>
           </button>
-        </nav>
+        </nav> */}
         <Routes>
           <Route
             path="/login"
             element={
-              <PublicRoute redirectTo="/main">
+              <PublicRoute redirectTo="/">
                 <LoginPage />
               </PublicRoute>
             }
           />
           <Route
-            path="/main/*"
+            path="/*"
             element={
               <PrivateRoute redirectTo="/login">
                 <MainPage />
@@ -47,6 +51,10 @@ function App() {
               </PrivateRoute>
             }
           />
+          {/* ?????????? */}
+          <Route path="/expense" element={<ExpensesPage />} />
+          <Route path="/income" element={<IncomeModule />} />
+          {/* ??????? */}
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Layout>

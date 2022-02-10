@@ -9,6 +9,7 @@ export const BtnToReport = styled.button`
   color: #52555fb2;
   background: none;
   border: none;
+  cursor: pointer;
   . &:hover {
     border: 2px solid #ffffff;
   }

@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
-import {colors} from '../../styles/utils'
-import { Link } from "react-router-dom";
+import { colors } from "../../styles/utils";
 
 export const BaseButton = styled.button`
   display: inline-block;
@@ -105,34 +104,12 @@ export const StatisticButton = styled.a`
 `;
 // position: absolute;
 // bottom: 0;
-export const StyledLink = styled(Link)`
-  vertical-align: bottom;
-  min-width: 150px;
-  height: 53px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: ${colors.black};
-  outline: none;
-  border: none;
-  background: ${colors.bgSummary};
-
-  &:hover,
-  &:focus {
-    color: ${colors.white};
-    background: ${colors.orange};
-  }
-`;
 
 export const ArrowBtnDiv = styled.div`
   text-align: left;
 
   outline: 1px solid red;
-
-`
+`;
 
 export const ArrowBtn = styled.a`
   width: 24px;
@@ -144,7 +121,7 @@ export const ArrowBtn = styled.a`
     fill: ${colors.orange};
   }
   &:focus {
-    fill:${colors.orange};
+    fill: ${colors.orange};
   }
 `;
 // =======

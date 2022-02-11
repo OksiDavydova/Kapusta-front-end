@@ -28,7 +28,8 @@ export const BtnToReport = styled.button`
 `;
 
 export const BtnReportText = styled.span`
-  margin-right: 20px;
+  margin-right: 15px;
   letter-spacing: 0.04em;
-  color: #52555fb3;
+   color: ${colors.textColorSecond}
+   outline: 1px solid red;
 `;

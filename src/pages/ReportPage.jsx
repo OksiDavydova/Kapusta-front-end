@@ -1,14 +1,14 @@
 import React from "react";
-// import { CategoryToReport } from "../components/CategoryToReport";
+
 // import { CategoryReportList } from "../components/CategoryReportList";
 import { ArrowButton } from "../components/Buttons";
 import { MonthPicker } from "../components/MonthPicker";
 
-import {BalanceOval} from "../components/Balance/BalanceOval"
+import { BalanceOval } from "../components/Balance/BalanceOval";
 import { ChartMobile } from "../components/Chart";
 
 import { CashPicker } from "../components/CashPicker";
-import {ReportBalance} from "../components/ReportBalance"
+import { ReportBalance } from "../components/ReportBalance";
 
 const DB = {
   costs: [
@@ -129,13 +129,12 @@ export default function ReportPage() {
 
       <BalanceOval />
       <ReportBalance />
-      <CashPicker />
+      {/* <CashPicker /> */}
 
-      //<CashPicker>{DB}</CashPicker>
+      <CashPicker>{DB}</CashPicker>
 
-      {/* <CategoryToReport /> */}
-      {/* <CategoryReportList />
-      <ChartMobile /> */}
+      {/* <CategoryReportList /> */}
+      <ChartMobile />
     </>
   );
 }

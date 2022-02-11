@@ -15,7 +15,7 @@ export const BgOverlay = styled.div`
   width: 100%;
   height: 100%;
   background-color: #f5f6fb;
-  /* background: url(${oneCabbage}), url(${pairCabagges}); */
+  background-image: url(${oneCabbage}), url(${pairCabagges});
   background-repeat: no-repeat;
   background-position: 273px 503px, 15px 515px;
 `;

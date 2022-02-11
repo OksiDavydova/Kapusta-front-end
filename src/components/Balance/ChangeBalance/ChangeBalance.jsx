@@ -19,7 +19,7 @@ function ChangeBalance() {
           id="balance"
           placeholder="00.00"
         />
-        UAN
+        UAH
       </ChangeBalanceSpan>
       <ChangeBalanceButton type="button" onClick={acceptButtonClick}>
         Подтвердить

@@ -40,3 +40,12 @@ export const Input = styled.input`
     color: #a6abb9;
   }
 `;
+
+export const AuthFormButtonWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: 1px solid red;
+  margin-top: auto;
+`;

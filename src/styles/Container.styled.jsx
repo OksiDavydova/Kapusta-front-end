@@ -9,7 +9,7 @@ export const Container = styled.div`
   padding-right: 10px;
 
   @media ${device.mobileS} {
-    width: 100%;
+    width: 320px;
   }
 
   /* @media screen and (min-width: 480px) {

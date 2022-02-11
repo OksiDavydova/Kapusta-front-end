@@ -2,8 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { loginUsers, signUpUsers } from "../../redux/operation";
 import { useForm } from "react-hook-form";
-import { Form, Label, Input } from "./AuthForm.styled";
-import { ContentWrapperChapter } from "../Wrapper/Wrapper.styled";
+import { Form, Label, Input, AuthFormButtonWrapper } from "./AuthForm.styled";
 import { Button } from "../../components/Buttons";
 
 function AuthForm() {
@@ -69,13 +68,13 @@ function AuthForm() {
         />
         {/* {errors.password && <span>Password is required</span>} */}
 
-        <ContentWrapperChapter>
+        <AuthFormButtonWrapper>
           <Button text={`${textForInput.enter}`} />
           <Button
             text={`${textForInput.signup}`}
             onClick={handleSubmit(onSubmit)}
           />
-        </ContentWrapperChapter>
+        </AuthFormButtonWrapper>
       </Form>
     </>
   );

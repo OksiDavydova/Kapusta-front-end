@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { StyledLink } from "./ButtonsStyles.styled";
+import { StyledLink } from "./NavigationLinkStyle.styled";
 
 function NavigationLink({ pathTo, text }) {
   const location = useLocation();
@@ -21,19 +21,3 @@ function NavigationLink({ pathTo, text }) {
   );
 }
 export default NavigationLink;
-
-// const StyledLink = styled(Link)`
-//   color: Blue;
-//   text-decoration: none;
-//   margin: 1rem;
-//   position: relative;
-// `;
-
-// function Nav() {
-//   return (
-//     <NavUnlisted>
-//       <StyledLink to="/">Home</StyledLink>
-//       <StyledLink to="/about">About</StyledLink>
-//     </NavUnlisted>
-//   );
-// }

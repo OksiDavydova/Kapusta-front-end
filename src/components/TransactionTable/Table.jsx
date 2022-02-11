@@ -1,9 +1,8 @@
-import React from 'react'
-import { useTable } from 'react-table'
-
+import React from "react";
+import { useTable } from "react-table";
 
 // Create a default prop getter
-const defaultPropGetter = () => ({})
+const defaultPropGetter = () => ({});
 
 // Expose some prop getters for headers, rows and cells, or more if you want!
 function Table({
@@ -23,14 +22,14 @@ function Table({
   } = useTable({
     columns,
     data,
-  })
+  });
 
   return (
     <table {...getTableProps()}>
       <thead>
-        {headerGroups.map(headerGroup => (
+        {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
+            {headerGroup.headers.map((column) => (
               <th
                 // Return an array of prop objects and react-table will merge them appropriately
                 {...column.getHeaderProps([
@@ -42,7 +41,7 @@ function Table({
                   getHeaderProps(column),
                 ])}
               >
-                {column.render('Header')}
+                {column.render("Header")}
               </th>
             ))}
           </tr>
@@ -50,11 +49,11 @@ function Table({
       </thead>
       <tbody {...getTableBodyProps()}>
         {rows.map((row, i) => {
-          prepareRow(row)
+          prepareRow(row);
           return (
             // Merge user row props in
             <tr {...row.getRowProps(getRowProps(row))}>
-              {row.cells.map(cell => {
+              {row.cells.map((cell) => {
                 return (
                   <td
                     // Return an array of prop objects and react-table will merge them appropriately
@@ -67,20 +66,19 @@ function Table({
                       getCellProps(cell),
                     ])}
                   >
-                    {cell.render('Cell')}
+                    {cell.render("Cell")}
                   </td>
-                )
+                );
               })}
             </tr>
-          )
+          );
         })}
       </tbody>
     </table>
-  )
+  );
 }
 
 export default Table;
-
 
 //===================FOR EXAMPLE======================================
 

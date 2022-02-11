@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Media from "react-media";
 import { TextBalance } from "../Text";
-import { ChangeBalance } from "../ChangeBalance";
+import { ChangeBalance } from "./ChangeBalance";
 import { CalendarMUI } from "../CalendarMUI";
 import { BalanceWrapper } from "../Wrapper/Wrapper.styled"; // =>Link
 import { ButtonToReport } from "./ButtonToReport";

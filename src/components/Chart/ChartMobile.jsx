@@ -1,4 +1,5 @@
 import React from "react";
+
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, LabelList, Cell } from "recharts";
 import {dataFromBack} from './data'
 
@@ -61,6 +62,7 @@ function ChartMobile() {
             }}
             />
         </BarChart>
+
     </ResponsiveContainer>
   );
 }

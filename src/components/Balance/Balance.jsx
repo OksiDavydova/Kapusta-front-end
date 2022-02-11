@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Media from "react-media";
 import { TextBalance } from "../Text";
-import { ChangeBalance } from "../ChangeBalance";
+import { ChangeBalance } from "./ChangeBalance";
 import { CalendarMUI } from "../CalendarMUI";
 import { BalanceWrapper } from "../Wrapper/Wrapper.styled"; // =>Link
 import { ButtonToReport } from "./ButtonToReport";
@@ -13,9 +14,8 @@ function Balance() {
   const [showBalanceModal, setShowBalanceModal] = useState(true);
   const navigate = useNavigate();
 
-  const toReportClick = () => {
+  const clickToReport = () => {
     navigate("/report");
-    // Notify.success("sonia");
   };
 
   const removeBalanceModal = () => {
@@ -25,11 +25,12 @@ function Balance() {
   return (
     <>
       <BalanceWrapper>
-        <ButtonToReport onClick={toReportClick} />
-        <TextBalance/>
-        <ChangeBalance />
 
-        <CalendarMUI />
+        <ButtonToReport onClick={clickToReport} />
+        <TextBalance/>
+
+        <ChangeBalance />
+        <Media query="(max-width: 767px)" render={() => <CalendarMUI />} />
       </BalanceWrapper>
 
       {/* --------Modal------------- */}

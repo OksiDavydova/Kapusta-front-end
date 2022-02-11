@@ -18,6 +18,7 @@ export const colors = {
   bgSummary: '#f5f6fb',
 
   //   /* Цвет для неактивной вкладки "Доход" или "Расход" */
+
   bgBtn: '#fafbfd',
 
   // Цвет вертикальной палочки в блоке Расходы/Доходы на странице Статистики
@@ -29,6 +30,9 @@ export const colors = {
 
   // Цвет border кнопки Очистить на tablet
   borderClearBtnColor: '#f6f7fc',
+
+  animation: "250ms cubic-bezier(0.4, 0, 0.2, 1)",
+
 };
 
 //   --costs-color: #e53935,

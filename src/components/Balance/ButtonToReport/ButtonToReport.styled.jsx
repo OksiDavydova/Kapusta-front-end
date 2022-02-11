@@ -1,20 +1,29 @@
 import styled from "@emotion/styled";
+import { colors } from "../../../styles/utils";
 
 export const BtnToReport = styled.button`
   display: flex;
-  align-items: bottom;
+  align-items: baseline;
   margin-bottom: 40px;
   letter-spacing: 0.04em;
   padding: 5px;
-  color: #52555fb2;
-  background: none;
+  color: ${colors.textColor};
+  background: transparent;
   border: none;
-  cursor: pointer;
-  . &:hover {
+
+  &:hover {
     border: 2px solid #ffffff;
   }
   &:focus {
     border: 2px solid #ffffff;
+  }
+  & > svg {
+    fill: ${colors.textColor};
+    transition: ${colors.animation};
+    &:hover,
+    &:focus {
+      fill: ${colors.orangeLight};
+    }
   }
 `;
 

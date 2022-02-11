@@ -6,18 +6,22 @@ import {
   CashPickerSpan,
 } from "./CashPickerStyle.styled";
 import { SvgIcon } from "../SvgIcon";
+import { CategoryReportList } from "../CategoryReportList";
 
-function CashPicker() {
+function CashPicker({ children }) {
   const [value, setValue] = useState(false);
-
+  const [data, setData] = useState(children.income);
+  console.log("CashPicker", data);
   function handleClick(e) {
     e.preventDefault();
     value ? setValue(false) : setValue(true);
+    value ? setData(children.income) : setData(children.costs);
   }
 
   const text = value ? "расходы" : "доходы";
 
   return (
+
     <CashPickerWrapper>
       <CashPickerDiv>
         <Arrow onClick={handleClick}>
@@ -29,6 +33,7 @@ function CashPicker() {
         </Arrow>
       </CashPickerDiv>
     </CashPickerWrapper>
+
   );
 }
 

@@ -23,11 +23,19 @@ function Balance() {
   return (
     <>
       <BalanceWrapper>
-        <ButtonToReport onClick={clickToReport} />
+        <Media
+          query="(min-width: 320px) and (max-width: 767px)"
+          render={() => <ButtonToReport onClick={clickToReport} />}
+        />
+
         <BalanceText>Баланс:</BalanceText>
 
         <ChangeBalance />
         <Media query="(max-width: 767px)" render={() => <CalendarMUI />} />
+        <Media
+          query="(min-width: 768px) and (max-width: 1440px)"
+          render={() => <ButtonToReport onClick={clickToReport} />}
+        />
       </BalanceWrapper>
 
       {/* --------Modal------------- */}

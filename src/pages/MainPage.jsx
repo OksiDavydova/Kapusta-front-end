@@ -18,7 +18,11 @@ export default function Main() {
       <Media query="(min-width: 767px)" render={() => <Summary />} />
 
       {/* open form for enter transaction */}
-      <NavigationMainMobile />
+      <Media
+        query="(min-width: 320px) and (max-width: 767px)"
+        render={() => <NavigationMainMobile />}
+      />
+
       {/* --open form for enter transaction ---*/}
     </ContentWrapper>
   );

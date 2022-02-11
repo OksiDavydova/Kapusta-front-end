@@ -1,8 +1,12 @@
 import styled from "@emotion/styled";
+import { colors, device } from "../../../styles/utils";
 
 export const ChangeBalanceWrapper = styled.div`
   display: flex;
   margin: 6px 0 40px 0;
+  @media ${device.tablet} {
+    margin-bottom: 0;
+  }
 `;
 
 export const ChangeBalanceSpan = styled.span`

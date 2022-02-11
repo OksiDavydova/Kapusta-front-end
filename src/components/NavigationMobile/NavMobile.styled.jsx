@@ -5,6 +5,5 @@ export const NavMobileWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  align-content: flex-end;
   outline: 1px solid red;
 `;

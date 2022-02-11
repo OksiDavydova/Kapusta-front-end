@@ -1,4 +1,5 @@
 import React from "react";
+import Media from "react-media";
 import { Table } from ".";
 import { SvgIcon } from "../SvgIcon";
 import { TransactionSection } from "./TransactionTableStyle.styled";
@@ -90,9 +91,30 @@ function TransactionTable() {
 
   return (
     <TransactionSection>
-      <Scrollbars style={{ width: 300, height: 200 }}>
-        <Table columns={columns} data={data} />
-      </Scrollbars>
+      <Media
+        query="(min-width: 320px) and (max-width: 767px)"
+        render={() => (
+          <Scrollbars style={{ width: 282, height: 142 }}>
+            <Table columns={columns} data={data} />
+          </Scrollbars>
+        )}
+      />
+      <Media
+        query="(min-width: 768px) and (max-width: 1023px)"
+        render={() => (
+          <Scrollbars style={{ width: 605, height: 384 }}>
+            <Table columns={columns} data={data} />
+          </Scrollbars>
+        )}
+      />
+      <Media
+        query="(min-width: 1024px)"
+        render={() => (
+          <Scrollbars style={{ width: 760, height: 384 }}>
+            <Table columns={columns} data={data} />
+          </Scrollbars>
+        )}
+      />
     </TransactionSection>
   );
 }

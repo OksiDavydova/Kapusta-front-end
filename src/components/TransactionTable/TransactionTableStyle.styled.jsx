@@ -81,7 +81,6 @@ th{
 
 }}}
     tbody{
-
     
 tr{
      font-weight: 400;

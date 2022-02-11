@@ -3,7 +3,7 @@ import React from "react";
 import { Header } from "../components/Header";
 import { Container } from "../styles/Container.styled";
 import { ToastifyContainer } from "../components/Toastify";
-import { Bg1, Bg2 } from "./Background.styled";
+import { BgOverlay, Bg2 } from "./Background.styled";
 
 function Layout({ children, isAuth }) {
   return (
@@ -11,7 +11,7 @@ function Layout({ children, isAuth }) {
       <main>
         <Container>
           <Header />
-          {isAuth ? <Bg1 /> : <Bg2 />}
+          {isAuth ? <BgOverlay /> : <Bg2 />}
           <>{children}</>
 
           <ToastifyContainer />

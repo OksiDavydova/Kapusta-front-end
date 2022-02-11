@@ -2,11 +2,18 @@ import styled from "@emotion/styled";
 import { device } from "../../styles/utils";
 
 export const ContentWrapper = styled.section`
-  display: flex;
+  width: 100%;
+  border: 1px solid red;
+  padding-top: 30px;
+
+  @media ${device.tablet}{
+   padding-top: 40px; 
+  }
+
+         /* display: flex;
   flex-direction: column;
   align-content: space-between;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: space-around; */
   /* height: calc(
     100vh - 56px
   ); // change - "some value" depended from content header */

@@ -11,17 +11,14 @@ export const BalanceWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  padding-top: 30px;
+  /* padding-top: 30px; */
   outline: 1px solid red;
 
   @media ${device.tablet} {
-    /* flex-direction: row;
-    width: 500px; */
-
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: 0;
-    margin-right: 0;
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 52px 58px 52px;
   }
 `;
 

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Media from "react-media";
-import { BalanceText } from "./BalanceStyle.styled";
+import { BalanceText, BalanceWrapper } from "./BalanceStyle.styled";
 import { ChangeBalance } from "./ChangeBalance";
 import { CalendarMUI } from "../CalendarMUI";
-import { BalanceWrapper } from "../Wrapper/Wrapper.styled"; // =>Link
+// import { BalanceWrapper } from "../Wrapper/Wrapper.styled"; // =>Link
 import { ButtonToReport } from "./ButtonToReport";
 import { ModalBalance } from "../Modal";
 

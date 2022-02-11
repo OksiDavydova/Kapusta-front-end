@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import {colors, device} from '../../styles/utils'
 
 export const SingleText = styled.p`
   margin: auto;
@@ -14,8 +15,38 @@ export const SingleText = styled.p`
 `;
 
 export const BalanceText = styled.p`
-  margin: ${(props) => props.margin};
-  font-weight: ${(props) => props.weight};
-  letter-spacing: ${(props) => props.spacing};
-  color: #52555fb3;
+  margin-bottom: 6px;
+  font-weight: 500;
+  // color: #52555fb3;
+  color: ${colors.textColorSecond};
+  outline: 1px solid red;
+
+  @media ${device.tablet} {
+    margin-bottom: 0px;
+    margin-right: 21px;
+    padding: 14px 0px;
+  }
+`;
+
+export const ReportText = styled.p`
+  margin-right: 15px;
+  letter-spacing: 0.04em;
+  // color: #52555fb3;
+  color: ${colors.textColorSecond}
+  outline: 1px solid red;
+`;
+
+export const ReportBalanceText = styled.p`
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  // color: #52555F;
+  color: ${colors.textColor}
+
+  outline: 1px solid red;
+
+  @media ${device.tablet} {
+    margin-bottom: 0px;
+    margin-right: 15px;
+  }
 `;

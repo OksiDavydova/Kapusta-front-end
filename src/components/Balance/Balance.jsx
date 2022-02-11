@@ -25,13 +25,10 @@ function Balance() {
   return (
     <>
       <BalanceWrapper>
+
         <ButtonToReport onClick={clickToReport} />
-        <TextBalance
-          margin={"0"}
-          fontWeight={"500"}
-          letterSpacing={"0.02em"}
-          text={text}
-        />
+        <TextBalance/>
+
         <ChangeBalance />
         <Media query="(max-width: 767px)" render={() => <CalendarMUI />} />
       </BalanceWrapper>

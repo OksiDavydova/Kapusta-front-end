@@ -3,8 +3,12 @@ import React from "react";
 // import { CategoryReportList } from "../components/CategoryReportList";
 import { ArrowButton } from "../components/Buttons";
 import { MonthPicker } from "../components/MonthPicker";
-// import { ChartMobile } from "../components/Chart";
+
+import {BalanceOval} from "../components/Balance/BalanceOval"
+import { ChartMobile } from "../components/Chart";
+
 import { CashPicker } from "../components/CashPicker";
+import {ReportBalance} from "../components/ReportBalance"
 
 const DB = {
   costs: [
@@ -122,7 +126,13 @@ export default function ReportPage() {
     <>
       <ArrowButton />
       <MonthPicker />
-      <CashPicker>{DB}</CashPicker>
+
+      <BalanceOval />
+      <ReportBalance />
+      <CashPicker />
+
+      //<CashPicker>{DB}</CashPicker>
+
       {/* <CategoryToReport /> */}
       {/* <CategoryReportList />
       <ChartMobile /> */}

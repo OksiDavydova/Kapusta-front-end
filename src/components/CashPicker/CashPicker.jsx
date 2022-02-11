@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   CashPickerWrapper,
+  CashPickerDiv,
   Arrow,
   CashPickerSpan,
 } from "./CashPickerStyle.styled";
@@ -13,7 +14,6 @@ function CashPicker({ children }) {
   console.log("CashPicker", data);
   function handleClick(e) {
     e.preventDefault();
-    console.log("Была нажата ссылка.");
     value ? setValue(false) : setValue(true);
     value ? setData(children.income) : setData(children.costs);
   }
@@ -21,18 +21,19 @@ function CashPicker({ children }) {
   const text = value ? "расходы" : "доходы";
 
   return (
-    <>
-      <CashPickerWrapper>
+
+    <CashPickerWrapper>
+      <CashPickerDiv>
         <Arrow onClick={handleClick}>
           <SvgIcon w={7} h={12} idIcon={"#left"} />
         </Arrow>
-        <CashPickerSpan>{text}</CashPickerSpan>
+      <CashPickerSpan>{text}</CashPickerSpan>
         <Arrow onClick={handleClick}>
           <SvgIcon w={7} h={12} idIcon={"#right"} />
         </Arrow>
-      </CashPickerWrapper>
-      <CategoryReportList>{data}</CategoryReportList>
-    </>
+      </CashPickerDiv>
+    </CashPickerWrapper>
+
   );
 }
 

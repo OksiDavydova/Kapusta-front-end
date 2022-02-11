@@ -8,9 +8,9 @@ import {
 import { SvgIcon } from "../SvgIcon";
 
 function MonthPicker() {
-  let currentDate = new Date();
+  const text = 'Текущий период:'
 
-  const month_name = [
+  const month = [
     "январь",
     "февраль",
     "март",
@@ -24,51 +24,42 @@ function MonthPicker() {
     "ноябрь",
     "декабрь",
   ];
-
-  const [monthCurrent, setMonthCurrent] = useState(
-    month_name.find((item, index) => index === currentDate.getMonth())
+  
+  let currentDate = new Date();
+  
+  const [currentMonth, setCurrentMonth] = useState(
+    month.find((item, index) => index === currentDate.getMonth())
   );
-  // const [yearCurrent, setyearCurrent] = useState(currentDate.getFullYear());
-
-  // let month = currentDate.getMonth();
-  // let year = currentDate.getFullYear();
+  const [currentYear, setCurrentYear] = useState(currentDate.getFullYear());
 
   function handleClickLeft(e) {
     e.preventDefault();
-    console.log("Была нажата ссылка.");
-    console.log("monthCurrent: ", monthCurrent);
-
-    for (let i = 0; ; i++) {
-      console.log(i);
-      if (month_name[i] === monthCurrent)
-        return setMonthCurrent(month_name[i - 1]);
-    }
+    const index = month.indexOf(currentMonth)
+    if (index !== 0) return setCurrentMonth(month[index-1])
+    setCurrentYear(currentYear-1)
+    return setCurrentMonth(month[month.length-1])
   }
 
   function handleClickRight(e) {
     e.preventDefault();
-    console.log("Была нажата ссылка.");
-    console.log("monthCurrent: ", monthCurrent);
-    for (let i = 0; ; i++) {
-      console.log(i);
-      if (month_name[i] === monthCurrent)
-        return setMonthCurrent(month_name[i + 1]);
-    }
+    const index = month.indexOf(currentMonth)
+    if (index !== month.length-1 ) return setCurrentMonth(month[index+1])
+    setCurrentYear(currentYear+1)
+    return setCurrentMonth(month[0])
   }
 
   return (
     <MonthPickerWrapper>
-      <MonthPickerText>Текущий период:</MonthPickerText>
+      <MonthPickerText>{text}</MonthPickerText>
+      <MonthPickerSpan>
       <Arrow onClick={handleClickLeft}>
         <SvgIcon w={7} h={12} idIcon={"#left"} />
       </Arrow>
-      <MonthPickerSpan>
-        {monthCurrent}
-        {/* {yearCurrent} */}
-      </MonthPickerSpan>
+        {[currentMonth, ' ', currentYear]}
       <Arrow onClick={handleClickRight}>
         <SvgIcon w={7} h={12} idIcon={"#right"} />
       </Arrow>
+      </MonthPickerSpan>
     </MonthPickerWrapper>
   );
 }

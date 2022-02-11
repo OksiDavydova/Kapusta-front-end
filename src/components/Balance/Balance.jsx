@@ -26,12 +26,7 @@ function Balance() {
     <>
       <BalanceWrapper>
         <ButtonToReport onClick={toReportClick} />
-        <TextBalance
-          margin={"0"}
-          fontWeight={"500"}
-          letterSpacing={"0.02em"}
-          text={text}
-        />
+        <TextBalance/>
         <ChangeBalance />
 
         <CalendarMUI />

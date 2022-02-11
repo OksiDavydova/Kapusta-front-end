@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   CashPickerWrapper,
+  CashPickerDiv,
   Arrow,
   CashPickerSpan,
 } from "./CashPickerStyle.styled";
@@ -11,7 +12,6 @@ function CashPicker() {
 
   function handleClick(e) {
     e.preventDefault();
-    console.log("Была нажата ссылка.");
     value ? setValue(false) : setValue(true);
   }
 
@@ -19,13 +19,15 @@ function CashPicker() {
 
   return (
     <CashPickerWrapper>
-      <Arrow onClick={handleClick}>
-        <SvgIcon w={7} h={12} idIcon={"#left"} />
-      </Arrow>
+      <CashPickerDiv>
+        <Arrow onClick={handleClick}>
+          <SvgIcon w={7} h={12} idIcon={"#left"} />
+        </Arrow>
       <CashPickerSpan>{text}</CashPickerSpan>
-      <Arrow onClick={handleClick}>
-        <SvgIcon w={7} h={12} idIcon={"#right"} />
-      </Arrow>
+        <Arrow onClick={handleClick}>
+          <SvgIcon w={7} h={12} idIcon={"#right"} />
+        </Arrow>
+      </CashPickerDiv>
     </CashPickerWrapper>
   );
 }

@@ -1,58 +1,22 @@
 import React from "react";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, LabelList, Cell } from "recharts";
+import {dataFromBack} from './data'
 
-const data = [
-  {
-    name: "Свинина",
-    value: 5000,
-  },
-  {
-    name: "Говядина",
-    value: 4500,
-  },
-  {
-    name: "Курица",
-    value: 3200,
-  },
-  {
-    name: "Рыба",
-    value: 2100,
-  },
-  {
-    name: "Панини",
-    value: 1800,
-  },
-  {
-    name: "Кофе",
-    value: 1700,
-  },
-  {
-    name: "Спагетти",
-    value: 1500,
-  },
-  {
-    name: "Шоколад",
-    value: 850,
-  },{
-    name: "Маслины",
-    value: 500,
-  },{
-    name: "Зелень",
-    value: 300,
-  }
-];
+let category = 5;
+
+let data = dataFromBack.filter((item) => item.category === category && item.expense).sort((a, b) => b.value - a.value);
 
 const colors = ['#FF751D', '#FFDAC0']
 
 // ----------------------Question - to do responsive chart or fixed???
 function ChartMobile() {
+  console.log(data);
   return (
-  <ResponsiveContainer width={320} height={640}>
+  <ResponsiveContainer width={320} height={data.length * 50} >
         <BarChart 
-            layout="vertical"
-            width={320}
-            height={640}
             data={data}
+            layout="vertical"
+            margin={{top: 0, right: 70, bottom: 0, left: 20}}
             >
         <Bar 
             dataKey="value" 
@@ -66,14 +30,17 @@ function ChartMobile() {
                     ))
                 }
             <LabelList 
-                dataKey={"value"} 
+                dataKey="value"
                 width={100} 
                 position="right" 
                 // offset={0} 
-                dy={-20}
-                dx={-38}
+                // dy={-20}
+                // dx={-68}
                 fill={'#52555F'}
                 formatter={(number) => `${number.toLocaleString('ru-RU')} грн`} 
+                style={{
+                    fontSize: '10px',
+                }}
                 />
         </Bar>
         <XAxis 
@@ -82,15 +49,16 @@ function ChartMobile() {
             />
         <YAxis 
             dataKey="name" type="category"
+            width={180} 
             tickLine={false} 
             axisLine={false} 
             mirror
-            dy={-20}
+            dy={-15}
             dx={-7}
-            // tick={{stroke: 'red', strokeWidth: 2, tickPadding: 20}}
-            // tickMargin={20} 
-            // tickPadding={20}
-            // textAnchor="middle"
+            // margin={{top: 20, right: 20, bottom: 20, left: 20}}
+            style={{
+                fontSize: '10px',
+            }}
             />
         </BarChart>
     </ResponsiveContainer>

@@ -17,7 +17,7 @@ export const GlobalStyles = css`
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
     text-align: center;
     -webkit-font-smoothing: antialiased;

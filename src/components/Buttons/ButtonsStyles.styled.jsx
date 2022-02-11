@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import {colors} from '../../styles/utils'
 import { Link } from "react-router-dom";
 
 export const BaseButton = styled.button`
@@ -14,43 +15,43 @@ export const BaseButton = styled.button`
   border: none;
   border-radius: 16px;
 
-  color: #52555f;
-  background-color: #f5f6fb;
+  color: ${colors.textColor};
+  background-color: ${colors.bgSummary};
   box-shadow: 1px 3px 5px rgba(82, 85, 95, 0.15);
 
   &:hover {
-    color: #ffffff;
-    background-color: #ff751d;
+    color: ${colors.white};
+    background-color: ${colors.orange};
     box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
   }
   &:focus {
-    color: #ffffff;
-    background-color: #ff751d;
+    color: ${colors.white};
+    background-color: ${colors.orange};
     box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
   }
 `;
 export const GreyButton = styled(BaseButton)`
   padding: 12px 6px;
   font-weight: normal;
-  color: #52555fb3;
-  background: #f5f6fb;
+  color: ${colors.textColorSecond};
+  background: ${colors.bgSummary};
   /* background: none; */
-  border: 2px solid #ffffff;
+  border: 2px solid ${colors.white};
 
   &:hover {
-    border: #ff751d;
+    border: ${colors.orange};
   }
 
   &:focus {
-    border: #ff751d;
+    border: ${colors.orange};
   }
 `;
 
 export const WhiteButton = styled(GreyButton)`
   font-weight: bold;
-  color: #52555f;
-  background: #ffffff;
-  border: 2px solid #f6f7fc;
+  color: ${colors.textColor};
+  background: ${colors.white};
+  border: 2px solid ${colors.borderClearBtnColor};
 `;
 
 export const LinkGoogle = styled.a`
@@ -72,17 +73,17 @@ export const LinkGoogle = styled.a`
   /* text-decoration: none; */
 
   color: #000000;
-  background-color: #f6f7fb;
+  background-color: ${colors.inputBg};
   box-shadow: 1px 2px 3px rgba(170, 178, 197, 0.2);
 
   &:hover {
-    color: #ffffff;
-    background-color: #ff751d;
+    color: ${colors.white};
+    background-color: ${colors.orange};
     box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
   }
   &:focus {
-    color: #ffffff;
-    background-color: #ff751d;
+    color: ${colors.white};
+    background-color: ${colors.orange};
     box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
   }
 `;
@@ -96,10 +97,10 @@ export const StatisticButton = styled.a`
   background: none;
   border: none;
   . &:hover {
-    border: 2px solid #ffffff;
+    border: 2px solid ${colors.white};
   }
   &:focus {
-    border: 2px solid #ffffff;
+    border: 2px solid ${colors.white};
   }
 `;
 // position: absolute;
@@ -114,38 +115,47 @@ export const StyledLink = styled(Link)`
   justify-content: center;
   text-decoration: none;
   text-transform: uppercase;
-  color: #000000;
+  color: ${colors.black};
   outline: none;
   border: none;
-  background: #f5f6fb;
+  background: ${colors.bgSummary};
 
   &:hover,
   &:focus {
-    color: #ffffff;
-    background: #ff751d;
+    color: ${colors.white};
+    background: ${colors.orange};
   }
 `;
+
+export const ArrowBtnDiv = styled.div`
+  text-align: left;
+
+  outline: 1px solid red;
+
+`
 
 export const ArrowBtn = styled.a`
   width: 24px;
   height: 24px;
-  margin: 15px auto 15px 0px;
+
+  outline: 1px solid red;
+
   &:hover {
-    fill: #ff751d;
+    fill: ${colors.orange};
   }
   &:focus {
-    fill: #ff751d;
+    fill:${colors.orange};
   }
 `;
 // =======
 //   cursor: pointer;
 //   &:hover {
-//     color: #ffffff;
+//     color: ${colors.white};
 //     background-color: #ff751d;
 //     box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
 //   }
 //   &:focus {
-//     color: #ffffff;
+//     color: ${colors.white};
 //     background-color: #ff751d;
 //     box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
 //   }

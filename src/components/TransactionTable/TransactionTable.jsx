@@ -6,7 +6,9 @@ import { TransactionSection } from "./TransactionTableStyle.styled";
 import { Scrollbars } from "react-custom-scrollbars-2";
 
 function TransactionTable() {
-  const btnDel = () => <SvgIcon w={16} h={16} idIcon={"#icon-delete"} />;
+  const btnDel = () =>  <button type="button" style={{border:'none'}}>
+    <SvgIcon w={16} h={16}
+      idIcon={"#icon-delete"} /></button>;
 
   const columns = React.useMemo(
     () => [
@@ -38,7 +40,14 @@ function TransactionTable() {
     () => [
       {
         day: "11.10.2021",
-        description: "Banana",
+        description: "Banana Montana",
+        category: "Products",
+        sum: "- 30.00 грн",
+        del: btnDel(),
+      },
+      {
+        day: "11.10.2021",
+        description: "Banana Banana Banana Banana ",
         category: "Products",
         sum: "- 30.00 грн",
         del: btnDel(),
@@ -51,11 +60,32 @@ function TransactionTable() {
         del: btnDel(),
       },
       {
-        day: "11.10.2021",
-        description: "Banana",
-        category: "Products",
-        sum: "- 30.00 грн",
-        del: btnDel(),
+        day: "",
+        description: "",
+        category: "",
+        sum: "",
+        del: "",
+      },
+      {
+        day: "",
+        description: "",
+        category: "",
+        sum: "",
+        del: "",
+      },
+      {
+        day: "",
+        description: "",
+        category: "",
+        sum: "",
+        del: "",
+      },
+      {
+        day: "",
+        description: "",
+        category: "",
+        sum: "",
+        del: "",
       },
       {
         day: "",
@@ -100,15 +130,24 @@ function TransactionTable() {
         )}
       />
       <Media
-        query="(min-width: 768px) and (max-width: 1023px)"
+        query="(min-width: 768px) and (max-width: 1439px)"
         render={() => (
           <Scrollbars style={{ width: 605, height: 384 }}>
             <Table columns={columns} data={data} />
           </Scrollbars>
         )}
       />
-      <Media
+      {/* <Media
         query="(min-width: 1024px)"
+        render={() => (
+          <Scrollbars style={{ width: 605, height: 384 }}>
+            <Table columns={columns} data={data} />
+          </Scrollbars>
+        )}
+      /> */}
+
+            <Media
+        query="(min-width: 1440px)"
         render={() => (
           <Scrollbars style={{ width: 760, height: 384 }}>
             <Table columns={columns} data={data} />

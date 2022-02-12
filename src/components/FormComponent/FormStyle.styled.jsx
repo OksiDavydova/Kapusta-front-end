@@ -1,52 +1,56 @@
 import styled from "@emotion/styled";
+import { device, colors } from "../../styles/utils";
 
-export const ProductWrapper = styled.div`
-  min-width: 282px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+export const FormWrapper = styled.div`
+  max-width: 280px;
   outline: 1px solid red;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 15px;
+
+  @media${device.tablet}{
+    max-width: 604px;
+    padding-top: 28px;
+  }
 `;
 
-export const Form = styled.form`
+export const FormTag = styled.form`
   display: flex;
-  width: 282px;
-  height: 44px;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 15px;
 
-  border: 2px solid #f5f6fb;
   box-sizing: border-box;
   border-radius: 16px 16px 0px 0px;
+
+      @media${device.tablet}{
+    padding-top: 0;
+  }
 `;
 
-export const Input = styled.input`
+export const InputDescription = styled.input`
   outline: none;
   padding-left: 20px;
-
-  /* display: flex;
-    align-items: center; */
-
+  height: 44px;
+  width: 100%;
+  /* border: 1px solid red; */
+  border-radius: 16px 0 0px 0px;
   color: #52555f;
-
-  border: none;
+  border: 2px solid #ffffff;
   background: none;
 
   &::placeholder {
     color: #c7ccdc;
   }
 `;
-export const DivSelect = styled.div`
-  // position: relative;
-  // display: flex;
-  // align-items: center;
+export const SelectOverlay = styled.div`
   width: 282px;
   height: 44px;
   margin-bottom: 30px;
 
-  border: 2px solid #f5f6fb;
-  box-sizing: border-box;
+  border: 2px solid white;
+
   border-radius: 0px 0px 16px 0px;
   border-top: none;
 `;
@@ -89,13 +93,13 @@ export const InputCost = styled.input`
     color: #c7ccdc;
   }
 `;
-export const ProductDiv = styled.div`
+export const CalculatorOverlay = styled.div`
   display: flex;
-  margin: 6px 0 40px 0;
+
   outline: 1px solid red;
 `;
 
-export const ProductSpan = styled.span`
+export const ValueSpan = styled.span`
   padding: 12px 20px;
   width: 125px;
   height: 44px;
@@ -112,7 +116,7 @@ export const ProductSpan = styled.span`
   border-radius: 22px 0px 0px 22px;
 `;
 
-export const ProductInput = styled.input`
+export const ValueInput = styled.input`
   outline: none;
   width: 50px;
   font-weight: bold;
@@ -128,8 +132,8 @@ export const ProductInput = styled.input`
   }
 `;
 
-export const ProductButton = styled.span`
-  padding: 12px 17px;
+export const CalculatorButton = styled.button`
+  padding: 12px 20px;
   width: 60px;
   height: 44px;
 
@@ -142,9 +146,38 @@ export const ProductButton = styled.span`
 
 export const ButtonFormWrapper = styled.div`
   width: 100%;
+  margin-top: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   outline: 1px solid red;
-  margin-top: auto;
+ @media${device.tablet}{
+margin-top: 30px;
+    
+  }
+`;
+
+export const FormButton = styled.button`
+  width: 125px;
+  height: 44px;
+  letter-spacing: 0.02em;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 16px;
+
+  color: ${colors.textColor};
+  background-color: ${colors.bgSummary};
+  box-shadow: 1px 3px 5px rgba(82, 85, 95, 0.15);
+
+  &:hover {
+    color: ${colors.white};
+    background-color: ${colors.orange};
+    box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
+  }
+  &:focus {
+    color: ${colors.white};
+    background-color: ${colors.orange};
+    box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
+  }
 `;

@@ -9,10 +9,10 @@ import { SvgIcon } from "../SvgIcon";
 
 function CalendarMUI() {
   const [value, setValue] = useState(new Date());
-
+  console.log(value);
   return (
     <Calendar>
-      <SvgIcon w={20} h={20} idIcon={"#icon-calendar"} />
+      {/* <SvgIcon w={20} h={20} idIcon={"#icon-calendar"} /> */}
       <LocalizationProvider dateAdapter={AdapterDateFns} locale={ruLocale}>
         <DatePicker
           mask={"__.__.____"}

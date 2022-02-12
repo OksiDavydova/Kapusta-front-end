@@ -1,11 +1,15 @@
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
-import SelectUnstyled, { selectUnstyledClasses } from '@mui/base/SelectUnstyled';
-import OptionUnstyled, { optionUnstyledClasses } from '@mui/base/OptionUnstyled';
-import PopperUnstyled from '@mui/base/PopperUnstyled';
-import { styled } from '@mui/system';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import SelectUnstyled, {
+  selectUnstyledClasses,
+} from "@mui/base/SelectUnstyled";
+import OptionUnstyled, {
+  optionUnstyledClasses,
+} from "@mui/base/OptionUnstyled";
+import PopperUnstyled from "@mui/base/PopperUnstyled";
+import { styled } from "@mui/system";
 
-const StyledButton = styled('button')`
+const StyledButton = styled("button")`
 //   font-family: IBM Plex Sans, sans-serif;
 //   font-size: 0.875rem;
 //   box-sizing: border-box;
@@ -59,25 +63,25 @@ const StyledButton = styled('button')`
   }
 `;
 
-const StyledListbox = styled('ul')`
-//   font-family: IBM Plex Sans, sans-serif;
-//   font-size: 0.875rem;
-//   box-sizing: border-box;
-//   padding: 0;
+const StyledListbox = styled("ul")`
+  //   font-family: IBM Plex Sans, sans-serif;
+  //   font-size: 0.875rem;
+  //   box-sizing: border-box;
+  //   padding: 0;
   margin-left: -2px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   min-width: 282px;
-  border: 2px solid #F5F6FB;
-//   border-top: none;
-  color: #C7CCDC;
-  &:focus{
-      color: #52555F;
-      background-color: #F5F6FB;
-  };
-  &:hover{
-    color: #52555F;
-    background-color: #F5F6FB;
-};
+  border: 2px solid #f5f6fb;
+  //   border-top: none;
+  color: #c7ccdc;
+  &:focus {
+    color: #52555f;
+    background-color: #f5f6fb;
+  }
+  &:hover {
+    color: #52555f;
+    background-color: #f5f6fb;
+  }
 `;
 
 const StyledOption = styled(OptionUnstyled)`
@@ -85,9 +89,8 @@ const StyledOption = styled(OptionUnstyled)`
   text-align: left;
   padding: 4px 10px;
   margin: 0;
-//   border-bottom: 1px solid #ddd;
+  //   border-bottom: 1px solid #ddd;
   cursor: pointer;
-
 
   &:last-of-type {
     border-bottom: none;
@@ -100,7 +103,6 @@ const StyledOption = styled(OptionUnstyled)`
   &.${optionUnstyledClasses.selected} {
     background-color: rgba(25, 118, 210, 0.08);
     // background-color: F5F6FB;
-
   }
 
   &.${optionUnstyledClasses.highlighted} {
@@ -113,13 +115,12 @@ const StyledOption = styled(OptionUnstyled)`
   &.${optionUnstyledClasses.highlighted}.${optionUnstyledClasses.selected} {
     background-color: #05e;
     // background-color: F5F6FB;
-    color: #52555F;
+    color: #52555f;
   }
 
   &:hover:not(.${optionUnstyledClasses.disabled}) {
     background-color: #39e;
     // background-color: F5F6FB;
-
   }
 `;
 
@@ -150,36 +151,29 @@ function renderValue(option) {
   if (option == null) {
     return <span>Категория товара</span>;
   }
-  return (
-    <span>
-      {option.label}
-    </span>
-  );
+  return <span>{option.label}</span>;
 }
 
 function CategorySelectUnstyled() {
-    const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
 
-    console.log(value);
+  console.log(value);
 
   return (
-    <CustomSelect 
-    value={value}
-    onChange={setValue}
-    renderValue={renderValue}>
-        <StyledOption value={1}>Транспорт</StyledOption>
-        <StyledOption value={2}>Продукты</StyledOption>
-        <StyledOption value={3}>Здоровье</StyledOption>
-        <StyledOption value={4}>Алкоголь</StyledOption>
-        <StyledOption value={5}>Развлечения</StyledOption>
-        <StyledOption value={6}>Всё для дома</StyledOption>
-        <StyledOption value={7}>Техника</StyledOption>
-        <StyledOption value={8}>Коммуналка, связь</StyledOption>
-        <StyledOption value={9}>Спорт, хобби</StyledOption>
-        <StyledOption value={10}>Образование</StyledOption>
-        <StyledOption value={11}>Прочее</StyledOption>
+    <CustomSelect value={value} onChange={setValue} renderValue={renderValue}>
+      <StyledOption value={1}>Транспорт</StyledOption>
+      <StyledOption value={2}>Продукты</StyledOption>
+      <StyledOption value={3}>Здоровье</StyledOption>
+      <StyledOption value={4}>Алкоголь</StyledOption>
+      <StyledOption value={5}>Развлечения</StyledOption>
+      <StyledOption value={6}>Всё для дома</StyledOption>
+      <StyledOption value={7}>Техника</StyledOption>
+      <StyledOption value={8}>Коммуналка, связь</StyledOption>
+      <StyledOption value={9}>Спорт, хобби</StyledOption>
+      <StyledOption value={10}>Образование</StyledOption>
+      <StyledOption value={11}>Прочее</StyledOption>
     </CustomSelect>
   );
 }
 
-export {CategorySelectUnstyled}
+export { CategorySelectUnstyled };

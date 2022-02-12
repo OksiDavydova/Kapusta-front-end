@@ -8,6 +8,7 @@ import {
   ReportPage,
   LoginPage,
   GoogleAuthPage,
+  MailConfirmationPage,
 } from "./pages";
 import { PublicRoute, PrivateRoute } from "./routes";
 import { Layout } from "./layout";
@@ -57,6 +58,7 @@ function App() {
             }
           />
           <Route path="/googleAuth" element={<GoogleAuthPage />} />
+          <Route path="/mailConfirm" element={<MailConfirmationPage />} />
           {/* ?????????? */}
           <Route path="/expense" element={<ExpensesPage />} />
           <Route path="/income" element={<IncomeModule />} />

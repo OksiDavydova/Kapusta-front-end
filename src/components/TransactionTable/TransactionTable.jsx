@@ -1,14 +1,19 @@
 import React from "react";
 import Media from "react-media";
+// import { useSelector } from "react-redux";
+// import { getArrayDataUser } from "../../redux/userData/userData-selector";
 import { Table } from ".";
 import { SvgIcon } from "../SvgIcon";
 import { TransactionSection } from "./TransactionTableStyle.styled";
 import { Scrollbars } from "react-custom-scrollbars-2";
 
 function TransactionTable() {
-  const btnDel = () =>  <button type="button" style={{border:'none'}}>
-    <SvgIcon w={16} h={16}
-      idIcon={"#icon-delete"} /></button>;
+  // const arrayDataUser = useSelector(getArrayDataUser);
+  const btnDel = () => (
+    <button type="button" style={{ border: "none" }}>
+      <SvgIcon w={16} h={16} idIcon={"#icon-delete"} />
+    </button>
+  );
 
   const columns = React.useMemo(
     () => [
@@ -33,7 +38,7 @@ function TransactionTable() {
         accessor: "del",
       },
     ],
-    []
+    [],
   );
 
   const data = React.useMemo(
@@ -116,7 +121,7 @@ function TransactionTable() {
         del: "",
       },
     ],
-    []
+    [],
   );
 
   return (
@@ -146,7 +151,7 @@ function TransactionTable() {
         )}
       /> */}
 
-            <Media
+      <Media
         query="(min-width: 1440px)"
         render={() => (
           <Scrollbars style={{ width: 760, height: 384 }}>

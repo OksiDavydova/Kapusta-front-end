@@ -21,19 +21,17 @@ function CashPicker({ children }) {
   const text = value ? "расходы" : "доходы";
 
   return (
-
     <CashPickerWrapper>
       <CashPickerDiv>
         <Arrow onClick={handleClick}>
           <SvgIcon w={7} h={12} idIcon={"#left"} />
         </Arrow>
-      <CashPickerSpan>{text}</CashPickerSpan>
+        <CashPickerSpan>{text}</CashPickerSpan>
         <Arrow onClick={handleClick}>
           <SvgIcon w={7} h={12} idIcon={"#right"} />
         </Arrow>
       </CashPickerDiv>
     </CashPickerWrapper>
-
   );
 }
 

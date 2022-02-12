@@ -3,6 +3,7 @@ import {
   ChangeBalanceSpan,
   ChangeBalanceInput,
   ChangeBalanceButton,
+  BalanceText,
 } from "./ChangeBalance.styled";
 
 function ChangeBalance() {
@@ -12,18 +13,21 @@ function ChangeBalance() {
   };
   return (
     <ChangeBalanceWrapper>
-      <ChangeBalanceSpan>
-        <ChangeBalanceInput
-          type="text"
-          name="balance"
-          id="balance"
-          placeholder="00.00"
-        />
-        UAH
-      </ChangeBalanceSpan>
-      <ChangeBalanceButton type="button" onClick={acceptButtonClick}>
-        Подтвердить
-      </ChangeBalanceButton>
+      <BalanceText>Баланс:</BalanceText>
+      <>
+        <ChangeBalanceSpan>
+          <ChangeBalanceInput
+            type="text"
+            name="balance"
+            id="balance"
+            placeholder="00.00"
+          />
+          UAH
+        </ChangeBalanceSpan>
+        <ChangeBalanceButton type="button" onClick={acceptButtonClick}>
+          Подтвердить
+        </ChangeBalanceButton>
+      </>
     </ChangeBalanceWrapper>
   );
 }

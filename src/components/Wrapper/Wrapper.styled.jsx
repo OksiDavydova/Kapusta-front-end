@@ -1,30 +1,14 @@
 import styled from "@emotion/styled";
 import { device } from "../../styles/utils";
 
-export const ContentWrapper = styled.section`
+export const ContentWrapper = styled.div`
   width: 100%;
   border: 1px solid red;
   padding-top: 30px;
 
-  @media ${device.tablet}{
-   padding-top: 40px; 
+  @media ${device.tablet} {
+    padding-top: 40px;
   }
-
-         /* display: flex;
-  flex-direction: column;
-  align-content: space-between;
-  justify-content: space-around; */
-  /* height: calc(
-    100vh - 56px
-  ); // change - "some value" depended from content header */
-  /* height: 458px; */
-
-  /* outline: 1px solid red;
-  background-color: #9acd32; */
-  /* @media ${device.tablet} {
-    width: 748px;
-    height: calc(100vh - 56px);
-  } */
 `;
 
 export const AuthWrapper = styled.div`

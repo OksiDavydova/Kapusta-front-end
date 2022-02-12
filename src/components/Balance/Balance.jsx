@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Media from "react-media";
-import { BalanceText, BalanceWrapper } from "./BalanceStyle.styled";
+import { BalanceWrapper } from "./BalanceStyle.styled";
 import { ChangeBalance } from "./ChangeBalance";
 import { CalendarMUI } from "../CalendarMUI";
-// import { BalanceWrapper } from "../Wrapper/Wrapper.styled"; // =>Link
 import { ButtonToReport } from "./ButtonToReport";
 import { ModalBalance } from "../Modal";
 
@@ -28,9 +27,8 @@ function Balance() {
           render={() => <ButtonToReport onClick={clickToReport} />}
         />
 
-        <BalanceText>Баланс:</BalanceText>
-
         <ChangeBalance />
+
         <Media query="(max-width: 767px)" render={() => <CalendarMUI />} />
         <Media
           query="(min-width: 768px) and (max-width: 1440px)"

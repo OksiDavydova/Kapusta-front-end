@@ -1,17 +1,23 @@
 import { Logo } from "./Logo";
 import { UserLogout } from "./UserLogout";
 import { UserProfile } from "./UserProfile";
-import { HeaderContainer, UserProfileWrapper } from "./HeaderStyles.styled";
+import {
+  HeaderFixed,
+  HeaderContainer,
+  UserProfileWrapper,
+} from "./HeaderStyles.styled";
 
 function Header() {
   return (
-    <HeaderContainer>
-      <Logo />
-      <UserProfileWrapper>
-        <UserProfile />
-        <UserLogout />
-      </UserProfileWrapper>
-    </HeaderContainer>
+    <HeaderFixed>
+      <HeaderContainer>
+        <Logo />
+        <UserProfileWrapper>
+          <UserProfile />
+          <UserLogout />
+        </UserProfileWrapper>
+      </HeaderContainer>
+    </HeaderFixed>
   );
 }
 

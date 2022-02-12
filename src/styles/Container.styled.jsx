@@ -3,7 +3,6 @@ import { device } from "./utils";
 
 export const Container = styled.div`
   width: 100%;
-
   margin-left: auto;
   margin-right: auto;
   padding-left: 10px;
@@ -23,7 +22,7 @@ export const Container = styled.div`
     padding-right: 20px;
   }
 
-  @media ${device.laptop} {
-    width: 1024px;
+  @media ${device.desktop} {
+    width: 1100px;
   }
 `;

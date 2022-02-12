@@ -13,7 +13,7 @@ import { PublicRoute, PrivateRoute } from "./routes";
 import { Layout } from "./layout";
 // ???????
 import { IncomeModule } from "./components/IncomeModule";
-import { ExpensesPage } from "./components/ExpensesPage";
+import { FormComponent } from "./components/FormComponent";
 
 function App() {
   const isAuth = useSelector(userIsAuth);
@@ -58,7 +58,7 @@ function App() {
           />
           <Route path="/googleAuth" element={<GoogleAuthPage />} />
           {/* ?????????? */}
-          <Route path="/expense" element={<ExpensesPage />} />
+          <Route path="/expense" element={<FormComponent />} />
           <Route path="/income" element={<IncomeModule />} />
           {/* ??????? */}
           <Route path="*" element={<PageNotFound />} />

@@ -4,20 +4,24 @@ import {
     SummaryTable,
     
 } from "./SummaryStyle.styled";
-
+import {colors} from '../../styles/utils'
 
 function SummaryLib() {
   const columns = React.useMemo(
     () => [
       {
         Header: 'Сводка',
+      
         columns: [
           {
             accessor: 'score0',
-            
+          
           },
           {
             accessor: 'score1',
+            style: {
+              maxWidth:'188px',            
+            }
           },
           
         ],
@@ -58,15 +62,47 @@ function SummaryLib() {
      []
  )
 
-    return (
-
-    <SummaryTable>
-      <Table
-        columns={columns}
-        data={data}
+  return (
+    <>
+    <style>
+  {`
+        .summaryContainer {
+            margin-top: 40px;     
+              border-radius: 20px 20px 20px 0;
+              max-width: 300px;
+        }
+        .thead {
+              text-align: center;
+              display: inline-block;
+              padding-top: 10px;
+              margin-bottom: 0;
+              font-weight: 700;
+              font-size: 12px;
+              line-height: 1.16;
+              height: 38px;
+              letter-spacing: 0.02em;
+              text-transform: uppercase;
+        }
+        .tr{
+            background-color: ${colors.bgSummary};
+              border-bottom: 2px solid ${colors.white};
+              display: table-row-group;
+              height: 38px;
+        }
+  
+      `}
+    </style>
     
+      <SummaryTable className="summaryContainer" >
+      <Table
+          columns={columns}
+          data={data}
+          getHeaderProps={row => ({ className: 'thead' })} 
+          getRowProps={row => ({ className: 'tr', })} 
       />
-    </SummaryTable>
+    </SummaryTable>  
+</>
+
   );
 }
 export default SummaryLib;

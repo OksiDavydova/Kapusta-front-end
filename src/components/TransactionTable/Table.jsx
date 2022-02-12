@@ -1,9 +1,22 @@
 import React from "react";
 import { useTable } from "react-table";
-
+import { Tooltip, createTheme, ThemeProvider } from '@mui/material';
 // Create a default prop getter
 const defaultPropGetter = () => ({});
 
+const theme = createTheme({
+  components: {
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          fontSize: "16px",
+          color: "white",
+          backgroundColor: "orange",
+        }
+      }
+    }
+  }
+});
 // Expose some prop getters for headers, rows and cells, or more if you want!
 function Table({
   columns,
@@ -50,24 +63,39 @@ function Table({
       <tbody {...getTableBodyProps()}>
         {rows.map((row, i) => {
           prepareRow(row);
+          
           return (
             // Merge user row props in
             <tr {...row.getRowProps(getRowProps(row))}>
               {row.cells.map((cell) => {
+                const currentDesc = cell.value;
                 return (
-                  <td
+                   <ThemeProvider theme={theme}>
+                  <Tooltip id='i' title={currentDesc}>
+                  <td 
                     // Return an array of prop objects and react-table will merge them appropriately
-                    {...cell.getCellProps([
+                   
+                   
+                      {...cell.getCellProps([
                       {
+                        //  title: cell.row.allCells[0].value,
                         className: cell.column.className,
                         style: cell.column.style,
                       },
                       getColumnProps(cell.column),
-                      getCellProps(cell),
-                    ])}
-                  >
-                    {cell.render("Cell")}
-                  </td>
+                        getCellProps(cell),
+                    //  title = getCellProps(cell.row.values.description)
+                        // console.log(rows[i].allCells[i].value)
+                        // console.log(row)
+                  ])}
+                    >
+                      
+                  {/* <EllipsisText text={cell} length={5}> */}
+                      {cell.render('Cell')}
+                       {/* </EllipsisText> */}
+                    </td>
+                    </Tooltip>
+                    </ThemeProvider>
                 );
               })}
             </tr>

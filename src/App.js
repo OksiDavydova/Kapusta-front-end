@@ -8,17 +8,20 @@ import {
   ReportPage,
   LoginPage,
   GoogleAuthPage,
+  MailConfirmationPage,
 } from "./pages";
 import { PublicRoute, PrivateRoute } from "./routes";
 import { Layout } from "./layout";
 // ???????
 import { IncomeModule } from "./components/IncomeModule";
-import { ExpensesPage } from "./components/ExpensesPage";
+// import { Background } from "./components/Background";
+import { FormComponent } from "./components/FormComponent";
 
 function App() {
   const isAuth = useSelector(userIsAuth);
   return (
     <>
+      
       <Layout isAuth={isAuth}>
         {/* <nav>
           <button>
@@ -57,8 +60,9 @@ function App() {
             }
           />
           <Route path="/googleAuth" element={<GoogleAuthPage />} />
+          <Route path="/mailConfirm" element={<MailConfirmationPage />} />
           {/* ?????????? */}
-          <Route path="/expense" element={<ExpensesPage />} />
+          <Route path="/expense" element={<FormComponent />} />
           <Route path="/income" element={<IncomeModule />} />
           {/* ??????? */}
           <Route path="*" element={<PageNotFound />} />

@@ -1,11 +1,19 @@
 import React from "react";
+import Media from "react-media";
+// import { useSelector } from "react-redux";
+// import { getArrayDataUser } from "../../redux/userData/userData-selector";
 import { Table } from ".";
 import { SvgIcon } from "../SvgIcon";
 import { TransactionSection } from "./TransactionTableStyle.styled";
 import { Scrollbars } from "react-custom-scrollbars-2";
 
 function TransactionTable() {
-  const btnDel = () => <SvgIcon w={16} h={16} idIcon={"#icon-delete"} />;
+  // const arrayDataUser = useSelector(getArrayDataUser);
+  const btnDel = () => (
+    <button type="button" style={{ border: "none" }}>
+      <SvgIcon w={16} h={16} idIcon={"#icon-delete"} />
+    </button>
+  );
 
   const columns = React.useMemo(
     () => [
@@ -37,7 +45,14 @@ function TransactionTable() {
     () => [
       {
         day: "11.10.2021",
-        description: "Banana",
+        description: "Banana Montana",
+        category: "Products",
+        sum: "- 30.00 грн",
+        del: btnDel(),
+      },
+      {
+        day: "11.10.2021",
+        description: "Banana Banana Banana Banana ",
         category: "Products",
         sum: "- 30.00 грн",
         del: btnDel(),
@@ -50,11 +65,32 @@ function TransactionTable() {
         del: btnDel(),
       },
       {
-        day: "11.10.2021",
-        description: "Banana",
-        category: "Products",
-        sum: "- 30.00 грн",
-        del: btnDel(),
+        day: "",
+        description: "",
+        category: "",
+        sum: "",
+        del: "",
+      },
+      {
+        day: "",
+        description: "",
+        category: "",
+        sum: "",
+        del: "",
+      },
+      {
+        day: "",
+        description: "",
+        category: "",
+        sum: "",
+        del: "",
+      },
+      {
+        day: "",
+        description: "",
+        category: "",
+        sum: "",
+        del: "",
       },
       {
         day: "",
@@ -90,9 +126,31 @@ function TransactionTable() {
 
   return (
     <TransactionSection>
-      <Scrollbars style={{ width: 300, height: 200 }}>
-        <Table columns={columns} data={data} />
-      </Scrollbars>
+      <Media
+        query="(min-width: 320px) and (max-width: 767px)"
+        render={() => (
+          <Scrollbars style={{ width: 282, height: 142 }}>
+            <Table columns={columns} data={data} />
+          </Scrollbars>
+        )}
+      />
+      <Media
+        query="(min-width: 768px) and (max-width: 1279px)"
+        render={() => (
+          <Scrollbars style={{ width: 605, height: 384 }}>
+            <Table columns={columns} data={data} />
+          </Scrollbars>
+        )}
+      />
+
+      <Media
+        query="(min-width: 1280px)"
+        render={() => (
+          <Scrollbars style={{ width: 760, height: 384 }}>
+            <Table columns={columns} data={data} />
+          </Scrollbars>
+        )}
+      />
     </TransactionSection>
   );
 }

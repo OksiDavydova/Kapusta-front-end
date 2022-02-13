@@ -1,4 +1,5 @@
 import React from "react";
+
 import Media from "react-media";
 
 // import { CategoryReportList } from "../components/CategoryReportList";
@@ -9,10 +10,14 @@ import { BalanceOval } from "../components/Balance/BalanceOval";
 import { Chart, ChartMobile } from "../components/Chart";
 
 // import { CashPicker } from "../components/CategoryReportList/CashPicker";
-import {CategoryReportList} from '../components/CategoryReportList'
+import { CategoryReportList } from "../components/CategoryReportList";
 import { ReportBalance } from "../components/ReportBalance";
-import {ReportPageWrapper, ReportPageTopWrapper, ChartTabletWrapper } from "../components/Wrapper/Wrapper.styled"
-import {dataFromBack} from '../components/Chart/data'
+import {
+  ReportPageWrapper,
+  ReportPageTopWrapper,
+  ChartTabletWrapper,
+} from "../components/Wrapper/Wrapper.styled";
+import { dataFromBack } from "../components/Chart/data";
 
 // const DB = {
 //   costs: [
@@ -130,43 +135,32 @@ import {dataFromBack} from '../components/Chart/data'
 export default function ReportPage() {
   return (
     <ReportPageWrapper>
-      <Media
-        query="(max-width: 767.98px)"
-        render={() => <ArrowButton />
-          }
-      />
-      <Media
-        query="(max-width: 767.98px)"
-        render={() => <MonthPicker />
-          }
-      />
-      <Media
-        query="(max-width: 767.98px)"
-        render={() => <BalanceOval />}
-      />
-      
-      
+      <Media query="(max-width: 767.98px)" render={() => <ArrowButton />} />
+      <Media query="(max-width: 767.98px)" render={() => <MonthPicker />} />
+      <Media query="(max-width: 767.98px)" render={() => <BalanceOval />} />
+
       <Media
         query="(min-width: 768px)"
-        render={() => <ReportPageTopWrapper>
-          <ArrowButton />
-          <BalanceOval />
-          <MonthPicker />
-        </ReportPageTopWrapper>
-        }
+        render={() => (
+          <ReportPageTopWrapper>
+            <ArrowButton />
+            <BalanceOval />
+            <MonthPicker />
+          </ReportPageTopWrapper>
+        )}
       />
-        <ReportBalance />
+      <ReportBalance />
 
       <CategoryReportList>{dataFromBack}</CategoryReportList>
-      <Media
-        query="(max-width: 767.98px)"
-        render={() => <ChartMobile />}
-      />
+      <Media query="(max-width: 767.98px)" render={() => <ChartMobile />} />
 
       <Media
         query="(min-width: 768px)"
-        render={() => <ChartTabletWrapper><Chart /></ChartTabletWrapper>
-        }
+        render={() => (
+          <ChartTabletWrapper>
+            <Chart />
+          </ChartTabletWrapper>
+        )}
       />
     </ReportPageWrapper>
   );

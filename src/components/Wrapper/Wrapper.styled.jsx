@@ -1,23 +1,23 @@
 import styled from "@emotion/styled";
 import { device } from "../../styles/utils";
 
-export const ContentWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-  justify-content: space-around;
+export const ContentWrapper = styled.div`
   width: 100%;
-  /* height: calc(
-    100vh - 56px
-  ); // change - "some value" depended from content header */
-  /* height: 458px; */
+  border: 1px solid red;
+  padding-top: 30px;
 
-  /* outline: 1px solid red;
-  background-color: #9acd32; */
-  /* @media ${device.tablet} {
-    width: 748px;
-    height: calc(100vh - 56px);
-  } */
+  @media ${device.tablet} {
+    padding-top: 40px;
+  }
+`;
+
+export const Overlay = styled.div`
+  position: relative;
+  width: 100%;
+  padding: 0 20px 60px 20px;
+  background: #ffffff;
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  border-radius: 0px 30px 30px 30px;
 `;
 
 export const AuthWrapper = styled.div`

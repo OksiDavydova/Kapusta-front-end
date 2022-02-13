@@ -58,11 +58,11 @@ export const ModalBalanceContent = styled.div`
       transform: translateY(calc(100% + 35px)) translateX(7%);
       };
       @media ${device.tablet} {
-      transform: translateY(calc(100% + 15px)) translateX(10%);
+      transform: translateY(calc(100% + -42px)) translateX(49%);
       width: 292px;
       };
-      @media ${device.laptop} {
-     transform: translateY(calc(100% + 18px)) translateX(16%);
+      @media ${device.desktop} {
+         transform: translateY(calc(100% + -41px)) translateX(223%)
     };
 };
 `;

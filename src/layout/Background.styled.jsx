@@ -18,6 +18,7 @@ export const BgBottomAuth = styled.div`
   z-index: -2;
   width: 100%;
   height: 100%;
+
   background-color: #FFFFFF;
   background-repeat: no-repeat;
 
@@ -32,6 +33,12 @@ export const BgBottomAuth = styled.div`
   background-image: url(${cabbagesBottom});
   background-position: 50% calc(100% + 25px);
   }
+
+
+  /* background-image: url(${oneCabbage}), url(${pairCabagges});
+  background-repeat: no-repeat;
+  background-position: 273px 503px, 15px 515px; */
+
 `;
 
 export const BgBottom = styled.div`

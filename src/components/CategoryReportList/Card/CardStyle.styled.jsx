@@ -10,10 +10,12 @@ export const CardItem = styled.li`
   outline: 1px solid red;
 
   @media ${device.tablet} {
-    margin-top: 10px;
+    margin-top: 40px;
     margin-left: 20px;
     flex-basis: calc(100% / 6 - 20px);
   }
+
+  
 
   @media ${device.tabletMax} {
     margin-top: 40px;
@@ -65,36 +67,38 @@ export const CardItem = styled.li`
 }
 `;
 
-export const CardText = styled.p`
-  margin: 0;
+export const CardText = styled.span`
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #52555f;
   outline: 1px solid red;
-
-
 `;
 
-export const CardBtnSvg = styled.div`
+export const CardBtnSvg = styled.button`
   position: relative;
-  padding: 5px 0px;
+  width: 100%;
   background-color: transparent;
   border: none;
   outline: 1px solid red;
-
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &:after {
     content: url(${btnLayout});
     position: absolute;
-    left: 15%;
-    bottom: 10%;
+    left: 17%;
+    bottom: 18%;
     z-index: -1;
   }
   &:hover {
     &::after {
       content: url(${btnLayoutActiv});
       z-index: -1;
-
     }
   }
 
@@ -112,17 +116,15 @@ export const SvgLayoutCard = styled.svg`
   position: absolute;
   top: 0;
   outline: 1px solid red;
-
 `;
 
-// export const CardSignature = styled.p`
-//   margin: 14px 0 0;
-//   text-transform: uppercase;
-//   color: #52555f;
-
-// `;
-
-export const CardDiv = styled.a`
-outline: 1px solid red;
-
-`
+export const CardSignature = styled.span`
+  display: block;
+  margin-top: 5px;
+  width: 90px;
+  text-transform: uppercase;
+  color: #52555f;
+  @media ${device.tablet} {
+    min-width: 90px;
+  }
+`;

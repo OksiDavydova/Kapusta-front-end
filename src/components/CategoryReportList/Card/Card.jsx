@@ -1,45 +1,44 @@
 import React from "react";
 import { SvgIcon } from "../../SvgIcon";
-import { CardItem, CardText, CardBtnSvg, CardDiv } from "./CardStyle.styled";
-import {svgName} from './svgName'
+import {
+  CardItem,
+  CardText,
+  CardBtnSvg,
+  CardSignature,
+} from "./CardStyle.styled";
+import { svgName } from "./svgName";
 
-const btnStyle = {
-  width: '90px',
-  padding: 0,
-  border: 'none',
-  font: 'inherit',
-  color: 'inherit',
-  backgroundColor: 'transparent',
-  textTransform: 'uppercase',
-  color: '#52555f',
-}
+// const btnStyle = {
+//   width: "90px",
+//   padding: 0,
+//   border: "none",
+//   font: "inherit",
+//   color: "inherit",
+//   backgroundColor: "transparent",
+//   textTransform: "uppercase",
+//   color: "#52555f",
+// };
 
-function Card({ key, value, category, updateChartData}) {
-  const svgPath = svgName.find((item) => item.category === category)
+function Card({ key, value, category, updateChartData }) {
+  const svgPath = svgName.find((item) => item.category === category);
 
   function handleClick(e) {
-  e.preventDefault();
-  updateChartData(category);
+    e.preventDefault();
+    updateChartData(category);
   }
 
   return (
     <CardItem key={key}>
-<CardDiv>
-  <CardText>{value.toLocaleString("ru-RU")}</CardText>
-        <CardBtnSvg>
-          <SvgIcon w={56} h={56} idIcon={svgPath.svg} />
-        </CardBtnSvg>
-
-        <button style={btnStyle} type="button" onClick={handleClick}>{category}</button>
-        {/* <CardSignature >{category}</CardSignature> */}
-        </CardDiv>
-        
+      <CardBtnSvg type="button" onClick={() => handleClick(key)}>
+        <CardText>{value.toLocaleString("ru-RU")}</CardText>
+        <SvgIcon w={56} h={56} idIcon={svgPath.svg} />
+        <CardSignature>{category}</CardSignature>
+      </CardBtnSvg>
     </CardItem>
   );
 }
 
 export default Card;
-
 
 // ------------------Ниже для истории полностью весь первоначальный код----------------------------------------------
 // ---------------------------!!!!!!!!!!!!!!!!!!!!!!!!!!!-------------------------------------

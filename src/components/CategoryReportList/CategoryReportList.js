@@ -1,11 +1,13 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
+
 import { useState, useEffect } from "react";
 
 import { Card } from "./Card";
 
-import { CategoryList } from "./CategoryStyled";
-import { ChartMobile } from "../Chart";
-//
+import { CategoryList, CategoryListWrapper } from "./CategoryStyled";
+// import { ChartMobile } from "../Chart";
+import { CashPicker } from "./CashPicker";
 
 // const array = [
 //   {
@@ -89,40 +91,91 @@ import { ChartMobile } from "../Chart";
 //   //   id: "13",
 //   // },
 // ];
+
 function CategoryReportList({ children }) {
-  const [data, setData] = useState(() => {
-    return children.filter((el) => {
-      return {
-        categoryName: el.categoryName,
-        sum: el.sum,
-      };
-    });
-  });
+  // ---------------------------Кусок кода Влада----Просто закомментировал, т.к. не разобрался------
+  // --------------------------!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-----------------------------
 
-  useEffect(() => {
-    const filterArray = children.filter((el) => {
-      return {
-        categoryName: el.categoryName,
-        sum: el.sum,
-      };
-    });
-    setData(filterArray);
-  }, [children]);
+  // const [data, setData] = useState(() => {
+  //   return children.filter(el => {
+  //     return {
+  //       categoryName: el.categoryName,
+  //       sum: el.sum,
+  //     };
+  //   });
+  // });
 
-  console.log("CategoryReportList", children);
+  // useEffect(() => {
+  //   const filterArray = children.filter(el => {
+  //     return {
+  //       categoryName: el.categoryName,
+  //       sum: el.sum,
+  //     };
+  //   });
+  //   setData(filterArray);
+  // }, [children]);
 
-  const onClick = (e) => {
-    children.find((el) => {
-      if (el.categoryName === e.target.name) {
-        return setData(el.data);
-      }
-    });
+  // console.log("CategoryReportList", children);
+
+  // const onClick = e => {
+  //   children.find(el => {
+  //     if (el.categoryName === e.target.name) {
+  //       return setData(el.data);
+  //     }
+  //   });
+  // };
+
+  // ------------------------Конец куска кода------------------------
+  // ----------------------!!!!!!!!!!!!!!!!!!!!!!!!--------------------
+
+  // НИЖЕ МОЙ КУСОК КОДА, КОТОРЫЙ НАПИСАЛ, ЧТОБЫ РИСОВАЛИСЬ ИКОНКИ -----------------
+
+  const [data, setData] = useState(children.filter(item => item.expense));
+  const [filter, setFilter] = useState([]);
+  const [chartData, setChartData] = useState([1, 2, 3]);
+
+  const updateData = value => {
+    setData(value);
   };
 
+  const updateChartData = value => {
+    const filteredChartData = data.filter(item => item.category === value);
+    setChartData(filteredChartData);
+  };
+
+  useEffect(() => {
+    function categoryArr(data) {
+      let set = new Set();
+      data.map(item => {
+        for (let key in item)
+          if (item[key] === item.category) set.add(item[key]);
+      });
+      return Array.from(set);
+    }
+
+    const arr = categoryArr(data);
+
+    function filteredArr(data, arr) {
+      let result = [];
+      for (let i = 0; i < arr.length; i++) {
+        let value = 0;
+        data.map(item => {
+          if (item.category === arr[i]) value += item.value;
+        });
+        result.push({ category: arr[i], value: value });
+      }
+      return result.sort((a, b) => b.value - a.value);
+    }
+
+    setFilter(filteredArr(data, arr));
+  }, [data]);
+
   return (
-    <>
+    <CategoryListWrapper>
+      <CashPicker children={children} updateData={updateData} />
       <CategoryList>
-        {children.map(({ id, price = 500, categoryName, src }) => (
+        {/* ------------------Кусок кода Влада, который просто закомментировал */}
+        {/* {children.map(({ id, price = 500, categoryName, src }) => (
           <Card
             key={id}
             id={id}
@@ -131,11 +184,18 @@ function CategoryReportList({ children }) {
             svgPath={src}
             onClick={onClick}
           />
+        ))} */}
+        {filter.map(({ value, category }) => (
+          <Card
+            key={uuidv4()}
+            value={value}
+            category={category}
+            updateChartData={updateChartData}
+          />
         ))}
       </CategoryList>
-
-      <ChartMobile>{data}</ChartMobile>
-    </>
+      {/* <ChartMobile chartData={chartData}></ChartMobile> */}
+    </CategoryListWrapper>
   );
 }
 

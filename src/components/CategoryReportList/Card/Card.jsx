@@ -1,29 +1,74 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
 import { SvgIcon } from "../../SvgIcon";
-import { CardSignature, CardItem, CardBtnSvg } from "./CardStyle.styled";
+import { CardItem, CardText, CardBtnSvg, CardDiv } from "./CardStyle.styled";
+import {svgName} from './svgName'
 
-// const defaultPath = `${sprite}#icon-logo-with-bg`;
+const btnStyle = {
+  width: '90px',
+  padding: 0,
+  border: 'none',
+  font: 'inherit',
+  color: 'inherit',
+  backgroundColor: 'transparent',
+  textTransform: 'uppercase',
+  color: '#52555f',
+}
 
-function Card({ id, total = "0", categoryName = "default", svgPath, onClick }) {
+function Card({ key, value, category, updateChartData}) {
+  const svgPath = svgName.find((item) => item.category === category)
+
+  function handleClick(e) {
+  e.preventDefault();
+  updateChartData(category);
+  }
+
   return (
-    <CardItem key={id}>
-      {/* { ????????} */}
-      <div>
-        <p>{total}</p>
-        <button
-          type="button"
-          name={categoryName}
-          onClick={onClick}
-        >{`${categoryName}`}</button>
-        {/* <CardBtnSvg onClick={onClick}>
-          <SvgIcon w={56} h={56} idIcon={svgPath} />
-        </CardBtnSvg> */}
+    <CardItem key={key}>
+<CardDiv>
+  <CardText>{value.toLocaleString("ru-RU")}</CardText>
+        <CardBtnSvg>
+          <SvgIcon w={56} h={56} idIcon={svgPath.svg} />
+        </CardBtnSvg>
 
-        <CardSignature>{categoryName}</CardSignature>
-      </div>
+        <button style={btnStyle} type="button" onClick={handleClick}>{category}</button>
+        {/* <CardSignature >{category}</CardSignature> */}
+        </CardDiv>
+        
     </CardItem>
   );
 }
+
 export default Card;
+
+
+// ------------------Ниже для истории полностью весь первоначальный код----------------------------------------------
+// ---------------------------!!!!!!!!!!!!!!!!!!!!!!!!!!!-------------------------------------
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import { Button } from "@mui/material";
+// import { SvgIcon } from "../../SvgIcon";
+// import { CardSignature, CardItem, CardBtnSvg } from "./CardStyle.styled";
+
+// // const defaultPath = `${sprite}#icon-logo-with-bg`;
+
+// function Card({ id, total = "0", categoryName = "default", svgPath, onClick }) {
+//   return (
+//     <CardItem key={id}>
+//       {/* { ????????} */}
+//       <div>
+//         <p>{total}</p>
+//         <button
+//           type="button"
+//           name={categoryName}
+//           onClick={onClick}
+//         >{`${categoryName}`}</button>
+//         {/* <CardBtnSvg onClick={onClick}>
+//           <SvgIcon w={56} h={56} idIcon={svgPath} />
+//         </CardBtnSvg> */}
+
+//         <CardSignature>{categoryName}</CardSignature>
+//       </div>
+//     </CardItem>
+//   );
+// }
+// export default Card;

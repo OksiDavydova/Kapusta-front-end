@@ -3,7 +3,7 @@ import React from "react";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, LabelList, Cell } from "recharts";
 import {dataFromBack} from './data'
 
-let category = 5;
+let category = "Продукты";
 
 let data = dataFromBack.filter((item) => item.category === category && item.expense).sort((a, b) => b.value - a.value);
 
@@ -13,11 +13,11 @@ const colors = ['#FF751D', '#FFDAC0']
 function ChartMobile() {
   console.log(data);
   return (
-  <ResponsiveContainer width={320} height={data.length * 50} >
+  <ResponsiveContainer width={300} height={data.length * 50} >
         <BarChart 
             data={data}
             layout="vertical"
-            margin={{top: 0, right: 70, bottom: 0, left: 20}}
+            margin={{top: 30, right: 20, bottom: 0, left: 15}}
             >
         <Bar 
             dataKey="value" 

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors } from "../../styles/utils";
+import { colors, device } from "../../styles/utils";
 
 export const BaseButton = styled.button`
   display: inline-block;
@@ -106,16 +106,37 @@ export const StatisticButton = styled.a`
 // bottom: 0;
 
 export const ArrowBtnDiv = styled.div`
+  padding-bottom: 10px;
   text-align: left;
 
   outline: 1px solid red;
+
+  @media ${device.tablet} {
+    displey: flex;
+    align-items: baseline;
+    // justify-content: center;
+    // flex-direction: baseline;
+
+
+    width: 174px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+  }
+
 `;
 
 export const ArrowBtn = styled.a`
+  // display: inline-block;
   width: 24px;
   height: 24px;
 
   outline: 1px solid red;
+
+  @media ${device.tablet} {
+    margin-right: 15px;
+  }
 
   &:hover {
     fill: ${colors.orange};
@@ -124,6 +145,13 @@ export const ArrowBtn = styled.a`
     fill: ${colors.orange};
   }
 `;
+
+export const ArrowBtnText = styled.p`
+display: inline-block;
+margin: 0;
+letter-spacing: 0.04em;
+color: ${colors.textColorSecond};
+`
 // =======
 //   cursor: pointer;
 //   &:hover {

@@ -2,18 +2,21 @@ import styled from "@emotion/styled";
 import { colors, device } from "../../../styles/utils";
 
 export const OvalBalanceSpan = styled.div`
+  padding-bottom: 30px;
+
   outline: 1px solid red;
 
   @media ${device.tablet} {
     display: flex;
+    padding-bottom: 0px;
   }
 `;
 
 export const OvalBalanceDiv = styled.div`
     display: inline-block;
     width: 183px;
-    height: 44px;
-    margin-bottom: 30px;
+    // height: 44px;
+    // margin-bottom: 30px;
     padding: 14px 5px;
     font-weight: bold;
     color: ${colors.black};
@@ -28,7 +31,7 @@ export const OvalBalanceDiv = styled.div`
 
     @media ${device.tablet} {
         width: 125px;
-        margin-bottom: 0px;
+        // margin-bottom: 0px;
         padding: 13px 5px;
     }
     `;

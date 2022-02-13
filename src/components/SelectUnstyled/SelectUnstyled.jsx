@@ -160,6 +160,8 @@ function renderValue(option) {
 function CategorySelectUnstyled() {
     const [value, setValue] = useState('');
 
+
+
     console.log(value);
 
   return (
@@ -167,17 +169,17 @@ function CategorySelectUnstyled() {
     value={value}
     onChange={setValue}
     renderValue={renderValue}>
-        <StyledOption value={1}>Транспорт</StyledOption>
-        <StyledOption value={2}>Продукты</StyledOption>
-        <StyledOption value={3}>Здоровье</StyledOption>
-        <StyledOption value={4}>Алкоголь</StyledOption>
-        <StyledOption value={5}>Развлечения</StyledOption>
-        <StyledOption value={6}>Всё для дома</StyledOption>
-        <StyledOption value={7}>Техника</StyledOption>
-        <StyledOption value={8}>Коммуналка, связь</StyledOption>
-        <StyledOption value={9}>Спорт, хобби</StyledOption>
-        <StyledOption value={10}>Образование</StyledOption>
-        <StyledOption value={11}>Прочее</StyledOption>
+        <StyledOption value={'Транспорт'}>Транспорт</StyledOption>
+        <StyledOption value={'Продукты'}>Продукты</StyledOption>
+        <StyledOption value={'Здоровье'}>Здоровье</StyledOption>
+        <StyledOption value={'Алкоголь'}>Алкоголь</StyledOption>
+        <StyledOption value={'Развлечения'}>Развлечения</StyledOption>
+        <StyledOption value={'Всё для дома'}>Всё для дома</StyledOption>
+        <StyledOption value={'Техника'}>Техника</StyledOption>
+        <StyledOption value={'Коммуналка, связь'}>Коммуналка, связь</StyledOption>
+        <StyledOption value={'Спорт, хобби'}>Спорт, хобби</StyledOption>
+        <StyledOption value={'Образование'}>Образование</StyledOption>
+        <StyledOption value={'Прочее'}>Прочее</StyledOption>
     </CustomSelect>
   );
 }

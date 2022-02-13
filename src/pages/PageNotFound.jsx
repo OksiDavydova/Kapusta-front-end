@@ -11,7 +11,7 @@ export default function PageNotFound() {
           <Link to="/login">login</Link>
         </button>
         <button>
-          <Link to="/main">Main</Link>
+          <Link to="/">Main</Link>
         </button>
         <button>
           <Link to="/report">Statistics</Link>

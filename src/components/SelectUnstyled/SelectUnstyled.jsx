@@ -8,6 +8,7 @@ import OptionUnstyled, {
 } from "@mui/base/OptionUnstyled";
 import PopperUnstyled from "@mui/base/PopperUnstyled";
 import { styled } from "@mui/system";
+import { device } from "../../styles/utils";
 
 const StyledButton = styled("button")`
 //   font-family: IBM Plex Sans, sans-serif;
@@ -29,13 +30,15 @@ const StyledButton = styled("button")`
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.02em;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     border: none;
     background: none;
     padding: 10px 22px;
     text-align: left;
     color: #C7CCDC;
-
+@media ${device.tablet}{
+  min-width: 170px;
+}
 
 
 //   &.${selectUnstyledClasses.focusVisible} {
@@ -49,8 +52,8 @@ const StyledButton = styled("button")`
       content: '▴';
         // content: '';
         // display: block;
-        // height: 28px;
-        // width: 28px;
+         /* height: 28px;
+        width: 28px; */
         // background-size: 28px 28px;
         // background-image: url('./toTop.svg');
     }
@@ -82,6 +85,9 @@ const StyledListbox = styled("ul")`
     color: #52555f;
     background-color: #f5f6fb;
   }
+  @media ${device.tablet} {
+    min-width: 170px;
+  }
 `;
 
 const StyledOption = styled(OptionUnstyled)`
@@ -106,20 +112,20 @@ const StyledOption = styled(OptionUnstyled)`
   }
 
   &.${optionUnstyledClasses.highlighted} {
-    background-color: #16d;
+    background-color: #c3cddb;
     // background-color: F5F6FB;
 
     color: #fff;
   }
 
   &.${optionUnstyledClasses.highlighted}.${optionUnstyledClasses.selected} {
-    background-color: #05e;
+    background-color: #d89f36;
     // background-color: F5F6FB;
     color: #52555f;
   }
 
   &:hover:not(.${optionUnstyledClasses.disabled}) {
-    background-color: #39e;
+    background-color: #eec233;
     // background-color: F5F6FB;
   }
 `;

@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 import Media from "react-media";
 import { Balance } from "../components/Balance";
-// import { TransactionTable } from "../components/TransactionTable";
+import { TransactionTable } from "../components/TransactionTable";
 import { Summary } from "../components/Summary";
 import { NavigationMainMobile } from "../components/NavigationMobile";
-
-import { FormComponent } from "../components/FormComponent"; // import Notify from "../services/toastify";
-// import { TypeOperationMain } from "../components/TypeOperationMain";
-import { ContentWrapper } from "../components/Wrapper/Wrapper.styled";
+import { FormComponent } from "../components/FormComponent";
+import { ContentWrapper, Overlay } from "../components/Wrapper/Wrapper.styled";
 
 export default function Main() {
   const [btnOperation, setBtnOperation] = useState(false);
-
-  console.log(btnOperation);
+  console.log(btnOperation)
   const changeTypeOperation = (e) => {
     switch (e.target.value) {
       case "доход":
@@ -41,14 +38,18 @@ export default function Main() {
             <button value="доход" onClick={changeTypeOperation}>
               доход
             </button>
-            <FormComponent />
+            <Overlay>
+              <FormComponent />
+              <TransactionTable />
+              <Summary />
+            </Overlay>
           </>
         )}
       />
-
-      {/* <TransactionTable /> */}
-      {/* visible from breakpoint tablet */}
-      <Media query="(min-width: 767px)" render={() => <Summary />} />
+      <Media
+        query="(min-width: 320px) and (max-width: 766px)"
+        render={() => <TransactionTable />}
+      />
 
       {/* open form for enter transaction */}
       <Media

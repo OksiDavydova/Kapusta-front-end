@@ -5,8 +5,8 @@ import { DatePicker } from "@mui/lab";
 import { TextField } from "@mui/material";
 import ruLocale from "date-fns/locale/ru";
 import { Calendar } from "./Calendar.styled";
-import { SvgIcon } from "../SvgIcon";
-
+// import { SvgIcon } from "../SvgIcon";
+import { ReactComponent as CalendarAvg } from "./calendar.svg";
 function CalendarMUI() {
   const [value, setValue] = useState(new Date());
   console.log(value);
@@ -21,6 +21,9 @@ function CalendarMUI() {
           onChange={(newValue) => {
             setValue(newValue);
           }}
+          components={{
+            OpenPickerIcon: CalendarAvg,
+          }}
           renderInput={(params) => <TextField {...params} />}
         />
       </LocalizationProvider>
@@ -29,3 +32,5 @@ function CalendarMUI() {
 }
 
 export { CalendarMUI };
+
+// .css - o9k5xi - MuiInputBase - root - MuiOutlinedInput - root

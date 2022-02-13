@@ -38,7 +38,7 @@ function TransactionTable() {
         accessor: "del",
       },
     ],
-    [],
+    []
   );
 
   const data = React.useMemo(
@@ -121,7 +121,7 @@ function TransactionTable() {
         del: "",
       },
     ],
-    [],
+    []
   );
 
   return (
@@ -135,24 +135,16 @@ function TransactionTable() {
         )}
       />
       <Media
-        query="(min-width: 768px) and (max-width: 1439px)"
+        query="(min-width: 768px) and (max-width: 1279px)"
         render={() => (
           <Scrollbars style={{ width: 605, height: 384 }}>
             <Table columns={columns} data={data} />
           </Scrollbars>
         )}
       />
-      {/* <Media
-        query="(min-width: 1024px)"
-        render={() => (
-          <Scrollbars style={{ width: 605, height: 384 }}>
-            <Table columns={columns} data={data} />
-          </Scrollbars>
-        )}
-      /> */}
 
       <Media
-        query="(min-width: 1440px)"
+        query="(min-width: 1280px)"
         render={() => (
           <Scrollbars style={{ width: 760, height: 384 }}>
             <Table columns={columns} data={data} />

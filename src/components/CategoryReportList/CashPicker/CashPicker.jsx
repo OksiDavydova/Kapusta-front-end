@@ -5,20 +5,23 @@ import {
   Arrow,
   CashPickerSpan,
 } from "./CashPickerStyle.styled";
-import { SvgIcon } from "../SvgIcon";
-// import { CategoryReportList } from "../CategoryReportList";
 
-function CashPicker({ children }) {
+import { SvgIcon } from "../../SvgIcon";
+
+function CashPicker({ children, updateData }) {
   const [value, setValue] = useState(false);
-  const [data, setData] = useState(children.income);
-  console.log("CashPicker", data);
+
+  const dataExpense = children.filter((item) => item.expense);
+  const dataIncome = children.filter((item) => !item.expense);
+
   function handleClick(e) {
     e.preventDefault();
+    console.log("Click CashPicker!");
     value ? setValue(false) : setValue(true);
-    value ? setData(children.income) : setData(children.costs);
+    value ? updateData(dataIncome) : updateData(dataExpense);
   }
 
-  const text = value ? "расходы" : "доходы";
+  let text = value ? "расходы" : "доходы";
 
   return (
     <CashPickerWrapper>

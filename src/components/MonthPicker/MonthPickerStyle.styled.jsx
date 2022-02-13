@@ -10,7 +10,7 @@ export const MonthPickerWrapper = styled.div`
   outline: 1px solid red;
 
   @media ${device.tabletMax} {
-    margin-bottom: 30px;
+    padding-bottom: 30px;
   }
 `;
 

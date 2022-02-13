@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
-import {colors} from '../../styles/utils'
+import {colors} from '../../../styles/utils'
 
 export const CashPickerWrapper = styled.div`
   display: flex;
   justify-content: center;
+  padding-bottom: 20px;
+  // margin-bottom: 20px;
 
   outline: 1px solid red;
 `;
@@ -13,6 +15,9 @@ export const CashPickerDiv = styled.div`
   display: flex;
   justify-content: center;
   padding: 2px 0px;
+
+  outline: 1px solid red;
+
 `
 
 export const Arrow = styled.a`

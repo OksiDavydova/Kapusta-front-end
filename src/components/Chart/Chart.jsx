@@ -10,55 +10,18 @@ import {
   Cell,
 } from "recharts";
 
-const data = [
-  {
-    name: "Свинина",
-    value: 5000,
-  },
-  {
-    name: "Говядина",
-    value: 4500,
-  },
-  {
-    name: "Курица",
-    value: 3200,
-  },
-  {
-    name: "Рыба",
-    value: 2100,
-  },
-  {
-    name: "Панини",
-    value: 1800,
-  },
-  {
-    name: "Кофе",
-    value: 1700,
-  },
-  {
-    name: "Спагетти",
-    value: 1500,
-  },
-  {
-    name: "Шоколад",
-    value: 850,
-  },
-  {
-    name: "Маслины",
-    value: 500,
-  },
-  {
-    name: "Зелень",
-    value: 300,
-  },
-];
+import {dataFromBack} from './data'
+
+let category = "Транспорт";
+
+let data = dataFromBack.filter((item) => item.category === category && item.expense).sort((a, b) => b.value - a.value);
 
 const colors = ["#FF751D", "#FFDAC0"];
 
 // ----------------------Question - to do responsive chart or fixed???
 function Chart() {
   return (
-    <ResponsiveContainer width="100%" height={400}>
+    <ResponsiveContainer width={data.length * 63} height={382}>
       <BarChart data={data} barSize={38} barCategoryGap={25}>
         <CartesianGrid vertical={false} />
         <Bar
@@ -66,6 +29,8 @@ function Chart() {
           fill="#FF751D"
           maxBarSize={38}
           radius={[10, 10, 0, 0]}
+          margin={{top: 20, right: 15, bottom: 0, left: 15}}
+
         >
           {data.map((entry, index) => (
             <Cell

@@ -21,12 +21,32 @@ export const Overlay = styled.div`
 `;
 
 export const AuthWrapper = styled.div`
+position: absolute;
+  top: 255px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  
+  padding: 40px 18px 53px 29px;
   padding: 40px 18px 53px 18px;
   width: 300px;
   height: 525px;
   background: #ffffff;
   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
   border-radius: 30px;
+
+  @media ${device.tablet} {
+    top: 300px;
+    width: 436px;
+    height: 535px;
+    padding: 50px 85px 53px 85px;
+
+  }
+   @media ${device.desktop} {
+    top: 173px;
+    left:74%; 
+
+  }
 `;
 
 export const ReportPageWrapper = styled.div`
@@ -37,7 +57,7 @@ export const ReportPageWrapper = styled.div`
     padding: 32px 0px 76px 0px;
   }
 
-`
+`;
 export const ChartTabletWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -48,7 +68,7 @@ export const ChartTabletWrapper = styled.div`
   border-radius: 30px;
   outline: 1px solid red;
 
-`
+`;
 
 export const ReportPageTopWrapper = styled.div`
   display: flex;
@@ -56,6 +76,4 @@ export const ReportPageTopWrapper = styled.div`
   justify-content: space-between;
   margin-bottom: 30px;
   outline: 1px solid red;
-
-
-`
+`;

@@ -14,10 +14,10 @@ export const BgOverlay = styled.div`
   z-index: -1;
   width: 100%;
   height: 100%;
-  background-color: #f5f6fb;
-  background-image: url(${oneCabbage}), url(${pairCabagges});
+  background-color: #45b92d;
+  /* background-image: url(${oneCabbage}), url(${pairCabagges});
   background-repeat: no-repeat;
-  background-position: 273px 503px, 15px 515px;
+  background-position: 273px 503px, 15px 515px; */
 `;
 
 export const Bg2 = styled.div`

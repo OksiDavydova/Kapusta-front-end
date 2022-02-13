@@ -11,6 +11,15 @@ export const ContentWrapper = styled.div`
   }
 `;
 
+export const Overlay = styled.div`
+  position: relative;
+  width: 100%;
+  padding: 0 20px 60px 20px;
+  background: #ffffff;
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  border-radius: 0px 30px 30px 30px;
+`;
+
 export const AuthWrapper = styled.div`
   padding: 40px 18px 53px 18px;
   width: 300px;

@@ -1,8 +1,17 @@
 import styled from "@emotion/styled";
 import { colors, device } from "../../styles/utils";
 
-export const TransactionSection = styled.section`
-margin: 0 auto;
+export const TransactionSection = styled.div`
+/* margin: 0 auto; */
+
+@media ${device.tablet}{
+  
+  margin-left: 40px; // ????????????????????????
+}
+/* margin-right: auto; */
+@media ${device.desktop}{
+  margin-left:0;
+}
 
    table {
       width:282px;

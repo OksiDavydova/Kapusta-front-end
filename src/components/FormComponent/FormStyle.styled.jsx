@@ -11,6 +11,19 @@ export const FormWrapper = styled.div`
   @media${device.tablet}{
     max-width: 604px;
     padding-top: 28px;
+    padding-bottom: 48px;
+  }
+
+    @media${device.desktop}{
+    max-width: 1060px;
+    padding-top: 33px;
+    padding-bottom: 59px;
+  }
+`;
+
+export const FormContainer = styled.div`
+      @media${device.tablet}{
+    display: flex;
   }
 `;
 
@@ -27,6 +40,9 @@ export const FormTag = styled.form`
       @media${device.tablet}{
     padding-top: 0;
   }
+        @media${device.desktop}{
+    flex-direction: row;
+  }
 `;
 
 export const InputDescription = styled.input`
@@ -37,98 +53,82 @@ export const InputDescription = styled.input`
   /* border: 1px solid red; */
   border-radius: 16px 0 0px 0px;
   color: #52555f;
-  border: 2px solid #ffffff;
+  border: 2px solid #F5F6FB;
   background: none;
 
   &::placeholder {
     color: #c7ccdc;
+  }
+        @media${device.tablet}{
+    width: 190px;
+    border-right:0;
   }
 `;
 export const SelectOverlay = styled.div`
   width: 282px;
   height: 44px;
   margin-bottom: 30px;
-
-  border: 2px solid white;
-
+  border: 2px solid #f5f6fb;
   border-radius: 0px 0px 16px 0px;
   border-top: none;
-`;
-
-// export const Select = styled.select`
-//     display: block;
-//     width: 100%;
-//     padding-left: 20px;
-//     background: none;
-//     border: none;
-//     appearance: none;
-//     outline: none;
-
-//     /* display: flex;
-//     align-items: center; */
-//     text-align: left;
-//     text-transform: none;
-
-//     &:after{
-//         position: absolute;
-//         content: url(./Vector\ 15.svg);
-//         margin-right: 22px;
-//         margin-left: 139px;
-//         pointer-events: none;
-//     }
-// `
-export const InputCost = styled.input`
-  outline: none;
-  width: 104px;
-  padding-left: 30px;
-
-  text-align: left;
-
-  color: #52555f;
-
-  border: none;
-  background: none;
-
-  &::placeholder {
-    color: #c7ccdc;
+  @media ${device.tablet} {
+    width: 190px;
+    border-radius: 0;
+    margin-bottom: 0;
+    border-top: 2px solid #f5f6fb;
   }
 `;
+
 export const CalculatorOverlay = styled.div`
+  position: relative;
   display: flex;
-
-  outline: 1px solid red;
+  
+    justify-content: center;
+  margin-left:auto;
+  margin-right:auto;
+  @media${device.tablet}{
+    border-radius:  0px 22px  22px 0;
+    border: 2px solid #F5F6FB;
+    height: 44px;
+    border-left:none;
+  }
 `;
-
+// for UAH
 export const ValueSpan = styled.span`
-  padding: 12px 20px;
-  width: 125px;
-  height: 44px;
-
+  position: absolute;
+  top: 14px;
+  right: 114px;
   font-weight: bold;
   text-align: right;
   text-transform: uppercase;
-
   color: #000000;
 
-  // background: #f5f6fb;
-  background: none;
-  border: 2px solid #ffffff;
-  border-radius: 22px 0px 0px 22px;
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 
 export const ValueInput = styled.input`
   outline: none;
-  width: 50px;
+  width: 123px;
+  padding-right: 35px;
   font-weight: bold;
   text-align: right;
-
+  border-radius: 22px 0px 0px 22px;
+  border: 2px solid #f5f6fb;
+  border-right: none;
   color: #000000;
-
-  border: none;
   background: none;
 
   &::placeholder {
     color: #000000;
+  }
+
+  @media ${device.tablet} {
+    height: 40px;
+    padding-right: 5px;
+    border: 0;
+    width: 60px;
   }
 `;
 
@@ -136,12 +136,15 @@ export const CalculatorButton = styled.button`
   padding: 12px 20px;
   width: 60px;
   height: 44px;
-
   background: none;
-  // background: #f5f6fb;
-  border: 2px solid #ffffff;
-  border-left: none;
+  border: 2px solid #f5f6fb;
   border-radius: 0px 22px 22px 0px;
+  @media ${device.tablet} {
+    border: 0;
+    width: 40px;
+    padding: 0;
+    height: 40px;
+  }
 `;
 
 export const ButtonFormWrapper = styled.div`
@@ -151,8 +154,13 @@ export const ButtonFormWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   outline: 1px solid red;
- @media${device.tablet}{
-margin-top: 30px;
+   @media${device.tablet}{
+   margin-top: 30px;
+   justify-content: center;  
+  }
+     @media${device.desktop}{
+   margin-top: 0;
+   width: 265px;
     
   }
 `;
@@ -179,5 +187,11 @@ export const FormButton = styled.button`
     color: ${colors.white};
     background-color: ${colors.orange};
     box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
+  }
+`;
+
+export const FormButtonSubmit = styled(FormButton)`
+       @media${device.tablet}{
+margin-right: 15px
   }
 `;

@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ArrowButton } from "../Buttons";
@@ -22,11 +23,14 @@ import { SvgIcon } from "../SvgIcon";
 import { CategorySelectUnstyled } from "../SelectUnstyled";
 import { getTypeTransaction } from "../../redux/typeTransaction//transaction-selector";
 import { getDate } from "../../redux/setDate/date-selector";
+import { getBalanceUser } from "../../redux/getBalance/balance-operation";
 
 function FormComponent() {
   const [valueSelect, setValueSelect] = useState("");
   const date = useSelector(getDate);
   const transaction = useSelector(getTypeTransaction);
+  const asfsasfsd = useSelector(state => state.balance);
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -34,13 +38,21 @@ function FormComponent() {
     resetField,
   } = useForm();
 
-  const onSubmit = data => {
+  const onSubmit = async data => {
     const { description, value } = data;
-    console.log(description);
-    console.log(value);
-    console.log(date);
-    console.log(valueSelect);
-    console.log(transaction);
+    const dateForDB = date.replaceAll("/", "");
+    const newTransaction = {
+      date: dateForDB,
+      description,
+      category: valueSelect,
+      value,
+      income: transaction,
+    };
+    const { status } = await axios.post("/api/v1/transactions", newTransaction);
+    console.log(status);
+    // if (status === 201) {
+    //   dispatch(getBalanceUser());
+    // }
     resetInputField();
   };
 
@@ -71,13 +83,14 @@ function FormComponent() {
             })}
           />
 
-
-        <SelectOverlay>
-          {/* ??????? */}
-          <CategorySelectUnstyled children={{ valueSelect, setValueSelect }} />
-        </SelectOverlay>
-        <CalculatorOverlay>
-                  <ValueInput
+          <SelectOverlay>
+            {/* ??????? */}
+            <CategorySelectUnstyled
+              children={{ valueSelect, setValueSelect }}
+            />
+          </SelectOverlay>
+          <CalculatorOverlay>
+            <ValueInput
               type="text"
               name="value"
               id="value"

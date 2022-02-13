@@ -1,9 +1,8 @@
 import React from "react";
-
 import { Header } from "../components/Header";
 import { Container } from "../styles/Container.styled";
 import { ToastifyContainer } from "../components/Toastify";
-import { BgOverlay, Bg2 } from "./Background.styled";
+import { BgBottomAuth, BgBottom, BgTopAuth, BgTop } from "./Background.styled";
 
 function Layout({ children, isAuth }) {
   return (
@@ -11,7 +10,8 @@ function Layout({ children, isAuth }) {
       <main>
         <Container>
           <Header />
-          {isAuth ? <BgOverlay /> : <Bg2 />}
+          {isAuth ? < BgBottomAuth/> : < BgBottom/>}
+          {isAuth ? <BgTopAuth /> : <BgTop />}
           <>{children}</>
 
           <ToastifyContainer />

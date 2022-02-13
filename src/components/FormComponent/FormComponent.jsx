@@ -7,6 +7,7 @@ import { CalendarMUI } from "../CalendarMUI";
 import {
   FormWrapper,
   FormTag,
+  FormContainer,
   InputDescription,
   SelectOverlay,
   CalculatorOverlay,
@@ -15,6 +16,7 @@ import {
   CalculatorButton,
   ButtonFormWrapper,
   FormButton,
+  FormButtonSubmit,
 } from "./FormStyle.styled";
 import { SvgIcon } from "../SvgIcon";
 import { CategorySelectUnstyled } from "../SelectUnstyled";
@@ -55,26 +57,27 @@ function FormComponent() {
       />
 
       <FormTag onSubmit={handleSubmit(onSubmit)} autoComplete="off">
-        <Media query="(min-width: 768px)" render={() => <CalendarMUI />} />
+        <FormContainer>
+          <Media query="(min-width: 768px)" render={() => <CalendarMUI />} />
 
-        <InputDescription
-          type="text"
-          name="description"
-          id="description"
-          placeholder="Описание товара"
-          {...register("description", {
-            required: true,
-            maxLength: 80,
-          })}
-        />
+          <InputDescription
+            type="text"
+            name="description"
+            id="description"
+            placeholder="Описание товара"
+            {...register("description", {
+              required: true,
+              maxLength: 80,
+            })}
+          />
+
 
         <SelectOverlay>
           {/* ??????? */}
           <CategorySelectUnstyled children={{ valueSelect, setValueSelect }} />
         </SelectOverlay>
         <CalculatorOverlay>
-          <ValueSpan>
-            <ValueInput
+                  <ValueInput
               type="text"
               name="value"
               id="value"
@@ -84,15 +87,14 @@ function FormComponent() {
                 maxLength: 80,
               })}
             />
-            UAH
-          </ValueSpan>
-          <CalculatorButton type="button">
-            <SvgIcon w={20} h={20} idIcon={"#icon-calculator"} />
-          </CalculatorButton>
-        </CalculatorOverlay>
-
+            <ValueSpan> UAH</ValueSpan>
+            <CalculatorButton type="button">
+              <SvgIcon w={20} h={20} idIcon={"#icon-calculator"} />
+            </CalculatorButton>
+          </CalculatorOverlay>
+        </FormContainer>
         <ButtonFormWrapper>
-          <FormButton type="submit">ввод</FormButton>
+          <FormButtonSubmit type="submit">ввод</FormButtonSubmit>
           <FormButton type="button">очистить</FormButton>
         </ButtonFormWrapper>
       </FormTag>

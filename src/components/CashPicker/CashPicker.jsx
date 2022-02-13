@@ -6,7 +6,7 @@ import {
   CashPickerSpan,
 } from "./CashPickerStyle.styled";
 import { SvgIcon } from "../SvgIcon";
-import { CategoryReportList } from "../CategoryReportList";
+// import { CategoryReportList } from "../CategoryReportList";
 
 function CashPicker({ children }) {
   const [value, setValue] = useState(false);

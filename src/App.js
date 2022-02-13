@@ -14,12 +14,14 @@ import { PublicRoute, PrivateRoute } from "./routes";
 import { Layout } from "./layout";
 // ???????
 import { IncomeModule } from "./components/IncomeModule";
+// import { Background } from "./components/Background";
 import { FormComponent } from "./components/FormComponent";
 
 function App() {
   const isAuth = useSelector(userIsAuth);
   return (
     <>
+      
       <Layout isAuth={isAuth}>
         {/* <nav>
           <button>

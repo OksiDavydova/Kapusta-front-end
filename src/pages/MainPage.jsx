@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import Media from "react-media";
 import { useSelector, useDispatch } from "react-redux";
 import { Balance } from "../components/Balance";
-// import { TransactionTable } from "../components/TransactionTable";
+import { TransactionTable } from "../components/TransactionTable";
 import { Summary } from "../components/Summary";
 import { NavigationMainMobile } from "../components/NavigationMobile";
-
-import { FormComponent } from "../components/FormComponent"; // import Notify from "../services/toastify";
-// import { TypeOperationMain } from "../components/TypeOperationMain";
-import { ContentWrapper } from "../components/Wrapper/Wrapper.styled";
+import { FormComponent } from "../components/FormComponent"; 
+import { ContentWrapper, Overlay } from "../components/Wrapper/Wrapper.styled";
 import { getTypeTransaction } from "../redux/typeTransaction/transaction-selector";
 import { changeTypeTransaction } from "../redux/typeTransaction/transaction-slice";
 
@@ -17,6 +15,7 @@ export default function Main() {
   const dispatch = useDispatch();
 
   const changeTypeOperation = e => {
+
     switch (e.target.value) {
       case "доход":
         dispatch(changeTypeTransaction(true));
@@ -44,14 +43,18 @@ export default function Main() {
             <button value="доход" onClick={changeTypeOperation}>
               доход
             </button>
-            <FormComponent />
+            <Overlay>
+              <FormComponent />
+              <TransactionTable />
+              <Summary />
+            </Overlay>
           </>
         )}
       />
-
-      {/* <TransactionTable /> */}
-      {/* visible from breakpoint tablet */}
-      <Media query="(min-width: 767px)" render={() => <Summary />} />
+      <Media
+        query="(min-width: 320px) and (max-width: 766px)"
+        render={() => <TransactionTable />}
+      />
 
       {/* open form for enter transaction */}
       <Media

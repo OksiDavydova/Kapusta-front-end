@@ -7,9 +7,14 @@ import { DatePicker } from "@mui/lab";
 import { TextField } from "@mui/material";
 import ruLocale from "date-fns/locale/ru";
 import { Calendar } from "./Calendar.styled";
-import { SvgIcon } from "../SvgIcon";
+
+
 import { getDate } from "../../redux/setDate/date-selector";
 import { setDateNow } from "../../redux/setDate/date-slice";
+
+
+// import { SvgIcon } from "../SvgIcon";
+import { ReactComponent as CalendarAvg } from "./calendar.svg";
 
 function CalendarMUI() {
   const date = useSelector(getDate);
@@ -27,7 +32,12 @@ function CalendarMUI() {
             const newDate = format(new Date(newValue), "yyyy/MM/dd");
             dispatch(setDateNow(newDate));
           }}
-          renderInput={params => <TextField {...params} />}
+
+          components={{
+            OpenPickerIcon: CalendarAvg,
+          }}
+          renderInput={(params) => <TextField {...params} />}
+
         />
       </LocalizationProvider>
     </Calendar>
@@ -35,3 +45,5 @@ function CalendarMUI() {
 }
 
 export { CalendarMUI };
+
+// .css - o9k5xi - MuiInputBase - root - MuiOutlinedInput - root

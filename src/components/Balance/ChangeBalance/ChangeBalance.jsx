@@ -1,6 +1,9 @@
+import axios from "axios";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { getBalanceUser } from "../../../redux/getBalance/balance-selector";
+import { getDate } from "../../../redux/setDate/date-selector";
+import { getUpdateBalanceUser } from "../../../redux/getBalance/balance-operation";
 import {
   ChangeBalanceWrapper,
   ChangeBalanceInput,
@@ -15,13 +18,28 @@ import {
 
 function ChangeBalance() {
   const balance = useSelector(getBalanceUser);
-  // const balance = 0;
+
+  const date = useSelector(getDate);
 
   const [valueBalance, setValueBalance] = useState(0);
+  const dispatch = useDispatch();
 
-  const acceptButtonClick = () => {
+  const acceptButtonClick = async () => {
     // Notify after good request
     console.log("click balance");
+    const dateForDB = date.replaceAll("/", "");
+    const newTransaction = {
+      date: dateForDB,
+      description: "Пополнение баланса",
+      category: "доп. доход",
+      value: valueBalance,
+      income: true,
+    };
+    const { status } = await axios.post("/api/v1/transactions", newTransaction);
+    console.log(status);
+    if (status === 201) {
+      dispatch(getUpdateBalanceUser());
+    }
   };
 
   const setBalance = (e) => {

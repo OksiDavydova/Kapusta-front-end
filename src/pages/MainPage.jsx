@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Media from "react-media";
 import { useSelector, useDispatch } from "react-redux";
 import { Balance } from "../components/Balance";
 import { TransactionTable } from "../components/TransactionTable";
 import { Summary } from "../components/Summary";
 import { NavigationMainMobile } from "../components/NavigationMobile";
-import { FormComponent } from "../components/FormComponent"; 
+import { FormComponent } from "../components/FormComponent";
 import { ContentWrapper, Overlay } from "../components/Wrapper/Wrapper.styled";
 import { getTypeTransaction } from "../redux/typeTransaction/transaction-selector";
 import { changeTypeTransaction } from "../redux/typeTransaction/transaction-slice";
@@ -13,9 +13,8 @@ import { changeTypeTransaction } from "../redux/typeTransaction/transaction-slic
 export default function Main() {
   const transaction = useSelector(getTypeTransaction);
   const dispatch = useDispatch();
-
-  const changeTypeOperation = e => {
-
+  console.log(transaction);
+  const changeTypeOperation = (e) => {
     switch (e.target.value) {
       case "доход":
         dispatch(changeTypeTransaction(true));

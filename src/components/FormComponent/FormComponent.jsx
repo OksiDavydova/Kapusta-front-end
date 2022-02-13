@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { ArrowButton } from "../Buttons";
 import Media from "react-media";
 import { useForm } from "react-hook-form";
@@ -16,18 +18,27 @@ import {
 } from "./FormStyle.styled";
 import { SvgIcon } from "../SvgIcon";
 import { CategorySelectUnstyled } from "../SelectUnstyled";
+import { getTypeTransaction } from "../../redux/typeTransaction//transaction-selector";
+import { getDate } from "../../redux/setDate/date-selector";
 
 function FormComponent() {
+  const [valueSelect, setValueSelect] = useState("");
+  const date = useSelector(getDate);
+  const transaction = useSelector(getTypeTransaction);
   const {
     register,
     handleSubmit,
     formState: { errors },
     resetField,
   } = useForm();
-  const onSubmit = (data) => {
-    // const { description, value } = data;
-    console.log(data);
-    console.log(errors);
+
+  const onSubmit = data => {
+    const { description, value } = data;
+    console.log(description);
+    console.log(value);
+    console.log(date);
+    console.log(valueSelect);
+    console.log(transaction);
     resetInputField();
   };
 
@@ -59,7 +70,7 @@ function FormComponent() {
 
         <SelectOverlay>
           {/* ??????? */}
-          <CategorySelectUnstyled />
+          <CategorySelectUnstyled children={{ valueSelect, setValueSelect }} />
         </SelectOverlay>
         <CalculatorOverlay>
           <ValueSpan>

@@ -12,6 +12,15 @@ export const SingleText = styled.p`
   text-align: ${(props) => props.align};
 
   color: #52555f;
+  
+  @media ${device.tablet} {
+    margin:0;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 12px;
+    line-height: 14px;
+    width: 269px;
+  }
 `;
 // ?????
 export const ReportBalanceText = styled.p`

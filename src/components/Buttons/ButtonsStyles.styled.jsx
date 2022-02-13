@@ -85,6 +85,10 @@ export const LinkGoogle = styled.a`
     background-color: ${colors.orange};
     box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
   }
+  
+   @media ${device.tablet} {
+    margin-bottom: 30px;
+  }
 `;
 
 export const StatisticButton = styled.a`

@@ -3,6 +3,7 @@ import { WrapperAuth } from '../components/Wrapper';
 import { GoogleLink } from '../components/Buttons';
 import { Text } from '../components/Text';
 import { AuthForm } from '../components/AuthForm';
+import Title from '../components/Title/Title';
 
 const firstText = 'Вы можете авторизоваться с помощью Google Account:';
 const secondText =
@@ -10,11 +11,14 @@ const secondText =
 
 export default function LoginPage() {
   return (
+    <>
+    <Title/>
     <WrapperAuth>
       <Text widthText={'222px'} text={firstText} />
       <GoogleLink text={'google'} />
       <Text widthText={'242px'} alignText={'left'} text={secondText} />
       <AuthForm />
-    </WrapperAuth>
+      </WrapperAuth>
+      </>
   );
 }

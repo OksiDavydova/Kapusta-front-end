@@ -1,9 +1,14 @@
 import styled from "@emotion/styled";
+import { device } from "../../styles/utils";
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  margin: 20px 20px 10px 20px;
+  // margin: 20px 9px 10px 9px;
+
+  @media ${device.tablet} {
+    margin:0;
+  }
 `;
 
 export const Label = styled.label`
@@ -16,6 +21,12 @@ export const Label = styled.label`
   text-transform: none;
 
   color: #000000;
+
+  @media ${device.tablet} {
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 14px;
+  }
 `;
 
 export const Input = styled.input`
@@ -39,6 +50,15 @@ export const Input = styled.input`
   &::placeholder {
     color: #a6abb9;
   }
+ 
+  @media ${device.tablet} {
+    max-width: 265px;
+  }
+  :nth-of-type(2){
+   @media ${device.tablet} {
+    margin-bottom:40px
+  }
+  }
 `;
 
 export const AuthFormButtonWrapper = styled.div`
@@ -46,6 +66,11 @@ export const AuthFormButtonWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  outline: 1px solid red;
+  // outline: 1px solid red;
   margin-top: auto;
+  
+  @media ${device.tabletMax} {
+    width: 265px;
+    margin-left: -7px;
+  }
 `;

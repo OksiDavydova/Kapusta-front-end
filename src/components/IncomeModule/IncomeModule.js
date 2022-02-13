@@ -1,5 +1,6 @@
 import React from "react";
+import { FormComponent } from "../FormComponent";
 
 export default function IncomeModule() {
-  return <h1>Доходы</h1>;
+  return <FormComponent />;
 }

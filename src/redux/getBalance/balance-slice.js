@@ -1,12 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getUpdateBalanceUser } from "./balance-operation";
 
 const getBalance = createSlice({
-
   name: "user/balance",
 
-  initialState: 0,
+  initialState: { balance: 0 },
   reducers: {},
-  extraReducers: {},
+  extraReducers: {
+    [getUpdateBalanceUser.fulfilled]: (state, actions) => {
+      console.log(actions);
+      return (state = { ...state, ...actions.payload });
+    },
+  },
 });
 
 export default getBalance.reducer;

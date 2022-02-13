@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { StyledLink } from "./NavigationLinkStyle.styled";
 
-function NavigationLink({ pathTo, text }) {
+function NavigationLink({ pathTo, text, onClick }) {
   const location = useLocation();
   return (
     <>
@@ -13,6 +13,7 @@ function NavigationLink({ pathTo, text }) {
             label: "back",
           },
         }}
+        onClick={onClick}
       >
         {text}
         {/* <SquareButton></SquareButton> */}

@@ -58,21 +58,6 @@ function ChangeBalance() {
           </ChangeBalanceButton>
         </>
       )}
-      {/* <>
-        <ChangeBalanceSpan>
-          <ChangeBalanceInput
-            type="number"
-            name="balance"
-            id="balance"
-            placeholder="00.00"
-            onChange={setBalance}
-          />
-          UAH
-        </ChangeBalanceSpan>
-        <ChangeBalanceButton type="button" onClick={acceptButtonClick}>
-          Подтвердить
-        </ChangeBalanceButton>
-      </> */}
     </ChangeBalanceWrapper>
   );
 }

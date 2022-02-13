@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const getBalance = createSlice({
-  name: "user/data",
+
+  name: "user/balance",
+
   initialState: 0,
   reducers: {},
   extraReducers: {},

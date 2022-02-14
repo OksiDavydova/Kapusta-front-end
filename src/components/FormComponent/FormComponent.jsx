@@ -23,7 +23,7 @@ import { SvgIcon } from "../SvgIcon";
 import { CategorySelectUnstyled } from "../SelectUnstyled";
 import { getTypeTransaction } from "../../redux/typeTransaction//transaction-selector";
 import { getDate } from "../../redux/setDate/date-selector";
-import { getBalanceUser } from "../../redux/getBalance/balance-operation";
+import { getUpdateBalanceUser } from "../../redux/getBalance/balance-operation";
 
 function FormComponent() {
   const [valueSelect, setValueSelect] = useState("");
@@ -49,10 +49,10 @@ function FormComponent() {
       income: transaction,
     };
     const { status } = await axios.post("/api/v1/transactions", newTransaction);
-    console.log(status);
-    // if (status === 201) {
-    //   dispatch(getBalanceUser());
-    // }
+
+    if (status === 201) {
+      dispatch(getUpdateBalanceUser());
+    }
     resetInputField();
   };
 

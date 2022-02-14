@@ -1,1 +1,1 @@
-export const getBalanceUser = state => state.balance;
+export const getBalanceUser = state => state.balance.balance;

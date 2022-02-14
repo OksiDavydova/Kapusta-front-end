@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Media from "react-media";
 import { SvgIcon } from "../SvgIcon";
@@ -15,7 +15,6 @@ import MobileDatePicker from '@mui/lab/MobileDatePicker';
 import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
-
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
@@ -51,6 +50,11 @@ const useStyles = makeStyles({
   }
 });
 
+
+// import { SvgIcon } from "../SvgIcon";
+//import { ReactComponent as CalendarAvg } from "./calendar.svg";
+
+
 function CalendarMUI() {
 
   // Эти два хука нужны, чтобы при нажатии на иконку - открывался календарь также, помимо нажатия на само поле + для стилей
@@ -69,7 +73,6 @@ function CalendarMUI() {
   return (
     <Calendar>
       <LocalizationProvider dateAdapter={AdapterDateFns} locale={ruLocale}>
-
        <Media query="(max-width: 1279px)" render={() => 
         <MobileDatePicker
             showToolbar={false}
@@ -128,6 +131,7 @@ function CalendarMUI() {
           />
         )}
       />
+
       </LocalizationProvider>
     </Calendar>
   );

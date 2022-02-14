@@ -6,15 +6,21 @@ import { getDate } from "../../../redux/setDate/date-selector";
 import { getUpdateBalanceUser } from "../../../redux/getBalance/balance-operation";
 import {
   ChangeBalanceWrapper,
-  ChangeBalanceSpan,
   ChangeBalanceInput,
   ChangeBalanceButton,
+  Span,
+  OvalBalanceSpan,
+  OvalBalanceDiv,
+  BalanceTextOval,
   BalanceText,
+  LabelBalance,
 } from "./ChangeBalance.styled";
 
 function ChangeBalance() {
   const balance = useSelector(getBalanceUser);
+
   const date = useSelector(getDate);
+
   const [valueBalance, setValueBalance] = useState(0);
   const dispatch = useDispatch();
 
@@ -36,28 +42,22 @@ function ChangeBalance() {
     }
   };
 
-  const setBalance = e => {
+  const setBalance = (e) => {
     const conversionToNumber = Number(e.target.value);
     setValueBalance(conversionToNumber);
   };
 
   return (
     <ChangeBalanceWrapper>
-      <BalanceText>Баланс:</BalanceText>
       {balance > 0 ? (
-        <ChangeBalanceSpan>
-          <ChangeBalanceInput
-            type="number"
-            name="balance"
-            id="balance"
-            value={balance}
-            disabled
-          />
-          UAH
-        </ChangeBalanceSpan>
+        <OvalBalanceSpan>
+          <BalanceTextOval>Баланс:</BalanceTextOval>
+          <OvalBalanceDiv>{[balance, " ", "UAH"]}</OvalBalanceDiv>
+        </OvalBalanceSpan>
       ) : (
         <>
-          <ChangeBalanceSpan>
+          <BalanceText>Баланс:</BalanceText>
+          <LabelBalance for="balance">
             <ChangeBalanceInput
               type="number"
               name="balance"
@@ -65,13 +65,10 @@ function ChangeBalance() {
               placeholder="00.00"
               onChange={setBalance}
             />
-            UAH
-          </ChangeBalanceSpan>
-          <ChangeBalanceButton
-            type="button"
-            onClick={acceptButtonClick}
-            disabled={valueBalance > 0 ? false : true}
-          >
+
+            <Span>UAH</Span>
+          </LabelBalance>
+          <ChangeBalanceButton type="button" onClick={acceptButtonClick}>
             Подтвердить
           </ChangeBalanceButton>
         </>

@@ -1,38 +1,37 @@
 export const colors = {
-  black: '#000000',
-  orange: '#ff751d',
-  orangeLight: '#ffdac0',
+  black: "#000000",
+  orange: "#ff751d",
+  orangeLight: "#ffdac0",
 
-  white: '#ffffff',
-  textColor: '#52555f',
+  white: "#ffffff",
+  textColor: "#52555f",
   /* 70% прозрачность текста */
   // textColorSecond: "rgb(82, 85, 95, 70%)", - below the same color, just in another color-scheme
-  textColorSecond: '#52555fb3',
+  textColorSecond: "#52555fb3",
 
-  logoBg: '#f5f6fa',
+  logoBg: "#f5f6fa",
 
-  inputBg: '#f6f7fb',
-  bgModal: '#1d346a',
-  bgModalBalance: 'linear-gradient(117.84deg, #1D346A 2.84%, #031634 67.28%)',
+  inputBg: "#f6f7fb",
+  bgModal: "#1d346a",
+  bgModalBalance: "linear-gradient(117.84deg, #1D346A 2.84%, #031634 67.28%)",
   /* Цвет для бэкграунда во вкладке "Доход" или "Расход" */
-  bgSummary: '#f5f6fb',
+  bgSummary: "#f5f6fb",
 
   //   /* Цвет для неактивной вкладки "Доход" или "Расход" */
 
-  bgBtn: '#fafbfd',
-
+  bgBtn: "#fafbfd",
+  bgMainNav: "#fbfcfc",
   // Цвет вертикальной палочки в блоке Расходы/Доходы на странице Статистики
-  lineColor: '#E0E5EB',
+  lineColor: "#E0E5EB",
 
   // Цвета расхода и дохода на странице Статистики
-  redColor: '#E53935',
-  greenColor: '#407946',
+  redColor: "#E53935",
+  greenColor: "#407946",
 
   // Цвет border кнопки Очистить на tablet
-  borderClearBtnColor: '#f6f7fc',
+  borderClearBtnColor: "#f6f7fc",
 
   animation: "250ms cubic-bezier(0.4, 0, 0.2, 1)",
-
 };
 
 //   --costs-color: #e53935,

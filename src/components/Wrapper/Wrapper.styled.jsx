@@ -79,3 +79,11 @@ export const ReportPageTopWrapper = styled.div`
   margin-bottom: 30px;
   outline: 1px solid red;
 `;
+
+export const WrapperLoginContainer = styled.section`
+height: 750px;
+ @media ${device.desktop}{
+height: 0; 
+}
+`;
+

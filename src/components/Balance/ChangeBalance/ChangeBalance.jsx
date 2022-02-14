@@ -42,7 +42,7 @@ function ChangeBalance() {
     }
   };
 
-  const setBalance = (e) => {
+  const setBalance = e => {
     const conversionToNumber = Number(e.target.value);
     setValueBalance(conversionToNumber);
   };

@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { SvgIcon } from "../../SvgIcon";
 import {
   CardItem,
@@ -7,29 +8,23 @@ import {
   CardSignature,
 } from "./CardStyle.styled";
 import { svgName } from "./svgName";
+import {
+  getDataForInput,
+  getBullForChangePage,
+} from "../../../redux/setDataDiagram/dataDiagram-selector";
+import { sortDataForDiagram } from "../../../redux/setDataDiagram/dataDiagram-slice";
 
-// const btnStyle = {
-//   width: "90px",
-//   padding: 0,
-//   border: "none",
-//   font: "inherit",
-//   color: "inherit",
-//   backgroundColor: "transparent",
-//   textTransform: "uppercase",
-//   color: "#52555f",
-// };
-
-function Card({ key, value, category, updateChartData }) {
-  const svgPath = svgName.find((item) => item.category === category);
-
-  function handleClick(e) {
-    e.preventDefault();
-    updateChartData(category);
-  }
-
+function Card({ key, value, category }) {
+  const bull = useSelector(getBullForChangePage);
+  const data = useSelector(getDataForInput);
+  const dispatch = useDispatch();
+  const svgPath = svgName.find(item => item.category === category);
   return (
     <CardItem key={key}>
-      <CardBtnSvg type="button" onClick={() => handleClick(key)}>
+      <CardBtnSvg
+        type="button"
+        onClick={() => dispatch(sortDataForDiagram({ category, bull, data }))}
+      >
         <CardText>{value.toLocaleString("ru-RU")}</CardText>
         <SvgIcon w={56} h={56} idIcon={svgPath.svg} />
         <CardSignature>{category}</CardSignature>

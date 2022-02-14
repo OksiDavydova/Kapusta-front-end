@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { getBalanceUser } from "../../../redux/getBalance/balance-selector";
 import {
   OvalBalanceSpan,
   OvalBalanceDiv,
@@ -8,13 +10,13 @@ import {
 // ВАЖНО !!!! - BalanceOval принимает const (или prop?) = СУММА текущего баланса, который получает с БЭКа.
 // Также сумму баланса с БЭКа привести к формату "00 000,00" через number.toLocaleString('ru-RU')
 function BalanceOval() {
+  const balance = useSelector(getBalanceUser);
   const text = "UAH";
-  const balanceSum = "55 000.00";
 
   return (
     <OvalBalanceSpan>
       <BalanceTextOval>Баланс:</BalanceTextOval>
-      <OvalBalanceDiv>{[balanceSum, " ", text]}</OvalBalanceDiv>
+      <OvalBalanceDiv>{[balance, " ", text]}</OvalBalanceDiv>
     </OvalBalanceSpan>
   );
 }

@@ -18,14 +18,13 @@ import {
   ReportPageTopWrapper,
   ChartTabletWrapper,
 } from "../components/Wrapper/Wrapper.styled";
-import { dataFromBack } from "../components/Chart/data";
 
 export default function ReportPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getDataForDiagram());
-  }, []);
+  }, [dispatch]);
 
   return (
     <ReportPageWrapper>
@@ -45,7 +44,7 @@ export default function ReportPage() {
       />
       <ReportBalance />
 
-      <CategoryReportList>{dataFromBack}</CategoryReportList>
+      <CategoryReportList />
       <Media query="(max-width: 767.98px)" render={() => <ChartMobile />} />
 
       <Media

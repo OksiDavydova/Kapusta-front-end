@@ -3,7 +3,7 @@ import { getDataForDiagram } from "./dataDiagram-operation";
 
 const dataForDiagram = createSlice({
   name: "dataForDiagram",
-  initialState: {},
+  initialState: false,
   reducers: {},
   extraReducers: {
     [getDataForDiagram.fulfilled]: (state, action) => {
@@ -26,17 +26,17 @@ const sortData = createSlice({
   name: "sortData",
   initialState: [],
   reducers: {
-    sortDataForDiagram: (state, { payload }) => {
+    sortDataForDiagram: (_, { payload }) => {
       if (!payload.bull) {
         const array = payload.data.expense.find(el => {
           return el.category === payload.category;
         });
-        return array.data;
+        return [...array.data].sort((a, b) => b.value - a.value);
       } else {
         const array = payload.data.income.find(el => {
           return el.category === payload.category;
         });
-        return array.data;
+        return [...array.data].sort((a, b) => b.value - a.value);
       }
     },
   },
@@ -47,5 +47,9 @@ const dataDiagram = combineReducers({
   bull: changePageDiagram.reducer,
   dataForDiagram: sortData.reducer,
 });
+
+const { changeDiagram } = changePageDiagram.actions;
+const { sortDataForDiagram } = sortData.actions;
+export { changeDiagram, sortDataForDiagram };
 
 export default dataDiagram;

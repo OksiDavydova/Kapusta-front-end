@@ -1,54 +1,54 @@
 export const svgName = [
   {
     svg: "#icon-car",
-    category: "Транспорт",
+    category: "транспорт",
   },
   {
     svg: "#icon-products",
-    category: "Продукты",
+    category: "продукты",
   },
   {
     svg: "#icon-hands-holding-heart",
-    category: "Здоровье",
+    category: "здоровье",
   },
   {
     svg: "#icon-alcohol",
-    category: "Алкоголь",
+    category: "алкоголь",
   },
   {
     svg: "#icon-kite",
-    category: "Развлечения",
+    category: "развлечение",
   },
   {
     svg: "#icon-couch",
-    category: "Всё для дома",
+    category: "всё для дома",
   },
   {
     svg: "#icon-tools",
-    category: "Техника",
+    category: "техника",
   },
   {
     svg: "#icon-invoice",
-    category: "Коммуналка, связь",
+    category: "коммуналка, связь",
   },
   {
     svg: "#icon-hobby",
-    category: "Спорт, хобби",
+    category: "спорт, хобби",
   },
   {
     svg: "#icon-book",
-    category: "Образование",
+    category: "образование",
   },
   {
     svg: "#icon-other",
-    category: "Прочее",
+    category: "прочее",
   },
   {
     svg: "#icon-salary",
-    category: "ЗП",
+    category: "зп",
   },
   {
     svg: "#icon-additional-salary",
-    category: "Доп. доход",
+    category: "доп. доход",
   },
 ];

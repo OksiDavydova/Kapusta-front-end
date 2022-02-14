@@ -1,5 +1,8 @@
 import React from 'react';
 import { WrapperAuth } from '../components/Wrapper';
+import {
+   WrapperLoginContainer,
+} from '../components/Wrapper/Wrapper.styled';
 import { GoogleLink } from '../components/Buttons';
 import { Text } from '../components/Text';
 import { AuthForm } from '../components/AuthForm';
@@ -12,6 +15,7 @@ const secondText =
 export default function LoginPage() {
   return (
     <>
+      <WrapperLoginContainer>
     <Title/>
     <WrapperAuth>
       <Text widthText={'222px'} text={firstText} />
@@ -19,6 +23,7 @@ export default function LoginPage() {
       <Text widthText={'242px'} alignText={'left'} text={secondText} />
       <AuthForm />
       </WrapperAuth>
+        </WrapperLoginContainer>
       </>
   );
 }

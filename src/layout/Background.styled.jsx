@@ -26,24 +26,20 @@ export const BgBottomAuth = styled.div`
     left: 0px;
     top: 0px;
     background-image: url(${pairCabbages});
-    background-position: calc((100% / 2) + 200px) 680px;
+    background-position: calc((100% / 2) + 280px) 680px;
   }
 
   @media ${device.desktop} {
     background-image: url(${cabbagesBottom});
     background-position: 50% calc(100% + 25px);
   }
-
-  /* background-image: 
-  background-repeat: no-repeat;
-  background-position: 273px 503px, 15px 515px; */
 `;
 
 export const BgBottom = styled.div`
   z-index: -1;
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 856px;
   background-repeat: no-repeat;
 
   left: 0px;
@@ -52,13 +48,18 @@ export const BgBottom = styled.div`
   background-position: calc((100% / 2) - 90px) bottom;
 
   @media ${device.tablet} {
+    z-index: 2;
     left: 0px;
     top: 0px;
+    height: 1024px;
     background-image: url(${pairCabbages});
-    background-position: calc((100% / 2) - 200px) 680px;
+    background-position-x: calc(50% - 200px);
+    background-position-y: 826px;
   }
 
   @media ${device.desktop} {
+    z-index: -1;
+    height: 850px;
     left: 0px;
     top: 0px;
     background-position: calc((100% / 2) - 300px) 658px;
@@ -95,7 +96,7 @@ export const BgTop = styled.div`
   width: 100%;
   border-radius: 0 0 0 150px;
   background-image: url(${oneCabbageLB});
-  background-position: calc((100% / 2) + 150px) 160px;
+  background-position: calc((100% / 2) + 150px) 105px;
 
   @media ${device.tablet} {
     left: 0px;

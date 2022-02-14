@@ -17,6 +17,6 @@ margin: 90px 0 50px 148px;
    @media ${device.desktop} {
  width: 377px;
 height: 139px;
-margin: 308px 127px 347px 230px;
+margin: 308px 127px 347px 108px;
   };
 `;

@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
+=======
+import React from "react";
+import { useState } from "react";
+>>>>>>> 66cad16327949781b168eefc69a3a83153297a17
 import { useDispatch, useSelector } from "react-redux";
 import Media from "react-media";
 import { SvgIcon } from "../SvgIcon";
@@ -82,18 +87,30 @@ function CalendarMUI() {
               onOpen={() => setOpen(true)}
               onClose={() => setOpen(false)}
               value={date}
+<<<<<<< HEAD
               onChange={(newValue) => {
                 const newDate = format(new Date(newValue), "yyyy/MM/dd");
                 dispatch(setDateNow(newDate));
               }}
               renderInput={(params) => (
+=======
+              onChange={newValue => {
+                const newDate = format(new Date(newValue), "yyyy/MM/dd");
+                dispatch(setDateNow(newDate));
+              }}
+              renderInput={params => (
+>>>>>>> 66cad16327949781b168eefc69a3a83153297a17
                 <TextField
                   {...params}
                   className={classes.root}
                   InputProps={{
                     startAdornment: (
                       <InputAdornment disablePointerEvents="false">
+<<<<<<< HEAD
                         <IconButton edge="start" onClick={(e) => setOpen(true)}>
+=======
+                        <IconButton edge="start" onClick={e => setOpen(true)}>
+>>>>>>> 66cad16327949781b168eefc69a3a83153297a17
                           <SvgIcon w={20} h={20} idIcon={"#icon-calendar"} />
                         </IconButton>
                       </InputAdornment>
@@ -117,11 +134,19 @@ function CalendarMUI() {
                 OpenPickerIcon: DateIcon,
               }}
               value={date}
+<<<<<<< HEAD
               onChange={(newValue) => {
                 const newDate = format(new Date(newValue), "yyyy/MM/dd");
                 dispatch(setDateNow(newDate));
               }}
               renderInput={(params) => (
+=======
+              onChange={newValue => {
+                const newDate = format(new Date(newValue), "yyyy/MM/dd");
+                dispatch(setDateNow(newDate));
+              }}
+              renderInput={params => (
+>>>>>>> 66cad16327949781b168eefc69a3a83153297a17
                 <TextField {...params} className={classes.root} />
               )}
             />

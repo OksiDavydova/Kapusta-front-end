@@ -2,236 +2,255 @@ import styled from "@emotion/styled";
 import { colors, device } from "../../styles/utils";
 
 export const TransactionSection = styled.div`
-/* margin: 0 auto; */
+  margin: 50px auto;
 
-@media ${device.tablet}{
-  
-  margin-left: 40px; // ????????????????????????
-}
-/* margin-right: auto; */
-@media ${device.desktop}{
-  margin-left:0;
-}
+  @media ${device.desktop}{
+    margin-left:0;
+};
+`;
 
-   table {
-      width:282px;
-      // margin: auto;
-       @media ${device.tablet}{ 
-         //  min-width:760px;  
-     background-color: ${colors.bgSummary};
-     padding: 1px;
-     border-radius: 20px 20px 0 0;  
-    }
-    @media ${device.desktop}{ 
-          min-width:760px;  };
-  }
+export const TableTransaction = styled.div` 
+    width:282px;
+    margin: auto;
+  @media ${device.tablet}{ 
+    margin: auto;
+    min-width: 605px;
+    background-color: ${colors.bgSummary};
+    padding: 1px;
+    border-radius: 20px 20px 0 0;  
+  };
 
-   thead {                           
-     @media ${device.tabletMax}{   
-     display:none;
-     }
-    tr{
-        @media ${device.tablet} {
-     height: 40px;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 1.16;
-     display: flex;
-     align-items: center;
-     text-align: center;
-     letter-spacing: 0.02em;
-     text-transform: uppercase;
-     background-color: ${colors.bgSummary};
-     border-radius: 20px 20px 0 0;
+  @media ${device.desktop}{ 
+    min-width:760px;  
+    margin: 0;
+  };
+`;
+export const TableHeadTransaction = styled.div`
+  @media ${device.tabletMax}{   
+    display:none;
+ }
+`;
+export const TrHeadTransaction = styled.div`
+  @media ${device.tablet} {
+    height: 40px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.16;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    background-color: ${colors.bgSummary};
+    border-radius: 20px 20px 0 0;
      
 }
+`;
+export const ThHeadTransaction = styled.div`
+  :nth-of-type(1) {   
+  @media ${device.tablet} {
+    width: 66px;
+    margin-right: 27px;
+    margin-left: 10px;
+  };
+
+  @media ${device.desktop} {
+    width: 84px;
+    margin-right: 20px;
+    margin-left: 10px;
+    text-align: start;
+    padding-left: 10px;
+  };
+  };
+
+ :nth-of-type(2){      
+  @media ${device.tablet} {
+    width: 97px;
+    margin-right: 104px;
+  };
+
+  @media ${device.desktop} {
+    width: 74px;
+    margin-right: 150px;
+  }; 
+  }; 
+
+ :nth-of-type(3){
+  @media ${device.tablet} {
+    width: 120px;
+    margin-right: 16px;
+  };
+
+  @media ${device.desktop} {
+    width: 172px;
+    margin-right: 33px;
+  };
+  };
+
+ :nth-of-type(4){  
+  @media ${device.tablet} {
+    width: 104px;
+    margin-right: 63px;
+  };
+
+  @media ${device.desktop} {
+    margin-right: 109px;
+    padding-left: 52px;
+  };
+  };
+`;
+
+export const TableBodyTransaction = styled.div`
+  @media ${device.tablet} {
+    width: 100%;
+    max-height: 293px ;
+    overflow-y: scroll;
+  
+  &::-webkit-scrollbar{
+    width: 6px;
+    border-radius: 2px;
+  },
+
+  &::-webkit-scrollbar-thumb {
+    background: ${colors.orange};
+    border-radius: 15px;
+    }
 }
-//Description title 
-th{
-    :nth-of-type(1) {    //day title
-   @media ${device.tablet} {
-   //   width: 66px;
-     margin-right: 27px;
-     margin-left: 10px;
-};
+`;
 
-  @media ${device.laptop} {
-   //   width: 84px;
-     margin-right: 20px;
-     margin-left: 10px;
-    };
- };
- :nth-of-type(2){       //desc title
-   
-    @media ${device.tablet} {
-   //   width: 97px;
-     margin-right: 86px;
-      };
-  @media ${device.laptop} {
-   //   width: 74px;
-     margin-right: 150px;
-    }; 
- }; 
- :nth-of-type(3){       //category title
-     @media ${device.tablet} {
-   //   width: 120px;
-     margin-right: 16px;
-};
-
-  @media ${device.laptop} {
-   //   width: 172px;
-     margin-right: 33px;
-    };
-
- };
- :nth-of-type(4){      //sum title
-       @media ${device.tablet} {
-   //   width: 104px;
-     margin-right: 84px;
-};
-  @media ${device.laptop} {
-     margin-right: 113px;
-    };
- },
-
-}}}
-    tbody{
-    
-tr{            //row
-     font-weight: 400;
-font-size: 12px;
-line-height: 1.16;
-letter-spacing: 0.04em;
-background-color: ${colors.white};
-height: 50px;
-margin-bottom: 2px;
-min-width:245px;
-
-//   @media ${device.mobileS}{
-//      min-width:280px;
-//  };
-
-//   @media ${device.mobileL}{
-//      min-width:400px;
-//  };
+export const TrBodyTransaction = styled.div`         
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.04em;
+    background-color: ${colors.white};
+    height: 50px;
+    margin-bottom: 2px;
+    min-width:245px;
 
   @media ${device.tabletMax}{ 
-
-     display: grid; 
+    display: grid; 
     border-bottom: 2px solid ${colors.bgSummary}; 
-     align-items: center; 
-     padding:10px 0;
-   }
+    align-items: center; 
+    padding:10px 0;
+  };
 
   @media ${device.tablet} {
-         min-width:280px;
-     display: flex;
-     align-items: center;
-     height: 40px;
-   };};
-                 //value
-    td {
-  :nth-of-type(1) {       //day value 
- @media ${device.tabletMax}{   
-    max-width: 20px;
-     grid-row: 2/4;
-     font-size: 8px;
-     line-height:1.12; 
-   };
-  @media ${device.tablet} {
-     width: 84px;
-     margin-right: 20px;
-   //   margin-left: 10px;
-};
-  @media ${device.laptop} {
-     width: 84px;
-     margin-right: 20px;
-   //   margin-left: 10px;
-    };
-  
- };
-:nth-of-type(2){          //desc value 
-   text-overflow: ellipsis;
-   white-space: nowrap;
-   overflow: hidden;
-   @media ${device.tabletMax}{   
-      margin-right: 29px;
-        
-     max-width: 30px;
-      padding-bottom:5px;
-      font-weight: 700;
-   };
-   @media ${device.tablet} {
-      max-width:60px;
-     text-align: start; 
-     width: 168px;
-     margin-right: 9px;
-   //   display: flex;
-   //   justify-content: flex-start;
-   };
-  @media ${device.laptop} {
-     width: 188px;
-     margin-right: 61px;
-   //   padding-right: 61px;
-   //   display: flex;
-   //   justify-content: flex-start;
-    };
- }; 
- :nth-of-type(3){            //category value 
-   // margin: 0 30px 5px 0;
-    @media ${device.tabletMax}{  
-       max-width: 21px;
-   //   padding: 22px 43px 0 0;
-     grid-row: 1/4; 
-     font-size: 8px;
-     line-height:1.12; 
-   };
-  @media ${device.tablet} {
-     width: 111px;
-     margin-right: 10px;
-};
-  @media ${device.laptop} {
-     width: 116px;
-     margin-right: 49px;
-     //padding-right:49px;
- };
-};
- :nth-of-type(4){              //sum value 
-     @media ${device.tabletMax}{
-        max-width: 53px;
-     grid-row: 1/4;   
-     font-weight: 700;
-   };
-  @media ${device.tablet} {
-     width: 104px;
-     margin-right: 40px;
-   };
-  @media ${device.laptop} {
-     width: 118px;
-     margin-right: 23px;
-   };  
- };
- :nth-of-type(5){        //btn value 
-   max-width: 20px;
-  grid-row: 1/4;
-  border: none;
-  border-radius: 50%;
-  padding: 15px 0;
-margin:0;
-       :hover,
-       :focus{
-           background-color: ${colors.bgSummary};
-       }
+    min-width:280px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+  };
+`;
+export const TdBodyTransaction = styled.div`
+  :nth-of-type(1) {   
 
-       @media ${device.tablet} {
-          margin-right: 26px;
-        };
+  @media ${device.tabletMax}{   
+    grid-row: 2/4;
+    width: 44px;
+    font-size: 8px;
+    line-height: 1.12; 
+  };
 
-       @media ${device.laptop} {
-          padding-right: 41px;
-        }; 
-       }
-      }
-      }
-     }
+  @media ${device.tablet} {
+    width: 84px;
+    margin-right: 20px;
+    margin-left: 10px;
+  };
+};
+
+  :nth-of-type(2){       
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+  @media ${device.tabletMax}{
+    width: 68px;
+    padding-bottom:5px;
+    font-weight: 700;
+    text-align: start; 
+  };
+
+  @media ${device.tablet} {
+    margin-right: 31px;
+    width: 157px;
+    text-align: start;
+
+  };
+
+  @media ${device.desktop} {
+    width: 188px;
+    margin-right: 61px;
+    display: flex;
+    justify-content: flex-start;
+  };
+}; 
+
+  :nth-of-type(3){           
+  @media ${device.tabletMax}{  
+    width: 66px;
+    margin: 20px 5px 0 0;
+    font-size: 8px;      
+    line-height:1.12; 
+    grid-row: 1/4; 
+    display: grid;
+    align-items: center;
+    justify-items: stretch;
+    justify-content: space-between;
+
+  };
+
+  @media ${device.tablet} {
+    width: 111px;
+    margin-right: 7px;
+  };
+
+  @media ${device.desktop} {
+    width: 116px;
+    margin-right: 49px;
+  };
+};
+
+  :nth-of-type(4){ 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+  @media ${device.tabletMax}{
+    width: 84px;
+    grid-row: 1/4;   
+    font-weight: 700;
+  };
+
+  @media ${device.tablet} {
+    width: 103px;
+    margin: 0px 15px;
+  };
+
+  @media ${device.desktop} {
+    width: 118px;
+    margin-right: 23px;
+  };
+};
+
+  :nth-of-type(5){ 
+    grid-row: 1/4;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+
+  @media ${device.tabletMax}{
+    padding: 7px 0 7px 22px;  
+  };
+
+  @media ${device.tablet} {
+    margin-right: 26px;
+  };
+};
+
+  :hover,
+  :focus{
+    background-color: ${colors.bgSummary};
+  };
+
 `;

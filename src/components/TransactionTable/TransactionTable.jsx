@@ -1,15 +1,37 @@
 import React from "react";
-import Media from "react-media";
 // import { useSelector } from "react-redux";
 // import { getArrayDataUser } from "../../redux/userData/userData-selector";
-import { Table } from ".";
 import { SvgIcon } from "../SvgIcon";
-import { TransactionSection } from "./TransactionTableStyle.styled";
-import { Scrollbars } from "react-custom-scrollbars-2";
+import { useTable } from "react-table";
+import { Tooltip, createTheme, ThemeProvider } from '@mui/material';
+import {
+  TableBodyTransaction,
+  TableHeadTransaction,
+  TableTransaction,
+  ThHeadTransaction,
+  TransactionSection,
+  TrHeadTransaction,
+  TrBodyTransaction,
+  TdBodyTransaction,
+} from "./TransactionTableStyle.styled";
+
+const theme = createTheme({
+  components: {
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          fontSize: "16px",
+          color: "white",
+          backgroundColor: "orange",
+        }
+      }
+    }
+  }
+});
 
 function TransactionTable() {
   // const arrayDataUser = useSelector(getArrayDataUser);
-  const btnDel = () => (
+    const btnDel = () => (
     <button type="button" style={{ border: "none" }}>
       <SvgIcon w={16} h={16} idIcon={"#icon-delete"} />
     </button>
@@ -123,35 +145,56 @@ function TransactionTable() {
     ],
     []
   );
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+  } = useTable({data,columns});
 
   return (
     <TransactionSection>
-      <Media
-        query="(min-width: 320px) and (max-width: 767px)"
-        render={() => (
-          <Scrollbars style={{ width: 282, height: 142 }}>
-            <Table columns={columns} data={data} />
-          </Scrollbars>
-        )}
-      />
-      <Media
-        query="(min-width: 768px) and (max-width: 1279px)"
-        render={() => (
-          <Scrollbars style={{ width: 605, height: 384 }}>
-            <Table columns={columns} data={data} />
-          </Scrollbars>
-        )}
-      />
+    <TableTransaction {...getTableProps()} >
+      <TableHeadTransaction>
+        {headerGroups.map(headerGroup => (
+          <TrHeadTransaction {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map(column => (
+              <ThHeadTransaction {...column.getHeaderProps()}>
+                {column.render("Header")}
+              </ThHeadTransaction>
+            ))}
+          </TrHeadTransaction>
+        ))}
+      </TableHeadTransaction>
 
-      <Media
-        query="(min-width: 1280px)"
-        render={() => (
-          <Scrollbars style={{ width: 760, height: 384 }}>
-            <Table columns={columns} data={data} />
-          </Scrollbars>
-        )}
-      />
+      <TableBodyTransaction {...getTableBodyProps()}>
+        {rows.map((row, i) => {
+          prepareRow(row);
+          
+          return (
+            <TrBodyTransaction {...row.getRowProps()}>
+              {row.cells.map((cell) => {
+                const currentDesc = cell.value;
+                return (
+                  <ThemeProvider theme={theme}>
+                    <Tooltip title={currentDesc}>
+                      <TdBodyTransaction {...cell.getCellProps()}
+                      >
+                        {cell.render('Cell')}
+                      </TdBodyTransaction>
+                    </Tooltip>
+                  </ThemeProvider>
+                );
+              })}
+            </TrBodyTransaction>
+          );
+        })}
+      </TableBodyTransaction>
+    </TableTransaction>
     </TransactionSection>
   );
 }
+
 export default TransactionTable;
+

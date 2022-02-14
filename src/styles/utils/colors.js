@@ -18,7 +18,8 @@ export const colors = {
   bgSummary: "#f5f6fb",
 
   //   /* Цвет для неактивной вкладки "Доход" или "Расход" */
-
+  bgBtnActive: "#fcfdfd",
+  bgBtnPrimary: "#f8f9fb",
   bgBtn: "#fafbfd",
   bgMainNav: "#fbfcfc",
   // Цвет вертикальной палочки в блоке Расходы/Доходы на странице Статистики

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { colors } from "../../styles/utils";
 
 export const TypeOperationWrapper = styled.div`
-  max-width: 665px;
+  width: 100%;
   text-align: start;
   /* outline: 1px solid red; */
   margin-left: auto;
@@ -22,8 +22,10 @@ export const ChooseOperationButton = styled.button`
   border: none;
   border-radius: 16px;
 
-  color: ${colors.textColor};
-  background-color: ${colors.bgMainNav};
+  color: ${(props) => props.isActive} ;
+  background-color: ${(props) => props.isBgActive} ;
+  /* background-color: ${colors.bgMainNav}; */
+
   transition: color ${colors.animation}
 
   &:hover {

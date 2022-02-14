@@ -6,6 +6,7 @@ import {
 } from "./TypeOperation.styled";
 import { getTypeTransaction } from "../../redux/typeTransaction/transaction-selector";
 import { changeTypeTransaction } from "../../redux/typeTransaction/transaction-slice";
+import { colors } from "../../styles/utils";
 
 function TypeOperationMain() {
   const transaction = useSelector(getTypeTransaction);
@@ -30,10 +31,20 @@ function TypeOperationMain() {
   return (
     <TypeOperationWrapper>
       <>
-        <ChooseOperationButton value="расход" onClick={changeTypeOperation}>
+        <ChooseOperationButton
+          isActive={transaction ? colors.black : colors.orange}
+          isBgActive={transaction ? colors.bgBtnPrimary : colors.bgBtnActive}
+          value="расход"
+          onClick={changeTypeOperation}
+        >
           расход
         </ChooseOperationButton>
-        <ChooseOperationButton value="доход" onClick={changeTypeOperation}>
+        <ChooseOperationButton
+          isActive={transaction ? colors.orange : colors.black}
+          isBgActive={transaction ? colors.bgBtnActive : colors.bgBtnPrimary}
+          value="доход"
+          onClick={changeTypeOperation}
+        >
           доход
         </ChooseOperationButton>
       </>

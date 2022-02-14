@@ -31,10 +31,11 @@ export const BtnToReport = styled.button`
     margin: 0;
     padding: 10px;
   }
+
   @media ${device.desktop} {
     position: absolute;
     top: 5px;
-    right: 0;
+    right: 30px;
   }
 `;
 

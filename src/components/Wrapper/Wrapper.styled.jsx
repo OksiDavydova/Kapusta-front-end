@@ -5,31 +5,46 @@ export const ContentWrapper = styled.div`
   width: 100%;
   border: 1px solid red;
   padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 56px);
 
   @media ${device.tablet} {
-    padding-top: 40px;
+    justify-content: flex-start;
+    padding: 40px 30px 83px;
+  }
+
+  @media ${device.desktop} {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 0 83px;
   }
 `;
 
 export const Overlay = styled.div`
-  position: relative;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-
-  padding: 0 20px 60px 20px;
-  background: #ffffff;
-  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
-  border-radius: 0px 30px 30px 30px;
+  @media ${device.desktop} {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 60px 20px;
+    background: #ffffff;
+    box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+    border-radius: 0px 0px 30px 30px;
+  }
+`;
+export const OverlayMobile = styled.div`
+  align-content: flex-end;
+  padding-top: 20px;
 `;
 
 export const AuthWrapper = styled.div`
-position: absolute;
+  position: absolute;
   top: 255px;
   left: 50%;
   -webkit-transform: translate(-50%);
   transform: translate(-50%);
-  
+
   padding: 40px 18px 53px 29px;
   padding: 40px 18px 53px 18px;
   width: 300px;
@@ -43,12 +58,10 @@ position: absolute;
     width: 436px;
     height: 535px;
     padding: 50px 85px 53px 85px;
-
   }
-   @media ${device.desktop} {
+  @media ${device.desktop} {
     top: 173px;
-    left:74%; 
-
+    left: 74%;
   }
 `;
 

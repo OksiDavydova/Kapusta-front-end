@@ -2,22 +2,27 @@ import styled from "@emotion/styled";
 import { device, colors } from "../../styles/utils";
 
 export const FormWrapper = styled.div`
-  max-width: 280px;
+width:100%;
+  /* max-width: 280px; */
   outline: 1px solid red;
   margin-left: auto;
   margin-right: auto;
   padding-top: 15px;
 
   @media${device.tablet}{
-    max-width: 604px;
-    padding-top: 28px;
-    padding-bottom: 48px;
-  }
+    
+    padding: 28px 30px 48px 30px; 
+    background: #ffffff;
+      box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  border-radius: 0px 30px 0px 0px;
 
+
+  }
     @media${device.desktop}{
-    max-width: 1060px;
-    padding-top: 33px;
-    padding-bottom: 59px;
+      /* width: 100%;  */
+    /* max-width: 1060px; */
+    padding: 33px 20px 59px;
+   
   }
 `;
 
@@ -37,10 +42,10 @@ export const FormTag = styled.form`
   box-sizing: border-box;
   border-radius: 16px 16px 0px 0px;
 
-      @media${device.tablet}{
+  @media${device.tablet}{
     padding-top: 0;
   }
-        @media${device.desktop}{
+  @media${device.desktop}{
     flex-direction: row;
   }
 `;
@@ -50,17 +55,17 @@ export const InputDescription = styled.input`
   padding-left: 20px;
   height: 44px;
   width: 100%;
-  /* border: 1px solid red; */
   border-radius: 16px 0 0px 0px;
   color: #52555f;
-  border: 2px solid #F5F6FB;
+  border: 2px solid ${colors.white};
   background: none;
 
   &::placeholder {
     color: #c7ccdc;
   }
-        @media${device.tablet}{
+  @media${device.tablet}{
     width: 190px;
+    border: 2px solid ${colors.bgSummary};
     border-right:0;
   }
 `;
@@ -68,14 +73,14 @@ export const SelectOverlay = styled.div`
   width: 282px;
   height: 44px;
   margin-bottom: 30px;
-  border: 2px solid #f5f6fb;
+  border: 2px solid ${colors.white};
   border-radius: 0px 0px 16px 0px;
   border-top: none;
   @media ${device.tablet} {
     width: 190px;
     border-radius: 0;
     margin-bottom: 0;
-    border-top: 2px solid #f5f6fb;
+    border: 2px solid ${colors.bgSummary};
   }
 `;
 
@@ -115,7 +120,7 @@ export const ValueInput = styled.input`
   font-weight: bold;
   text-align: right;
   border-radius: 22px 0px 0px 22px;
-  border: 2px solid #f5f6fb;
+  border: 2px solid ${colors.white};
   border-right: none;
   color: #000000;
   background: none;
@@ -125,6 +130,7 @@ export const ValueInput = styled.input`
   }
 
   @media ${device.tablet} {
+    border-color: ${colors.bgSummary};
     height: 40px;
     padding-right: 5px;
     border: 0;
@@ -137,9 +143,10 @@ export const CalculatorButton = styled.button`
   width: 60px;
   height: 44px;
   background: none;
-  border: 2px solid #f5f6fb;
+  border: 2px solid ${colors.white};
   border-radius: 0px 22px 22px 0px;
   @media ${device.tablet} {
+    border-color: ${colors.bgSummary};
     border: 0;
     width: 40px;
     padding: 0;

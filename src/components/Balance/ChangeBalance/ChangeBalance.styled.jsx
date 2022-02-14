@@ -20,7 +20,7 @@ export const Span = styled.span`
   text-transform: uppercase;
   color: #000000;
   @media ${device.tablet} {
-    top: 15px;
+    top: 14px;
     right: 12px;
   }
 `;
@@ -37,7 +37,7 @@ export const ChangeBalanceInput = styled.input`
   border-radius: 22px 0px 0px 22px;
   background: none;
 
-  padding: 13px 35px 13px 0;
+  padding: 13px 38px 13px 0;
   &::placeholder {
     color: #000000;
   }
@@ -79,10 +79,11 @@ export const BalanceText = styled.p`
   margin-bottom: 6px;
   font-weight: 500;
   color: ${colors.textColorSecond};
-  outline: 1px solid red;
+
   @media ${device.tablet} {
     margin-bottom: 0px;
     margin-right: 21px;
+    margin-left: 30px;
     padding: 14px 0px;
   }
 `;

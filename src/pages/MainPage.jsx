@@ -6,12 +6,12 @@ import { TransactionTable } from "../components/TransactionTable";
 import { NavigationMainMobile } from "../components/NavigationMobile";
 import { TypeOperationMain } from "../components/TypeOperationMain";
 import { FormComponent } from "../components/FormComponent";
-import { ContentWrapper, Overlay } from "../components/Wrapper/Wrapper.styled";
-
-//import { getTypeTransaction } from "../redux/typeTransaction/transaction-selector";
-//import { changeTypeTransaction } from "../redux/typeTransaction/transaction-slice";
-import {SummaryTable} from "../components/Summary";
-
+import {
+  ContentWrapper,
+  Overlay,
+  OverlayMobile,
+} from "../components/Wrapper/Wrapper.styled";
+import { SummaryTable } from "../components/Summary";
 
 export default function Main() {
   return (
@@ -22,8 +22,8 @@ export default function Main() {
         render={() => (
           <>
             <TypeOperationMain />
+            <FormComponent />
             <Overlay>
-              <FormComponent />
               <TransactionTable />
               <SummaryTable />
             </Overlay>
@@ -31,17 +31,14 @@ export default function Main() {
         )}
       />
       <Media
-        query="(min-width: 320px) and (max-width: 767.98px)"
-        render={() => <TransactionTable />}
-      />
-
-      {/* open form for enter transaction */}
-      <Media
         query="(min-width: 320px) and (max-width: 767px)"
-        render={() => <NavigationMainMobile />}
+        render={() => (
+          <OverlayMobile>
+            <TransactionTable />
+            <NavigationMainMobile />
+          </OverlayMobile>
+        )}
       />
-
-      {/* --open form for enter transaction ---*/}
     </ContentWrapper>
   );
 }

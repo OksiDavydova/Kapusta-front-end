@@ -3,7 +3,7 @@ import React from "react";
 // import { getArrayDataUser } from "../../redux/userData/userData-selector";
 import { SvgIcon } from "../SvgIcon";
 import { useTable } from "react-table";
-import { Tooltip, createTheme, ThemeProvider } from '@mui/material';
+import { Tooltip, createTheme, ThemeProvider } from "@mui/material";
 import {
   TableBodyTransaction,
   TableHeadTransaction,
@@ -23,15 +23,15 @@ const theme = createTheme({
           fontSize: "16px",
           color: "white",
           backgroundColor: "orange",
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 });
 
 function TransactionTable() {
   // const arrayDataUser = useSelector(getArrayDataUser);
-    const btnDel = () => (
+  const btnDel = () => (
     <button type="button" style={{ border: "none" }}>
       <SvgIcon w={16} h={16} idIcon={"#icon-delete"} />
     </button>
@@ -151,50 +151,48 @@ function TransactionTable() {
     headerGroups,
     rows,
     prepareRow,
-  } = useTable({data,columns});
+  } = useTable({ data, columns });
 
   return (
     <TransactionSection>
-    <TableTransaction {...getTableProps()} >
-      <TableHeadTransaction>
-        {headerGroups.map(headerGroup => (
-          <TrHeadTransaction {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
-              <ThHeadTransaction {...column.getHeaderProps()}>
-                {column.render("Header")}
-              </ThHeadTransaction>
-            ))}
-          </TrHeadTransaction>
-        ))}
-      </TableHeadTransaction>
+      <TableTransaction {...getTableProps()}>
+        <TableHeadTransaction>
+          {headerGroups.map((headerGroup) => (
+            <TrHeadTransaction {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column) => (
+                <ThHeadTransaction {...column.getHeaderProps()}>
+                  {column.render("Header")}
+                </ThHeadTransaction>
+              ))}
+            </TrHeadTransaction>
+          ))}
+        </TableHeadTransaction>
 
-      <TableBodyTransaction {...getTableBodyProps()}>
-        {rows.map((row, i) => {
-          prepareRow(row);
-          
-          return (
-            <TrBodyTransaction {...row.getRowProps()}>
-              {row.cells.map((cell) => {
-                const currentDesc = cell.value;
-                return (
-                  <ThemeProvider theme={theme}>
-                    <Tooltip title={currentDesc}>
-                      <TdBodyTransaction {...cell.getCellProps()}
-                      >
-                        {cell.render('Cell')}
-                      </TdBodyTransaction>
-                    </Tooltip>
-                  </ThemeProvider>
-                );
-              })}
-            </TrBodyTransaction>
-          );
-        })}
-      </TableBodyTransaction>
-    </TableTransaction>
+        <TableBodyTransaction {...getTableBodyProps()}>
+          {rows.map((row, i) => {
+            prepareRow(row);
+
+            return (
+              <TrBodyTransaction {...row.getRowProps()}>
+                {row.cells.map((cell) => {
+                  const currentDesc = cell.value;
+                  return (
+                    <ThemeProvider theme={theme}>
+                      <Tooltip title={currentDesc}>
+                        <TdBodyTransaction {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </TdBodyTransaction>
+                      </Tooltip>
+                    </ThemeProvider>
+                  );
+                })}
+              </TrBodyTransaction>
+            );
+          })}
+        </TableBodyTransaction>
+      </TableTransaction>
     </TransactionSection>
   );
 }
 
 export default TransactionTable;
-

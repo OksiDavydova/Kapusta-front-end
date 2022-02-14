@@ -135,9 +135,9 @@ import { dataFromBack } from "../components/Chart/data";
 export default function ReportPage() {
   return (
     <ReportPageWrapper>
-      <Media query="(max-width: 767.98px)" render={() => <ArrowButton />} />
-      <Media query="(max-width: 767.98px)" render={() => <MonthPicker />} />
-      <Media query="(max-width: 767.98px)" render={() => <BalanceOval />} />
+      <Media query="(max-width: 767px)" render={() => <ArrowButton />} />
+      <Media query="(max-width: 767px)" render={() => <MonthPicker />} />
+      <Media query="(max-width: 767px)" render={() => <BalanceOval />} />
 
       <Media
         query="(min-width: 768px)"

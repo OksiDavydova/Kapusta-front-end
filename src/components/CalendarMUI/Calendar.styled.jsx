@@ -1,12 +1,14 @@
 import styled from "@emotion/styled";
 import { device } from "../../styles/utils";
+
 export const Calendar = styled.div`
-  /* width: 100%; */
-   width: 200px;
+  display: flex;
+  align-items: center;
+  width: 124px;
 
-  margin-top: auto;
+  outline: 1px solid red;
 
-    @media${device.tablet}{
+    @media${device.desktop}{
     width: 145px;
   }
 `;

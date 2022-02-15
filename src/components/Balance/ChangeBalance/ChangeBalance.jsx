@@ -49,6 +49,7 @@ function ChangeBalance() {
     }
   };
 
+
   // const enterKeyHandler = (e) => {
   //   console.log(e);
   //   if (e.code === "Enter") {
@@ -68,6 +69,11 @@ function ChangeBalance() {
 
   const removeBalanceModal = () => {
     setShowBalanceModal(false);
+
+  //const setBalance = e => {
+    //const conversionToNumber = Number(e.target.value);
+    //setValueBalance(conversionToNumber);
+
   };
 
   return (

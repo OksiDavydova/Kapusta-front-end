@@ -1,4 +1,13 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  getBullForChangePage,
+  getDataForInput,
+} from "../../../redux/setDataDiagram/dataDiagram-selector";
+import {
+  changeDiagram,
+  sortDataForDiagram,
+} from "../../../redux/setDataDiagram/dataDiagram-slice";
 import {
   CashPickerWrapper,
   CashPickerDiv,
@@ -8,20 +17,32 @@ import {
 
 import { SvgIcon } from "../../SvgIcon";
 
-function CashPicker({ children, updateData }) {
-  const [value, setValue] = useState(false);
+function CashPicker() {
+  const bull = useSelector(getBullForChangePage);
+  const data = useSelector(getDataForInput);
+  const dispatch = useDispatch();
 
-  const dataExpense = children.filter((item) => item.expense);
-  const dataIncome = children.filter((item) => !item.expense);
+  useEffect(() => {
+    if (!data) return;
+    if (bull) {
+      dispatch(
+        sortDataForDiagram({ category: data.income[0].category, bull, data }),
+      );
+    }
+    if (!bull) {
+      dispatch(
+        sortDataForDiagram({ category: data.expense[0].category, bull, data }),
+      );
+    }
+  }, [bull, data]);
 
   function handleClick(e) {
     e.preventDefault();
     console.log("Click CashPicker!");
-    value ? setValue(false) : setValue(true);
-    value ? updateData(dataIncome) : updateData(dataExpense);
+    dispatch(changeDiagram(!bull));
   }
 
-  let text = value ? "расходы" : "доходы";
+  let text = bull ? "доходы" : "расходы";
 
   return (
     <CashPickerWrapper>

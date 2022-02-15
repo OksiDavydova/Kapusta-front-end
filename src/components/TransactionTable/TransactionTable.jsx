@@ -1,5 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
 import { getUserTransactionTheLastSixMounts } from "../../redux/getTransaction/transaction-selector";
 import { getTypeTransaction } from "../../redux/typeTransaction/transaction-selector";
 // import { SvgIcon } from "../SvgIcon";
@@ -15,6 +16,8 @@ import {
   TrBodyTransaction,
   TdBodyTransaction,
 } from "./TransactionTableStyle.styled";
+import { SvgIcon } from "../SvgIcon";
+import { getUserTransaction } from "../../redux/getTransaction/transaction-operation";
 
 const theme = createTheme({
   components: {
@@ -33,6 +36,7 @@ const theme = createTheme({
 function TransactionTable() {
   const arrayDataUser = useSelector(getUserTransactionTheLastSixMounts);
   const bull = useSelector(getTypeTransaction);
+  const dispatch = useDispatch();
 
   const columns = React.useMemo(
     () => [
@@ -72,6 +76,24 @@ function TransactionTable() {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ data, columns });
 
+  const deleteTransaction = async id => {
+    const response = await axios.delete(`/api/v1/transactions/${id}`);
+    if (response.status === 200) {
+      dispatch(getUserTransaction());
+    }
+    return;
+  };
+
+  const btnDel = id => (
+    <button
+      type="button"
+      style={{ border: "none" }}
+      onClick={() => deleteTransaction(id)}
+    >
+      <SvgIcon w={16} h={16} idIcon={"#icon-delete"} />
+    </button>
+  );
+
   return (
     <TransactionSection>
       <TableTransaction {...getTableProps()}>
@@ -89,6 +111,7 @@ function TransactionTable() {
 
         <TableBodyTransaction {...getTableBodyProps()}>
           {rows.map((row, i) => {
+            row.values._id = btnDel(row.values._id);
             prepareRow(row);
 
             return (

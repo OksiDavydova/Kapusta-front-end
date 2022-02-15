@@ -13,6 +13,9 @@ import {
   Cell,
 } from "recharts";
 
+// import EllipsisText from "react-ellipsis-text"
+{/* <EllipsisText text={text} length={6} /> */}
+
 
 function Chart() {
   const getDataChart = useSelector(getDataDiagram);

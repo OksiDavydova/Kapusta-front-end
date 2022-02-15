@@ -1,9 +1,12 @@
-import axios from "axios";
-import { useState } from "react";
+// import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getBalanceUser } from "../../../redux/getBalance/balance-selector";
 import { getDate } from "../../../redux/setDate/date-selector";
-import { getUpdateBalanceUser } from "../../../redux/getBalance/balance-operation";
+import {
+  getUpdateBalanceUser,
+  updateBalanceUserFirst,
+} from "../../../redux/getBalance/balance-operation";
 import { ModalBalance } from "../../Modal";
 import {
   ChangeBalanceWrapper,
@@ -19,20 +22,19 @@ import {
 import { toast } from "react-toastify";
 
 function ChangeBalance() {
+  const dispatch = useDispatch();
   const [showBalanceModal, setShowBalanceModal] = useState(true);
+  const [valueBalance, setValueBalance] = useState(""); // input
   const balance = useSelector(getBalanceUser);
   const date = useSelector(getDate);
-  const [valueBalance, setValueBalance] = useState(0);
-  const dispatch = useDispatch();
+  console.log(valueBalance);
+
+  useEffect(() => {
+    dispatch(getUpdateBalanceUser());
+  }, [dispatch]);
 
   const handleClick = async () => {
     // Notify after good request
-
-    if (isNaN(valueBalance) || !valueBalance) {
-      toast.error("введите коректную сумму пополнения баланса");
-      return;
-    }
-
     const dateForDB = date.replaceAll("/", "");
     const newTransaction = {
       date: dateForDB,
@@ -41,25 +43,27 @@ function ChangeBalance() {
       value: valueBalance,
       income: true,
     };
-    const { status } = await axios.post("/api/v1/transactions", newTransaction);
-    console.log(status);
-    if (status === 201) {
-      dispatch(getUpdateBalanceUser());
-      removeBalanceModal();
-    }
+    dispatch(updateBalanceUserFirst(newTransaction));
+    // console.log(status);
+    // if (status === 201) {
+    //   dispatch(getUpdateBalanceUser());
+    //   removeBalanceModal();
+    // }
   };
-
 
   // const enterKeyHandler = (e) => {
   //   console.log(e);
   //   if (e.code === "Enter") {
-  //     handleClick();
+  //     const fixBalanceValue = parseFloat(e.target.value).toFixed(2);
+  //     setValueBalance(fixBalanceValue);
+  //     e.target.blur();
   //   }
   // };
 
   const setBalance = ({ target }) => {
     // const conversionToNumber = Number(e.target.value);
     const fixBalanceValue = parseFloat(target.value).toFixed(2);
+    console.log(fixBalanceValue);
     if (isNaN(fixBalanceValue)) {
       toast.error("введите коректную сумму пополнения баланса");
       return;
@@ -69,16 +73,14 @@ function ChangeBalance() {
 
   const removeBalanceModal = () => {
     setShowBalanceModal(false);
-
-  //const setBalance = e => {
-    //const conversionToNumber = Number(e.target.value);
-    //setValueBalance(conversionToNumber);
-
   };
+  //const setBalance = e => {
+  //const conversionToNumber = Number(e.target.value);
+  //setValueBalance(conversionToNumber);
 
   return (
     <ChangeBalanceWrapper>
-      {balance > 0 ? (
+      {balance ? (
         <OvalBalanceSpan>
           <BalanceTextOval>Баланс:</BalanceTextOval>
           <OvalBalanceDiv>{[balance, " ", "UAH"]}</OvalBalanceDiv>
@@ -91,6 +93,7 @@ function ChangeBalance() {
               type="text"
               name="balance"
               id="balance"
+              // value={valueBalance}
               pattern="^[ 0-9]+$"
               placeholder="00.00"
               onChange={setBalance}
@@ -106,9 +109,8 @@ function ChangeBalance() {
       )}
 
       {/* --------Modal------------- */}
-      {showBalanceModal && balance === 0 && (
-        <ModalBalance onClose={removeBalanceModal} />
-      )}
+      {/* //balance = 0 */}
+      {showBalanceModal && <ModalBalance onClose={removeBalanceModal} />}
       {/* --------------------- */}
     </ChangeBalanceWrapper>
   );

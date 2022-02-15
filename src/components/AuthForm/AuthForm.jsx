@@ -19,7 +19,7 @@ function AuthForm() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data, event) => {
+  const onSubmitAuth = (data, event) => {
     // доступ к тексту button (Используется библиотека emotion-style)
     const { innerHTML } = event.nativeEvent.submitter;
 
@@ -29,7 +29,7 @@ function AuthForm() {
           loginUsers({
             email: data.email,
             password: data.password,
-          }),
+          })
         );
         break;
       case `${textForInput.signup}`:
@@ -37,7 +37,7 @@ function AuthForm() {
           signUpUsers({
             email: data.email,
             password: data.password,
-          }),
+          })
         );
         break;
       default:
@@ -47,9 +47,11 @@ function AuthForm() {
   };
   return (
     <>
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        <Label>Электронная почта: </Label>
+      <Form onSubmit={handleSubmit(onSubmitAuth)} autocomplete="off">
+        <Label htmlFor="email">Электронная почта: </Label>
         <Input
+          type="text"
+          id="email"
           placeholder="your@mail.com"
           {...register("email", {
             required: true,
@@ -57,23 +59,24 @@ function AuthForm() {
           })}
         />
         {/* Сообщение об обязательном поле */}
-        {/* {errors.email && <span>Email is required</span>} */}
-        <Label>Пароль: </Label>
+        {errors.email && <span>Email is required</span>}
+        <Label htmlFor="password">Пароль: </Label>
         <Input
+          type="password"
+          id="password"
           placeholder="Пароль"
           {...register("password", {
             required: true,
-            pattern:
-              /(?=.*[0-9])(?=.*[!@#-$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g,
+            pattern: /(?=.*[0-9])(?=.*[!@#-$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g,
           })}
         />
-        {/* {errors.password && <span>Password is required</span>} */}
+        {errors.password && <span>Password is required</span>}
 
         <AuthFormButtonWrapper>
           <Button text={`${textForInput.enter}`} />
           <Button
             text={`${textForInput.signup}`}
-            onClick={handleSubmit(onSubmit)}
+            onClick={handleSubmit(onSubmitAuth)}
           />
         </AuthFormButtonWrapper>
       </Form>

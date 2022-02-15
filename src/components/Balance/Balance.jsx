@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Media from "react-media";
 import { BalanceWrapper } from "./BalanceStyle.styled";
@@ -7,6 +7,7 @@ import { CalendarMUI } from "../CalendarMUI";
 import { ButtonToReport } from "./ButtonToReport";
 
 function Balance() {
+  const balCalc = useRef();
   const navigate = useNavigate();
 
   const clickToReport = () => {
@@ -21,7 +22,7 @@ function Balance() {
           render={() => <ButtonToReport onClick={clickToReport} />}
         />
 
-        <ChangeBalance />
+        <ChangeBalance ref={balCalc} />
 
         <Media query="(max-width: 767px)" render={() => <CalendarMUI />} />
         <Media

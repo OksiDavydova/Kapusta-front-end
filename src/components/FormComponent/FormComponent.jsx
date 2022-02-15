@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState,useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ArrowButton } from "../Buttons";
 import Media from "react-media";
@@ -26,6 +26,7 @@ import { getDate } from "../../redux/setDate/date-selector";
 import { getUpdateBalanceUser } from "../../redux/getBalance/balance-operation";
 
 function FormComponent() {
+  const calcForm = useRef();
   const [valueSelect, setValueSelect] = useState("");
   const date = useSelector(getDate);
   const transaction = useSelector(getTypeTransaction);
@@ -70,7 +71,7 @@ function FormComponent() {
 
       <FormTag onSubmit={handleSubmit(onSubmit)} autoComplete="off">
         <FormContainer>
-          <Media query="(min-width: 768px)" render={() => <CalendarMUI />} />
+          <Media query="(min-width: 768px)" render={() => <CalendarMUI ref={ calcForm}/>} />
 
           <InputDescription
             type="text"

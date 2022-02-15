@@ -53,13 +53,16 @@ const useStyles = makeStyles({
 // import { SvgIcon } from "../SvgIcon";
 //import { ReactComponent as CalendarAvg } from "./calendar.svg";
 
-function CalendarMUI() {
+function CalendarMUI({ ref }) {
   // const calendarRef=useRef(null)
   // Эти два хука нужны, чтобы при нажатии на иконку - открывался календарь также, помимо нажатия на само поле + для стилей
   const [open, setOpen] = useState(false);
   const classes = useStyles();
 
   const date = useSelector(getDate);
+  if (!date) {
+  }
+  console.log("calendar", date);
   const dispatch = useDispatch();
 
   function DateIcon() {
@@ -73,6 +76,7 @@ function CalendarMUI() {
           query="(max-width: 1279px)"
           render={() => (
             <MobileDatePicker
+              ref={ref}
               showToolbar={false}
               // cancelText = {false}
               // okText = {false}
@@ -111,10 +115,12 @@ function CalendarMUI() {
           query="(min-width: 1280px)"
           render={() => (
             <DesktopDatePicker
+              ref={ref}
               inputFormat="dd.MM.yyyy"
               maxDate={new Date()}
               minDate={2021}
-              InputAdornmentProps={{ position: "start" }}
+              position="start"
+              // InputAdornmentProps={{ position: "start" }}
               components={{
                 OpenPickerIcon: DateIcon,
               }}

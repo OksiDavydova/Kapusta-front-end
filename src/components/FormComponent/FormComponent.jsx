@@ -62,7 +62,7 @@ function FormComponent() {
   return (
     <FormWrapper>
       <Media
-        query="(min-width: 320px) and (max-width: 767px)"
+        query="(max-width: 767px)"
         render={() => <ArrowButton />}
       />
 

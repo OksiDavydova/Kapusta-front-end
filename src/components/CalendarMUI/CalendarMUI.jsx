@@ -41,6 +41,7 @@ const useStyles = makeStyles({
     "& .MuiInputBase-input": {
       padding: 0,
       margin: 0,
+      marginLeft: -5,
       border: 0,
       fontSize: 12,
       fontWeight: 900,
@@ -49,9 +50,6 @@ const useStyles = makeStyles({
     },
   },
 });
-
-// import { SvgIcon } from "../SvgIcon";
-//import { ReactComponent as CalendarAvg } from "./calendar.svg";
 
 function CalendarMUI() {
   // const calendarRef=useRef(null)

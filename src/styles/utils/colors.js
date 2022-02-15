@@ -32,6 +32,9 @@ export const colors = {
   // Цвет border кнопки Очистить на tablet
   borderClearBtnColor: "#f6f7fc",
 
+  // Цвет внутри select
+  selectColor: "#C7CCDC",
+
   animation: "250ms cubic-bezier(0.4, 0, 0.2, 1)",
 };
 

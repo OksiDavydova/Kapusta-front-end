@@ -2,11 +2,20 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { loginUsers, signUpUsers } from "../../redux/operation";
 import { useForm } from "react-hook-form";
-import { Form, Label, Input, AuthFormButtonWrapper } from "./AuthForm.styled";
+import {
+  Form,
+  Label,
+  Input,
+  AuthFormButtonWrapper,
+  SpanEmail,
+  SpanPassword,
+  SpanText,
+} from "./AuthForm.styled";
 import { Button } from "../../components/Buttons";
 
 function AuthForm() {
   const dispatch = useDispatch();
+
   const textForInput = {
     enter: "вход",
     signup: "регистрация",
@@ -57,7 +66,12 @@ function AuthForm() {
           })}
         />
         {/* Сообщение об обязательном поле */}
-        {/* {errors.email && <span>Email is required</span>} */}
+
+        {errors.email && (
+          <SpanEmail>
+            *Email is required. <SpanText>Example: email@email.com</SpanText>
+          </SpanEmail>
+        )}
         <Label>Пароль: </Label>
         <Input
           placeholder="Пароль"
@@ -67,7 +81,14 @@ function AuthForm() {
               /(?=.*[0-9])(?=.*[!@#-$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g,
           })}
         />
-        {/* {errors.password && <span>Password is required</span>} */}
+        {errors.password && (
+          <SpanPassword>
+            *Password is required.{" "}
+            <SpanText>
+              Must be an uppercase letter, lowercase letter, number, and symbol.{" "}
+            </SpanText>
+          </SpanPassword>
+        )}
 
         <AuthFormButtonWrapper>
           <Button text={`${textForInput.enter}`} />

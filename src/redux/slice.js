@@ -8,11 +8,11 @@ import {
 
 const authSlice = createSlice({
   name: 'user/auth',
-  initialState: { isLogin: false },
+  initialState: { isLogin: false, email: null },
   reducers: {},
   extraReducers: {
     [signUpUsers.fulfilled]: (state, action) => {
-      return (state = { ...action.payload, isLogin: true });
+      return (state = { ...action.payload, isLogin: true, email: action.payload.email });
     },
     [loginUsers.fulfilled]: (state, action) => {
       return (state = { ...action.payload, isLogin: true });

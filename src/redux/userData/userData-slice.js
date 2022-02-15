@@ -46,4 +46,8 @@ const UserData = createSlice({
   extraReducers: {},
 });
 
+console.log(UserData)
+
 export default UserData.reducer;
+
+

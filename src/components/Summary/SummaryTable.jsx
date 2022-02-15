@@ -68,7 +68,7 @@ function SummaryTable() {
           ))}
         </SummaryHead>
 
-        <div {...getTableBodyProps()}>
+        <div {...getTableBodyProps()} style={{height:'228px',  backgroundColor: '#f5f6fb'}}>
           {rows.map((row, i) => {
             prepareRow(row);
 

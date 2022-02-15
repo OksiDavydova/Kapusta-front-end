@@ -110,7 +110,7 @@ export const StatisticButton = styled.a`
 // bottom: 0;
 
 export const ArrowBtnDiv = styled.div`
-  padding-bottom: 10px;
+  // padding-bottom: 10px;
   text-align: left;
 
   outline: 1px solid red;

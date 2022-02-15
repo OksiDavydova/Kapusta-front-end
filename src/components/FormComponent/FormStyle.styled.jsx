@@ -52,7 +52,7 @@ export const InputDescription = styled.input`
   padding-left: 20px;
   height: 44px;
   width: 100%;
-  border-radius: 16px 0 0px 0px;
+  border-radius: 16px 0px 0px 0px;
   color: #52555f;
   border: 2px solid ${colors.white};
   background: none;

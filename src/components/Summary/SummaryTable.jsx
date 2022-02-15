@@ -6,6 +6,7 @@ import {
     SummaryTr,
     SummaryTrBody,
     SummaryTableContainer,
+    SummaryBody,
 } from "./SummaryStyle.styled";
 
 function SummaryTable() {
@@ -87,7 +88,7 @@ function SummaryTable() {
                     ))}
                 </SummaryHead>
 
-                <div {...getTableBodyProps()}>
+                <SummaryBody {...getTableBodyProps()}>
                     {rows.map((row, i) => {
                         prepareRow(row);
           
@@ -104,7 +105,7 @@ function SummaryTable() {
                             </SummaryTrBody>
                         );
                     })}
-                </div>
+                </SummaryBody>
             </SummaryTab>
         </SummaryTableContainer>
     );

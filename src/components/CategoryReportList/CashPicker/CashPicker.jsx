@@ -24,21 +24,34 @@ function CashPicker() {
 
   useEffect(() => {
     if (!data) return;
+
     if (bull) {
+      if (data.income.length === 0) {
+        dispatch(sortDataForDiagram([]));
+
+        return;
+      }
       dispatch(
         sortDataForDiagram({ category: data.income[0].category, bull, data }),
       );
+      return;
     }
     if (!bull) {
+      if (data.expense.length === 0) {
+        dispatch(sortDataForDiagram([]));
+        return;
+      }
       dispatch(
         sortDataForDiagram({ category: data.expense[0].category, bull, data }),
       );
+      return;
     }
-  }, [bull, data]);
+
+    return;
+  }, [bull, data, dispatch]);
 
   function handleClick(e) {
     e.preventDefault();
-    console.log("Click CashPicker!");
     dispatch(changeDiagram(!bull));
   }
 

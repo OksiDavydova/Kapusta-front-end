@@ -1,6 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { getDataDiagram } from "../../redux/setDataDiagram/dataDiagram-selector";
+import {
+  getDataDiagram,
+  getDataForInput,
+} from "../../redux/setDataDiagram/dataDiagram-selector";
 import {
   ResponsiveContainer,
   BarChart,
@@ -13,17 +16,24 @@ import {
   Cell,
 } from "recharts";
 
+// import EllipsisText from "react-ellipsis-text"
+{
+  /* <EllipsisText text={text} length={6} /> */
+}
 
 function Chart() {
   const getDataChart = useSelector(getDataDiagram);
+  const data = useSelector(getDataForInput);
 
-const colors = ["#FF751D", "#FFDAC0"];
+  const arrayFromRender = data ? getDataChart : [];
+
+  const colors = ["#FF751D", "#FFDAC0"];
 
   return (
-    <ResponsiveContainer width={getDataChart.length * 63} height={382}>
-      <BarChart data={getDataChart} barSize={38} barCategoryGap={25}>
-        <CartesianGrid vertical={false} width={650}/>
-        <CartesianAxis/>
+    <ResponsiveContainer width={arrayFromRender.length * 63} height={382}>
+      <BarChart data={arrayFromRender} barSize={38} barCategoryGap={25}>
+        <CartesianGrid vertical={false} width={650} />
+        <CartesianAxis />
         <Bar
           dataKey="value"
           fill="#FF751D"
@@ -31,7 +41,7 @@ const colors = ["#FF751D", "#FFDAC0"];
           radius={[10, 10, 0, 0]}
           margin={{ top: 20, right: 15, bottom: 0, left: 15 }}
         >
-          {getDataChart.map((entry, index) => (
+          {arrayFromRender.map((entry, index) => (
             <Cell
               key={`cell-${index}`}
               fill={index % 3 === 0 ? colors[0] : colors[1]}
@@ -46,7 +56,7 @@ const colors = ["#FF751D", "#FFDAC0"];
             formatter={number => `${number.toLocaleString("ru-RU")} грн`}
           />
         </Bar>
-        <XAxis dataKey="name" tickLine={false} axisLine={false}/>
+        <XAxis dataKey="name" tickLine={false} axisLine={false} />
         <YAxis dataKey="value" hide tickCount={10} axisLine={false} />
       </BarChart>
     </ResponsiveContainer>

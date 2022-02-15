@@ -7,29 +7,52 @@ axios.defaults.baseURL = BASE_URL;
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+    localStorage.setItem("token", token);
   },
   unset() {
     axios.defaults.headers.common.Authorization = "";
+    localStorage.setItem("token", null);
   },
 };
 
-export const signUpUsers = createAsyncThunk("users/signUp", async user => {
-  const { data } = await axios.post("/api/v1/auth/signup", user);
-  token.set(data.user.token);
-  return data.user;
-});
+export const signUpUsers = createAsyncThunk(
+  "users/signUp",
+  async (user, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post("/api/v1/auth/signup", user);
+      token.set(data.user.token);
+      return data.user;
+    } catch (err) {
+      return rejectWithValue(err.message);
+    }
+  },
+);
 
-export const loginUsers = createAsyncThunk("users/login", async user => {
-  const { data } = await axios.post("/api/v1/auth/login", user);
-  token.set(data.user.token);
-  return data.user;
-});
+export const loginUsers = createAsyncThunk(
+  "users/login",
+  async (user, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post("/api/v1/auth/login", user);
+      token.set(data.user.token);
+      return data.user;
+    } catch (err) {
+      return rejectWithValue(err.message);
+    }
+  },
+);
 
-export const logoutUsers = createAsyncThunk("users/logout", async () => {
-  await axios.post("/api/v1/auth/logout");
-  token.unset();
-  return;
-});
+export const logoutUsers = createAsyncThunk(
+  "users/logout",
+  async (_, { rejectWithValue }) => {
+    try {
+      await axios.post("/api/v1/auth/logout");
+      token.unset();
+      return;
+    } catch (err) {
+      return rejectWithValue(err.message);
+    }
+  },
+);
 
 export const googleAuthUsers = createAsyncThunk(
   "users/current",

@@ -2,25 +2,23 @@ import styled from "@emotion/styled";
 import { device } from "../../styles/utils";
 
 export const BalanceWrapper = styled.section`
-  position: relative;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-left: auto;
   margin-right: auto;
   outline: 1px solid red;
-  padding-bottom: 62px;
+  padding-bottom: 42px;
 
   @media ${device.tablet} {
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
+    width: 665px;
     padding-bottom: 58px;
   }
 
   @media ${device.desktop} {
-    justify-content: center;
+    justify-content: space-between;
+    width: 1060px;
     padding-bottom: 9px;
   }
 `;

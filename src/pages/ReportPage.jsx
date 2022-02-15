@@ -1,16 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import Media from "react-media";
-import { useDispatch } from "react-redux";
-import { getDataForDiagram } from "../redux/setDataDiagram/dataDiagram-operation";
-// import { CategoryReportList } from "../components/CategoryReportList";
 import { ArrowButton } from "../components/Buttons";
 import { MonthPicker } from "../components/MonthPicker";
 
 import { BalanceOval } from "../components/Balance/BalanceOval";
 import { Chart, ChartMobile } from "../components/Chart";
 
-// import { CashPicker } from "../components/CategoryReportList/CashPicker";
 import { CategoryReportList } from "../components/CategoryReportList";
 import { ReportBalance } from "../components/ReportBalance";
 import {
@@ -20,12 +16,6 @@ import {
 } from "../components/Wrapper/Wrapper.styled";
 
 export default function ReportPage() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getDataForDiagram());
-  }, [dispatch]);
-
   return (
     <ReportPageWrapper>
       <Media query="(max-width: 767px)" render={() => <ArrowButton />} />

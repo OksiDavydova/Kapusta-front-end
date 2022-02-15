@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getBalanceUser } from "../../../redux/getBalance/balance-selector";
 import { getDate } from "../../../redux/setDate/date-selector";
@@ -19,17 +19,29 @@ import {
 import { toast } from "react-toastify";
 
 function ChangeBalance() {
+  const dispatch = useDispatch();
   const [showBalanceModal, setShowBalanceModal] = useState(true);
   const balance = useSelector(getBalanceUser);
   const date = useSelector(getDate);
-  const [valueBalance, setValueBalance] = useState(0);
-  const dispatch = useDispatch();
+  //value from input
+  const [valueBalance, setValueBalance] = useState("");
 
-  const handleClick = async () => {
-    // Notify after good request
+  useEffect(() => {
+    dispatch(getUpdateBalanceUser());
+  }, [dispatch]);
+  // input
+  const setBalance = (e) => {
+    setValueBalance(e.target.value);
+  };
+  // form handle Submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // input value to number
+    const fixBalanceValue = parseFloat(valueBalance).toFixed(2);
 
     if (isNaN(valueBalance) || !valueBalance) {
-      toast.error("введите коректную сумму пополнения баланса");
+      toast.error(`проверте данные вы ввели: ${valueBalance}`);
+      // setValueBalance("");
       return;
     }
 
@@ -38,47 +50,28 @@ function ChangeBalance() {
       date: dateForDB,
       description: "Пополнение баланса",
       category: "доп. доход",
-      value: valueBalance,
+      value: fixBalanceValue,
       income: true,
     };
     const { status } = await axios.post("/api/v1/transactions", newTransaction);
-    console.log(status);
+
     if (status === 201) {
       dispatch(getUpdateBalanceUser());
       removeBalanceModal();
+      setValueBalance("");
     }
-  };
-
-
-  // const enterKeyHandler = (e) => {
-  //   console.log(e);
-  //   if (e.code === "Enter") {
-  //     handleClick();
-  //   }
-  // };
-
-  const setBalance = ({ target }) => {
-    // const conversionToNumber = Number(e.target.value);
-    const fixBalanceValue = parseFloat(target.value).toFixed(2);
-    if (isNaN(fixBalanceValue)) {
-      toast.error("введите коректную сумму пополнения баланса");
-      return;
-    }
-    setValueBalance(fixBalanceValue);
   };
 
   const removeBalanceModal = () => {
-    setShowBalanceModal(false);
-
-  //const setBalance = e => {
-    //const conversionToNumber = Number(e.target.value);
-    //setValueBalance(conversionToNumber);
-
+    setShowBalanceModal(!showBalanceModal);
   };
+  //const setBalance = e => {
+  //const conversionToNumber = Number(e.target.value);
+  //setValueBalance(conversionToNumber);
 
   return (
     <ChangeBalanceWrapper>
-      {balance > 0 ? (
+      {balance ? (
         <OvalBalanceSpan>
           <BalanceTextOval>Баланс:</BalanceTextOval>
           <OvalBalanceDiv>{[balance, " ", "UAH"]}</OvalBalanceDiv>
@@ -86,27 +79,27 @@ function ChangeBalance() {
       ) : (
         <>
           <BalanceText>Баланс:</BalanceText>
-          <LabelBalance htmlFor="balance">
-            <ChangeBalanceInput
-              type="text"
-              name="balance"
-              id="balance"
-              pattern="^[ 0-9]+$"
-              placeholder="00.00"
-              onChange={setBalance}
-              // onKeyDown={enterKeyHandler}
-            />
-
-            <Span>UAH</Span>
-          </LabelBalance>
-          <ChangeBalanceButton type="button" onClick={handleClick}>
-            Подтвердить
-          </ChangeBalanceButton>
+          <form onSubmit={handleSubmit}>
+            <LabelBalance htmlFor="balance">
+              <ChangeBalanceInput
+                type="text"
+                name="balance"
+                // pattern="^[ 0-9]+$"
+                placeholder="00.00"
+                value={valueBalance}
+                onChange={setBalance}
+                autoComplete="off"
+                autoFocus
+              />
+              <Span>UAH</Span>
+            </LabelBalance>
+            <ChangeBalanceButton type="submit">Подтвердить</ChangeBalanceButton>
+          </form>
         </>
       )}
 
       {/* --------Modal------------- */}
-      {showBalanceModal && balance === 0 && (
+      {showBalanceModal && !balance && (
         <ModalBalance onClose={removeBalanceModal} />
       )}
       {/* --------------------- */}

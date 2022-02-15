@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { getExpenseUser } from "../../redux/getBalance/balance-selector";
+import { getDataForInput } from "../../redux/setDataDiagram/dataDiagram-selector";
 import {
   ReportBalanceWrapper,
   ReportBalanceDiv,
@@ -11,9 +12,9 @@ import { ReportBalanceText } from "../Text/Text.styled";
 // Также суммы с БЭКа привести к формату "00 000,00 грн" через number.toLocaleString("ru-RU", {style: "currency", currency: "UAH"})
 
 function ReportBalance() {
-  const balance = useSelector(getExpenseUser);
-  const expenses = `-${balance.expense} грн`;
-  const incomes = `+${balance.income} грн`;
+  const balance = useSelector(getDataForInput);
+  const expenses = balance ? `-${balance.sumOfExpense} грн` : `0 грн`;
+  const incomes = balance ? `+${balance.sumOfIncome} грн` : `0 грн`;
 
   const textResponses = "Расходы:";
   const textIncomes = "Доходы:";

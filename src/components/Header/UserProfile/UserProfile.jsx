@@ -1,9 +1,14 @@
+import React from "react";
 import {getUserEmail} from "../../../redux/selectors";
 import { useSelector} from "react-redux";
+
 import { AvatarLetter, UserName, ProfileWrapper } from "./UserProfile.styled";
+// import { userEmailAuth } from "../../../redux/selectors";
+
 
 function UserProfile(isAuth) {
   const userEmail = useSelector(getUserEmail)
+  
   const userName = (userEmail) => {
     if (userEmail) {
       const index = userEmail.indexOf("@");
@@ -20,6 +25,7 @@ function UserProfile(isAuth) {
   };
 
   // 
+
 
   return (
     

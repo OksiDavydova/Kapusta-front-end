@@ -29,14 +29,14 @@ export const BtnToReport = styled.button`
 
   @media ${device.tablet} {
     margin: 0;
-    padding: 10px;
+    padding: 14px 10px 10px;
   }
 
-  @media ${device.desktop} {
-    position: absolute;
-    top: 5px;
-    right: 30px;
-  }
+  // @media ${device.desktop} {
+  //   position: absolute;
+  //   top: 5px;
+  //   right: 30px;
+  // }
 `;
 
 export const BtnReportText = styled.span`

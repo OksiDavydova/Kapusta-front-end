@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const StyledLink = styled(Link)`
   vertical-align: bottom;
-  min-width: 150px;
+  min-width: 148px;
   height: 53px;
   font-weight: bold;
   display: flex;
@@ -16,6 +16,9 @@ export const StyledLink = styled(Link)`
   outline: none;
   border: none;
   background: ${colors.bgSummary};
+
+  // outline: 1px solid red;
+
 
   &:hover,
   &:focus {

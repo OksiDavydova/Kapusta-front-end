@@ -52,6 +52,7 @@ function SummaryTable() {
       data,
     });
 
+
   return (
     <SummaryTableContainer>
       <SummaryTab {...getTableProps()}>
@@ -85,6 +86,8 @@ function SummaryTable() {
       </SummaryTab>
     </SummaryTableContainer>
   );
+
+
 }
 
 export default SummaryTable;

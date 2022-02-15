@@ -20,7 +20,7 @@ export const ChooseOperationButton = styled.button`
   text-transform: uppercase;
 
   border: none;
-  border-radius: 16px;
+  border-radius: 20px 20px 0px 0px;
 
   color: ${(props) => props.isActive} ;
   background-color: ${(props) => props.isBgActive} ;

@@ -10,61 +10,50 @@ export const CardItem = styled.li`
   outline: 1px solid red;
 
   @media ${device.tablet} {
-    margin-top: 40px;
+    margin-top: 20px;
     margin-left: 20px;
     flex-basis: calc(100% / 6 - 20px);
   }
 
-  
-
   @media ${device.tabletMax} {
-    margin-top: 40px;
+    margin-top: 20px;
     margin-left: 10px;
+    margin-bottom: 20px;
     flex-basis: calc(100% / 3 - 10px);
 
-    &:nth-child(4):before{
+    &:nth-child(2):before{
       content: "";
       display: block;
       position: absolute;
-      top: -20%;
-      right: -218%;
-      height: 1px;
-      width: 282px;
+      top: 120%;
+      right: -118%;
+      height: 3px;
+      width: 300px;
       background: ${colors.lineColor};
   }
 
-  &:nth-child(7):before{
-    content: "";
-    display: block;
-    position: absolute;
-    top: -20%;
-    right: -218%;
-    height: 1px;
-    width: 282px;
-    background: ${colors.lineColor};
-}
+    &:nth-child(5):before{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 120%;
+      right: -118%;
+      height: 3px;
+      width: 300px;
+      background: ${colors.lineColor};
+  }
 
-&:nth-child(10):before{
-  content: "";
-  display: block;
-  position: absolute;
-  top: -20%;
-  right: -162%;
-  height: 1px;
-  width: 282px;
-  background: ${colors.lineColor};
-}
+    &:nth-child(8):before{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 120%;
+      right: -118%;
+      height: 3px;
+      width: 300px;
+      background: ${colors.lineColor};
+    }
 
-&:nth-child(10):after{
-  content: "";
-  display: block;
-  position: absolute;
-  top: 120%;
-  right: -162%;
-  height: 1px;
-  width: 282px;
-  background: ${colors.lineColor};
-}
 `;
 
 export const CardText = styled.span`
@@ -93,12 +82,12 @@ export const CardBtnSvg = styled.button`
     position: absolute;
     left: 17%;
     bottom: 18%;
-    z-index: -1;
+    z-index: -3;
   }
   &:hover {
     &::after {
       content: url(${btnLayoutActiv});
-      z-index: -1;
+      z-index: -3;
     }
   }
 

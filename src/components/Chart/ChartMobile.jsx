@@ -15,12 +15,13 @@ function ChartMobile() {
   const getDataChart = useSelector(getDataDiagram);
 
   const colors = ["#FF751D", "#FFDAC0"];
+  
   return (
     <ResponsiveContainer width={300} height={getDataChart.length * 50}>
       <BarChart
         data={getDataChart}
         layout="vertical"
-        margin={{ top: 30, right: 20, bottom: 0, left: 15 }}
+        margin={{ top: 30, right: 50, bottom: 0, left: 15 }}
       >
         <Bar
           dataKey="value"

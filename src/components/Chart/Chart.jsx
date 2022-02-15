@@ -8,28 +8,22 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
+  CartesianAxis,
   LabelList,
   Cell,
 } from "recharts";
 
-import { dataFromBack } from "./data";
 
-// let category = "Транспорт";
-
-// let data = dataFromBack
-//   .filter(item => item.category === category && item.expense)
-//   .sort((a, b) => b.value - a.value);
-
-const colors = ["#FF751D", "#FFDAC0"];
-
-// ----------------------Question - to do responsive chart or fixed???
 function Chart() {
   const getDataChart = useSelector(getDataDiagram);
+
+const colors = ["#FF751D", "#FFDAC0"];
 
   return (
     <ResponsiveContainer width={getDataChart.length * 63} height={382}>
       <BarChart data={getDataChart} barSize={38} barCategoryGap={25}>
-        <CartesianGrid vertical={false} />
+        <CartesianGrid vertical={false} width={650}/>
+        <CartesianAxis/>
         <Bar
           dataKey="value"
           fill="#FF751D"
@@ -52,7 +46,7 @@ function Chart() {
             formatter={number => `${number.toLocaleString("ru-RU")} грн`}
           />
         </Bar>
-        <XAxis dataKey="name" tickLine={false} axisLine={false} />
+        <XAxis dataKey="name" tickLine={false} axisLine={false}/>
         <YAxis dataKey="value" hide tickCount={10} axisLine={false} />
       </BarChart>
     </ResponsiveContainer>

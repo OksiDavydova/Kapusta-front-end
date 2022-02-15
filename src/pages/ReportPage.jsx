@@ -45,7 +45,7 @@ export default function ReportPage() {
       <ReportBalance />
 
       <CategoryReportList />
-      <Media query="(max-width: 767.98px)" render={() => <ChartMobile />} />
+      <Media query="(max-width: 767px)" render={() => <ChartMobile />} />
 
       <Media
         query="(min-width: 768px)"

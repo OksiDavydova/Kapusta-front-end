@@ -1,25 +1,25 @@
 import styled from "@emotion/styled";
-import { colors } from "../../../styles/utils";
+import { device, colors } from "../../../styles/utils";
 
 export const CashPickerWrapper = styled.div`
-  position: relative;
   display: flex;
   justify-content: center;
-  padding-bottom: 20px;
-  // margin-bottom: 20px;
+  padding-bottom: 15px;
 
   outline: 1px solid red;
+
+  @media ${device.tablet} {
+    padding-bottom: 20px;
+  }
 `;
 
 export const CashPickerDiv = styled.div`
-  position: absolute;
   width: 134px;
   display: flex;
   justify-content: center;
   padding: 2px 0px;
 
   outline: 1px solid red;
-  z-index: 99;
 `;
 
 export const Arrow = styled.a`

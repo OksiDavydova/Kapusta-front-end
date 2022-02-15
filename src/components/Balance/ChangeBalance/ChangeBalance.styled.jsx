@@ -9,7 +9,7 @@ export const ChangeBalanceWrapper = styled.div`
     display: flex;
   }
   @media ${device.desktop} {
-    margin-left: 350px;
+    justify-content: center;
   }
 `;
 export const LabelBalance = styled.label`
@@ -24,7 +24,7 @@ export const Span = styled.span`
   text-transform: uppercase;
   color: #000000;
   @media ${device.tablet} {
-    top: 14px;
+    top: 0;
     right: 12px;
   }
 `;
@@ -32,7 +32,6 @@ export const Span = styled.span`
 export const ChangeBalanceInput = styled.input`
   outline: none;
   width: 123px;
-  /* height: 44px; */
   padding: 0;
   font-weight: bold;
   text-align: right;
@@ -58,7 +57,6 @@ export const ChangeBalanceButton = styled.button`
   text-transform: uppercase;
   color: #52555fb3;
   text-align: center;
-  // background: #f5f6fb;
   background: none;
   border: 2px solid #ffffff;
   border-left: none;
@@ -95,7 +93,7 @@ export const BalanceText = styled.p`
 export const OvalBalanceSpan = styled.div`
   padding-bottom: 40px;
 
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 
   @media ${device.tablet} {
     display: flex;
@@ -109,33 +107,27 @@ export const OvalBalanceSpan = styled.div`
 `;
 
 export const OvalBalanceDiv = styled.div`
-    display: inline-block;
-    width: 183px;
+  display: inline-block;
+  width: 183px;
 
-    padding: 14px 5px;
-    font-weight: bold;
-    color: ${colors.black};
+  padding: 14px 5px;
+  font-weight: bold;
+  color: ${colors.black};
 
-    border: 2px solid ${colors.white};
-    border-radius: 22px 22px 22px 22px;
+  border: 2px solid ${colors.white};
+  border-radius: 22px 22px 22px 22px;
+  background: none;
 
-    // background: ${colors.bgSummary};
-    background: none;
-
-    outline: 1px solid red;
-
-    @media ${device.tablet} {
-        width: 125px;
-        padding: 13px 5px;
-    }
-    `;
+  @media ${device.tablet} {
+    width: 125px;
+    padding: 13px 5px;
+  }
+`;
 
 export const BalanceTextOval = styled.p`
   margin-bottom: 6px;
   font-weight: 500;
-  // color: #52555fb3;
   color: ${colors.textColorSecond};
-  outline: 1px solid red;
 
   @media ${device.tablet} {
     margin-bottom: 0px;

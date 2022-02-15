@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import SelectUnstyled, {
   selectUnstyledClasses,
@@ -165,7 +165,7 @@ function renderValue(option) {
 function CategorySelectUnstyled({ children }) {
   // тип нужен для того, чтобы правильно отрисовывать категории для транзакций
   const typeTransaction = useSelector(getTypeTransaction);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <CustomSelect

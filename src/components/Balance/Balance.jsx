@@ -18,7 +18,7 @@ function Balance() {
       <BalanceWrapper>
         <ButtonToReport onClick={clickToReport} />
         <ChangeBalance />
-        <Media query="(max-width: 767px)" render={() => <CalendarMUI />} />
+        <Media query="(max-width: 767.98px)" render={() => <CalendarMUI />} />
       </BalanceWrapper>
     </>
   );

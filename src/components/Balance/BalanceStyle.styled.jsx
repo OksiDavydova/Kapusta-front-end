@@ -6,7 +6,6 @@ export const BalanceWrapper = styled.section`
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  outline: 1px solid red;
   padding-bottom: 42px;
 
   @media ${device.tablet} {

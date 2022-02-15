@@ -3,7 +3,6 @@ import { device, colors } from "../../styles/utils";
 
 export const FormWrapper = styled.div`
 width:100%;
-  /* max-width: 280px; */
   outline: 1px solid red;
   margin-left: auto;
   margin-right: auto;
@@ -19,8 +18,6 @@ width:100%;
 
   }
     @media${device.desktop}{
-      /* width: 100%;  */
-    /* max-width: 1060px; */
     padding: 33px 20px 59px;
    
   }
@@ -70,8 +67,6 @@ export const InputDescription = styled.input`
   }
     @media${device.desktop}{
     width: 287px;
-    /* border: 2px solid ${colors.bgSummary};
-    border-right:0; */
   }
 `;
 export const SelectOverlay = styled.div`
@@ -169,7 +164,7 @@ export const ButtonFormWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
    @media${device.tablet}{
    margin-top: 30px;
    justify-content: center;  

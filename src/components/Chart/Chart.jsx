@@ -17,9 +17,8 @@ import {
 } from "recharts";
 
 // import EllipsisText from "react-ellipsis-text"
-{
-  /* <EllipsisText text={text} length={6} /> */
-}
+
+/* <EllipsisText text={text} length={6} /> */
 
 function Chart() {
   const getDataChart = useSelector(getDataDiagram);
@@ -53,7 +52,7 @@ function Chart() {
             position="top"
             offset={10}
             fill={"#52555F"}
-            formatter={number => `${number.toLocaleString("ru-RU")} грн`}
+            formatter={(number) => `${number.toLocaleString("ru-RU")} грн`}
           />
         </Bar>
         <XAxis dataKey="name" tickLine={false} axisLine={false} />

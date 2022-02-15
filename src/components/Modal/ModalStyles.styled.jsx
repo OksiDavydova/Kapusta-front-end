@@ -61,18 +61,18 @@ export const ModalBalanceContent = styled.div`
       transform: translateY(calc(100% + 35px)) translateX(26%);
       };
       @media ${device.tablet} {
-      transform: translateY(calc(100% + -47px)) translateX(49%);
+      transform: translateY(calc(100% + -47px)) translateX(66%);
       width: 292px;
       };
       @media (min-width: 1024px) {
-      transform: translateY(calc(100% + -47px)) translateX(100%);
+      transform: translateY(calc(100% + -47px)) translateX(114%);
       width: 292px;
       };
       @media ${device.desktop} {
-         transform: translateY(calc(100% + -41px)) translateX(199%)
+      transform: translateY(calc(100% + -41px)) translateX(199%)
     };
-          @media (min-width: 1440px) {
-         transform: translateY(calc(100% + -41px)) translateX(228%)
+      @media (min-width: 1440px) {
+      transform: translateY(calc(100% + -41px)) translateX(228%)
     };
 };
 `;

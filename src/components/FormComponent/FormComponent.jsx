@@ -25,6 +25,7 @@ import { getTypeTransaction } from "../../redux/typeTransaction//transaction-sel
 import { getDate } from "../../redux/setDate/date-selector";
 import { getUpdateBalanceUser } from "../../redux/getBalance/balance-operation";
 import { getUserTransaction } from "../../redux/getTransaction/transaction-operation";
+// import { toast } from "react-toastify";
 
 function FormComponent() {
   const [valueSelect, setValueSelect] = useState("");
@@ -34,8 +35,14 @@ function FormComponent() {
   const dispatch = useDispatch();
   const { register, handleSubmit, resetField } = useForm();
 
-  const onSubmit = async data => {
+  const onSubmit = async (data) => {
     const { description, value } = data;
+    // const normalizeDescription = console.log(data);
+    // console.log(description);
+    // if (description.trim() === "") {
+    //   toast.error(`введите описание`);
+    //   return;
+    // }
     const dateForDB = date.replaceAll("/", "");
     const newTransaction = {
       date: dateForDB,
@@ -49,6 +56,7 @@ function FormComponent() {
     if (status === 201) {
       dispatch(getUpdateBalanceUser());
       dispatch(getUserTransaction());
+      // toast.success("okey");
     }
     resetInputField();
   };
@@ -82,7 +90,6 @@ function FormComponent() {
           />
 
           <SelectOverlay>
-            {/* ??????? */}
             <CategorySelectUnstyled
               children={{ valueSelect, setValueSelect }}
             />

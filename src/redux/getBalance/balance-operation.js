@@ -18,6 +18,7 @@ export const getUpdateBalanceUser = createAsyncThunk(
           acc.balance -= el.total;
           return acc;
         }
+        return acc;
       },
       { balance: 0, income: 0, expense: 0 },
     );
@@ -25,5 +26,5 @@ export const getUpdateBalanceUser = createAsyncThunk(
     return {
       ...balance,
     };
-  }
+  },
 );

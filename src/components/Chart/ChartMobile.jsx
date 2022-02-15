@@ -1,6 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { getDataDiagram } from "../../redux/setDataDiagram/dataDiagram-selector";
+import {
+  getDataDiagram,
+  getDataForInput,
+} from "../../redux/setDataDiagram/dataDiagram-selector";
 import {
   ResponsiveContainer,
   BarChart,
@@ -13,13 +16,16 @@ import {
 
 function ChartMobile() {
   const getDataChart = useSelector(getDataDiagram);
+  const data = useSelector(getDataForInput);
+
+  const arrayFromRender = data ? getDataChart : [];
 
   const colors = ["#FF751D", "#FFDAC0"];
-  
+
   return (
-    <ResponsiveContainer width={300} height={getDataChart.length * 50}>
+    <ResponsiveContainer width={300} height={arrayFromRender.length * 50}>
       <BarChart
-        data={getDataChart}
+        data={arrayFromRender}
         layout="vertical"
         margin={{ top: 30, right: 50, bottom: 0, left: 15 }}
       >
@@ -29,7 +35,7 @@ function ChartMobile() {
           barSize={15}
           radius={[0, 10, 10, 0]}
         >
-          {getDataChart.map((entry, index) => (
+          {arrayFromRender.map((entry, index) => (
             <Cell
               key={`cell-${index}`}
               fill={index % 3 === 0 ? colors[0] : colors[1]}

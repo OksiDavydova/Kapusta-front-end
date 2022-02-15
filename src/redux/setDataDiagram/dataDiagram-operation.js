@@ -4,8 +4,13 @@ import { CATEGORIES_FOR_SELECT } from "../../const/constants";
 
 export const getDataForDiagram = createAsyncThunk(
   "user/transactionForDiagram",
-  async () => {
-    const { data } = await axios.get("/api/v1/transactions/sorted");
+  async date => {
+    // const { data } = await axios.get("/api/v1/transactions/sorted");
+    const response = await axios.get(`/api/v1/transactions/forreport/${date}`);
+
+    if (response.data.data.transactionsByDescription.length === 0) return false;
+
+    const data = response.data.data.transactionsByDescription;
 
     const expense = CATEGORIES_FOR_SELECT[0].expense.reduce((acc, el) => {
       let total = 0;
@@ -13,7 +18,7 @@ export const getDataForDiagram = createAsyncThunk(
         category: el,
         data: [],
       };
-      data.data.map((e, ind) => {
+      data.map((e, ind) => {
         if (e._id.category === el) {
           total += e.totalDescription;
           newObj.data.push({
@@ -37,7 +42,7 @@ export const getDataForDiagram = createAsyncThunk(
         category: el,
         data: [],
       };
-      data.data.map((e, ind) => {
+      data.map((e, ind) => {
         if (e._id.category === el) {
           total += e.totalDescription;
           newObj.data.push({
@@ -61,7 +66,10 @@ export const getDataForDiagram = createAsyncThunk(
     const newData = {
       income: sortIncome,
       expense: sortExpense,
+      sumOfExpense: response.data.data.sumOfCosts,
+      sumOfIncome: response.data.data.sumOfIncomes,
     };
+
     return newData;
   },
 );

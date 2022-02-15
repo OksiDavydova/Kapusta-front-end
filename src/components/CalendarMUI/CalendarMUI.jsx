@@ -94,7 +94,10 @@ function CalendarMUI() {
                   className={classes.root}
                   InputProps={{
                     startAdornment: (
-                      <InputAdornment disablePointerEvents={false}>
+                      <InputAdornment
+                        position={"start"}
+                        disablePointerEvents={false}
+                      >
                         <IconButton edge="start" onClick={(e) => setOpen(true)}>
                           <SvgIcon w={20} h={20} idIcon={"#icon-calendar"} />
                         </IconButton>

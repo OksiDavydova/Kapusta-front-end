@@ -8,6 +8,7 @@ import {
   getDataForInput,
   getBullForChangePage,
 } from "../../redux/setDataDiagram/dataDiagram-selector";
+// import { NoResult } from "./NoResult";
 
 function CategoryReportList() {
   const data = useSelector(getDataForInput);
@@ -26,6 +27,7 @@ function CategoryReportList() {
           sortDataIcon.map(({ total, category }) => (
             <Card key={uuidv4()} value={total} category={category} />
           ))}
+        {/* {!data && <NoResult />} */}
       </CategoryList>
     </CategoryListWrapper>
   );

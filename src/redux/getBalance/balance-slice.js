@@ -8,7 +8,6 @@ const getBalance = createSlice({
   reducers: {},
   extraReducers: {
     [getUpdateBalanceUser.fulfilled]: (state, actions) => {
-      console.log(actions);
       return (state = { ...state, ...actions.payload });
     },
   },

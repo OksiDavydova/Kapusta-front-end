@@ -11,9 +11,8 @@ import { colors } from "../../styles/utils";
 function TypeOperationMain() {
   const transaction = useSelector(getTypeTransaction);
   const dispatch = useDispatch();
-  console.log(transaction);
 
-  const changeTypeOperation = (e) => {
+  const changeTypeOperation = e => {
     switch (e.target.value) {
       case "доход":
         dispatch(changeTypeTransaction(true));

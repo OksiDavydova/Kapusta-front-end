@@ -1,7 +1,8 @@
 import React from "react";
-// import { useSelector } from "react-redux";
-// import { getArrayDataUser } from "../../redux/userData/userData-selector";
-import { SvgIcon } from "../SvgIcon";
+import { useSelector } from "react-redux";
+import { getUserTransactionTheLastSixMounts } from "../../redux/getTransaction/transaction-selector";
+import { getTypeTransaction } from "../../redux/typeTransaction/transaction-selector";
+// import { SvgIcon } from "../SvgIcon";
 import { useTable } from "react-table";
 import { Tooltip, createTheme, ThemeProvider } from "@mui/material";
 import {
@@ -30,18 +31,14 @@ const theme = createTheme({
 });
 
 function TransactionTable() {
-  // const arrayDataUser = useSelector(getArrayDataUser);
-  const btnDel = () => (
-    <button type="button" style={{ border: "none" }}>
-      <SvgIcon w={16} h={16} idIcon={"#icon-delete"} />
-    </button>
-  );
+  const arrayDataUser = useSelector(getUserTransactionTheLastSixMounts);
+  const bull = useSelector(getTypeTransaction);
 
   const columns = React.useMemo(
     () => [
       {
         Header: "Дата",
-        accessor: "day",
+        accessor: "date",
       },
       {
         Header: "Описание",
@@ -53,105 +50,27 @@ function TransactionTable() {
       },
       {
         Header: "Сумма",
-        accessor: "sum",
+        accessor: "value",
       },
       {
         Header: "",
-        accessor: "del",
+        accessor: "_id",
       },
     ],
-    []
+    [],
   );
 
   const data = React.useMemo(
-    () => [
-      {
-        day: "11.10.2021",
-        description: "Banana Montana",
-        category: "Products",
-        sum: "- 30.00 грн",
-        del: btnDel(),
-      },
-      {
-        day: "11.10.2021",
-        description: "Banana Banana Banana Banana ",
-        category: "Products",
-        sum: "- 30.00 грн",
-        del: btnDel(),
-      },
-      {
-        day: "11.10.2021",
-        description: "Banana",
-        category: "Products",
-        sum: "- 30.00 грн",
-        del: btnDel(),
-      },
-      {
-        day: "",
-        description: "",
-        category: "",
-        sum: "",
-        del: "",
-      },
-      {
-        day: "",
-        description: "",
-        category: "",
-        sum: "",
-        del: "",
-      },
-      {
-        day: "",
-        description: "",
-        category: "",
-        sum: "",
-        del: "",
-      },
-      {
-        day: "",
-        description: "",
-        category: "",
-        sum: "",
-        del: "",
-      },
-      {
-        day: "",
-        description: "",
-        category: "",
-        sum: "",
-        del: "",
-      },
-      {
-        day: "",
-        description: "",
-        category: "",
-        sum: "",
-        del: "",
-      },
-      {
-        day: "",
-        description: "",
-        category: "",
-        sum: "",
-        del: "",
-      },
-      {
-        day: "",
-        description: "",
-        category: "",
-        sum: "",
-        del: "",
-      },
-    ],
-    []
+    () =>
+      arrayDataUser
+        ? bull
+          ? arrayDataUser.lastSixMonthsTransaction.income
+          : arrayDataUser.lastSixMonthsTransaction.expense
+        : [],
+    [bull, arrayDataUser],
   );
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({ data, columns });
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable({ data, columns });
 
   return (
     <TransactionSection>
@@ -173,8 +92,8 @@ function TransactionTable() {
             prepareRow(row);
 
             return (
-              <TrBodyTransaction {...row.getRowProps()} key={ i}>
-                {row.cells.map((cell,i) => {
+              <TrBodyTransaction {...row.getRowProps()} key={i}>
+                {row.cells.map((cell, i) => {
                   const currentDesc = cell.value;
                   return (
                     <ThemeProvider theme={theme} key={i}>

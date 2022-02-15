@@ -12,7 +12,7 @@ import {
 function CategoryReportList() {
   const data = useSelector(getDataForInput);
   const bull = useSelector(getBullForChangePage);
-
+  console.log(data);
   const dataIcon = bull ? data.income : data.expense;
   const sortDataIcon = data
     ? [...dataIcon].sort((a, b) => b.total - a.total)

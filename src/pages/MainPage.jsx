@@ -16,13 +16,15 @@ import {
 import { SummaryTable } from "../components/Summary";
 
 import { getUpdateBalanceUser } from "../redux/getBalance/balance-operation";
+import { getUserTransaction } from "../redux/getTransaction/transaction-operation";
 
 export default function Main() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getUpdateBalanceUser());
-  }, []);
+    dispatch(getUserTransaction());
+  }, [dispatch]);
 
   return (
     <ContentWrapper>

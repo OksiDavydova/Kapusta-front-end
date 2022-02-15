@@ -24,19 +24,15 @@ import { CategorySelectUnstyled } from "../SelectUnstyled";
 import { getTypeTransaction } from "../../redux/typeTransaction//transaction-selector";
 import { getDate } from "../../redux/setDate/date-selector";
 import { getUpdateBalanceUser } from "../../redux/getBalance/balance-operation";
+import { getUserTransaction } from "../../redux/getTransaction/transaction-operation";
 
 function FormComponent() {
   const [valueSelect, setValueSelect] = useState("");
   const date = useSelector(getDate);
   const transaction = useSelector(getTypeTransaction);
-  const asfsasfsd = useSelector(state => state.balance);
+
   const dispatch = useDispatch();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    resetField,
-  } = useForm();
+  const { register, handleSubmit, resetField } = useForm();
 
   const onSubmit = async data => {
     const { description, value } = data;
@@ -52,6 +48,7 @@ function FormComponent() {
 
     if (status === 201) {
       dispatch(getUpdateBalanceUser());
+      dispatch(getUserTransaction());
     }
     resetInputField();
   };
@@ -59,6 +56,7 @@ function FormComponent() {
   const resetInputField = () => {
     resetField("description");
     resetField("value");
+    setValueSelect("");
   };
 
   return (
@@ -108,7 +106,9 @@ function FormComponent() {
         </FormContainer>
         <ButtonFormWrapper>
           <FormButtonSubmit type="submit">ввод</FormButtonSubmit>
-          <FormButton type="button">очистить</FormButton>
+          <FormButton type="button" onClick={resetInputField}>
+            очистить
+          </FormButton>
         </ButtonFormWrapper>
       </FormTag>
     </FormWrapper>

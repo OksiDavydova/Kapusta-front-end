@@ -42,13 +42,12 @@ function ChangeBalance() {
       income: true,
     };
     const { status } = await axios.post("/api/v1/transactions", newTransaction);
-    console.log(status);
+
     if (status === 201) {
       dispatch(getUpdateBalanceUser());
       removeBalanceModal();
     }
   };
-
 
   // const enterKeyHandler = (e) => {
   //   console.log(e);
@@ -70,10 +69,9 @@ function ChangeBalance() {
   const removeBalanceModal = () => {
     setShowBalanceModal(false);
 
-  //const setBalance = e => {
+    //const setBalance = e => {
     //const conversionToNumber = Number(e.target.value);
     //setValueBalance(conversionToNumber);
-
   };
 
   return (

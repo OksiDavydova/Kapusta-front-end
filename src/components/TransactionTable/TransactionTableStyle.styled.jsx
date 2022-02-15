@@ -7,8 +7,7 @@ export const TransactionSection = styled.div`
   @media ${device.tablet} {
     margin-left: 0;
     padding: 0 30px 48px;
-    background: #ffffff;
-
+    background: ${colors.white};
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 0px 0px 30px 30px;
   }
@@ -16,17 +15,20 @@ export const TransactionSection = styled.div`
   @media ${device.desktop} {
     padding: 0;
     background: transparent;
-    border-radius: 0;
+    border-radius: 20px 20px 0px 0px;
   }
 `;
 
 export const TableTransaction = styled.div`
   max-width: 282px;
+  min-height:200px;
   margin: auto;
   @media ${device.tablet} {
     margin: auto;
     min-width: 605px;
-    background-color: ${colors.bgSummary};
+    min-height: 300px;
+    background-color: ${colors.white};
+    box-shadow: 0px 10px 60px rgb(170 178 197 / 20%);
     padding: 1px;
     border-radius: 20px 20px 0 0;
   }
@@ -112,18 +114,17 @@ export const ThHeadTransaction = styled.div`
 
 export const TableBodyTransaction = styled.div`
     width: 100%;
-    max-height: 157px;
+    max-height: 250px;
     overflow-y: scroll;
-    border-top: 1px solid black;
 
   @media ${device.tablet} {
     border: none;
-    max-height: 346px;
+    // max-height: 346px;
     
   }
     @media ${device.desktop} {
     border: none;
-    max-height: 344px;
+    // max-height: 344px;
     
   }
     
@@ -166,7 +167,7 @@ export const TrBodyTransaction = styled.div`
   height: 50px;
   margin-bottom: 2px;
   min-width: 245px;
-
+border-bottom: 2px solid #f5f6fb;
   @media ${device.tabletMax} {
     display: grid;
     border-bottom: 2px solid ${colors.bgSummary};

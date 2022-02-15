@@ -41,7 +41,7 @@ export default function Main() {
         )}
       />
       <Media
-        query="(min-width: 320px) and (max-width: 767px)"
+        query="(min-width: 320px) and (max-width: 767.98px)" //якщо не поставити .98 то таблиця при ширині 767 не відображається взагалі
         render={() => (
           <OverlayMobile>
             <TransactionTable />

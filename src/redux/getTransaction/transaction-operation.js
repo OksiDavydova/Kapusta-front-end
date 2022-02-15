@@ -1,20 +1,5 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { SvgIcon } from "../../components/SvgIcon";
-
-const deleteTransaction = id => {
-  console.log(id);
-};
-
-const btnDel = id => (
-  <button
-    type="button"
-    style={{ border: "none" }}
-    onClick={() => deleteTransaction(id)}
-  >
-    <SvgIcon w={16} h={16} idIcon={"#icon-delete"} />
-  </button>
-);
 
 export const getUserTransaction = createAsyncThunk(
   "user/transaction",
@@ -59,13 +44,11 @@ export const getUserTransaction = createAsyncThunk(
           if (el.income) {
             acc.income.push({
               ...el,
-              _id: btnDel(el._id),
             });
             return acc;
           }
           acc.expense.push({
             ...el,
-            _id: btnDel(el._id),
           });
           return acc;
         },

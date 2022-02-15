@@ -21,7 +21,7 @@ export const svgName = [
   },
   {
     svg: "#icon-couch",
-    category: "всё для дома",
+    category: "все для дома",
   },
   {
     svg: "#icon-tools",

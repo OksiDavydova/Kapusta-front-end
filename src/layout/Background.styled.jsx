@@ -15,7 +15,7 @@ export const BgBottomAuth = styled.div`
   position: absolute;
   left: 0px;
   top: 56px;
-  z-index: -2;
+  z-index: -5;
   width: 100%;
   height: 100%;
 
@@ -36,7 +36,7 @@ export const BgBottomAuth = styled.div`
 `;
 
 export const BgBottom = styled.div`
-  z-index: -1;
+  z-index: -4;
   position: absolute;
   width: 100%;
   height: 856px;
@@ -48,7 +48,7 @@ export const BgBottom = styled.div`
   background-position: calc((100% / 2) - 90px) bottom;
 
   @media ${device.tablet} {
-    z-index: 2;
+    z-index: -5;
     left: 0px;
     top: 0px;
     height: 1024px;
@@ -58,7 +58,7 @@ export const BgBottom = styled.div`
   }
 
   @media ${device.desktop} {
-    z-index: -1;
+    z-index: -4;
     height: 850px;
     left: 0px;
     top: 0px;
@@ -67,7 +67,7 @@ export const BgBottom = styled.div`
 `;
 
 export const BgTopAuth = styled.div`
-  z-index: -1;
+  z-index: -4;
   display: block;
   position: absolute;
   left: 0px;
@@ -84,7 +84,7 @@ export const BgTopAuth = styled.div`
 `;
 
 export const BgTop = styled.div`
-  z-index: -1;
+  z-index: -4;
   display: block;
   position: absolute;
   background-color: #f5f6fb;

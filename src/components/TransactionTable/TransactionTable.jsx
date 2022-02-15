@@ -157,10 +157,10 @@ function TransactionTable() {
     <TransactionSection>
       <TableTransaction {...getTableProps()}>
         <TableHeadTransaction>
-          {headerGroups.map((headerGroup) => (
-            <TrHeadTransaction {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <ThHeadTransaction {...column.getHeaderProps()}>
+          {headerGroups.map((headerGroup, i) => (
+            <TrHeadTransaction key={i} {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column, i) => (
+                <ThHeadTransaction key={i} {...column.getHeaderProps()}>
                   {column.render("Header")}
                 </ThHeadTransaction>
               ))}
@@ -173,11 +173,11 @@ function TransactionTable() {
             prepareRow(row);
 
             return (
-              <TrBodyTransaction {...row.getRowProps()}>
-                {row.cells.map((cell) => {
+              <TrBodyTransaction {...row.getRowProps()} key={ i}>
+                {row.cells.map((cell,i) => {
                   const currentDesc = cell.value;
                   return (
-                    <ThemeProvider theme={theme}>
+                    <ThemeProvider theme={theme} key={i}>
                       <Tooltip title={currentDesc}>
                         <TdBodyTransaction {...cell.getCellProps()}>
                           {cell.render("Cell")}

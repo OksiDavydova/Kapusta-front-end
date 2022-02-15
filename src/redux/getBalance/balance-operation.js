@@ -25,5 +25,5 @@ export const getUpdateBalanceUser = createAsyncThunk(
     return {
       ...balance,
     };
-  },
+  }
 );

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getBalanceUser } from "../../../redux/getBalance/balance-selector";
 import { getDate } from "../../../redux/setDate/date-selector";
 import { getUpdateBalanceUser } from "../../../redux/getBalance/balance-operation";
+import { ModalBalance } from "../../Modal";
 import {
   ChangeBalanceWrapper,
   ChangeBalanceInput,
@@ -15,18 +16,23 @@ import {
   BalanceText,
   LabelBalance,
 } from "./ChangeBalance.styled";
+import { toast } from "react-toastify";
 
 function ChangeBalance() {
+  const [showBalanceModal, setShowBalanceModal] = useState(true);
   const balance = useSelector(getBalanceUser);
-
   const date = useSelector(getDate);
-
   const [valueBalance, setValueBalance] = useState(0);
   const dispatch = useDispatch();
 
-  const acceptButtonClick = async () => {
+  const handleClick = async () => {
     // Notify after good request
-    console.log("click balance");
+
+    if (isNaN(valueBalance) || !valueBalance) {
+      toast.error("введите коректную сумму пополнения баланса");
+      return;
+    }
+
     const dateForDB = date.replaceAll("/", "");
     const newTransaction = {
       date: dateForDB,
@@ -39,12 +45,35 @@ function ChangeBalance() {
     console.log(status);
     if (status === 201) {
       dispatch(getUpdateBalanceUser());
+      removeBalanceModal();
     }
   };
 
-  const setBalance = e => {
-    const conversionToNumber = Number(e.target.value);
-    setValueBalance(conversionToNumber);
+
+  // const enterKeyHandler = (e) => {
+  //   console.log(e);
+  //   if (e.code === "Enter") {
+  //     handleClick();
+  //   }
+  // };
+
+  const setBalance = ({ target }) => {
+    // const conversionToNumber = Number(e.target.value);
+    const fixBalanceValue = parseFloat(target.value).toFixed(2);
+    if (isNaN(fixBalanceValue)) {
+      toast.error("введите коректную сумму пополнения баланса");
+      return;
+    }
+    setValueBalance(fixBalanceValue);
+  };
+
+  const removeBalanceModal = () => {
+    setShowBalanceModal(false);
+
+  //const setBalance = e => {
+    //const conversionToNumber = Number(e.target.value);
+    //setValueBalance(conversionToNumber);
+
   };
 
   return (
@@ -57,22 +86,30 @@ function ChangeBalance() {
       ) : (
         <>
           <BalanceText>Баланс:</BalanceText>
-          <LabelBalance for="balance">
+          <LabelBalance htmlFor="balance">
             <ChangeBalanceInput
-              type="number"
+              type="text"
               name="balance"
               id="balance"
+              pattern="^[ 0-9]+$"
               placeholder="00.00"
               onChange={setBalance}
+              // onKeyDown={enterKeyHandler}
             />
 
             <Span>UAH</Span>
           </LabelBalance>
-          <ChangeBalanceButton type="button" onClick={acceptButtonClick}>
+          <ChangeBalanceButton type="button" onClick={handleClick}>
             Подтвердить
           </ChangeBalanceButton>
         </>
       )}
+
+      {/* --------Modal------------- */}
+      {showBalanceModal && balance === 0 && (
+        <ModalBalance onClose={removeBalanceModal} />
+      )}
+      {/* --------------------- */}
     </ChangeBalanceWrapper>
   );
 }

@@ -57,12 +57,22 @@ export const ModalBalanceContent = styled.div`
       @media ${device.mobileS} {
       transform: translateY(calc(100% + 35px)) translateX(7%);
       };
+      @media ${device.mobileL} {
+      transform: translateY(calc(100% + 35px)) translateX(26%);
+      };
       @media ${device.tablet} {
-      transform: translateY(calc(100% + -42px)) translateX(49%);
+      transform: translateY(calc(100% + -47px)) translateX(49%);
+      width: 292px;
+      };
+      @media (min-width: 1024px) {
+      transform: translateY(calc(100% + -47px)) translateX(100%);
       width: 292px;
       };
       @media ${device.desktop} {
-         transform: translateY(calc(100% + -41px)) translateX(223%)
+         transform: translateY(calc(100% + -41px)) translateX(199%)
+    };
+          @media (min-width: 1440px) {
+         transform: translateY(calc(100% + -41px)) translateX(228%)
     };
 };
 `;

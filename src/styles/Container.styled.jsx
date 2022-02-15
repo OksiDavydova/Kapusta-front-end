@@ -23,6 +23,6 @@ export const Container = styled.div`
   }
 
   @media ${device.desktop} {
-    width: 1100px;
+    width: 1280px;
   }
 `;

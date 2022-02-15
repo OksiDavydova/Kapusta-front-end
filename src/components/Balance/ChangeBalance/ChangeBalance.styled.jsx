@@ -2,10 +2,14 @@ import styled from "@emotion/styled";
 import { colors, device } from "../../../styles/utils";
 
 export const ChangeBalanceWrapper = styled.div`
-  margin: 0 0 40px 0;
+  margin-bottom: 40px;
   @media ${device.tablet} {
     margin-bottom: 0;
+    margin-left: 40px;
     display: flex;
+  }
+  @media ${device.desktop} {
+    margin-left: 350px;
   }
 `;
 export const LabelBalance = styled.label`
@@ -89,13 +93,18 @@ export const BalanceText = styled.p`
 `;
 
 export const OvalBalanceSpan = styled.div`
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 
   outline: 1px solid red;
 
   @media ${device.tablet} {
     display: flex;
+    margin-left: 70px;
     padding-bottom: 0px;
+  }
+
+  @media ${device.desktop} {
+    margin-left: 400px;
   }
 `;
 
@@ -117,7 +126,6 @@ export const OvalBalanceDiv = styled.div`
 
     @media ${device.tablet} {
         width: 125px;
-        // margin-bottom: 0px;
         padding: 13px 5px;
     }
     `;

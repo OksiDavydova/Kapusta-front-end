@@ -16,7 +16,7 @@ export const ContentWrapper = styled.div`
   }
 
   @media ${device.desktop} {
-    max-width: 1100px;
+    max-width: 1060px;
     margin-left: auto;
     margin-right: auto;
     padding: 40px 0 83px;

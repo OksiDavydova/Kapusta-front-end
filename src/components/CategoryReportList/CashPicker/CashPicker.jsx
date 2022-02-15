@@ -50,7 +50,7 @@ function CashPicker() {
         <Arrow onClick={handleClick}>
           <SvgIcon w={7} h={12} idIcon={"#left"} />
         </Arrow>
-        <CashPickerSpan>{text}</CashPickerSpan>
+          <CashPickerSpan>{text}</CashPickerSpan>
         <Arrow onClick={handleClick}>
           <SvgIcon w={7} h={12} idIcon={"#right"} />
         </Arrow>

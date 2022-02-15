@@ -8,7 +8,7 @@ import {
 
 const authSlice = createSlice({
   name: "user/auth",
-  initialState: { isLogin: false, error: null },
+  initialState: { isLogin: false, error: null, email: "" },
   reducers: {},
   extraReducers: {
     [signUpUsers.fulfilled]: (state, action) => {
@@ -18,7 +18,11 @@ const authSlice = createSlice({
       return (state = { isLogin: false, error: action.payload });
     },
     [loginUsers.fulfilled]: (state, action) => {
-      return (state = { ...action.payload, isLogin: true });
+      return (state = {
+        ...action.payload,
+        email: action.payload.email,
+        isLogin: true,
+      });
     },
     [loginUsers.rejected]: (state, action) => {
       return (state = { isLogin: false, error: action.payload });

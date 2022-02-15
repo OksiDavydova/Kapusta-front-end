@@ -1,6 +1,11 @@
+import React from "react";
+// import { useSelector } from "react-redux";
 import { AvatarLetter, UserName, ProfileWrapper } from "./UserProfile.styled";
+// import { userEmailAuth } from "../../../redux/selectors";
 
 function UserProfile() {
+  // const userEmail = useSelector(userEmailAuth);
+  // console.log(userEmail);
   return (
     <ProfileWrapper>
       {/* {UserAvatar ?

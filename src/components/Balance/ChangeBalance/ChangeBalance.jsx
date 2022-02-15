@@ -76,7 +76,7 @@ function ChangeBalance() {
 
   return (
     <ChangeBalanceWrapper>
-      {balance > 0 ? (
+      {balance ? (
         <OvalBalanceSpan>
           <BalanceTextOval>Баланс:</BalanceTextOval>
           <OvalBalanceDiv>{[balance, " ", "UAH"]}</OvalBalanceDiv>
@@ -104,9 +104,7 @@ function ChangeBalance() {
       )}
 
       {/* --------Modal------------- */}
-      {showBalanceModal && balance === 0 && (
-        <ModalBalance onClose={removeBalanceModal} />
-      )}
+      {showBalanceModal && <ModalBalance onClose={removeBalanceModal} />}
       {/* --------------------- */}
     </ChangeBalanceWrapper>
   );

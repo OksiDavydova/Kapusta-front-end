@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { format, parseISO } from "date-fns";
+import { format } from "date-fns"; //parseISO
 
 const initialState = format(new Date(), "yyyy/MM/dd");
 

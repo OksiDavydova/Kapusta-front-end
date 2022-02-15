@@ -13,7 +13,8 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { TextField } from "@mui/material";
 import MobileDatePicker from "@mui/lab/MobileDatePicker";
 import DesktopDatePicker from "@mui/lab/DesktopDatePicker";
-import InputAdornment from "@mui/material/InputAdornment";
+// import InputAdornment from "@mui/material/InputAdornment";
+import { InputAdornment } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import { makeStyles } from "@mui/styles";
 
@@ -53,6 +54,7 @@ const useStyles = makeStyles({
 //import { ReactComponent as CalendarAvg } from "./calendar.svg";
 
 function CalendarMUI() {
+  // const calendarRef=useRef(null)
   // Эти два хука нужны, чтобы при нажатии на иконку - открывался календарь также, помимо нажатия на само поле + для стилей
   const [open, setOpen] = useState(false);
   const classes = useStyles();
@@ -92,7 +94,7 @@ function CalendarMUI() {
                   className={classes.root}
                   InputProps={{
                     startAdornment: (
-                      <InputAdornment disablePointerEvents="false">
+                      <InputAdornment disablePointerEvents={false}>
                         <IconButton edge="start" onClick={(e) => setOpen(true)}>
                           <SvgIcon w={20} h={20} idIcon={"#icon-calendar"} />
                         </IconButton>

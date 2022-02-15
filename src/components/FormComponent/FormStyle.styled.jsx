@@ -68,6 +68,11 @@ export const InputDescription = styled.input`
     border: 2px solid ${colors.bgSummary};
     border-right:0;
   }
+    @media${device.desktop}{
+    width: 287px;
+    /* border: 2px solid ${colors.bgSummary};
+    border-right:0; */
+  }
 `;
 export const SelectOverlay = styled.div`
   width: 282px;
@@ -136,6 +141,10 @@ export const ValueInput = styled.input`
     border: 0;
     width: 60px;
   }
+
+  @media ${device.desktop} {
+    width: 80px;
+  }
 `;
 
 export const CalculatorButton = styled.button`
@@ -168,7 +177,7 @@ export const ButtonFormWrapper = styled.div`
      @media${device.desktop}{
    margin-top: 0;
    width: 265px;
-    
+    margin-left: 27px;
   }
 `;
 

@@ -1,13 +1,14 @@
 import styled from "@emotion/styled";
-import { device } from "../../styles/utils";
+import { device, colors } from "../../styles/utils";
 
 export const Form = styled.form`
+  position: relative;
   display: flex;
   flex-direction: column;
   // margin: 20px 9px 10px 9px;
 
   @media ${device.tablet} {
-    margin:0;
+    margin: 0;
   }
 `;
 
@@ -31,7 +32,7 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   outline: none;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   padding: 17px 20px;
   border: none;
   max-width: 253px;
@@ -50,14 +51,14 @@ export const Input = styled.input`
   &::placeholder {
     color: #a6abb9;
   }
- 
+
   @media ${device.tablet} {
     max-width: 265px;
   }
-  :nth-of-type(2){
-   @media ${device.tablet} {
-    margin-bottom:40px
-  }
+  :nth-of-type(2) {
+    @media ${device.tablet} {
+      margin-bottom: 40px;
+    }
   }
 `;
 
@@ -68,9 +69,39 @@ export const AuthFormButtonWrapper = styled.div`
   justify-content: space-between;
   // outline: 1px solid red;
   margin-top: auto;
-  
+
   @media ${device.tabletMax} {
     width: 265px;
     margin-left: -7px;
   }
+`;
+
+export const SpanEmail = styled.span`
+  position: absolute;
+  top: 30%;
+  color: ${colors.redColor};
+  text-align: left;
+  font-size: 10px;
+  font-style: italic;
+  @media ${device.tablet} {
+    font-size: 12px;
+  }
+`;
+
+export const SpanPassword = styled.span`
+  position: absolute;
+  top: 70%;
+  padding-top: 5px;
+  color: ${colors.redColor};
+  text-align: left;
+  font-size: 10px;
+  font-style: italic;
+  @media ${device.tablet} {
+    font-size: 12px;
+    padding-top: 0;
+  }
+`;
+
+export const SpanText = styled.span`
+  color: ${colors.textColor};
 `;

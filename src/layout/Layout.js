@@ -10,8 +10,9 @@ function Layout({ children, isAuth }) {
       <main>
         <Container>
           <Header />
-          {isAuth ? < BgBottomAuth/> : <  BgBottom/>}
-          {isAuth ? < BgTopAuth/> : < BgTop/>}
+           {isAuth ? < BgTopAuth/> : < BgTop/>}
+           {isAuth ? < BgBottomAuth/> : <  BgBottom/>}
+          {/* {isAuth ? < BgTopAuth/> : < BgTop/>} */}
           <>{children}</>
 
           <ToastifyContainer />

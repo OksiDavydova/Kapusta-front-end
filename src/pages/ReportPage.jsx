@@ -21,12 +21,9 @@ import { LoaderReport } from "../components/Loader";
 export default function ReportPage() {
   const notify = useSelector(diagramNotifyStatus);
   const isLoading = useSelector(diagramLoading);
+
   const getDataChart = useSelector(getDataDiagram);
   const dataCheck = getDataChart ? getDataChart.length ===0 : false;
-  console.log(dataCheck)
-
-  
-  console.log(notify);
 
   useEffect(() => {
     const { status, message } = notify;

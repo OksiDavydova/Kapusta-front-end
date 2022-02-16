@@ -16,12 +16,13 @@ import {
   TdBodyTransaction,
 } from "./TransactionTableStyle.styled";
 import { SvgIcon } from "../SvgIcon";
+import { ReportBalanceSum } from "../ReportBalance/ReportBalance.styled";
 import { getUserTransaction } from "../../redux/getTransaction/transaction-operation";
 import { getUserTransactionTheLastSixMounts } from "../../redux/getTransaction/transaction-selector";
 import { getTypeTransaction } from "../../redux/typeTransaction/transaction-selector";
 import { getUpdateBalanceUser } from "../../redux/getBalance/balance-operation";
 import { getBalanceUser } from "../../redux/getBalance/balance-selector";
-
+import {NoResult} from '../CategoryReportList/NoResult'
 const theme = createTheme({
   components: {
     MuiTooltip: {
@@ -68,15 +69,17 @@ function TransactionTable() {
     [],
   );
 
-  const data = React.useMemo(
-    () =>
-      arrayDataUser
+  const data = React.useMemo(() => {
+    if (window.innerWidth >= 768) {
+      return arrayDataUser
         ? bull
           ? arrayDataUser.lastSixMonthsTransaction.income
           : arrayDataUser.lastSixMonthsTransaction.expense
-        : [],
-    [bull, arrayDataUser],
-  );
+        : [];
+    }
+    return arrayDataUser ? arrayDataUser.lastSixMonthsTransactionForMobile : [];
+  }, [bull, arrayDataUser]);
+
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ data, columns });
 
@@ -88,7 +91,6 @@ function TransactionTable() {
       return;
     }
     const response = await axios.delete(`/api/v1/transactions/${id}`);
-    console.log(response);
     if (response.status === 200) {
       dispatch(getUserTransaction());
       dispatch(getUpdateBalanceUser());
@@ -120,13 +122,21 @@ function TransactionTable() {
             </TrHeadTransaction>
           ))}
         </TableHeadTransaction>
-
-        <TableBodyTransaction {...getTableBodyProps()}>
+        {data.length > 0 ? (
+     <TableBodyTransaction {...getTableBodyProps()}>
           {rows.map((row, i) => {
+            console.log(row);
             row.values._id = btnDel({
               id: row.values._id,
               value: row.values.value,
             });
+            row.values.value = row.original.income ? (
+              <ReportBalanceSum>{`${row.values.value} грн.`}</ReportBalanceSum>
+            ) : (
+              <ReportBalanceSum
+                expenses
+              >{`-${row.values.value} грн.`}</ReportBalanceSum>
+            );
             prepareRow(row);
 
             return (
@@ -147,6 +157,7 @@ function TransactionTable() {
             );
           })}
         </TableBodyTransaction>
+) : <NoResult/>}
       </TableTransaction>
     </TransactionSection>
   );

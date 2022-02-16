@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { toast } from "react-toastify";
+import React from "react";
 import { useSelector } from "react-redux";
 import Media from "react-media";
 import { ArrowButton } from "../components/Buttons";
@@ -15,31 +14,16 @@ import {
   ReportPageTopWrapper,
   ChartTabletWrapper,
 } from "../components/Wrapper/Wrapper.styled";
-import {  diagramLoading, getDataDiagram, diagramNotifyStatus } from "../redux/setDataDiagram/dataDiagram-selector";
+
+import {  diagramLoading, getDataDiagram} from "../redux/setDataDiagram/dataDiagram-selector";
+
 import { LoaderReport } from "../components/Loader";
 
 export default function ReportPage() {
-  const notify = useSelector(diagramNotifyStatus);
   const isLoading = useSelector(diagramLoading);
 
   const getDataChart = useSelector(getDataDiagram);
   const dataCheck = getDataChart ? getDataChart.length ===0 : false;
-
-  useEffect(() => {
-    const { status, message } = notify;
-    switch (status) {
-      case "error":
-        toast.error(message);
-        break;
-
-      case "success":
-        toast.success(message);
-        break;
-
-      default:
-        return;
-    }
-  }, [notify]);
 
   return (
     <>

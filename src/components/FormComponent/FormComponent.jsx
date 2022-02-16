@@ -27,7 +27,6 @@ import { getDate } from "../../redux/setDate/date-selector";
 import { getUpdateBalanceUser } from "../../redux/getBalance/balance-operation";
 import { getUserTransaction } from "../../redux/getTransaction/transaction-operation";
 import { getBalanceUser } from "../../redux/getBalance/balance-selector";
-// import { toast } from "react-toastify";
 
 function FormComponent() {
   const [valueSelect, setValueSelect] = useState("");
@@ -47,7 +46,12 @@ function FormComponent() {
     //   return;
     // }
 
-    if (userBalance - value < 0) {
+    if (!value || !description || !valueSelect) {
+      toast.error("Заполните все поля!");
+      return;
+    }
+
+    if (userBalance - value < 0 && !transaction) {
       toast.error(
         "Данная операция невозможна! Баланс не может быть отрицательным!",
       );
@@ -91,11 +95,9 @@ function FormComponent() {
             id="description"
             placeholder="Описание товара"
             {...register("description", {
-              required: true,
               maxLength: 80,
             })}
           />
-
           <SelectOverlay>
             <CategorySelectUnstyled
               children={{ valueSelect, setValueSelect }}
@@ -108,7 +110,6 @@ function FormComponent() {
               id="value"
               placeholder="0,00"
               {...register("value", {
-                required: true,
                 maxLength: 80,
               })}
             />

@@ -3,12 +3,41 @@ import { getDataForDiagram } from "./dataDiagram-operation";
 
 const dataForDiagram = createSlice({
   name: "dataForDiagram",
-  initialState: false,
+  initialState: { data: false, isLoading: false, notifyStatus: {} },
   reducers: {},
   extraReducers: {
+    [getDataForDiagram.pending]: state => {
+      return (state = { ...state, isLoading: true });
+    },
     [getDataForDiagram.fulfilled]: (state, action) => {
-      if (!action.payload) return false;
-      return (state = { ...action.payload });
+      if (!action.payload) {
+        return (state = {
+          data: false,
+          isLoading: false,
+          notifyStatus: {
+            status: "success",
+            message: `Данные отсутсвуют`,
+          },
+        });
+      }
+      return (state = {
+        data: { ...action.payload },
+        isLoading: false,
+        notifyStatus: {
+          status: "success",
+          message: `Полученны новые данные:)`,
+        },
+      });
+    },
+    [getDataForDiagram.rejected]: state => {
+      return (state = {
+        ...state,
+        isLoading: false,
+        notifyStatus: {
+          status: "error",
+          message: `Обновление данных не удалось:(`,
+        },
+      });
     },
   },
 });

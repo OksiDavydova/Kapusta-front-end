@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
 import { ArrowButton } from "../Buttons";
 import Media from "react-media";
@@ -25,17 +26,19 @@ import { getTypeTransaction } from "../../redux/typeTransaction//transaction-sel
 import { getDate } from "../../redux/setDate/date-selector";
 import { getUpdateBalanceUser } from "../../redux/getBalance/balance-operation";
 import { getUserTransaction } from "../../redux/getTransaction/transaction-operation";
+import { getBalanceUser } from "../../redux/getBalance/balance-selector";
 // import { toast } from "react-toastify";
 
 function FormComponent() {
   const [valueSelect, setValueSelect] = useState("");
   const date = useSelector(getDate);
+  const userBalance = useSelector(getBalanceUser);
   const transaction = useSelector(getTypeTransaction);
 
   const dispatch = useDispatch();
   const { register, handleSubmit, resetField } = useForm();
 
-  const onSubmit = async (data) => {
+  const onSubmit = async data => {
     const { description, value } = data;
     // const normalizeDescription = console.log(data);
     // console.log(description);
@@ -43,6 +46,14 @@ function FormComponent() {
     //   toast.error(`введите описание`);
     //   return;
     // }
+
+    if (userBalance - value < 0) {
+      toast.error(
+        "Данная операция невозможна! Баланс не может быть отрицательным!",
+      );
+      return;
+    }
+
     const dateForDB = date.replaceAll("/", "");
     const newTransaction = {
       date: dateForDB,
@@ -56,7 +67,6 @@ function FormComponent() {
     if (status === 201) {
       dispatch(getUpdateBalanceUser());
       dispatch(getUserTransaction());
-      // toast.success("okey");
     }
     resetInputField();
   };
@@ -69,10 +79,7 @@ function FormComponent() {
 
   return (
     <FormWrapper>
-      <Media
-        query="(max-width: 767px)"
-        render={() => <ArrowButton />}
-      />
+      <Media query="(max-width: 767px)" render={() => <ArrowButton />} />
 
       <FormTag onSubmit={handleSubmit(onSubmit)} autoComplete="off">
         <FormContainer>

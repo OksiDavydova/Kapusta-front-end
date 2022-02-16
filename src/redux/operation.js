@@ -11,7 +11,7 @@ const token = {
   },
   unset() {
     axios.defaults.headers.common.Authorization = "";
-    localStorage.setItem("token", null);
+    localStorage.setItem("token", "");
   },
 };
 
@@ -20,7 +20,6 @@ export const signUpUsers = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const { data } = await axios.post("/api/v1/auth/signup", user);
-      token.set(data.user.token);
       return data.user;
     } catch (err) {
       return rejectWithValue(err.message);

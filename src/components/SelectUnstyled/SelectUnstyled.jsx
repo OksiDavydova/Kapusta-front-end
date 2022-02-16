@@ -28,7 +28,13 @@ const StyledButton = styled("button")`
   }
 
   @media ${device.tablet} {
-    min-width: 170px;
+    min-width: 167px;
+    padding: 10px 22px;
+
+  }
+
+  @media ${device.desktop} {
+    min-width: 184px;
   }
 
   &.${selectUnstyledClasses.expanded} {
@@ -50,6 +56,8 @@ const StyledListbox = styled("ul")`
   background-color: ${colors.white};
   min-width: 282px;
   border: 2px solid ${colors.bgSummary};
+  border-bottom: none;
+  box-shadow: 0px 3px 4px rgba(170, 178, 197, 0.4);
 
   &:focus {
     color: ${colors.textColor};
@@ -60,7 +68,10 @@ const StyledListbox = styled("ul")`
     background-color: ${colors.bgSummary};
   }
   @media ${device.tablet} {
-    min-width: 170px;
+    min-width: 171px;
+  }
+  @media ${device.desktop} {
+    min-width: 188px;
   }
 `;
 

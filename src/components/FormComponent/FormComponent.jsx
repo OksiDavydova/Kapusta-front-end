@@ -106,13 +106,13 @@ function FormComponent() {
               type="text"
               name="value"
               id="value"
-              placeholder="00.00"
+              placeholder="0,00"
               {...register("value", {
                 required: true,
                 maxLength: 80,
               })}
             />
-            <ValueSpan> UAH</ValueSpan>
+            <ValueSpan>UAH</ValueSpan>
             <CalculatorButton type="button">
               <SvgIcon w={20} h={20} idIcon={"#icon-calculator"} />
             </CalculatorButton>

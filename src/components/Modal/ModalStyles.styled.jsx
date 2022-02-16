@@ -72,7 +72,7 @@ export const ModalBalanceContent = styled.div`
       transform: translateY(calc(100% + -41px)) translateX(199%)
     };
       @media (min-width: 1440px) {
-      transform: translateY(calc(100% + -41px)) translateX(228%)
+      transform: translateY(calc(100% + -41px)) translateX(235%)
     };
 };
 `;

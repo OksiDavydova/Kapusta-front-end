@@ -97,12 +97,12 @@ export const OvalBalanceSpan = styled.div`
 
   @media ${device.tablet} {
     display: flex;
-    margin-left: 70px;
+    /* margin-left: 70px; */
     padding-bottom: 0px;
   }
 
   @media ${device.desktop} {
-    margin-left: 400px;
+    /* margin-left: 400px; */
   }
 `;
 

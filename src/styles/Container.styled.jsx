@@ -21,9 +21,6 @@ export const Container = styled.div`
     width: 768px;
     padding-left: 20px;
     padding-right: 20px;
-    background-image: url(${pairCabbages});
-    background-position: calc((100% / 2) + 250px) calc(100% - 64px);
-    background-repeat: no-repeat;
   }
 
   @media ${device.desktop} {

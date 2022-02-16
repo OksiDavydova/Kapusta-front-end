@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import { device } from "../../styles/utils";
+import pairCabbages from "../../assets/img/pairCabbages.png";
+import cabbagesBottom from "../../assets/img/cabbagesBottom.png";
 
 export const ContentWrapper = styled.div`
   width: 100%;
@@ -9,17 +11,20 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   min-height: calc(100vh - 56px);
+  background-repeat: no-repeat;
 
   @media ${device.tablet} {
     justify-content: flex-start;
     padding: 40px 30px 83px;
+    background-image: url(${pairCabbages});
+    background-position: calc((100% / 2) + 200px) calc(100% - 24px);
   }
 
   @media ${device.desktop} {
-    max-width: 1060px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 40px 0 83px;
+    max-width: 1240px;
+    padding: 40px 90px 83px;
+    background-image: url(${cabbagesBottom});
+    background-position: 50% calc(100% + 25px);
   }
 `;
 
@@ -79,7 +84,15 @@ export const ReportPageWrapper = styled.div`
   /* outline: 1px solid red; */
 
   @media ${device.tablet} {
-    padding: 32px 0px 76px 0px;
+    padding: 32px 0px 76px;
+    background-image: url(${pairCabbages});
+    background-position: calc((100% / 2) + 200px) calc(100% + 40px);
+    background-repeat: no-repeat;
+  }
+
+  @media ${device.desktop} {
+   background-image: url(${cabbagesBottom});
+   background-position: 50% calc(100% - 20px);
   }
 `;
 

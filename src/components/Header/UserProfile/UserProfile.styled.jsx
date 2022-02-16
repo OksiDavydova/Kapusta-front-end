@@ -10,9 +10,7 @@ export const ProfileWrapper = styled.div`
 export const AvatarLetter = styled.p`
   width: 32px;
   height: 32px;
-
-  margin-top: 12px;
-  margin-right: 15px;
+  margin-bottom: 0px;
   padding: 9px 12px;
 
   font-weight: bold;
@@ -31,8 +29,6 @@ export const UserName = styled.p`
   position: relative;
   margin-bottom: 0;
   margin-right: 20px;
-  /* font-size: 12px;
-  line-height: 1.16; */
   color: ${colors.textColor};
 
   &:after {
@@ -42,8 +38,8 @@ export const UserName = styled.p`
     width: 1px;
     height: 36px;
     top: -14px;
-    left: 80px;
-    background-color: ${colors.textColor};
+    left: 100px;
+    background-color: ${colors.lineColor};
   }
 
   @media (max-width: 767.98px) {

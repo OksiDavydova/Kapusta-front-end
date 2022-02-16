@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { userIsAuth } from "../../redux/selectors";
 import { Logo } from "./Logo";
 import { UserLogout } from "./UserLogout";
 import { UserProfile } from "./UserProfile";
@@ -8,14 +10,17 @@ import {
 } from "./HeaderStyles.styled";
 
 function Header() {
+  const isAuth = useSelector(userIsAuth);
   return (
     <HeaderFixed>
       <HeaderContainer>
         <Logo />
-        <UserProfileWrapper>
-          <UserProfile />
-          <UserLogout />
-        </UserProfileWrapper>
+        {isAuth && (
+          <UserProfileWrapper>
+            <UserProfile />
+            <UserLogout />
+          </UserProfileWrapper>
+        )}
       </HeaderContainer>
     </HeaderFixed>
   );

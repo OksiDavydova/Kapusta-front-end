@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const LogoutBtn = styled.button`
   margin-top: 5px;
+  margin-left: 15px;
   border: none;
   background-color: white;
 

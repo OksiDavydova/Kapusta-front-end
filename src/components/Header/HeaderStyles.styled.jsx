@@ -9,25 +9,26 @@ export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 10px 13px;
-  width: 280px;
-  margin: 0 auto 0 auto;
+  padding: 13px 19px;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
     width: 728px;
+    padding: 10px 0px 10px 26px;
+
   }
 
   @media (min-width: 1280px) {
     width: 100%;
-    /* width: 1230px; */
+    padding: 10px 44px 10px 26px;
   }
 `;
 
 export const UserProfileWrapper = styled.div`
-  margin: 0;
+  // margin: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content:  space-between;
 
   @media (min-width: 768px) {
     align-items: baseline;

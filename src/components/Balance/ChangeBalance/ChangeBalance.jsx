@@ -49,7 +49,7 @@ function ChangeBalance() {
     const newTransaction = {
       date: dateForDB,
       description: "Пополнение баланса",
-      category: "доп. доход",
+      category: "Доп. доход",
       value: fixBalanceValue,
       income: true,
     };

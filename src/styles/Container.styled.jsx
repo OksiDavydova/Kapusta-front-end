@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import pairCabbages from "../assets/img/pairCabbages.png";
 import { device } from "./utils";
 
 export const Container = styled.div`
@@ -20,9 +21,13 @@ export const Container = styled.div`
     width: 768px;
     padding-left: 20px;
     padding-right: 20px;
+    background-image: url(${pairCabbages});
+    background-position: calc((100% / 2) + 250px) calc(100% - 64px);
+    background-repeat: no-repeat;
   }
 
   @media ${device.desktop} {
     width: 1280px;
+    background-image:none;
   }
 `;

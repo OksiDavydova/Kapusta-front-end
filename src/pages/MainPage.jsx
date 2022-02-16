@@ -13,6 +13,7 @@ import {
   ContentWrapper,
   Overlay,
   OverlayMobile,
+  DesktopOverlayShadow,
 } from "../components/Wrapper/Wrapper.styled";
 import { SummaryTable } from "../components/Summary";
 
@@ -52,11 +53,13 @@ export default function Main() {
         render={() => (
           <>
             <TypeOperationMain />
-            <FormComponent />
-            <Overlay>
-              <TransactionTable />
-              <SummaryTable />
-            </Overlay>
+            <DesktopOverlayShadow>
+              <FormComponent />
+              <Overlay>
+                <TransactionTable />
+                <SummaryTable />
+              </Overlay>
+            </DesktopOverlayShadow>
           </>
         )}
       />

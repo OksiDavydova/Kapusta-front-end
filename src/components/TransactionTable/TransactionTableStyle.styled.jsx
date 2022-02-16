@@ -3,17 +3,18 @@ import { colors, device } from "../../styles/utils";
 
 export const TransactionSection = styled.div`
   margin: 0 auto;
-
+  /* outline: 1px solid red; */
   @media ${device.tablet} {
     margin-left: 0;
     padding: 0 30px 48px;
     background: ${colors.white};
-    box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+    box-shadow: 0px 10px 60px 0px rgba(170, 178, 197, 0.1);
     border-radius: 0px 0px 30px 30px;
   }
 
   @media ${device.desktop} {
     padding: 0;
+    box-shadow: 0 0 0 0;
     background: transparent;
     border-radius: 20px 20px 0px 0px;
   }
@@ -21,15 +22,16 @@ export const TransactionSection = styled.div`
 
 export const TableTransaction = styled.div`
   max-width: 282px;
-  min-height:200px;
+  min-height: 200px;
   margin: auto;
+  /* outline: 1px solid red; */
   @media ${device.tablet} {
     margin: auto;
     min-width: 605px;
     min-height: 300px;
     background-color: ${colors.white};
-    box-shadow: 0px 10px 60px rgb(170 178 197 / 20%);
-    padding: 1px;
+    box-shadow: 0px 10px 30px 0px rgb(170 178 197 / 20%);
+    /* padding: 1px; */
     border-radius: 20px 20px 0 0;
   }
 
@@ -113,28 +115,27 @@ export const ThHeadTransaction = styled.div`
 `;
 
 export const TableBodyTransaction = styled.div`
-    width: 100%;
-    max-height: 250px;
-    overflow-y: scroll;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: scroll;
 
   @media ${device.tablet} {
     border: none;
   }
-    @media ${device.desktop} {
+  @media ${device.desktop} {
     border: none;
   }
-    
 
-    &::-webkit-scrollbar {
-      width: 6px;
-      border-radius: 2px;
-    }
+  &::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 2px;
+  }
 
-    ,
-    &::-webkit-scrollbar-thumb {
-      background: ${colors.orange};
-      border-radius: 15px;
-    }
+  ,
+  &::-webkit-scrollbar-thumb {
+    background: ${colors.orange};
+    border-radius: 15px;
+  }
 `;
 
 export const TrBodyTransaction = styled.div`

@@ -25,12 +25,21 @@ export const ContentWrapper = styled.div`
 
 export const Overlay = styled.div`
   @media ${device.desktop} {
+    /* outline: 1px solid red; */
     display: flex;
     justify-content: space-between;
     padding: 0 20px 60px 20px;
     background: #ffffff;
-    box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 0px 0px 30px 30px;
+  }
+`;
+
+export const DesktopOverlayShadow = styled.div`
+  @media ${device.desktop} {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 0px 30px 30px 30px;
+    box-shadow: 0 10px 60px rgba(170, 178, 197, 0.2);
   }
 `;
 export const OverlayMobile = styled.div`

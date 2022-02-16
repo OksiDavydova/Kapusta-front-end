@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginUsers, signUpUsers } from "../../redux/operation";
 import { useForm } from "react-hook-form";
 import {
@@ -12,10 +12,12 @@ import {
   SpanText,
 } from "./AuthForm.styled";
 import { Button } from "../../components/Buttons";
-// import { Loader } from "../../components/Loader";
+import { LoaderAuth } from "../../components/Loader";
+import { authLoading } from "../../redux/selectors";
 
 function AuthForm() {
   const dispatch = useDispatch();
+  const isLoading = useSelector(authLoading);
 
   const textForInput = {
     enter: "вход",
@@ -57,7 +59,7 @@ function AuthForm() {
   };
   return (
     <>
-      {/* <Loader /> */}
+      {isLoading && <LoaderAuth />}
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Label>Электронная почта: </Label>
         <Input
@@ -84,9 +86,9 @@ function AuthForm() {
         />
         {errors.password && (
           <SpanPassword>
-            *Password is required.{" "}
+            *Password is required.
             <SpanText>
-              Must be an uppercase letter, lowercase letter, number, and symbol.{" "}
+              Must be an uppercase letter, lowercase letter, number, and symbol.
             </SpanText>
           </SpanPassword>
         )}

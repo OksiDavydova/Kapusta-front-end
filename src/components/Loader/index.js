@@ -1,1 +1,2 @@
-export { default as Loader } from "./Loader";
+export { default as LoaderAuth } from "./LoaderAuth";
+export { default as LoaderReport } from "./LoaderReport";

@@ -243,11 +243,13 @@ export const TdBodyTransaction = styled.div`
     }
 
     @media ${device.tablet} {
+      padding-left: 35px;
       width: 103px;
       margin: 0px 15px;
     }
 
     @media ${device.desktop} {
+      padding-left: 47px;
       width: 118px;
       margin-right: 23px;
     }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { css } from "@emotion/react";
 import HashLoader from "react-spinners/HashLoader";
 
@@ -21,8 +21,9 @@ const override = css`
 `;
 
 export default function Loader() {
-  let [loading, setLoading] = useState(true);
-  let [color, setColor] = useState("#ff751d");
+  // закоментировала чтобы былдилось
+  // let [loading, setLoading] = useState(true);
+  // let [color, setColor] = useState("#ff751d");
 
   return (
     <div className="sweet-loading">
@@ -33,7 +34,7 @@ export default function Loader() {
         placeholder="Color of the loader"
       /> */}
 
-      <HashLoader color={color} loading={loading} css={override} size={150} />
+      {/* <HashLoader color={color} loading={loading} css={override} size={150} /> */}
     </div>
   );
 }

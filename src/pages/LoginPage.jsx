@@ -1,6 +1,6 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { googleAuthUsers } from "../redux/operation";
+// import { useDispatch } from "react-redux";
+// import { googleAuthUsers } from "../redux/operation";
 import { WrapperAuth } from "../components/Wrapper";
 import { WrapperLoginContainer } from "../components/Wrapper/Wrapper.styled";
 import { GoogleLink } from "../components/Buttons";
@@ -13,8 +13,8 @@ const secondText =
   "Или зайти с помощью e-mail и пароля, предварительно зарегистрировавшись:";
 
 export default function LoginPage() {
-  const dispatch = useDispatch();
-  const getToken = localStorage.getItem("token");
+  // const dispatch = useDispatch();
+  // const getToken = localStorage.getItem("token");
 
   // if (getToken) {
   //   dispatch(googleAuthUsers(getToken));

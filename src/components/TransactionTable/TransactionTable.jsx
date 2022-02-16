@@ -1,9 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { getUserTransactionTheLastSixMounts } from "../../redux/getTransaction/transaction-selector";
-import { getTypeTransaction } from "../../redux/typeTransaction/transaction-selector";
-import { getUpdateBalanceUser } from "../../redux/getBalance/balance-operation";
+import { toast } from "react-toastify";
 // import { SvgIcon } from "../SvgIcon";
 import { useTable } from "react-table";
 import { Tooltip, createTheme, ThemeProvider } from "@mui/material";
@@ -19,6 +17,10 @@ import {
 } from "./TransactionTableStyle.styled";
 import { SvgIcon } from "../SvgIcon";
 import { getUserTransaction } from "../../redux/getTransaction/transaction-operation";
+import { getUserTransactionTheLastSixMounts } from "../../redux/getTransaction/transaction-selector";
+import { getTypeTransaction } from "../../redux/typeTransaction/transaction-selector";
+import { getUpdateBalanceUser } from "../../redux/getBalance/balance-operation";
+import { getBalanceUser } from "../../redux/getBalance/balance-selector";
 
 const theme = createTheme({
   components: {
@@ -37,6 +39,7 @@ const theme = createTheme({
 function TransactionTable() {
   const arrayDataUser = useSelector(getUserTransactionTheLastSixMounts);
   const bull = useSelector(getTypeTransaction);
+  const userBalance = useSelector(getBalanceUser);
   const dispatch = useDispatch();
 
   const columns = React.useMemo(
@@ -77,7 +80,13 @@ function TransactionTable() {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ data, columns });
 
-  const deleteTransaction = async id => {
+  const deleteTransaction = async ({ id, value }) => {
+    if (userBalance - value < 0) {
+      toast.error(
+        "Данная операция невозможна! Баланс не может быть отрицательным!",
+      );
+      return;
+    }
     const response = await axios.delete(`/api/v1/transactions/${id}`);
     console.log(response);
     if (response.status === 200) {
@@ -87,11 +96,11 @@ function TransactionTable() {
     return;
   };
 
-  const btnDel = id => (
+  const btnDel = ({ id, value }) => (
     <button
       type="button"
       style={{ border: "none" }}
-      onClick={() => deleteTransaction(id)}
+      onClick={() => deleteTransaction({ id, value })}
     >
       <SvgIcon w={16} h={16} idIcon={"#icon-delete"} />
     </button>
@@ -114,7 +123,10 @@ function TransactionTable() {
 
         <TableBodyTransaction {...getTableBodyProps()}>
           {rows.map((row, i) => {
-            row.values._id = btnDel(row.values._id);
+            row.values._id = btnDel({
+              id: row.values._id,
+              value: row.values.value,
+            });
             prepareRow(row);
 
             return (

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
+import { toast } from "react-toastify";
 import { userIsAuth } from "./redux/selectors";
 import {
   MainPage,
@@ -16,12 +17,30 @@ import { Layout } from "./layout";
 import { IncomeModule } from "./components/IncomeModule";
 // import { Background } from "./components/Background";
 import { FormComponent } from "./components/FormComponent";
+import { authNotifyStatus } from "./redux/selectors";
 
 function App() {
+  const notify = useSelector(authNotifyStatus);
+
+  useEffect(() => {
+    const { status, message } = notify;
+    switch (status) {
+      case "error":
+        toast.error(message);
+        break;
+
+      case "success":
+        toast.success(message);
+        break;
+
+      default:
+        return;
+    }
+  }, [notify]);
+
   const isAuth = useSelector(userIsAuth);
   return (
     <>
-      
       <Layout isAuth={isAuth}>
         {/* <nav>
           <button>

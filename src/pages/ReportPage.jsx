@@ -1,5 +1,6 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 import Media from "react-media";
 import { ArrowButton } from "../components/Buttons";
 import { MonthPicker } from "../components/MonthPicker";
@@ -14,8 +15,28 @@ import {
   ReportPageTopWrapper,
   ChartTabletWrapper,
 } from "../components/Wrapper/Wrapper.styled";
+import { diagramNotifyStatus } from "../redux/setDataDiagram/dataDiagram-selector";
 
 export default function ReportPage() {
+  const notify = useSelector(diagramNotifyStatus);
+  console.log(notify);
+
+  useEffect(() => {
+    const { status, message } = notify;
+    switch (status) {
+      case "error":
+        toast.error(message);
+        break;
+
+      case "success":
+        toast.success(message);
+        break;
+
+      default:
+        return;
+    }
+  }, [notify]);
+
   return (
     <ReportPageWrapper>
       <Media query="(max-width: 767px)" render={() => <ArrowButton />} />

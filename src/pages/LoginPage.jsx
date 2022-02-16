@@ -16,9 +16,9 @@ export default function LoginPage() {
   const dispatch = useDispatch();
   const getToken = localStorage.getItem("token");
 
-  if (getToken) {
-    dispatch(googleAuthUsers(getToken));
-  }
+  // if (getToken) {
+  //   dispatch(googleAuthUsers(getToken));
+  // }
 
   return (
     <>

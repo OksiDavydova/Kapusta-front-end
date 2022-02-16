@@ -61,6 +61,7 @@ function ChangeBalance() {
       dispatch(getUserTransaction());
       removeBalanceModal();
       setValueBalance("");
+      toast.success("Первое пополнение прошло успешно:)");
     }
   };
 

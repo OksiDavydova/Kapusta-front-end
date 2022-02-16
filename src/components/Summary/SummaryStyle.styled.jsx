@@ -29,10 +29,10 @@ export const SummaryHead = styled.div`
   text-align: center;
 `;
 
-export const SummaryBody = styled.div`
-   height: 228px;
-   background-color: ${colors.bgSummary};
-`;
+// export const SummaryBody = styled.div`
+//    height: 228px;
+//    background-color: ${colors.bgSummary};
+// `;
 
 export const SummaryTr = styled.div`
   height: 38px;

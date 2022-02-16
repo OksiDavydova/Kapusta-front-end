@@ -25,7 +25,7 @@ const theme = createTheme({
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          fontSize: "16px",
+          fontSize: "10px",
           color: "white",
           backgroundColor: "orange",
         },
@@ -123,7 +123,7 @@ function TransactionTable() {
                   const currentDesc = cell.value;
                   return (
                     <ThemeProvider theme={theme} key={i}>
-                      <Tooltip title={currentDesc}>
+                      <Tooltip title={currentDesc} placement="right">
                         <TdBodyTransaction {...cell.getCellProps()}>
                           {cell.render("Cell")}
                         </TdBodyTransaction>

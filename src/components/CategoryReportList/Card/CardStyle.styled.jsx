@@ -27,7 +27,7 @@ export const CardItem = styled.li`
       position: absolute;
       top: 120%;
       right: -118%;
-      height: 3px;
+      height: 1px;
       width: 300px;
       background: ${colors.lineColor};
   }
@@ -38,7 +38,7 @@ export const CardItem = styled.li`
       position: absolute;
       top: 120%;
       right: -118%;
-      height: 3px;
+      height: 1px;
       width: 300px;
       background: ${colors.lineColor};
   }
@@ -49,7 +49,7 @@ export const CardItem = styled.li`
       position: absolute;
       top: 120%;
       right: -118%;
-      height: 3px;
+      height: 1px;
       width: 300px;
       background: ${colors.lineColor};
     }

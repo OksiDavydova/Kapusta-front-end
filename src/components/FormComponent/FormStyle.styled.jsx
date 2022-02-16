@@ -11,8 +11,8 @@ width:100%;
     
     padding: 28px 30px 48px 30px; 
     background: #ffffff;
-      box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
-  border-radius: 0px 30px 0px 0px;
+    box-shadow: 0 10px 60px rgba(170, 178, 197, 0.2);
+    border-radius: 0px 30px 0px 0px;
 
 
   }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import { useSelector } from "react-redux";
 import {
   getDataDiagram,
@@ -11,34 +11,40 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  CartesianAxis,
   LabelList,
   Cell,
+  Text,
 } from "recharts";
 
 // import EllipsisText from "react-ellipsis-text"
+// {/* <EllipsisText text={name} length={6} /> */}
 
-/* <EllipsisText text={text} length={6} /> */
+class CustomizedAxisTick extends PureComponent {
+  render() {
+    const { x, y, payload } = this.props;
+    return <Text x={x} y={y} width={60} textAnchor="middle" verticalAnchor="start">{payload.value}</Text>
+
+  }
+}
+
 
 function Chart() {
   const getDataChart = useSelector(getDataDiagram);
   const data = useSelector(getDataForInput);
 
   const arrayFromRender = data ? getDataChart : [];
+  console.log('arrayFromRender: ', arrayFromRender);
 
   const colors = ["#FF751D", "#FFDAC0"];
 
   return (
     <ResponsiveContainer width={arrayFromRender.length * 63} height={382}>
-      <BarChart data={arrayFromRender} barSize={38} barCategoryGap={25}>
-        <CartesianGrid vertical={false} width={650} />
-        <CartesianAxis />
+      <BarChart data={arrayFromRender} >
+        <CartesianGrid vertical={false} />
         <Bar
           dataKey="value"
-          fill="#FF751D"
           maxBarSize={38}
           radius={[10, 10, 0, 0]}
-          margin={{ top: 20, right: 15, bottom: 0, left: 15 }}
         >
           {arrayFromRender.map((entry, index) => (
             <Cell
@@ -55,8 +61,21 @@ function Chart() {
             formatter={(number) => `${number.toLocaleString("ru-RU")} грн`}
           />
         </Bar>
-        <XAxis dataKey="name" tickLine={false} axisLine={false} />
-        <YAxis dataKey="value" hide tickCount={10} axisLine={false} />
+        <XAxis 
+          dataKey="name" 
+          tickLine={false} 
+          axisLine={false} 
+          interval={0}
+          height={50}
+          tick={<CustomizedAxisTick />}
+          // angle={30} 
+          // dy={20} 
+          // dx={30}
+          // padding={{ bottom: 100 }}
+          // tick={{textAnchor: "start", width: 100, scaleToFit: 'true'}}
+          // width={100}
+          />
+        <YAxis dataKey="value" hide tickCount={10} axisLine={false}/>
       </BarChart>
     </ResponsiveContainer>
   );

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { getUserTransactionTheLastSixMounts } from "../../redux/getTransaction/transaction-selector";
 import { getTypeTransaction } from "../../redux/typeTransaction/transaction-selector";
+import { getUpdateBalanceUser } from "../../redux/getBalance/balance-operation";
 // import { SvgIcon } from "../SvgIcon";
 import { useTable } from "react-table";
 import { Tooltip, createTheme, ThemeProvider } from "@mui/material";
@@ -78,8 +79,10 @@ function TransactionTable() {
 
   const deleteTransaction = async id => {
     const response = await axios.delete(`/api/v1/transactions/${id}`);
+    console.log(response);
     if (response.status === 200) {
       dispatch(getUserTransaction());
+      dispatch(getUpdateBalanceUser());
     }
     return;
   };

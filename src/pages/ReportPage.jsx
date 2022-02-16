@@ -15,13 +15,15 @@ import {
   ReportPageTopWrapper,
   ChartTabletWrapper,
 } from "../components/Wrapper/Wrapper.styled";
-import { diagramNotifyStatus } from "../redux/setDataDiagram/dataDiagram-selector";
+import {  diagramLoading, getDataDiagram, diagramNotifyStatus } from "../redux/setDataDiagram/dataDiagram-selector";
 import { LoaderReport } from "../components/Loader";
-import { diagramLoading } from "../redux/setDataDiagram/dataDiagram-selector";
 
 export default function ReportPage() {
   const notify = useSelector(diagramNotifyStatus);
   const isLoading = useSelector(diagramLoading);
+
+  const getDataChart = useSelector(getDataDiagram);
+  const dataCheck = getDataChart ? getDataChart.length ===0 : false;
 
   useEffect(() => {
     const { status, message } = notify;
@@ -60,16 +62,21 @@ export default function ReportPage() {
         <ReportBalance />
 
         <CategoryReportList />
-        <Media query="(max-width: 767px)" render={() => <ChartMobile />} />
+        {!dataCheck && 
+          <>
+            <Media query="(max-width: 767px)" render={() => <ChartMobile />} />
 
-        <Media
-          query="(min-width: 768px)"
-          render={() => (
-            <ChartTabletWrapper>
-              <Chart />
-            </ChartTabletWrapper>
-          )}
-        />
+            <Media
+              query="(min-width: 768px)"
+              render={() => (
+                <ChartTabletWrapper>
+                  <Chart />
+                </ChartTabletWrapper>
+              )}
+            />
+          </>
+        }
+        
       </ReportPageWrapper>
     </>
   );

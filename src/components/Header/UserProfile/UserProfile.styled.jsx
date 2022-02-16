@@ -38,7 +38,7 @@ export const UserName = styled.p`
     width: 1px;
     height: 36px;
     top: -14px;
-    left: 100px;
+    left: 42px;
     background-color: ${colors.lineColor};
   }
 

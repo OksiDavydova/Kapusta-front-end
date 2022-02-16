@@ -106,24 +106,16 @@ export const StatisticButton = styled.a`
     border: 2px solid ${colors.white};
   }
 `;
-// position: absolute;
-// bottom: 0;
 
 export const ArrowBtnDiv = styled.div`
-  // padding-bottom: 10px;
   text-align: left;
 
   outline: 1px solid red;
 
   @media ${device.tablet} {
-    displey: flex;
-    align-items: baseline;
-    // justify-content: center;
-    // flex-direction: baseline;
-
-
-    width: 174px;
+    display: flex;
     align-items: center;
+    width: 174px;
     margin: 0;
     padding: 0;
 
@@ -151,22 +143,8 @@ export const ArrowBtn = styled.a`
 `;
 
 export const ArrowBtnText = styled.p`
-display: inline-block;
-margin: 0;
-letter-spacing: 0.04em;
-color: ${colors.textColorSecond};
+  display: inline-block;
+  margin: 0;
+  letter-spacing: 0.04em;
+  color: ${colors.textColorSecond};
 `
-// =======
-//   cursor: pointer;
-//   &:hover {
-//     color: ${colors.white};
-//     background-color: #ff751d;
-//     box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
-//   }
-//   &:focus {
-//     color: ${colors.white};
-//     background-color: #ff751d;
-//     box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
-//   }
-// `;
-// >>>>>>> main

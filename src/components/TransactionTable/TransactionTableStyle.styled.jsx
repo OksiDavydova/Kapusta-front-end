@@ -119,13 +119,9 @@ export const TableBodyTransaction = styled.div`
 
   @media ${device.tablet} {
     border: none;
-    // max-height: 346px;
-    
   }
     @media ${device.desktop} {
     border: none;
-    // max-height: 344px;
-    
   }
     
 
@@ -139,23 +135,6 @@ export const TableBodyTransaction = styled.div`
       background: ${colors.orange};
       border-radius: 15px;
     }
-  
-  /* @media ${device.tablet} {
-    width: 100%;
-    max-height: 293px;
-    overflow-y: scroll;
-
-    &::-webkit-scrollbar {
-      width: 6px;
-      border-radius: 2px;
-    }
-
-    ,
-    &::-webkit-scrollbar-thumb {
-      background: ${colors.orange};
-      border-radius: 15px;
-    }
-  } */
 `;
 
 export const TrBodyTransaction = styled.div`
@@ -167,7 +146,7 @@ export const TrBodyTransaction = styled.div`
   height: 50px;
   margin-bottom: 2px;
   min-width: 245px;
-border-bottom: 2px solid #f5f6fb;
+  border-bottom: 2px solid #f5f6fb;
   @media ${device.tabletMax} {
     display: grid;
     border-bottom: 2px solid ${colors.bgSummary};
@@ -238,6 +217,8 @@ export const TdBodyTransaction = styled.div`
     }
 
     @media ${device.tablet} {
+      text-align: start;
+      padding-left: 30px;
       width: 111px;
       margin-right: 7px;
     }
@@ -249,6 +230,8 @@ export const TdBodyTransaction = styled.div`
   }
 
   :nth-of-type(4) {
+    text-align: start;
+    padding-left: 30px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -275,11 +258,7 @@ export const TdBodyTransaction = styled.div`
     border: none;
     border-radius: 50%;
     width: 32px;
-     padding: 7px;
-
-    /* @media ${device.tabletMax} {
-      padding: 7px 0 7px 22px;
-    } */
+    padding: 7px;
 
     @media ${device.tablet} {
       margin-right: 26px;

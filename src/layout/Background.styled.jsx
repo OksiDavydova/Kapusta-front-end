@@ -14,7 +14,7 @@ import oneCabbageLB from "../assets/img/oneCabbageLB.png";
 export const BgBottomAuth = styled.div`
   position: absolute;
   left: 0px;
-  top: 56px;
+  top: 0px;
   z-index: -5;
   width: 100%;
   height: 100%;
@@ -23,10 +23,8 @@ export const BgBottomAuth = styled.div`
   background-repeat: no-repeat;
 
   @media ${device.tablet} {
-    left: 0px;
-    top: 0px;
-    background-image: url(${pairCabbages});
-    background-position: calc((100% / 2) + 280px) 680px;
+    // background-image: url(${pairCabbages});
+    // background-position: calc((100% / 2) + 280px) calc(100% - 64px);
   }
 
   @media ${device.desktop} {
@@ -48,13 +46,13 @@ export const BgBottom = styled.div`
   background-position: calc((100% / 2) - 90px) bottom;
 
   @media ${device.tablet} {
-    z-index: -5;
+    z-index: 1;
     left: 0px;
     top: 0px;
     height: 1024px;
     background-image: url(${pairCabbages});
     background-position-x: calc(50% - 200px);
-    background-position-y: 826px;
+    background-position-y: 830px;
   }
 
   @media ${device.desktop} {
@@ -62,7 +60,7 @@ export const BgBottom = styled.div`
     height: 850px;
     left: 0px;
     top: 0px;
-    background-position: calc((100% / 2) - 300px) 658px;
+    background-position: calc((100% / 2) - 410px) 658px;
   }
 `;
 
@@ -72,7 +70,7 @@ export const BgTopAuth = styled.div`
   position: absolute;
   left: 0px;
   top: 56px;
-  height: 345px;
+  height: 286px;
   width: 100%;
   border-radius: 0 0 0 150px;
   background-color: #f2f5fc;

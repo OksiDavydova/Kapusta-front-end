@@ -16,9 +16,12 @@ import {
   ChartTabletWrapper,
 } from "../components/Wrapper/Wrapper.styled";
 import { diagramNotifyStatus } from "../redux/setDataDiagram/dataDiagram-selector";
+import { LoaderReport } from "../components/Loader";
+import { diagramLoading } from "../redux/setDataDiagram/dataDiagram-selector";
 
 export default function ReportPage() {
   const notify = useSelector(diagramNotifyStatus);
+  const isLoading = useSelector(diagramLoading);
   console.log(notify);
 
   useEffect(() => {
@@ -38,34 +41,37 @@ export default function ReportPage() {
   }, [notify]);
 
   return (
-    <ReportPageWrapper>
-      <Media query="(max-width: 767px)" render={() => <ArrowButton />} />
-      <Media query="(max-width: 767px)" render={() => <MonthPicker />} />
-      <Media query="(max-width: 767px)" render={() => <BalanceOval />} />
+    <>
+      {isLoading && <LoaderReport />}
+      <ReportPageWrapper>
+        <Media query="(max-width: 767px)" render={() => <ArrowButton />} />
+        <Media query="(max-width: 767px)" render={() => <MonthPicker />} />
+        <Media query="(max-width: 767px)" render={() => <BalanceOval />} />
 
-      <Media
-        query="(min-width: 768px)"
-        render={() => (
-          <ReportPageTopWrapper>
-            <ArrowButton />
-            <BalanceOval />
-            <MonthPicker />
-          </ReportPageTopWrapper>
-        )}
-      />
-      <ReportBalance />
+        <Media
+          query="(min-width: 768px)"
+          render={() => (
+            <ReportPageTopWrapper>
+              <ArrowButton />
+              <BalanceOval />
+              <MonthPicker />
+            </ReportPageTopWrapper>
+          )}
+        />
+        <ReportBalance />
 
-      <CategoryReportList />
-      <Media query="(max-width: 767px)" render={() => <ChartMobile />} />
+        <CategoryReportList />
+        <Media query="(max-width: 767px)" render={() => <ChartMobile />} />
 
-      <Media
-        query="(min-width: 768px)"
-        render={() => (
-          <ChartTabletWrapper>
-            <Chart />
-          </ChartTabletWrapper>
-        )}
-      />
-    </ReportPageWrapper>
+        <Media
+          query="(min-width: 768px)"
+          render={() => (
+            <ChartTabletWrapper>
+              <Chart />
+            </ChartTabletWrapper>
+          )}
+        />
+      </ReportPageWrapper>
+    </>
   );
 }

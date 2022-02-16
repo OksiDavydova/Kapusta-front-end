@@ -46,7 +46,7 @@ export const BgBottom = styled.div`
   background-position: calc((100% / 2) - 90px) bottom;
 
   @media ${device.tablet} {
-    z-index: 1;
+    z-index: -4;
     left: 0px;
     top: 0px;
     height: 1024px;

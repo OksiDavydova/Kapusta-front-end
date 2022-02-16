@@ -21,7 +21,7 @@ export const CategoryList = styled.ul`
 
 export const CategoryListWrapper = styled.div`
   // padding-bottom: 20px;
-  border-bottom: 3px solid #e0e5eb;
+  border-bottom: 1px solid #e0e5eb;
   /* outline: 1px solid red; */
 
   @media ${device.tablet} {

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getBalanceUser } from "../../../redux/getBalance/balance-selector";
 import { getDate } from "../../../redux/setDate/date-selector";
 import { getUpdateBalanceUser } from "../../../redux/getBalance/balance-operation";
+import { getUserTransaction } from "../../../redux/getTransaction/transaction-operation";
 import { ModalBalance } from "../../Modal";
 import {
   ChangeBalanceWrapper,
@@ -30,11 +31,11 @@ function ChangeBalance() {
     dispatch(getUpdateBalanceUser());
   }, [dispatch]);
   // input
-  const setBalance = (e) => {
+  const setBalance = e => {
     setValueBalance(e.target.value);
   };
   // form handle Submit
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
     // input value to number
     const fixBalanceValue = parseFloat(valueBalance).toFixed(2);
@@ -53,10 +54,11 @@ function ChangeBalance() {
       value: fixBalanceValue,
       income: true,
     };
-    const { status } = await axios.post("/api/v1/transactions", newTransaction);
 
+    const { status } = await axios.post("/api/v1/transactions", newTransaction);
     if (status === 201) {
       dispatch(getUpdateBalanceUser());
+      dispatch(getUserTransaction());
       removeBalanceModal();
       setValueBalance("");
     }

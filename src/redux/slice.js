@@ -110,6 +110,7 @@ const authSlice = createSlice({
       });
     },
     [googleAuthUsers.rejected]: state => {
+      localStorage.setItem("token", "");
       return (state = {
         ...state,
         isLoading: false,

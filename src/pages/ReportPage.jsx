@@ -22,7 +22,6 @@ import { diagramLoading } from "../redux/setDataDiagram/dataDiagram-selector";
 export default function ReportPage() {
   const notify = useSelector(diagramNotifyStatus);
   const isLoading = useSelector(diagramLoading);
-  console.log(notify);
 
   useEffect(() => {
     const { status, message } = notify;

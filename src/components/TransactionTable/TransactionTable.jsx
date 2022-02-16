@@ -22,7 +22,7 @@ import { getUserTransactionTheLastSixMounts } from "../../redux/getTransaction/t
 import { getTypeTransaction } from "../../redux/typeTransaction/transaction-selector";
 import { getUpdateBalanceUser } from "../../redux/getBalance/balance-operation";
 import { getBalanceUser } from "../../redux/getBalance/balance-selector";
-import {NoResult} from '../CategoryReportList/NoResult'
+import { NoResult } from '../CategoryReportList/NoResult';
 const theme = createTheme({
   components: {
     MuiTooltip: {

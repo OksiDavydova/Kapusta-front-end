@@ -10,6 +10,7 @@ import {
 } from "./SummaryStyle.styled";
 import { getUserTransactionTheLastSixMounts } from "../../redux/getTransaction/transaction-selector.js";
 import { getTypeTransaction } from "../../redux/typeTransaction/transaction-selector.js";
+import { NoResult } from '../CategoryReportList/NoResult';
 
 function SummaryTable() {
   const transaction = useSelector(getUserTransactionTheLastSixMounts);
@@ -67,8 +68,8 @@ function SummaryTable() {
             </SummaryTr>
           ))}
         </SummaryHead>
-
-        <div {...getTableBodyProps()}>
+        {data.length > 0 ? (
+   <div {...getTableBodyProps()}>
           {rows.map((row, i) => {
             prepareRow(row);
 
@@ -83,6 +84,8 @@ function SummaryTable() {
             );
           })}
         </div>
+): <NoResult/>}
+       
       </SummaryTab>
     </SummaryTableContainer>
   );

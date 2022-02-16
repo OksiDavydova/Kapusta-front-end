@@ -4,7 +4,7 @@ import { colors, device } from "../../../styles/utils";
 export const OvalBalanceSpan = styled.div`
   padding-bottom: 30px;
 
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 
   @media ${device.tablet} {
     display: flex;
@@ -27,7 +27,7 @@ export const OvalBalanceDiv = styled.div`
     // background: ${colors.bgSummary};
     background: none;
 
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 
     @media ${device.tablet} {
         width: 125px;
@@ -41,7 +41,7 @@ export const BalanceTextOval = styled.p`
   font-weight: 500;
   // color: #52555fb3;
   color: ${colors.textColorSecond};
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 
   @media ${device.tablet} {
     margin-bottom: 0px;

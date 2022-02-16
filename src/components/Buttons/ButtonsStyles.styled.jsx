@@ -85,8 +85,8 @@ export const LinkGoogle = styled.a`
     background-color: ${colors.orange};
     box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
   }
-  
-   @media ${device.tablet} {
+
+  @media ${device.tablet} {
     margin-bottom: 30px;
   }
 `;
@@ -110,7 +110,7 @@ export const StatisticButton = styled.a`
 export const ArrowBtnDiv = styled.div`
   text-align: left;
 
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 
   @media ${device.tablet} {
     display: flex;
@@ -118,9 +118,7 @@ export const ArrowBtnDiv = styled.div`
     width: 174px;
     margin: 0;
     padding: 0;
-
   }
-
 `;
 
 export const ArrowBtn = styled.a`
@@ -128,7 +126,7 @@ export const ArrowBtn = styled.a`
   width: 24px;
   height: 24px;
 
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 
   @media ${device.tablet} {
     margin-right: 15px;
@@ -147,4 +145,4 @@ export const ArrowBtnText = styled.p`
   margin: 0;
   letter-spacing: 0.04em;
   color: ${colors.textColorSecond};
-`
+`;

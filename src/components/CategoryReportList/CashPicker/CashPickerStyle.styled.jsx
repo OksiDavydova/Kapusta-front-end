@@ -6,7 +6,7 @@ export const CashPickerWrapper = styled.div`
   justify-content: center;
   padding-bottom: 15px;
 
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 
   @media ${device.tablet} {
     padding-bottom: 20px;
@@ -19,7 +19,7 @@ export const CashPickerDiv = styled.div`
   justify-content: center;
   padding: 2px 0px;
 
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 `;
 
 export const Arrow = styled.a`
@@ -27,7 +27,7 @@ export const Arrow = styled.a`
   height: 12px;
   margin-top: 2px;
 
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 `;
 
 export const CashPickerSpan = styled.span`
@@ -38,5 +38,5 @@ export const CashPickerSpan = styled.span`
   text-transform: uppercase;
   color: ${colors.black};
 
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 `;

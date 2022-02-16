@@ -3,7 +3,7 @@ import { device } from "../../styles/utils";
 
 export const ContentWrapper = styled.div`
   width: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding-top: 30px;
   display: flex;
   flex-direction: column;
@@ -67,7 +67,7 @@ export const AuthWrapper = styled.div`
 
 export const ReportPageWrapper = styled.div`
   padding: 15px 0px;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 
   @media ${device.tablet} {
     padding: 32px 0px 76px 0px;
@@ -82,7 +82,7 @@ export const ChartTabletWrapper = styled.div`
   background: #ffffff;
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
   border-radius: 30px;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 `;
 
 export const ReportPageTopWrapper = styled.div`
@@ -90,13 +90,12 @@ export const ReportPageTopWrapper = styled.div`
   align-content: center;
   justify-content: space-between;
   margin-bottom: 30px;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 `;
 
 export const WrapperLoginContainer = styled.section`
-height: 750px;
- @media ${device.desktop}{
-height: 0; 
-}
+  height: 750px;
+  @media ${device.desktop} {
+    height: 0;
+  }
 `;
-

@@ -3,7 +3,6 @@ import { device, colors } from "../../styles/utils";
 
 export const FormWrapper = styled.div`
 width:100%;
-  outline: 1px solid red;
   margin-left: auto;
   margin-right: auto;
   padding-top: 15px;

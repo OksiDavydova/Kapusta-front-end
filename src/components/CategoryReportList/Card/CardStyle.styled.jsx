@@ -7,7 +7,7 @@ export const CardItem = styled.li`
   position: relative;
   display: inline-block;
   text-align: center;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 
   @media ${device.tablet} {
     margin-top: 20px;
@@ -63,7 +63,7 @@ export const CardText = styled.span`
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #52555f;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 `;
 
 export const CardBtnSvg = styled.button`
@@ -71,7 +71,7 @@ export const CardBtnSvg = styled.button`
   width: 100%;
   background-color: transparent;
   border: none;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -104,7 +104,7 @@ export const SvgLayoutCard = styled.svg`
   height: 46px;
   position: absolute;
   top: 0;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 `;
 
 export const CardSignature = styled.span`

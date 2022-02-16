@@ -76,10 +76,17 @@ export const AuthWrapper = styled.div`
 
 export const ReportPageWrapper = styled.div`
   padding: 15px 0px;
-  /* outline: 1px solid red; */
 
   @media ${device.tablet} {
+    width: 666px;
+    margin: 0px auto;
     padding: 32px 0px 76px 0px;
+  }
+
+  @media ${device.desktop} {
+    width: 1060px;
+    margin: 0px auto;
+    padding: 40px 0px 75px 0px;
   }
 `;
 

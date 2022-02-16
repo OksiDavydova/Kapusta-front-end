@@ -13,8 +13,8 @@ function ArrowButton() {
     navigate("/");
   };
   return (
-    <ArrowBtnDiv>
-      <ArrowBtn onClick={clickOnArrow}>
+    <ArrowBtnDiv onClick={clickOnArrow}>
+      <ArrowBtn >
         <SvgIcon w={24} h={24} idIcon={"#icon-arrow-left"} />
       </ArrowBtn>
       <Media

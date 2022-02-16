@@ -37,7 +37,7 @@ const theme = createTheme({
 });
 
 function TransactionTable() {
-  const arrayDataUser = useSelector(getUserTransactionTheLastSixMounts);
+  let arrayDataUser = useSelector(getUserTransactionTheLastSixMounts);
   const bull = useSelector(getTypeTransaction);
   const userBalance = useSelector(getBalanceUser);
   const dispatch = useDispatch();
@@ -68,15 +68,19 @@ function TransactionTable() {
     [],
   );
 
-  const data = React.useMemo(
-    () =>
-      arrayDataUser
+  console.log(window.innerWidth);
+
+  const data = React.useMemo(() => {
+    if (window.innerWidth >= 768) {
+      return arrayDataUser
         ? bull
           ? arrayDataUser.lastSixMonthsTransaction.income
           : arrayDataUser.lastSixMonthsTransaction.expense
-        : [],
-    [bull, arrayDataUser],
-  );
+        : [];
+    }
+    return arrayDataUser ? arrayDataUser.lastSixMonthsTransactionForMobile : [];
+  }, [bull, arrayDataUser]);
+
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ data, columns });
 

@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { device } from "../../styles/utils";
 
 export const BalanceWrapper = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-left: auto;
@@ -16,7 +17,7 @@ export const BalanceWrapper = styled.section`
   }
 
   @media ${device.desktop} {
-    justify-content: space-between;
+    justify-content: center;
     width: 1060px;
     padding-bottom: 9px;
   }

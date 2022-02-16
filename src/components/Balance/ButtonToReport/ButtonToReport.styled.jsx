@@ -10,33 +10,27 @@ export const BtnToReport = styled.button`
   background: transparent;
   border: none;
   margin: 0 auto 40px auto;
-  transition: border-color ${colors.animation};
-
-  &:hover {
-    border: 2px solid #ffffff;
-  }
-  &:focus {
-    border: 2px solid #ffffff;
-  }
-  & > svg {
-    fill: ${colors.textColor};
-    transition: ${colors.animation};
-    &:hover,
-    &:focus {
-      fill: ${colors.orangeLight};
-    }
-  }
+  transition: color ${colors.animation};
 
   @media ${device.tablet} {
     margin: 0;
     padding: 14px 10px 10px;
   }
 
-  // @media ${device.desktop} {
-  //   position: absolute;
-  //   top: 5px;
-  //   right: 30px;
-  // }
+  @media ${device.desktop} {
+    position: absolute;
+    top: 0px;
+    right: 30px;
+  }
+
+  &:hover,
+  &:focus {
+    color: ${colors.orange};
+  }
+
+  & > svg {
+    fill: currentColor;
+  }
 `;
 
 export const BtnReportText = styled.span`

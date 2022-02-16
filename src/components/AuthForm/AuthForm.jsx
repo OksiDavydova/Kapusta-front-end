@@ -12,6 +12,7 @@ import {
   SpanText,
 } from "./AuthForm.styled";
 import { Button } from "../../components/Buttons";
+import { Loader } from "../../components/Loader";
 
 function AuthForm() {
   const dispatch = useDispatch();
@@ -56,6 +57,7 @@ function AuthForm() {
   };
   return (
     <>
+      {/* <Loader /> */}
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Label>Электронная почта: </Label>
         <Input

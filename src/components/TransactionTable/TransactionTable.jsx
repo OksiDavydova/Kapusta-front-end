@@ -21,7 +21,7 @@ import { getUserTransactionTheLastSixMounts } from "../../redux/getTransaction/t
 import { getTypeTransaction } from "../../redux/typeTransaction/transaction-selector";
 import { getUpdateBalanceUser } from "../../redux/getBalance/balance-operation";
 import { getBalanceUser } from "../../redux/getBalance/balance-selector";
-
+import {NoResult} from '../CategoryReportList/NoResult'
 const theme = createTheme({
   components: {
     MuiTooltip: {
@@ -120,8 +120,8 @@ function TransactionTable() {
             </TrHeadTransaction>
           ))}
         </TableHeadTransaction>
-
-        <TableBodyTransaction {...getTableBodyProps()}>
+        {data.length > 0 ? (
+     <TableBodyTransaction {...getTableBodyProps()}>
           {rows.map((row, i) => {
             row.values._id = btnDel({
               id: row.values._id,
@@ -147,6 +147,7 @@ function TransactionTable() {
             );
           })}
         </TableBodyTransaction>
+) : <NoResult/>}
       </TableTransaction>
     </TransactionSection>
   );

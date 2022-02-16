@@ -16,6 +16,7 @@ import {
   TdBodyTransaction,
 } from "./TransactionTableStyle.styled";
 import { SvgIcon } from "../SvgIcon";
+import { ReportBalanceSum } from "../ReportBalance/ReportBalance.styled";
 import { getUserTransaction } from "../../redux/getTransaction/transaction-operation";
 import { getUserTransactionTheLastSixMounts } from "../../redux/getTransaction/transaction-selector";
 import { getTypeTransaction } from "../../redux/typeTransaction/transaction-selector";
@@ -37,7 +38,7 @@ const theme = createTheme({
 });
 
 function TransactionTable() {
-  let arrayDataUser = useSelector(getUserTransactionTheLastSixMounts);
+  const arrayDataUser = useSelector(getUserTransactionTheLastSixMounts);
   const bull = useSelector(getTypeTransaction);
   const userBalance = useSelector(getBalanceUser);
   const dispatch = useDispatch();
@@ -68,8 +69,6 @@ function TransactionTable() {
     [],
   );
 
-  console.log(window.innerWidth);
-
   const data = React.useMemo(() => {
     if (window.innerWidth >= 768) {
       return arrayDataUser
@@ -92,7 +91,6 @@ function TransactionTable() {
       return;
     }
     const response = await axios.delete(`/api/v1/transactions/${id}`);
-    console.log(response);
     if (response.status === 200) {
       dispatch(getUserTransaction());
       dispatch(getUpdateBalanceUser());
@@ -127,10 +125,18 @@ function TransactionTable() {
 
         <TableBodyTransaction {...getTableBodyProps()}>
           {rows.map((row, i) => {
+            console.log(row);
             row.values._id = btnDel({
               id: row.values._id,
               value: row.values.value,
             });
+            row.values.value = row.original.income ? (
+              <ReportBalanceSum>{`${row.values.value} грн.`}</ReportBalanceSum>
+            ) : (
+              <ReportBalanceSum
+                expenses
+              >{`-${row.values.value} грн.`}</ReportBalanceSum>
+            );
             prepareRow(row);
 
             return (

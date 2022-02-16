@@ -37,6 +37,9 @@ export const getUserTransaction = createAsyncThunk(
         };
       });
 
+    const lastSixMonthsTransactionForMobile =
+      data.data.lastSixMonthsTransaction.sort((a, b) => b.date - a.date);
+
     const sortDataLastSixMonthsTransaction = data.data.lastSixMonthsTransaction
       .sort((a, b) => b.date - a.date)
       .reduce(
@@ -59,6 +62,7 @@ export const getUserTransaction = createAsyncThunk(
       lastSixMonthsCosts: filterDataLastSixMonthsCosts,
       lastSixMonthsIncomes: filterDataLastSixMonthsIncomes,
       lastSixMonthsTransaction: sortDataLastSixMonthsTransaction,
+      lastSixMonthsTransactionForMobile,
     };
   },
 );

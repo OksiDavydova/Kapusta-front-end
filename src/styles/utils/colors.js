@@ -35,6 +35,14 @@ export const colors = {
   // Цвет внутри select
   selectColor: "#C7CCDC",
 
+  // Placeholder Auth Form
+  authText: "#a6abb9",
+
+  // Border bottom modal
+  modalBorder: "#172d5d",
+
+  bgTopAuth: "#f2f5fc",
+
   animation: "250ms cubic-bezier(0.4, 0, 0.2, 1)",
 };
 

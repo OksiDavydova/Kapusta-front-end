@@ -21,7 +21,7 @@ export const Label = styled.label`
   text-align: left;
   text-transform: none;
 
-  color: #000000;
+  color: ${colors.black};
 
   @media ${device.tablet} {
     margin-bottom: 10px;
@@ -43,13 +43,13 @@ export const Input = styled.input`
   text-align: left;
   text-transform: none;
 
-  color: #52555f;
+  color: ${colors.textColor};
 
-  background: #f6f7fb;
+  background: ${colors.inputBg};
   border-radius: 30px;
 
   &::placeholder {
-    color: #a6abb9;
+    color: ${colors.authText};
   }
 
   @media ${device.tablet} {
@@ -67,7 +67,6 @@ export const AuthFormButtonWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // outline: 1px solid red;
   margin-top: auto;
 
   @media ${device.tabletMax} {

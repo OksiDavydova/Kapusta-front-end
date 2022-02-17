@@ -17,9 +17,6 @@ export const StyledLink = styled(Link)`
   border: none;
   background: ${colors.bgSummary};
 
-  // outline: 1px solid red;
-
-
   &:hover,
   &:focus {
     color: ${colors.white};

@@ -10,7 +10,7 @@ width:100%;
   @media${device.tablet}{
     
     padding: 28px 30px 48px 30px; 
-    background: #ffffff;
+    background: ${colors.white};
     box-shadow: 0 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 0px 30px 0px 0px;
 
@@ -52,12 +52,12 @@ export const InputDescription = styled.input`
   height: 44px;
   width: 282px;
   border-radius: 16px 0px 0px 0px;
-  color: #52555f;
+  color:${colors.textColor};
   border: 2px solid ${colors.white};
   background: none;
 
   &::placeholder {
-    color: #c7ccdc;
+    color: ${colors.selectColor};
   }
 
   @media${device.tablet}{
@@ -82,7 +82,7 @@ export const SelectOverlay = styled.div`
   }
 
   @media ${device.tablet} {
-    width: 171px;
+    width: 176px;
     border-radius: 0;
     margin-bottom: 0;
     border: 2px solid ${colors.bgSummary};
@@ -102,7 +102,7 @@ export const CalculatorOverlay = styled.div`
   @media${device.tablet}{
     width: 104px;
     border-radius:  0px 22px  22px 0;
-    border: 2px solid #F5F6FB;
+    border: 2px solid ${colors.bgSummary};
     height: 44px;
     border-left: none;
   }

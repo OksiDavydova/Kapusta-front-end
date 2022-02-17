@@ -4,7 +4,6 @@ import { colors } from "../../styles/utils";
 export const TypeOperationWrapper = styled.div`
   width: 100%;
   text-align: start;
-  /* outline: 1px solid red; */
   margin-left: auto;
   margin-right: auto;
 `;
@@ -24,7 +23,6 @@ export const ChooseOperationButton = styled.button`
 
   color: ${(props) => props.isActive} ;
   background-color: ${(props) => props.isBgActive} ;
-  /* background-color: ${colors.bgMainNav}; */
 
   transition: color ${colors.animation}
 

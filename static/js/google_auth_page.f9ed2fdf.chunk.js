@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkkapusta_front_end=self.webpackChunkkapusta_front_end||[]).push([[506],{8994:function(n,t,e){e.r(t),e.d(t,{default:function(){return c}});var a=e(6030),r=e(6871),u=e(188),o=e(6351),s=e(184);function c(){var n=(0,a.v9)(o.Z7),t=(0,a.I0)(),e=new URLSearchParams(document.location.search).get("token");return t((0,u.P_)(e)),n?(0,s.jsx)(r.Fg,{to:"/"}):(0,s.jsx)(r.Fg,{to:"/login"})}}}]);
+//# sourceMappingURL=google_auth_page.f9ed2fdf.chunk.js.map

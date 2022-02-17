@@ -3,7 +3,7 @@ import { colors, device } from "../../styles/utils";
 
 export const SummaryTableContainer = styled.div`
   width: 230px;
-      height: 306px;
+      max-height: 306px;
   /* margin: 0 auto; */
   padding-top: 40px;
   margin-left: 30px;

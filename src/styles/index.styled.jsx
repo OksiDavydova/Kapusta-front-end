@@ -22,7 +22,7 @@ export const GlobalStyles = css`
     text-align: center;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    min-height: 100vh;
+    // min-height: 100vh;
   }
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

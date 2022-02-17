@@ -15,8 +15,9 @@ export const StyledLink = styled(Link)`
   outline: none;
   border: none;
   background: ${colors.bgSummary};
+  transition: ${colors.animation};
 
-  &:not(:last-child){
+  &:not(:last-child) {
     margin-right: 2px;
   }
 
@@ -25,5 +26,4 @@ export const StyledLink = styled(Link)`
     color: ${colors.white};
     background: ${colors.orange};
   }
-
 `;

@@ -12,7 +12,7 @@ import { styled } from "@mui/system";
 import { device } from "../../styles/utils";
 import { getTypeTransaction } from "../../redux/typeTransaction/transaction-selector";
 import { CATEGORIES_FOR_SELECT } from "../../const/constants";
-import {colors} from '../../styles/utils/colors';
+import { colors } from "../../styles/utils/colors";
 
 const StyledButton = styled("button")`
   min-width: 278px;
@@ -22,6 +22,7 @@ const StyledButton = styled("button")`
   padding: 10px 22px;
   text-align: left;
   color: ${colors.textColor};
+  transition: color ${colors.animation};
 
   &:hover {
     color: ${colors.selectColor};
@@ -30,7 +31,6 @@ const StyledButton = styled("button")`
   @media ${device.tablet} {
     min-width: 167px;
     padding: 10px 22px;
-
   }
 
   @media ${device.desktop} {
@@ -38,11 +38,11 @@ const StyledButton = styled("button")`
   }
 
   &.${selectUnstyledClasses.expanded} {
-
     &::after {
       content: "▴";
       margin-left: 20px;
-  }}
+    }
+  }
 
   &::after {
     content: "▾";
@@ -58,6 +58,7 @@ const StyledListbox = styled("ul")`
   border: 2px solid ${colors.bgSummary};
   border-bottom: none;
   box-shadow: 0px 3px 4px rgba(170, 178, 197, 0.4);
+  transition: color ${colors.animation};
 
   &:focus {
     color: ${colors.textColor};

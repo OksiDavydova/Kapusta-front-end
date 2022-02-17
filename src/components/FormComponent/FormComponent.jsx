@@ -37,14 +37,8 @@ function FormComponent() {
   const dispatch = useDispatch();
   const { register, handleSubmit, resetField } = useForm();
 
-  const onSubmit = async data => {
+  const onSubmit = async (data) => {
     const { description, value } = data;
-    // const normalizeDescription = console.log(data);
-    // console.log(description);
-    // if (description.trim() === "") {
-    //   toast.error(`введите описание`);
-    //   return;
-    // }
 
     if (!value || !description || !valueSelect) {
       toast.error("Заполните все поля!");
@@ -53,7 +47,7 @@ function FormComponent() {
 
     if (userBalance - value < 0 && !transaction) {
       toast.error(
-        "Данная операция невозможна! Баланс не может быть отрицательным!",
+        "Данная операция невозможна! Баланс не может быть отрицательным!"
       );
       return;
     }

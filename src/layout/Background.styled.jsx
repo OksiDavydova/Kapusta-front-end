@@ -1,6 +1,6 @@
 //for test only
 import styled from "@emotion/styled";
-import { device, colors } from "../styles/utils/device";
+import { device, colors } from "../styles/utils";
 // import { colors } from "../styles/utils";
 // import { device } from "../styles/utils";
 import cabbagesBottom from "../assets/img/cabbagesBottom.png";

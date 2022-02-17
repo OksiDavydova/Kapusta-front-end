@@ -136,9 +136,7 @@ export const ArrowBtnDiv = styled.div`
 export const ArrowBtn = styled.a`
   width: 24px;
   height: 24px;
-
-  //fill: ${colors.orange};
-
+  fill: ${colors.orange};
 
   @media ${device.tablet} {
     margin-right: 15px;

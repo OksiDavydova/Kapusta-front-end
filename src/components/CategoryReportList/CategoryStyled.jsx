@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import { device, colors } from "../../styles/utils";
 
 export const CategoryList = styled.ul`
-
   @media ${device.mobileS} {
     margin-left: -10px;
     margin-top: -10px;
@@ -22,9 +21,6 @@ export const CategoryListWrapper = styled.div`
   border-bottom: 1px solid ${colors.lineColor};
 
   @media ${device.tablet} {
-    top: 50%;
-    left: 0%;
-    min-width: 666px;
     padding: 20px 30px;
     margin-bottom: 30px;
 

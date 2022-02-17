@@ -107,6 +107,20 @@ export const StatisticButton = styled.a`
   }
 `;
 
+// export const ArrowBtnDiv = styled.div`
+//   text-align: left;
+
+//   /* outline: 1px solid red; */
+
+//   @media ${device.tablet} {
+//     display: flex;
+//     align-items: center;
+//     width: 174px;
+//     margin: 0;
+//     padding: 0;
+//   }
+// `;
+
 export const ArrowBtnDiv = styled.div`
   text-align: left;
 
@@ -123,21 +137,18 @@ export const ArrowBtn = styled.a`
   width: 24px;
   height: 24px;
 
+  //fill: ${colors.orange};
+
+
   @media ${device.tablet} {
     margin-right: 15px;
   }
-
-  &:hover {
-    fill: ${colors.orange};
-  }
-  &:focus {
-    fill: ${colors.orange};
-  }
 `;
 
-export const ArrowBtnText = styled.p`
-  display: inline-block;
+export const ArrowBtnText = styled.a`
+  display: block;
   margin: 0;
   letter-spacing: 0.04em;
   color: ${colors.textColorSecond};
+  // transition: transform 0.2s;
 `;

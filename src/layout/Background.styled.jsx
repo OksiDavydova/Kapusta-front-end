@@ -9,32 +9,36 @@ import pairCabbages from "../assets/img/pairCabbages.png";
 import oneCabbageRT from "../assets/img/oneCabbageRT.png";
 import oneCabbageLB from "../assets/img/oneCabbageLB.png";
 
-// import cabbagesBottom from "../assets/img/cabbagesBottom.png";
-// grey back first then cabbage
 export const BgBottomAuth = styled.div`
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: -5;
-  width: 100%;
-  height: 100%;
+  // position: absolute;
+  // left: 0px;
+  // top: 0px;
+  // z-index: -5;
+  // width: 100%;
+  // height: 100%;
 
-  background-color: ${colors.white};
-  background-repeat: no-repeat;
 
-  @media ${device.tablet} {
-    // background-image: url(${pairCabbages});
-    // background-position: calc((100% / 2) + 280px) calc(100% - 64px);
-  }
+  //background-color: ${colors.white};
+  //background-repeat: no-repeat;
 
-  @media ${device.desktop} {
-    background-image: url(${cabbagesBottom});
-    background-position: 50% calc(100% + 25px);
-  }
+
+
+  // @media ${device.tablet} {
+  //   background-image: url(${pairCabbages});
+  //   min-height: 983px;
+  //   background-position: calc((100% / 2) + 200px) calc(100% - 24px);
+    
+  // }
+
+  // @media ${device.desktop} {
+  //   background-image: url(${cabbagesBottom});
+  //   background-position: 50% calc(100% + 25px);
+  //   height: 100%;
+  // }
 `;
 
 export const BgBottom = styled.div`
-  z-index: -4;
+  z-index: -6;
   position: absolute;
   width: 100%;
   height: 856px;
@@ -57,9 +61,10 @@ export const BgBottom = styled.div`
 
   @media ${device.desktop} {
     z-index: -4;
-    height: 850px;
+    height: 100%;
     left: 0px;
     top: 0px;
+    background-image: url(${pairCabbages});
     background-position: calc((100% / 2) - 410px) 658px;
   }
 `;

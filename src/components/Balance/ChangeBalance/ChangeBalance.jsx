@@ -103,7 +103,7 @@ function ChangeBalance() {
       {balance ? (
         <OvalBalanceSpan>
           <BalanceTextOval>Баланс:</BalanceTextOval>
-          <OvalBalanceDiv>{[balance, " ", "UAH"]}</OvalBalanceDiv>
+          <OvalBalanceDiv>{[balance.toLocaleString(), " ", "UAH"]}</OvalBalanceDiv>
         </OvalBalanceSpan>
       ) : (
         <>

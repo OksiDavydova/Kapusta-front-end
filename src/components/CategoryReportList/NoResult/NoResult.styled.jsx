@@ -17,4 +17,7 @@ padding: 10px;
         width: 800px;
     }
 }
+ @media${device.tabletMax}{
+     margin-bottom: 30px;
+ }
 `

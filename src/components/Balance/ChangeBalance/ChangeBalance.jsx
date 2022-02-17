@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getBalanceUser } from "../../../redux/getBalance/balance-selector";
 import { getDate } from "../../../redux/setDate/date-selector";
@@ -26,6 +26,20 @@ function ChangeBalance() {
   const date = useSelector(getDate);
   //value from input
   const [valueBalance, setValueBalance] = useState("");
+
+  // Coordinates for Modal
+  const ref = useRef();
+  const [coordinates, setCoordinates] = useState('');
+
+  useEffect(() => {
+    setTimeout(() => {
+      const rect = ref.current.getBoundingClientRect();
+      setCoordinates(rect)
+    })
+  }, []);
+
+  console.log('coordinates Input: ', coordinates);
+  // End of part with coordinates
 
   useEffect(() => {
     dispatch(getUpdateBalanceUser());
@@ -72,6 +86,19 @@ function ChangeBalance() {
   //const conversionToNumber = Number(e.target.value);
   //setValueBalance(conversionToNumber);
 
+  // let elem = document.querySelector('#input');
+
+  // console.log(elem.getBoundingClientRect());
+
+  // function getCoords(elem) {
+  //   let box = elem.getBoundingClientRect();
+  
+  //   return {
+  //     top: Math.round(box.top + pageYOffset),
+  //     left: Math.round(box.left + pageXOffset)
+  //   };
+  // }
+
   return (
     <ChangeBalanceWrapper>
       {balance ? (
@@ -85,6 +112,7 @@ function ChangeBalance() {
           <form onSubmit={handleSubmit}>
             <LabelBalance htmlFor="balance">
               <ChangeBalanceInput
+                id="input"
                 type="text"
                 name="balance"
                 // pattern="^[ 0-9]+$"
@@ -93,6 +121,7 @@ function ChangeBalance() {
                 onChange={setBalance}
                 autoComplete="off"
                 autoFocus
+                ref={ref}
               />
               <Span>UAH</Span>
             </LabelBalance>
@@ -103,7 +132,7 @@ function ChangeBalance() {
 
       {/* --------Modal------------- */}
       {showBalanceModal && !balance && (
-        <ModalBalance onClose={removeBalanceModal} />
+        <ModalBalance coordinates={coordinates} onClose={removeBalanceModal} />
       )}
       {/* --------------------- */}
     </ChangeBalanceWrapper>

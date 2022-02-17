@@ -2,7 +2,9 @@ import styled from "@emotion/styled";
 import { colors, device } from "../../../styles/utils";
 
 export const ChangeBalanceWrapper = styled.div`
+    margin-bottom: 40px;
   @media ${device.tablet} {
+    margin: 0;
     margin-left: 40px;
     display: flex;
   }

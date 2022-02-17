@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
 import Media from "react-media";
 // import { useSelector, useDispatch } from "react-redux";
 import { Balance } from "../components/Balance";
@@ -8,7 +7,7 @@ import { TransactionTable } from "../components/TransactionTable";
 import { NavigationMainMobile } from "../components/NavigationMobile";
 import { TypeOperationMain } from "../components/TypeOperationMain";
 import { FormComponent } from "../components/FormComponent";
-import { transactionNotifyStatus } from "../redux/getTransaction/transaction-selector";
+
 import {
   ContentWrapper,
   Overlay,
@@ -21,24 +20,7 @@ import { getUpdateBalanceUser } from "../redux/getBalance/balance-operation";
 import { getUserTransaction } from "../redux/getTransaction/transaction-operation";
 
 export default function Main() {
-  const notify = useSelector(transactionNotifyStatus);
   const dispatch = useDispatch();
-  console.log(notify);
-  useEffect(() => {
-    const { status, message } = notify;
-    switch (status) {
-      case "error":
-        toast.error(message);
-        break;
-
-      case "success":
-        toast.success(message);
-        break;
-
-      default:
-        return;
-    }
-  }, [notify]);
 
   useEffect(() => {
     dispatch(getUpdateBalanceUser());

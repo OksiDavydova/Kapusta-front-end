@@ -13,6 +13,7 @@ const authSlice = createSlice({
     error: null,
     email: "",
     isLoading: false,
+    isVerify: false,
     notifyStatus: {},
   },
 
@@ -23,6 +24,7 @@ const authSlice = createSlice({
     },
     [signUpUsers.fulfilled]: (state, action) => {
       return (state = {
+        ...state,
         ...action.payload,
         email: action.payload.email,
         isLoading: false,
@@ -45,22 +47,21 @@ const authSlice = createSlice({
       });
     },
     [loginUsers.pending]: state => {
-      return (state = { ...state, isLoading: true });
+      state.isLoading = true;
     },
     [loginUsers.fulfilled]: (state, action) => {
+      console.log(action);
       return (state = {
+        ...state,
         ...action.payload,
         email: action.payload.email,
         isLogin: true,
         isLoading: false,
-        notifyStatus: {
-          status: "success",
-          message: "Вы успешно вошли в свой аккаунт:)",
-        },
       });
     },
     [loginUsers.rejected]: (state, action) => {
       return (state = {
+        ...state,
         isLogin: false,
         error: action.payload,
         isLoading: false,
@@ -71,28 +72,24 @@ const authSlice = createSlice({
       });
     },
     [logoutUsers.pending]: state => {
-      return (state = { ...state, isLoading: true });
+      state.isLoading = true;
     },
     [logoutUsers.fulfilled]: (state, action) => {
       return (state = {
+        ...state,
         ...action.payload,
         isLogin: false,
         isLoading: false,
-        notifyStatus: {
-          status: "success",
-          message: "Вы успешно вышли со своего аккаунта:)",
-        },
+        isVerify: false,
       });
     },
     [logoutUsers.rejected]: (state, action) => {
       return (state = {
-        isLogin: true,
+        ...state,
+        isLogin: false,
         error: action.payload,
         isLoading: false,
-        notifyStatus: {
-          status: "error",
-          message: "Выйти из аккаунта не удалось:(",
-        },
+        isVerify: false,
       });
     },
     [googleAuthUsers.pending]: state => {
@@ -100,13 +97,11 @@ const authSlice = createSlice({
     },
     [googleAuthUsers.fulfilled]: (state, action) => {
       return (state = {
+        ...state,
         ...action.payload,
         isLogin: true,
         isLoading: false,
-        notifyStatus: {
-          status: "success",
-          message: "Вы успешно вошли в свой аккаунт:)",
-        },
+        isVerify: true,
       });
     },
     [googleAuthUsers.rejected]: state => {

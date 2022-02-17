@@ -22,7 +22,9 @@ import { getUserTransactionTheLastSixMounts } from "../../redux/getTransaction/t
 import { getTypeTransaction } from "../../redux/typeTransaction/transaction-selector";
 import { getUpdateBalanceUser } from "../../redux/getBalance/balance-operation";
 import { getBalanceUser } from "../../redux/getBalance/balance-selector";
-import {NoResult} from '../CategoryReportList/NoResult'
+
+import { NoResult } from "../CategoryReportList/NoResult";
+
 const theme = createTheme({
   components: {
     MuiTooltip: {
@@ -123,41 +125,42 @@ function TransactionTable() {
           ))}
         </TableHeadTransaction>
         {data.length > 0 ? (
-     <TableBodyTransaction {...getTableBodyProps()}>
-          {rows.map((row, i) => {
-            console.log(row);
-            row.values._id = btnDel({
-              id: row.values._id,
-              value: row.values.value,
-            });
-            row.values.value = row.original.income ? (
-              <ReportBalanceSum>{`${row.values.value} грн.`}</ReportBalanceSum>
-            ) : (
-              <ReportBalanceSum
-                expenses
-              >{`-${row.values.value} грн.`}</ReportBalanceSum>
-            );
-            prepareRow(row);
+          <TableBodyTransaction {...getTableBodyProps()}>
+            {rows.map((row, i) => {
+              row.values._id = btnDel({
+                id: row.values._id,
+                value: row.values.value,
+              });
+              row.values.value = row.original.income ? (
+                <ReportBalanceSum>{`${row.values.value} грн.`}</ReportBalanceSum>
+              ) : (
+                <ReportBalanceSum
+                  expenses
+                >{`-${row.values.value} грн.`}</ReportBalanceSum>
+              );
+              prepareRow(row);
 
-            return (
-              <TrBodyTransaction {...row.getRowProps()} key={i}>
-                {row.cells.map((cell, i) => {
-                  const currentDesc = cell.value;
-                  return (
-                    <ThemeProvider theme={theme} key={i}>
-                      <Tooltip title={currentDesc} placement="right">
-                        <TdBodyTransaction {...cell.getCellProps()}>
-                          {cell.render("Cell")}
-                        </TdBodyTransaction>
-                      </Tooltip>
-                    </ThemeProvider>
-                  );
-                })}
-              </TrBodyTransaction>
-            );
-          })}
-        </TableBodyTransaction>
-) : <NoResult/>}
+              return (
+                <TrBodyTransaction {...row.getRowProps()} key={i}>
+                  {row.cells.map((cell, i) => {
+                    const currentDesc = cell.value;
+                    return (
+                      <ThemeProvider theme={theme} key={i}>
+                        <Tooltip title={currentDesc} placement="right">
+                          <TdBodyTransaction {...cell.getCellProps()}>
+                            {cell.render("Cell")}
+                          </TdBodyTransaction>
+                        </Tooltip>
+                      </ThemeProvider>
+                    );
+                  })}
+                </TrBodyTransaction>
+              );
+            })}
+          </TableBodyTransaction>
+        ) : (
+          <NoResult />
+        )}
       </TableTransaction>
     </TransactionSection>
   );

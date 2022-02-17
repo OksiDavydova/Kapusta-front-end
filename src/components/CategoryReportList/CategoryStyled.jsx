@@ -21,6 +21,7 @@ export const CategoryList = styled.ul`
 export const CategoryListWrapper = styled.div`
   border-bottom: 1px solid ${colors.lineColor};
 
+
   @media ${device.tablet} {
     padding: 20px 30px;
     margin-bottom: 30px;

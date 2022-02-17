@@ -3,7 +3,7 @@ import { getUserTransaction } from "./transaction-operation";
 
 const userTransaction = createSlice({
   name: "user/transaction",
-  initialState: { data: false, isLoading: false, notifyStatus: {} },
+  initialState: { data: false, isLoading: false },
   reducers: {},
   extraReducers: {
     [getUserTransaction.pending]: state => {
@@ -15,20 +15,12 @@ const userTransaction = createSlice({
           ...action.payload,
         },
         isLoading: false,
-        notifyStatus: {
-          status: "success",
-          message: `Ваши транзакции успешно обновлены:)`,
-        },
       });
     },
     [getUserTransaction.rejected]: state => {
       return (state = {
         ...state,
         isLoading: false,
-        notifyStatus: {
-          status: "error",
-          message: `Обновить транзакции не удалось:()`,
-        },
       });
     },
   },

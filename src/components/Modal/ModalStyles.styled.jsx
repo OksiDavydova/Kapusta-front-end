@@ -34,7 +34,7 @@ export const ModalBalanceContent = styled.div`
   padding: 41px 25px 31px 25px;
   color: ${colors.white};
   background: ${colors.bgModalBalance};
-  transform: translateY(calc(100% + 15px)) translateX(12%);
+  // transform: translateY(calc(100% + 15px)) translateX(12%);
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
   border-radius: 30px;
   
@@ -49,32 +49,32 @@ export const ModalBalanceContent = styled.div`
       border-right: 11px solid transparent;
       border-bottom: 11px solid ${colors.modalBorder};
 
-      @media ${device.tablet} {
-      left:16%;
-    };
+    //   @media ${device.tablet} {
+    //   left:16%;
+    // };
   }
 
-      @media ${device.mobileS} {
-      transform: translateY(calc(100% + 35px)) translateX(7%);
-      };
-      @media ${device.mobileL} {
-      transform: translateY(calc(100% + 35px)) translateX(26%);
-      };
-      @media ${device.tablet} {
-      transform: translateY(calc(100% + -47px)) translateX(66%);
-      width: 292px;
-      };
-      @media (min-width: 1024px) {
-      transform: translateY(calc(100% + -47px)) translateX(114%);
-      width: 292px;
-      };
-      @media ${device.desktop} {
-      transform: translateY(calc(100% + -41px)) translateX(199%)
-    };
-      @media (min-width: 1440px) {
-      transform: translateY(calc(100% + -41px)) translateX(235%)
-    };
-};
+//       @media ${device.mobileS} {
+//       transform: translateY(calc(100% + 35px)) translateX(7%);
+//       };
+//       @media ${device.mobileL} {
+//       transform: translateY(calc(100% + 35px)) translateX(26%);
+//       };
+//       @media ${device.tablet} {
+//       transform: translateY(calc(100% + -47px)) translateX(66%);
+//       width: 292px;
+//       };
+//       @media (min-width: 1024px) {
+//       transform: translateY(calc(100% + -47px)) translateX(114%);
+//       width: 292px;
+//       };
+//       @media ${device.desktop} {
+//       transform: translateY(calc(100% + -41px)) translateX(199%)
+//     };
+//       @media (min-width: 1440px) {
+//       transform: translateY(calc(100% + -41px)) translateX(235%)
+//     };
+// };
 `;
 
 export const ModalTitleTxt = styled.p`

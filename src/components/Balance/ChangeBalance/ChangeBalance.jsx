@@ -28,17 +28,25 @@ function ChangeBalance() {
   const [valueBalance, setValueBalance] = useState("");
 
   // Coordinates for Modal
-  const ref = useRef();
+  const [size, setSize] = useState([window.innerWidth, window.innerHeight])
+  const handleResize = () => {
+    setSize([window.innerWidth, window.innerHeight])
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [size])
+
   const [coordinates, setCoordinates] = useState('');
+  const ref = useRef();
 
   useEffect(() => {
     setTimeout(() => {
       const rect = ref.current.getBoundingClientRect();
       setCoordinates(rect)
     })
-  }, []);
-
-  console.log('coordinates Input: ', coordinates);
+  }, [size]);
   // End of part with coordinates
 
   useEffect(() => {

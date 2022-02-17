@@ -61,7 +61,8 @@ export const BgBottom = styled.div`
 
   @media ${device.desktop} {
     z-index: -4;
-    height: 100%;
+    // height: 100%;
+    height: calc(100% + 125px);
     left: 0px;
     top: 0px;
     background-image: url(${pairCabbages});

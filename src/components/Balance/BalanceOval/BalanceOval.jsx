@@ -15,7 +15,7 @@ function BalanceOval() {
   return (
     <OvalBalanceSpan>
       <BalanceTextOval>Баланс:</BalanceTextOval>
-      <OvalBalanceDiv>{[balance, " ", text]}</OvalBalanceDiv>
+      <OvalBalanceDiv>{[balance.toLocaleString(), " ", text]}</OvalBalanceDiv>
     </OvalBalanceSpan>
   );
 }

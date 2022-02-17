@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
 import { SvgIcon } from "../../SvgIcon";
 import {
   CardItem,
@@ -14,13 +15,13 @@ import {
 } from "../../../redux/setDataDiagram/dataDiagram-selector";
 import { sortDataForDiagram } from "../../../redux/setDataDiagram/dataDiagram-slice";
 
-function Card({ key, value, category }) {
+function Card({ value, category }) {
   const bull = useSelector(getBullForChangePage);
   const data = useSelector(getDataForInput);
   const dispatch = useDispatch();
   const svgPath = svgName.find(item => item.category === category);
   return (
-    <CardItem key={key}>
+    <CardItem key={uuidv4()}>
       <CardBtnSvg
         type="button"
         onClick={() => dispatch(sortDataForDiagram({ category, bull, data }))}

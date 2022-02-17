@@ -28,6 +28,7 @@ function ChangeBalance() {
   const [valueBalance, setValueBalance] = useState("");
 
   // Coordinates for Modal
+
   const [size, setSize] = useState([window.innerWidth, window.innerHeight])
   const handleResize = () => {
     setSize([window.innerWidth, window.innerHeight])
@@ -47,6 +48,8 @@ function ChangeBalance() {
       setCoordinates(rect)
     })
   }, [size]);
+
+ 
   // End of part with coordinates
 
   useEffect(() => {
@@ -62,7 +65,7 @@ function ChangeBalance() {
     // input value to number
     const fixBalanceValue = parseFloat(valueBalance).toFixed(2);
 
-    if (isNaN(valueBalance) || !valueBalance) {
+    if (isNaN(valueBalance) || !valueBalance || valueBalance < 0) {
       toast.error(`проверте данные вы ввели: ${valueBalance}`);
       // setValueBalance("");
       return;
@@ -90,29 +93,12 @@ function ChangeBalance() {
   const removeBalanceModal = () => {
     setShowBalanceModal(!showBalanceModal);
   };
-  //const setBalance = e => {
-  //const conversionToNumber = Number(e.target.value);
-  //setValueBalance(conversionToNumber);
-
-  // let elem = document.querySelector('#input');
-
-  // console.log(elem.getBoundingClientRect());
-
-  // function getCoords(elem) {
-  //   let box = elem.getBoundingClientRect();
-  
-  //   return {
-  //     top: Math.round(box.top + pageYOffset),
-  //     left: Math.round(box.left + pageXOffset)
-  //   };
-  // }
-
   return (
     <ChangeBalanceWrapper>
       {balance ? (
         <OvalBalanceSpan>
           <BalanceTextOval>Баланс:</BalanceTextOval>
-          <OvalBalanceDiv>{[balance, " ", "UAH"]}</OvalBalanceDiv>
+          <OvalBalanceDiv>{[balance.toLocaleString(), " ", "UAH"]}</OvalBalanceDiv>
         </OvalBalanceSpan>
       ) : (
         <>

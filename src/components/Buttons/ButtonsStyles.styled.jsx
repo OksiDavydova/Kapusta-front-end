@@ -17,6 +17,7 @@ export const BaseButton = styled.button`
   color: ${colors.textColor};
   background-color: ${colors.bgSummary};
   box-shadow: 1px 3px 5px rgba(82, 85, 95, 0.15);
+  transition: ${colors.animation};
 
   &:hover {
     color: ${colors.white};
@@ -36,6 +37,7 @@ export const GreyButton = styled(BaseButton)`
   background: ${colors.bgSummary};
   /* background: none; */
   border: 2px solid ${colors.white};
+  transition: color ${colors.animation};
 
   &:hover {
     border: ${colors.orange};
@@ -74,6 +76,7 @@ export const LinkGoogle = styled.a`
   color: ${colors.black};
   background-color: ${colors.inputBg};
   box-shadow: 1px 2px 3px rgba(170, 178, 197, 0.2);
+  transition: color ${colors.animation};
 
   &:hover {
     color: ${colors.white};
@@ -99,6 +102,7 @@ export const StatisticButton = styled.a`
   color: rgba(82, 85, 95, 0.7);
   background: none;
   border: none;
+  transition: color ${colors.animation};
   . &:hover {
     border: 2px solid ${colors.white};
   }

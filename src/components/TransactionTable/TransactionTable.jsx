@@ -132,11 +132,11 @@ function TransactionTable() {
                 value: row.values.value,
               });
               row.values.value = row.original.income ? (
-                <ReportBalanceSum>{`${row.values.value} грн.`}</ReportBalanceSum>
+                <ReportBalanceSum>{`${row.values.value.toLocaleString()} грн.`}</ReportBalanceSum>
               ) : (
                 <ReportBalanceSum
                   expenses
-                >{`-${row.values.value} грн.`}</ReportBalanceSum>
+                >{`-${row.values.value.toLocaleString()} грн.`}</ReportBalanceSum>
               );
               prepareRow(row);
 

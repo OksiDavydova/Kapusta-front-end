@@ -50,7 +50,6 @@ const authSlice = createSlice({
       state.isLoading = true;
     },
     [loginUsers.fulfilled]: (state, action) => {
-      console.log(action);
       return (state = {
         ...state,
         ...action.payload,

@@ -7,14 +7,14 @@ import cabbagesBottom from "../../assets/img/cabbagesBottom.png";
 export const ContentWrapper = styled.div`
   width: 100%;
   padding-top: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
   min-height: calc(100vh - 56px);
   background-repeat: no-repeat;
 
   @media ${device.tablet} {
-    justify-content: flex-start;
+    // justify-content: flex-start;
     padding: 40px 30px 83px;
     background-image: url(${pairCabbages});
     background-position: calc((100% / 2) + 200px) calc(100% - 24px);
@@ -47,8 +47,10 @@ export const DesktopOverlayShadow = styled.div`
   }
 `;
 export const OverlayMobile = styled.div`
-  align-content: flex-end;
+  // align-content: flex-end;
+  height: 100%;
   padding-top: 20px;
+  padding-bottom: 53px;
 `;
 
 export const AuthWrapper = styled.div`

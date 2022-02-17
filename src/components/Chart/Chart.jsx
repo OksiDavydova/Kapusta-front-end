@@ -16,9 +16,6 @@ import {
   Text,
 } from "recharts";
 
-// import EllipsisText from "react-ellipsis-text"
-// {/* <EllipsisText text={name} length={6} /> */}
-
 class CustomizedAxisTick extends PureComponent {
   render() {
     const { x, y, payload } = this.props;
@@ -30,7 +27,7 @@ class CustomizedAxisTick extends PureComponent {
   }
 }
 
-function Chart() {
+function Chart({width}) {
   const getDataChart = useSelector(getDataDiagram);
   const data = useSelector(getDataForInput);
 
@@ -39,10 +36,19 @@ function Chart() {
   const colors = ["#FF751D", "#FFDAC0"];
 
   return (
-    <ResponsiveContainer width={arrayFromRender.length * 63} height={382}>
-      <BarChart data={arrayFromRender}>
+    // <ResponsiveContainer width={arrayFromRender.length * 63} height={382}>
+    <ResponsiveContainer width={width} height={400} >
+      <BarChart 
+        data={arrayFromRender}
+        maxwidth={600}
+        margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
+      >
         <CartesianGrid vertical={false} />
-        <Bar dataKey="value" maxBarSize={38} radius={[10, 10, 0, 0]}>
+        <Bar 
+          dataKey="value" 
+          maxBarSize={38} 
+          radius={[10, 10, 0, 0]}
+        >
           {arrayFromRender.map((entry, index) => (
             <Cell
               key={`cell-${index}`}

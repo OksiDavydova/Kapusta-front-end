@@ -51,10 +51,19 @@ export default function ReportPage() {
             <Media query="(max-width: 767.98px)" render={() => <ChartMobile />} />
 
             <Media
-              query="(min-width: 768px)"
+              query="(min-width: 768px) and (max-width: 1279px)"
               render={() => (
                 <ChartTabletWrapper>
-                  <Chart />
+                  <Chart width={635}/>
+                </ChartTabletWrapper>
+              )}
+            />
+
+            <Media
+              query="(min-width: 1280px)"
+              render={() => (
+                <ChartTabletWrapper>
+                  <Chart width={758}/>
                 </ChartTabletWrapper>
               )}
             />

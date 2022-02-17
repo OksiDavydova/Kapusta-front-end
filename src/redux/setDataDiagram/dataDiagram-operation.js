@@ -66,8 +66,8 @@ export const getDataForDiagram = createAsyncThunk(
     const newData = {
       income: sortIncome,
       expense: sortExpense,
-      sumOfExpense: response.data.data.sumOfCosts,
-      sumOfIncome: response.data.data.sumOfIncomes,
+      sumOfExpense: response.data.data.sumOfCosts.toLocaleString(),
+      sumOfIncome: response.data.data.sumOfIncomes.toLocaleString(),
     };
 
     return newData;

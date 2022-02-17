@@ -23,6 +23,10 @@ export const getUpdateBalanceUser = createAsyncThunk(
       { balance: 0, income: 0, expense: 0 },
     );
 
+    balance.balance = balance.balance.toLocaleString();
+    balance.income = balance.income.toLocaleString();
+    balance.expense = balance.expense.toLocaleString();
+
     return {
       ...balance,
     };

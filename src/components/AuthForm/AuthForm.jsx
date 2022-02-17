@@ -41,7 +41,7 @@ function AuthForm() {
           loginUsers({
             email: data.email,
             password: data.password,
-          })
+          }),
         );
         break;
       case `${textForInput.signup}`:
@@ -49,7 +49,7 @@ function AuthForm() {
           signUpUsers({
             email: data.email,
             password: data.password,
-          })
+          }),
         );
         break;
       default:
@@ -78,10 +78,12 @@ function AuthForm() {
         )}
         <Label>Пароль: </Label>
         <Input
+          type="password"
           placeholder="Пароль"
           {...register("password", {
             required: true,
-            pattern: /(?=.*[0-9])(?=.*[!@#-$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g,
+            pattern:
+              /(?=.*[0-9])(?=.*[!@#-$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g,
           })}
         />
         {errors.password && (

@@ -50,7 +50,6 @@ const sortData = createSlice({
         const array = payload.data.expense.find(el => {
           return el.category === payload.category;
         });
-        console.log(array);
         return [...array.data].sort((a, b) => b.value - a.value);
       } else {
         const array = payload.data.income.find(el => {

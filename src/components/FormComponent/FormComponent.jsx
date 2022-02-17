@@ -37,7 +37,7 @@ function FormComponent() {
   const dispatch = useDispatch();
   const { register, handleSubmit, resetField } = useForm();
 
-  const onSubmit = async (data) => {
+  const onSubmit = async data => {
     const { description, value } = data;
 
     if (!value || !description || !valueSelect) {
@@ -47,7 +47,7 @@ function FormComponent() {
 
     if (userBalance - value < 0 && !transaction) {
       toast.error(
-        "Данная операция невозможна! Баланс не может быть отрицательным!"
+        "Данная операция невозможна! Баланс не может быть отрицательным!",
       );
       return;
     }
@@ -74,6 +74,13 @@ function FormComponent() {
     resetField("value");
     setValueSelect("");
   };
+
+  // useEffect(() => {
+  //   resetField("description");
+  //   resetField("value");
+  //   setValueSelect("");
+  //   return;
+  // }, [transaction, resetField]);
 
   return (
     <FormWrapper>

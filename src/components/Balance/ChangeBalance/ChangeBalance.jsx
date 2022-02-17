@@ -53,7 +53,7 @@ function ChangeBalance() {
     // input value to number
     const fixBalanceValue = parseFloat(valueBalance).toFixed(2);
 
-    if (isNaN(valueBalance) || !valueBalance) {
+    if (isNaN(valueBalance) || !valueBalance || valueBalance < 0) {
       toast.error(`проверте данные вы ввели: ${valueBalance}`);
       // setValueBalance("");
       return;

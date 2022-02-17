@@ -1,5 +1,5 @@
 import { NoResultDiv } from './NoResult.styled';
-import noResult from './no-result2.png';
+import noResult from '../../../assets/img/noResult.png';
 
 function NoResult() {
   return (

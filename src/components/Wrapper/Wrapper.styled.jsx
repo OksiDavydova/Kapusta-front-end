@@ -81,9 +81,9 @@ export const AuthWrapper = styled.div`
 
 export const ReportPageWrapper = styled.div`
   padding: 15px 0px;
-  /* outline: 1px solid red; */
 
   @media ${device.tablet} {
+
     padding: 32px 0px 76px;
     background-image: url(${pairCabbages});
     background-position: calc((100% / 2) + 200px) calc(100% + 40px);
@@ -93,6 +93,13 @@ export const ReportPageWrapper = styled.div`
   @media ${device.desktop} {
    background-image: url(${cabbagesBottom});
    background-position: 50% calc(100% - 20px);
+
+  }
+
+  @media ${device.desktop} {
+    width: 1060px;
+    margin: 0px auto;
+    padding: 40px 0px 75px 0px;
   }
 `;
 

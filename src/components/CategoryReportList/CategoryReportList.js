@@ -8,7 +8,7 @@ import {
   getDataForInput,
   getBullForChangePage,
 } from "../../redux/setDataDiagram/dataDiagram-selector";
-// import { NoResult } from "./NoResult";
+import { NoResult } from "./NoResult";
 
 function CategoryReportList() {
   const data = useSelector(getDataForInput);
@@ -18,6 +18,7 @@ function CategoryReportList() {
   const sortDataIcon = data
     ? [...dataIcon].sort((a, b) => b.total - a.total)
     : [];
+  const dataCheck = data ? dataIcon.length === 0 : false;
 
   return (
     <CategoryListWrapper>
@@ -27,8 +28,9 @@ function CategoryReportList() {
           sortDataIcon.map(({ total, category }) => (
             <Card key={uuidv4()} value={total} category={category} />
           ))}
-        {/* {!data && <NoResult />} */}
       </CategoryList>
+      {dataCheck && <NoResult />}
+      {!data && <NoResult />}
     </CategoryListWrapper>
   );
 }

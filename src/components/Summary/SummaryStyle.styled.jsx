@@ -8,6 +8,7 @@ export const SummaryTableContainer = styled.div`
   padding-top: 40px;
   margin-left: 30px;
   border-radius: 20px 20px 20px 0;
+  box-shadow: 0px 10px 30px 0px rgb(170 178 197 / 20%);     //?????
   @media ${device.desktop} {
     padding: 0;
     margin: 0;
@@ -53,4 +54,5 @@ export const SummaryTrBody = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+   text-transform: uppercase;
 `;

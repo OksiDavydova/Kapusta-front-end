@@ -231,6 +231,8 @@ export const TdBodyTransaction = styled.div`
   }
 
   :nth-of-type(4) {
+    font-weight:700;
+    font-size:12px;
     text-align: start;
     padding-left: 30px;
     text-overflow: ellipsis;

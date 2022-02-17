@@ -61,6 +61,7 @@ export const ChangeBalanceButton = styled.button`
   border: 2px solid ${colors.white};
   border-left: none;
   border-radius: 0px 22px 22px 0px;
+  transition: ${colors.animation};
   &:hover {
     color:  ${colors.white};
     background:  ${colors.orange};

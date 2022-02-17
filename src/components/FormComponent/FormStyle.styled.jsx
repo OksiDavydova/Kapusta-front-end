@@ -2,28 +2,25 @@ import styled from "@emotion/styled";
 import { device, colors } from "../../styles/utils";
 
 export const FormWrapper = styled.div`
-width:100%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-top: 15px;
 
-  @media${device.tablet}{
-    
-    padding: 28px 30px 48px 30px; 
+  @media${device.tablet} {
+    padding: 28px 30px 48px 30px;
     background: ${colors.white};
+
     box-shadow: 0 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 0px 30px 0px 0px;
-
-
   }
-    @media${device.desktop}{
+  @media${device.desktop} {
     padding: 33px 20px 59px;
-   
   }
 `;
 
 export const FormContainer = styled.div`
-      @media${device.tablet}{
+  @media${device.tablet} {
     display: flex;
   }
 `;
@@ -38,10 +35,10 @@ export const FormTag = styled.form`
   box-sizing: border-box;
   border-radius: 16px 16px 0px 0px;
 
-  @media${device.tablet}{
+  @media${device.tablet} {
     padding-top: 0;
   }
-  @media${device.desktop}{
+  @media${device.desktop} {
     flex-direction: row;
   }
 `;
@@ -52,7 +49,7 @@ export const InputDescription = styled.input`
   height: 44px;
   width: 282px;
   border-radius: 16px 0px 0px 0px;
-  color:${colors.textColor};
+  color: ${colors.textColor};
   border: 2px solid ${colors.white};
   background: none;
 
@@ -60,12 +57,12 @@ export const InputDescription = styled.input`
     color: ${colors.selectColor};
   }
 
-  @media${device.tablet}{
+  @media${device.tablet} {
     width: 192px;
     border: 2px solid ${colors.bgSummary};
-    border-right:0;
+    border-right: 0;
   }
-    @media${device.desktop}{
+  @media${device.desktop} {
     width: 289px;
   }
 `;
@@ -77,7 +74,8 @@ export const SelectOverlay = styled.div`
   border-radius: 0px 0px 16px 0px;
   border-top: none;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     border-radius: 0;
   }
 
@@ -96,12 +94,12 @@ export const CalculatorOverlay = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 
-  @media${device.tablet}{
+  @media${device.tablet} {
     width: 104px;
-    border-radius:  0px 22px  22px 0;
+    border-radius: 0px 22px 22px 0;
     border: 2px solid ${colors.bgSummary};
     height: 44px;
     border-left: none;
@@ -139,7 +137,7 @@ export const ValueInput = styled.input`
   &::placeholder {
     color: ${colors.black};
 
-    @media ${device.tablet}{
+    @media ${device.tablet} {
       color: ${colors.selectColor};
     }
   }
@@ -163,6 +161,7 @@ export const CalculatorButton = styled.button`
   background: none;
   border: 2px solid ${colors.white};
   border-radius: 0px 22px 22px 0px;
+  cursor: default;
 
   @media ${device.tablet} {
     border: none;
@@ -174,7 +173,6 @@ export const CalculatorButton = styled.button`
   @media ${device.desktop} {
     padding-right: 25px;
   }
-
 `;
 
 export const ButtonFormWrapper = styled.div`
@@ -184,11 +182,11 @@ export const ButtonFormWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
-   @media${device.tablet}{
-   margin-top: 30px;
-   justify-content: center;  
+  @media${device.tablet} {
+    margin-top: 30px;
+    justify-content: center;
   }
-     @media${device.desktop}{
+  @media${device.desktop} {
     margin-top: 0;
     width: 265px;
     margin-left: 27px;
@@ -207,6 +205,7 @@ export const FormButton = styled.button`
   color: ${colors.textColor};
   background-color: ${colors.bgSummary};
   box-shadow: 1px 3px 5px rgba(82, 85, 95, 0.15);
+  transition: ${colors.animation};
 
   &:hover {
     color: ${colors.white};
@@ -221,7 +220,7 @@ export const FormButton = styled.button`
 `;
 
 export const FormButtonSubmit = styled(FormButton)`
-       @media${device.tablet}{
-margin-right: 15px
+  @media${device.tablet} {
+    margin-right: 15px;
   }
 `;

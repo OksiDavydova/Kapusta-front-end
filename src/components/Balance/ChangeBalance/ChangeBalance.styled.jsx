@@ -22,7 +22,7 @@ export const Span = styled.span`
   right: 10px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #000000;
+  color: ${colors.black};
   @media ${device.tablet} {
     top: 0;
     right: 12px;
@@ -35,14 +35,14 @@ export const ChangeBalanceInput = styled.input`
   padding: 0;
   font-weight: bold;
   text-align: right;
-  color: #000000;
-  border: 2px solid #ffffff;
+  color:  ${colors.black};
+  border: 2px solid  ${colors.white};
   border-radius: 22px 0px 0px 22px;
   background: none;
 
   padding: 13px 38px 13px 0;
   &::placeholder {
-    color: #000000;
+    color:  ${colors.black};
   }
   @media ${device.tablet} {
     border-radius: 16px;
@@ -55,22 +55,22 @@ export const ChangeBalanceButton = styled.button`
   height: 44px;
   font-weight: normal;
   text-transform: uppercase;
-  color: #52555fb3;
+  color:  ${colors.textColorSecond};
   text-align: center;
   background: none;
-  border: 2px solid #ffffff;
+  border: 2px solid ${colors.white};
   border-left: none;
   border-radius: 0px 22px 22px 0px;
   transition: ${colors.animation};
   &:hover {
-    color: #ffffff;
-    background: #ff751d;
-    border: #ff751d;
+    color:  ${colors.white};
+    background:  ${colors.orange};
+    border:  ${colors.orange};
   }
   &:focus {
-    color: #ffffff;
-    background: #ff751d;
-    border: #ff751d;
+    color: ${colors.white};
+    background: ${colors.orange};
+    border: ${colors.orange};
   }
   @media ${device.tablet} {
     border-radius: 16px;
@@ -94,16 +94,9 @@ export const BalanceText = styled.p`
 export const OvalBalanceSpan = styled.div`
   padding-bottom: 40px;
 
-  /* outline: 1px solid red; */
-
   @media ${device.tablet} {
     display: flex;
-    /* margin-left: 70px; */
     padding-bottom: 0px;
-  }
-
-  @media ${device.desktop} {
-    /* margin-left: 400px; */
   }
 `;
 

@@ -28,19 +28,7 @@ export const AvatarLetter = styled.p`
 export const UserName = styled.p`
   position: relative;
   margin-bottom: 0;
-  margin-right: 20px;
   color: ${colors.textColor};
-
-  &:after {
-    position: absolute;
-    display: block;
-    content: "";
-    width: 1px;
-    height: 36px;
-    top: -14px;
-    left: 63px;
-    background-color: ${colors.lineColor};
-  }
 
   @media (max-width: 767.98px) {
     display: none;

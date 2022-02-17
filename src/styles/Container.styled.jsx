@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import pairCabbages from "../assets/img/pairCabbages.png";
+//import pairCabbages from "../assets/img/pairCabbages.png";
 import { device } from "./utils";
 
 export const Container = styled.div`
@@ -25,6 +25,6 @@ export const Container = styled.div`
 
   @media ${device.desktop} {
     width: 1280px;
-    background-image:none;
+    background-image: none;
   }
 `;

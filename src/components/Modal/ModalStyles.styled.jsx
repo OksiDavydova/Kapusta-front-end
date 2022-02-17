@@ -47,7 +47,7 @@ export const ModalBalanceContent = styled.div`
       height: 0;
       border-left: 11px solid transparent;
       border-right: 11px solid transparent;
-      border-bottom: 11px solid #172d5d;
+      border-bottom: 11px solid ${colors.modalBorder};
 
       @media ${device.tablet} {
       left:16%;

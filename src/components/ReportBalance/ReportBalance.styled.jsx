@@ -12,8 +12,6 @@ export const ReportBalanceWrapper = styled.div`
   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
   border-radius: 20px;
 
-  /* outline: 1px solid red; */
-
   @media ${device.tablet} {
     margin-bottom: 30px;
     padding: 16px 0px 16px 0px;
@@ -25,7 +23,6 @@ export const ReportBalanceWrapper = styled.div`
 export const ReportBalanceDiv = styled.div`
   position: relative;
   padding: 0px 15px;
-  /* outline: 1px solid red; */
 
   @media ${device.tablet} {
     display: flex;
@@ -53,7 +50,5 @@ export const ReportBalanceSum = styled.p`
   font-size: 14px;
   letter-spacing: 0.04em;
 
-  color: ${(props) => (props.expenses ? "#E53935" : "#407946")};
-
-  /* outline: 1px solid red; */
+  color: ${(props) => (props.expenses ? `${colors.redColor}` : `${colors.greenColor}`)};
 `;

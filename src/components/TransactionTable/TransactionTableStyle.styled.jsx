@@ -3,7 +3,7 @@ import { colors, device } from "../../styles/utils";
 
 export const TransactionSection = styled.div`
   margin: 0 auto;
-  /* outline: 1px solid red; */
+
   @media ${device.tablet} {
     margin-left: 0;
     padding: 0 30px 48px;
@@ -24,14 +24,13 @@ export const TableTransaction = styled.div`
   max-width: 282px;
   min-height: 200px;
   margin: auto;
-  /* outline: 1px solid red; */
+
   @media ${device.tablet} {
     margin: auto;
     min-width: 605px;
     min-height: 300px;
     background-color: ${colors.white};
     box-shadow: 0px 10px 30px 0px rgb(170 178 197 / 20%);
-    /* padding: 1px; */
     border-radius: 20px 20px 0 0;
   }
 
@@ -147,7 +146,7 @@ export const TrBodyTransaction = styled.div`
   height: 50px;
   margin-bottom: 2px;
   min-width: 245px;
-  border-bottom: 2px solid #f5f6fb;
+  border-bottom: 2px solid ${colors.bgSummary};
   @media ${device.tabletMax} {
     display: grid;
     border-bottom: 2px solid ${colors.bgSummary};

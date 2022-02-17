@@ -1,6 +1,6 @@
 //for test only
 import styled from "@emotion/styled";
-import { device } from "../styles/utils/device";
+import { device, colors } from "../styles/utils/device";
 // import { colors } from "../styles/utils";
 // import { device } from "../styles/utils";
 import cabbagesBottom from "../assets/img/cabbagesBottom.png";
@@ -9,8 +9,6 @@ import pairCabbages from "../assets/img/pairCabbages.png";
 import oneCabbageRT from "../assets/img/oneCabbageRT.png";
 import oneCabbageLB from "../assets/img/oneCabbageLB.png";
 
-// import cabbagesBottom from "../assets/img/cabbagesBottom.png";
-// grey back first then cabbage
 export const BgBottomAuth = styled.div`
   // position: absolute;
   // left: 0px;
@@ -19,8 +17,11 @@ export const BgBottomAuth = styled.div`
   // width: 100%;
   // height: 100%;
 
-  // background-color: #ffffff;
-  // background-repeat: no-repeat;
+
+  //background-color: ${colors.white};
+  //background-repeat: no-repeat;
+
+
 
   // @media ${device.tablet} {
   //   background-image: url(${pairCabbages});
@@ -77,7 +78,7 @@ export const BgTopAuth = styled.div`
   height: 286px;
   width: 100%;
   border-radius: 0 0 0 150px;
-  background-color: #f2f5fc;
+  background-color: ${colors.bgTopAuth};
   background-repeat: no-repeat;
 
   @media ${device.tablet} {
@@ -89,7 +90,7 @@ export const BgTop = styled.div`
   z-index: -4;
   display: block;
   position: absolute;
-  background-color: #f5f6fb;
+  background-color: ${colors.bgSummary};
   background-repeat: no-repeat;
 
   left: 0px;

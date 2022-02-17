@@ -71,7 +71,7 @@ export const LinkGoogle = styled.a`
   text-transform: capitalize;
   /* text-decoration: none; */
 
-  color: #000000;
+  color: ${colors.black};
   background-color: ${colors.inputBg};
   box-shadow: 1px 2px 3px rgba(170, 178, 197, 0.2);
 
@@ -124,13 +124,6 @@ export const StatisticButton = styled.a`
 export const ArrowBtnDiv = styled.div`
   text-align: left;
 
-  // &:hover > a {
-  //   transform: scale(1.05);
-  // }
-  // &:focus > a {
-  //   transform: scale(1.05);
-  // }
-
   @media ${device.tablet} {
     display: flex;
     align-items: center;
@@ -143,8 +136,9 @@ export const ArrowBtnDiv = styled.div`
 export const ArrowBtn = styled.a`
   width: 24px;
   height: 24px;
-  // transition: transform 0.2s;
-  fill: ${colors.orange};
+
+  //fill: ${colors.orange};
+
 
   @media ${device.tablet} {
     margin-right: 15px;

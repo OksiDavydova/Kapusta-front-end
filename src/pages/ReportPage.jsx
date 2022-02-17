@@ -29,9 +29,9 @@ export default function ReportPage() {
     <>
       {isLoading && <LoaderReport />}
       <ReportPageWrapper>
-        <Media query="(max-width: 767px)" render={() => <ArrowButton />} />
-        <Media query="(max-width: 767px)" render={() => <MonthPicker />} />
-        <Media query="(max-width: 767px)" render={() => <BalanceOval />} />
+        <Media query="(max-width: 767.98px)" render={() => <ArrowButton />} />
+        <Media query="(max-width: 767.98px)" render={() => <MonthPicker />} />
+        <Media query="(max-width: 767.98px)" render={() => <BalanceOval />} />
 
         <Media
           query="(min-width: 768px)"
@@ -48,7 +48,7 @@ export default function ReportPage() {
         <CategoryReportList />
         {!dataCheck && 
           <>
-            <Media query="(max-width: 767px)" render={() => <ChartMobile />} />
+            <Media query="(max-width: 767.98px)" render={() => <ChartMobile />} />
 
             <Media
               query="(min-width: 768px)"

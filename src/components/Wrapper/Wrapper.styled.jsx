@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
-import { device } from "../../styles/utils";
+import { device, colors } from "../../styles/utils";
 import pairCabbages from "../../assets/img/pairCabbages.png";
 import cabbagesBottom from "../../assets/img/cabbagesBottom.png";
 
+
 export const ContentWrapper = styled.div`
   width: 100%;
-  /* border: 1px solid red; */
   padding-top: 30px;
   display: flex;
   flex-direction: column;
@@ -30,11 +30,10 @@ export const ContentWrapper = styled.div`
 
 export const Overlay = styled.div`
   @media ${device.desktop} {
-    /* outline: 1px solid red; */
     display: flex;
     justify-content: space-between;
     padding: 0 20px 60px 20px;
-    background: #ffffff;
+    background: ${colors.white};
     border-radius: 0px 0px 30px 30px;
   }
 `;
@@ -42,7 +41,7 @@ export const Overlay = styled.div`
 export const DesktopOverlayShadow = styled.div`
   @media ${device.desktop} {
     width: 100%;
-    background: #ffffff;
+    background: ${colors.white};
     border-radius: 0px 30px 30px 30px;
     box-shadow: 0 10px 60px rgba(170, 178, 197, 0.2);
   }
@@ -63,7 +62,7 @@ export const AuthWrapper = styled.div`
   padding: 40px 18px 53px 18px;
   width: 300px;
   height: 525px;
-  background: #ffffff;
+  background: ${colors.white};
   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
   border-radius: 30px;
 
@@ -108,10 +107,9 @@ export const ChartTabletWrapper = styled.div`
   justify-content: center;
   height: 422px;
   padding: 20px 15px;
-  background: #ffffff;
+  background: ${colors.white};
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
   border-radius: 30px;
-  /* outline: 1px solid red; */
 `;
 
 export const ReportPageTopWrapper = styled.div`
@@ -119,7 +117,6 @@ export const ReportPageTopWrapper = styled.div`
   align-content: center;
   justify-content: space-between;
   margin-bottom: 30px;
-  /* outline: 1px solid red; */
 `;
 
 export const WrapperLoginContainer = styled.section`

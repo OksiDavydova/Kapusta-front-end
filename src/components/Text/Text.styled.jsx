@@ -10,8 +10,7 @@ export const SingleText = styled.p`
   letter-spacing: 0.04em;
   text-transform: none;
   text-align: ${(props) => props.align};
-
-  color: #52555f;
+  color: ${colors.textColor};
   
   @media ${device.tablet} {
     margin:0;
@@ -27,10 +26,7 @@ export const ReportBalanceText = styled.p`
   margin-bottom: 5px;
   font-weight: bold;
   font-size: 14px;
-  // color: #52555F;
   color: ${colors.textColor}
-
-  outline: 1px solid red;
 
   @media ${device.tablet} {
     margin-bottom: 0px;

@@ -29,16 +29,15 @@ function ChangeBalance() {
 
   // Coordinates for Modal
   const ref = useRef();
-  const [coordinates, setCoordinates] = useState('');
+  const [coordinates, setCoordinates] = useState("");
 
   useEffect(() => {
     setTimeout(() => {
-      const rect = ref.current.getBoundingClientRect();
-      setCoordinates(rect)
-    })
+      const rect = ref.current?.getBoundingClientRect();
+      setCoordinates(rect);
+    });
   }, []);
 
-  console.log('coordinates Input: ', coordinates);
   // End of part with coordinates
 
   useEffect(() => {
@@ -92,7 +91,7 @@ function ChangeBalance() {
 
   // function getCoords(elem) {
   //   let box = elem.getBoundingClientRect();
-  
+
   //   return {
   //     top: Math.round(box.top + pageYOffset),
   //     left: Math.round(box.left + pageXOffset)

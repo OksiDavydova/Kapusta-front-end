@@ -28,16 +28,28 @@ function ChangeBalance() {
   const [valueBalance, setValueBalance] = useState("");
 
   // Coordinates for Modal
+
+  const [size, setSize] = useState([window.innerWidth, window.innerHeight])
+  const handleResize = () => {
+    setSize([window.innerWidth, window.innerHeight])
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [size])
+
+  const [coordinates, setCoordinates] = useState('');
   const ref = useRef();
-  const [coordinates, setCoordinates] = useState("");
 
   useEffect(() => {
     setTimeout(() => {
-      const rect = ref.current?.getBoundingClientRect();
-      setCoordinates(rect);
-    });
-  }, []);
+      const rect = ref.current.getBoundingClientRect();
+      setCoordinates(rect)
+    })
+  }, [size]);
 
+ 
   // End of part with coordinates
 
   useEffect(() => {
@@ -81,23 +93,6 @@ function ChangeBalance() {
   const removeBalanceModal = () => {
     setShowBalanceModal(!showBalanceModal);
   };
-  //const setBalance = e => {
-  //const conversionToNumber = Number(e.target.value);
-  //setValueBalance(conversionToNumber);
-
-  // let elem = document.querySelector('#input');
-
-  // console.log(elem.getBoundingClientRect());
-
-  // function getCoords(elem) {
-  //   let box = elem.getBoundingClientRect();
-
-  //   return {
-  //     top: Math.round(box.top + pageYOffset),
-  //     left: Math.round(box.left + pageXOffset)
-  //   };
-  // }
-
   return (
     <ChangeBalanceWrapper>
       {balance ? (

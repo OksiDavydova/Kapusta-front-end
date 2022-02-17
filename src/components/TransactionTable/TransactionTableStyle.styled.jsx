@@ -115,7 +115,7 @@ export const ThHeadTransaction = styled.div`
 
 export const TableBodyTransaction = styled.div`
   width: 100%;
-  max-height: 250px;
+  max-height: 400px;
   overflow-y: scroll;
 
   @media ${device.tablet} {

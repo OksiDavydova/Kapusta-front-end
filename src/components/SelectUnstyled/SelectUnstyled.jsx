@@ -13,8 +13,11 @@ import { device } from "../../styles/utils";
 import { getTypeTransaction } from "../../redux/typeTransaction/transaction-selector";
 import { CATEGORIES_FOR_SELECT } from "../../const/constants";
 import {colors} from '../../styles/utils/colors';
+import toTop from "./toTop.svg";
+import toBottom from "./toBottom.svg";
 
 const StyledButton = styled("button")`
+  position: relative;
   min-width: 278px;
   min-height: 42px;
   border: none;
@@ -38,16 +41,32 @@ const StyledButton = styled("button")`
   }
 
   &.${selectUnstyledClasses.expanded} {
+    position: relative;
 
     &::after {
-      content: "▴";
-      margin-left: 20px;
+      content: url(${toTop});
+      position: absolute;
+      left: 90%;
+      bottom: 30%;
+      z-index: 3;
+
+      @media ${device.tablet} {
+        left: 82%;
+        bottom: 30%;
+      }
   }}
 
   &::after {
-    content: "▾";
-    float: right;
-    margin-left: 20px;
+    content: url(${toBottom});
+      position: absolute;
+      left: 90%;
+      bottom: 30%;
+      z-index: 3;
+
+      @media ${device.tablet} {
+        left: 82%;
+        bottom: 30%;
+      }
   }
 `;
 

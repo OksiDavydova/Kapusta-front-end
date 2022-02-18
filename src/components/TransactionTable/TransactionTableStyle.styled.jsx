@@ -24,7 +24,9 @@ export const TableTransaction = styled.div`
   max-width: 282px;
   min-height: 200px;
   margin: auto;
-
+@media ${device.tabletMax}{
+      margin-bottom: 50px;
+}
   @media ${device.tablet} {
     margin: auto;
     min-width: 605px;
